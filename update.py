@@ -13,7 +13,7 @@ import fileinput
 from time import mktime, strftime
 
 sam_families = [
-    "SAMD21", "SAMD51"
+    "SAMD21", "SAMD51", "SAML21"
 ]
 packurl = "http://packs.download.atmel.com/"
 

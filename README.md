@@ -8,7 +8,8 @@ The files are copied and modified by converting all line endings from Windows to
 Here is the list of the current device header version and release date:
 
 - [SAMD21: v1.3.331 created 17-August-2018](http://packs.download.atmel.com/Atmel.SAMD21_DFP.1.3.331.atpack)
-- [SAMD51: v1.1.96 created 21-September-2018](http://packs.download.atmel.com/Atmel.SAMD51_DFP.1.1.96.atpack)
+- [SAMD51: v1.2.139 created 09-April-2019](http://packs.download.atmel.com/Atmel.SAMD51_DFP.1.2.139.atpack)
+- [SAML21: v1.2.125 created 31-August-2018](http://packs.download.atmel.com/Atmel.SAML21_DFP.1.2.125.atpack)
 
 The Microchip header files in this directory are available under the Apache-2.0 License:
 ```
