@@ -3,7 +3,7 @@
  *
  * \brief Peripheral I/O description for SAMD51G19A
  *
- * Copyright (c) 2018 Microchip Technology Inc.
+ * Copyright (c) 2019 Microchip Technology Inc.
  *
  * \asf_license_start
  *
