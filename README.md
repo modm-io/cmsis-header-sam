@@ -1,33 +1,23 @@
-# CMSIS device headers for Microchip SAM
+## CMSIS device headers for Microchip SAM
 
 This folder includes the CMSIS device headers for all Microchip SAM devices.
-The files located here are part of the device packs provided by Microchip at
-[packs.download.atmel.com](http://packs.download.atmel.com/) and can be found
-inside the `include` folder of each device pack.
+The files located here are part of the device packs provided by Microchip at [http://packs.download.atmel.com/](http://packs.download.atmel.com/). libraries and can be found inside the `include` folder of each device pack.
 
-The files are copied and modified by converting all line endings from Windows
-to Unix style and removing all trailing whitespace.
+The files are copied and modified by converting all line endings from Windows to Unix style and removing all trailing whitespace (see `post_script.sh`). If you don't like that, stop complaining and do the work yourself.
 
 Here is the list of the current device header version and release date:
 
-- [SAMD21: v1.3.331 created 17-August-2018](http://packs.download.atmel.com/Atmel.SAMD21_DFP.1.3.331.atpack)
+- [SAMD21: v1.3.395 created 19-September-2019](http://packs.download.atmel.com/Atmel.SAMD21_DFP.1.3.395.atpack)
 - [SAMD51: v1.2.139 created 09-April-2019](http://packs.download.atmel.com/Atmel.SAMD51_DFP.1.2.139.atpack)
 - [SAML21: v1.2.125 created 31-August-2018](http://packs.download.atmel.com/Atmel.SAML21_DFP.1.2.125.atpack)
 
-The Travis CI integration checks these versions daily and updates this repo automatically:
-[![](https://travis-ci.org/modm-io/cmsis-header-sam.svg?branch=master)](https://travis-ci.org/modm-io/cmsis-header-sam)
-
-
-## License
-
 The Microchip header files in this directory are available under the Apache-2.0 License:
-
 ```
  \file
 
  \brief Top level header file
 
- Copyright (c) {year} Microchip Technology Inc.
+ Copyright (c) 2018 Microchip Technology Inc.
 
  \license_start
 

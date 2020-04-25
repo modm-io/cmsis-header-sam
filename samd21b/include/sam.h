@@ -3,7 +3,7 @@
  *
  * \brief Top level header file
  *
- * Copyright (c) 2018 Microchip Technology Inc.
+ * Copyright (c) 2019 Microchip Technology Inc.
  *
  * \license_start
  *
@@ -30,10 +30,10 @@
 #ifndef _SAM_
 #define _SAM_
 
-#if   defined(__SAMD21E15BU__) || defined(__ATSAMD21E15BU__)
-  #include "samd21e15bu.h"
-#elif defined(__SAMD21E16BU__) || defined(__ATSAMD21E16BU__)
+#if   defined(__SAMD21E16BU__) || defined(__ATSAMD21E16BU__)
   #include "samd21e16bu.h"
+#elif defined(__SAMD21E15BU__) || defined(__ATSAMD21E15BU__)
+  #include "samd21e15bu.h"
 #else
   #error Library does not support the specified device
 #endif
