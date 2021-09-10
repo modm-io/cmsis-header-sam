@@ -10,7 +10,7 @@ from time import strftime
 from collections import defaultdict
 
 sam_families = [
-    "SAMD21", "SAMD51", "SAML21", "SAMG"
+    "SAMD21", "SAMD51", "SAML21", "SAMG", "SAMV70"
 ]
 packurl = "http://packs.download.atmel.com/"
 
