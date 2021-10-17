@@ -10,7 +10,7 @@ from time import strftime
 from collections import defaultdict
 
 sam_families = [
-    "SAMD21", "SAMD51", "SAML21", "SAMG", "SAMV70"
+    "SAMD21", "SAMD51", "SAME51", "SAME53", "SAME54", "SAML21", "SAMG", "SAMV70"
 ]
 packurl = "http://packs.download.atmel.com/"
 
@@ -67,9 +67,12 @@ for family in sam_families:
             pack_remote_date[family] = f.date_time + (0,0,-1)
             if f.filename.startswith("sam"):
                 family_folders[family].add(f.filename.split("/")[0])
-            if re.match(r'sam.*?\/include\/.*?\.h', f.filename):
+            if re.match(r'(sam.*?\/)?include\/.*?\.h', f.filename):
                 print(f.filename)
-                dest = Path(f.filename)
+                if f.filename.startswith("include"):
+                    dest = Path(family.lower()) / Path(f.filename)
+                else:
+                    dest = Path(f.filename)
                 dest.parent.mkdir(parents=True, exist_ok=True)
                 with z.open(f, "r") as rfile, dest.open("w") as wfile:
                     wfile.writelines(l.rstrip().decode("utf-8")+"\n" for l in rfile.readlines())

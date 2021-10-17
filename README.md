@@ -12,6 +12,9 @@ Here is the list of the current device header version and release date:
 
 - [SAMD21: v1.3.395 created 19-September-2019](http://packs.download.atmel.com/Atmel.SAMD21_DFP.1.3.395.atpack)
 - [SAMD51: v1.2.139 created 09-April-2019](http://packs.download.atmel.com/Atmel.SAMD51_DFP.1.2.139.atpack)
+- [SAME51: vx.x.x created DATE](link)
+- [SAME53: vx.x.x created DATE](link)
+- [SAME54: vx.x.x created DATE](link)
 - [SAML21: v1.2.125 created 31-August-2018](http://packs.download.atmel.com/Atmel.SAML21_DFP.1.2.125.atpack)
 - [SAMG: v2.1.97 created 26-September-2017](http://packs.download.atmel.com/Atmel.SAMG_DFP.2.1.97.atpack)
 - [SAMV70: v2.4.130 created 18-February-2019](http://packs.download.atmel.com/Atmel.SAMV70_DFP.2.4.130.atpack)
