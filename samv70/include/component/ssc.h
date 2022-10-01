@@ -3,7 +3,7 @@
  *
  * \brief Component description for SSC
  *
- * Copyright (c) 2019 Microchip Technology Inc.
+ * Copyright (c) 2022 Microchip Technology Inc.
  *
  * \license_start
  *
@@ -32,7 +32,7 @@
 #define _SAMV70_SSC_COMPONENT_H_
 #define _SAMV70_SSC_COMPONENT_         /**< \deprecated  Backward compatibility for ASF */
 
-/** \addtogroup SAMV_SAMV70 Synchronous Serial Controller
+/** \addtogroup SAMV70_SSC Synchronous Serial Controller
  *  @{
  */
 /* ========================================================================== */

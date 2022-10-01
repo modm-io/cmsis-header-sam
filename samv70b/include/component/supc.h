@@ -3,7 +3,7 @@
  *
  * \brief Component description for SUPC
  *
- * Copyright (c) 2019 Microchip Technology Inc.
+ * Copyright (c) 2022 Microchip Technology Inc.
  *
  * \license_start
  *
@@ -27,12 +27,12 @@
  *
  */
 
-/* file generated from device description version 2019-01-18T21:20:49Z */
+/* file generated from device description version 2022-06-28T09:09:02Z */
 #ifndef _SAMV70_SUPC_COMPONENT_H_
 #define _SAMV70_SUPC_COMPONENT_H_
 #define _SAMV70_SUPC_COMPONENT_         /**< \deprecated  Backward compatibility for ASF */
 
-/** \addtogroup SAMV_SAMV70 Supply Controller
+/** \addtogroup SAMV70_SUPC Supply Controller
  *  @{
  */
 /* ========================================================================== */
@@ -790,6 +790,34 @@ typedef union {
 #define SUPC_SR_WKUPIS_Msk                  (_U_(0x3FFF) << SUPC_SR_WKUPIS_Pos)            /**< (SUPC_SR Mask) WKUPIS */
 #define SUPC_SR_WKUPIS(value)               (SUPC_SR_WKUPIS_Msk & ((value) << SUPC_SR_WKUPIS_Pos))
 
+/* -------- SYSC_WPMR : (SUPC Offset: 0xd4) (R/W 32) Write Protection Mode Register -------- */
+#if !(defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__))
+#if COMPONENT_TYPEDEF_STYLE == 'N'
+typedef union {
+  struct {
+    uint32_t WPEN:1;                    /**< bit:      0  Write Protection Enable                  */
+    uint32_t :7;                        /**< bit:   1..7  Reserved */
+    uint32_t WPKEY:24;                  /**< bit:  8..31  Write Protection Key                     */
+  } bit;                                /**< Structure used for bit  access */
+  uint32_t reg;                         /**< Type used for register access */
+} SYSC_WPMR_Type;
+#endif
+#endif /* !(defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__)) */
+
+#define SYSC_WPMR_OFFSET                    (0xD4)                                        /**<  (SYSC_WPMR) Write Protection Mode Register  Offset */
+
+#define SYSC_WPMR_WPEN_Pos                  0                                              /**< (SYSC_WPMR) Write Protection Enable Position */
+#define SYSC_WPMR_WPEN_Msk                  (_U_(0x1) << SYSC_WPMR_WPEN_Pos)               /**< (SYSC_WPMR) Write Protection Enable Mask */
+#define SYSC_WPMR_WPEN                      SYSC_WPMR_WPEN_Msk                             /**< \deprecated Old style mask definition for 1 bit bitfield. Use SYSC_WPMR_WPEN_Msk instead */
+#define SYSC_WPMR_WPKEY_Pos                 8                                              /**< (SYSC_WPMR) Write Protection Key Position */
+#define SYSC_WPMR_WPKEY_Msk                 (_U_(0xFFFFFF) << SYSC_WPMR_WPKEY_Pos)         /**< (SYSC_WPMR) Write Protection Key Mask */
+#define SYSC_WPMR_WPKEY(value)              (SYSC_WPMR_WPKEY_Msk & ((value) << SYSC_WPMR_WPKEY_Pos))
+#define   SYSC_WPMR_WPKEY_PASSWD_Val        _U_(0x525443)                                  /**< (SYSC_WPMR) Writing any other value in this field aborts the write operation of the WPEN bit. Always reads as 0.  */
+#define SYSC_WPMR_WPKEY_PASSWD              (SYSC_WPMR_WPKEY_PASSWD_Val << SYSC_WPMR_WPKEY_Pos)  /**< (SYSC_WPMR) Writing any other value in this field aborts the write operation of the WPEN bit. Always reads as 0. Position  */
+#define SYSC_WPMR_MASK                      _U_(0xFFFFFF01)                                /**< \deprecated (SYSC_WPMR) Register MASK  (Use SYSC_WPMR_Msk instead)  */
+#define SYSC_WPMR_Msk                       _U_(0xFFFFFF01)                                /**< (SYSC_WPMR) Register Mask  */
+
+
 #if !(defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__))
 #if COMPONENT_TYPEDEF_STYLE == 'R'
 /** \brief SUPC hardware registers */
@@ -800,6 +828,8 @@ typedef struct {
   __IO uint32_t SUPC_WUMR;      /**< (SUPC Offset: 0x0C) Supply Controller Wake-up Mode Register */
   __IO uint32_t SUPC_WUIR;      /**< (SUPC Offset: 0x10) Supply Controller Wake-up Inputs Register */
   __I  uint32_t SUPC_SR;        /**< (SUPC Offset: 0x14) Supply Controller Status Register */
+  __I  uint8_t                        Reserved1[188];
+  __IO uint32_t SYSC_WPMR;      /**< (SUPC Offset: 0xD4) Write Protection Mode Register */
 } Supc;
 
 #elif COMPONENT_TYPEDEF_STYLE == 'N'
@@ -811,6 +841,8 @@ typedef struct {
   __IO SUPC_WUMR_Type                 SUPC_WUMR;      /**< Offset: 0x0C (R/W  32) Supply Controller Wake-up Mode Register */
   __IO SUPC_WUIR_Type                 SUPC_WUIR;      /**< Offset: 0x10 (R/W  32) Supply Controller Wake-up Inputs Register */
   __I  SUPC_SR_Type                   SUPC_SR;        /**< Offset: 0x14 (R/   32) Supply Controller Status Register */
+  __I  uint8_t                        Reserved1[188];
+  __IO SYSC_WPMR_Type                 SYSC_WPMR;      /**< Offset: 0xD4 (R/W  32) Write Protection Mode Register */
 } Supc;
 
 #else /* COMPONENT_TYPEDEF_STYLE */

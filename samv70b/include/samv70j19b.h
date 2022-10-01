@@ -3,7 +3,7 @@
  *
  * \brief Header file for ATSAMV70J19B
  *
- * Copyright (c) 2019 Microchip Technology Inc.
+ * Copyright (c) 2022 Microchip Technology Inc.
  *
  * \license_start
  *
@@ -27,7 +27,7 @@
  *
  */
 
-/* file generated from device description version 2019-01-18T21:20:35Z */
+/* file generated from device description version 2022-06-28T09:08:45Z */
 #ifndef _SAMV70J19B_H_
 #define _SAMV70J19B_H_
 
@@ -50,7 +50,7 @@
     \li to specify the access to peripheral variables.
     \li for automatic generation of peripheral register debug information.
 
-    \remark
+    \\remark
     CMSIS core has a syntax that differs from this using i.e. __I, __O, or __IO followed by 'uint<size>_t' respective types.
     Default the header files will follow the CMSIS core syntax.
  *  @{
@@ -279,10 +279,10 @@ typedef struct _DeviceVectors
 } DeviceVectors;
 
 /* Defines for Deprecated Interrupt and Exceptions handler names */
-#define pfnMemManage_Handler      pfnMemoryManagement_Handler     /**< \deprecated  Backward compatibility for ASF */
-#define pfnDebugMon_Handler       pfnDebugMonitor_Handler         /**< \deprecated  Backward compatibility for ASF */
 #define pfnNMI_Handler            pfnNonMaskableInt_Handler       /**< \deprecated  Backward compatibility for ASF */
 #define pfnSVC_Handler            pfnSVCall_Handler               /**< \deprecated  Backward compatibility for ASF */
+#define pfnDebugMon_Handler       pfnDebugMonitor_Handler         /**< \deprecated  Backward compatibility for ASF */
+#define pfnMemManage_Handler      pfnMemoryManagement_Handler     /**< \deprecated  Backward compatibility for ASF */
 
 #endif /* !(defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__)) */
 
@@ -360,10 +360,10 @@ void XDMAC_Handler                 ( void );
 
 
 /* Defines for Deprecated Interrupt and Exceptions handler names */
-#define MemManage_Handler         MemoryManagement_Handler        /**< \deprecated  Backward compatibility for ASF */
-#define DebugMon_Handler          DebugMonitor_Handler            /**< \deprecated  Backward compatibility for ASF */
 #define NMI_Handler               NonMaskableInt_Handler          /**< \deprecated  Backward compatibility for ASF */
 #define SVC_Handler               SVCall_Handler                  /**< \deprecated  Backward compatibility for ASF */
+#define DebugMon_Handler          DebugMonitor_Handler            /**< \deprecated  Backward compatibility for ASF */
+#define MemManage_Handler         MemoryManagement_Handler        /**< \deprecated  Backward compatibility for ASF */
 
 #endif /* !(defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__)) */
 
@@ -778,7 +778,7 @@ void XDMAC_Handler                 ( void );
 #define SYSTEM_SIZE              _U_(0x10000000)       /* 262144kB Memory segment type: io */
 #define QSPIMEM_SIZE             _U_(0x20000000)       /* 524288kB Memory segment type: other */
 #define AXIMX_SIZE               _U_(0x00100000)       /* 1024kB Memory segment type: other */
-#define ITCM_SIZE                _U_(0x00200000)       /* 2048kB Memory segment type: other */
+#define ITCM_SIZE                _U_(0x00020000)       /*  128kB Memory segment type: other */
 #define IFLASH_SIZE              _U_(0x00080000)       /*  512kB Memory segment type: flash */
 #define IFLASH_PAGE_SIZE         _U_(       512)
 #define IFLASH_NB_OF_PAGES       _U_(      1024)
@@ -802,7 +802,7 @@ void XDMAC_Handler                 ( void );
 /* ************************************************************************** */
 #define JTAGID                   _UL_(0X05B3D03F)
 #define CHIP_JTAGID              _UL_(0X05B3D03F)
-#define CHIP_CIDR                _UL_(0XA13D0A00)
+#define CHIP_CIDR                _UL_(0XA13D0A01)
 #define CHIP_EXID                _UL_(0X00000000)
 
 /* ************************************************************************** */

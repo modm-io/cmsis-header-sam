@@ -3,7 +3,7 @@
  *
  * \brief Component description for AES
  *
- * Copyright (c) 2019 Microchip Technology Inc.
+ * Copyright (c) 2022 Microchip Technology Inc.
  *
  * \license_start
  *
@@ -32,7 +32,7 @@
 #define _SAMV70_AES_COMPONENT_H_
 #define _SAMV70_AES_COMPONENT_         /**< \deprecated  Backward compatibility for ASF */
 
-/** \addtogroup SAMV_SAMV70 Advanced Encryption Standard
+/** \addtogroup SAMV70_AES Advanced Encryption Standard
  *  @{
  */
 /* ========================================================================== */

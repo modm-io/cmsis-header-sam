@@ -3,7 +3,7 @@
  *
  * \brief Top level header file
  *
- * Copyright (c) 2019 Microchip Technology Inc.
+ * Copyright (c) 2022 Microchip Technology Inc.
  *
  * \license_start
  *
@@ -38,10 +38,10 @@
   #include "samv70n19b.h"
 #elif defined(__SAMV70N20B__) || defined(__ATSAMV70N20B__)
   #include "samv70n20b.h"
-#elif defined(__SAMV70Q19B__) || defined(__ATSAMV70Q19B__)
-  #include "samv70q19b.h"
 #elif defined(__SAMV70Q20B__) || defined(__ATSAMV70Q20B__)
   #include "samv70q20b.h"
+#elif defined(__SAMV70Q19B__) || defined(__ATSAMV70Q19B__)
+  #include "samv70q19b.h"
 #else
   #error Library does not support the specified device
 #endif

@@ -3,7 +3,7 @@
  *
  * \brief Instance description for DACC
  *
- * Copyright (c) 2019 Microchip Technology Inc.
+ * Copyright (c) 2022 Microchip Technology Inc.
  *
  * \license_start
  *
@@ -27,7 +27,7 @@
  *
  */
 
-/* file generated from device description version 2019-01-18T21:20:49Z */
+/* file generated from device description version 2022-06-28T09:09:02Z */
 #ifndef _SAMV70_DACC_INSTANCE_H_
 #define _SAMV70_DACC_INSTANCE_H_
 
@@ -73,7 +73,8 @@
 #endif /* (defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__)) */
 
 /* ========== Instance Parameter definitions for DACC peripheral ========== */
-#define DACC_DMAC_ID_TX                          30
+#define DACC_DMAC_ID_CH0_TX                      30
+#define DACC_DMAC_ID_CH1_TX                      31
 #define DACC_INSTANCE_ID                         30
 #define DACC_CLOCK_ID                            30
 

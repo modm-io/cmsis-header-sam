@@ -3,7 +3,7 @@
  *
  * \brief Component description for QSPI
  *
- * Copyright (c) 2019 Microchip Technology Inc.
+ * Copyright (c) 2022 Microchip Technology Inc.
  *
  * \license_start
  *
@@ -32,7 +32,7 @@
 #define _SAMV70_QSPI_COMPONENT_H_
 #define _SAMV70_QSPI_COMPONENT_         /**< \deprecated  Backward compatibility for ASF */
 
-/** \addtogroup SAMV_SAMV70 Quad Serial Peripheral Interface
+/** \addtogroup SAMV70_QSPI Quad Serial Peripheral Interface
  *  @{
  */
 /* ========================================================================== */

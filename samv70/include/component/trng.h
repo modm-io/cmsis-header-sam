@@ -3,7 +3,7 @@
  *
  * \brief Component description for TRNG
  *
- * Copyright (c) 2019 Microchip Technology Inc.
+ * Copyright (c) 2022 Microchip Technology Inc.
  *
  * \license_start
  *
@@ -32,7 +32,7 @@
 #define _SAMV70_TRNG_COMPONENT_H_
 #define _SAMV70_TRNG_COMPONENT_         /**< \deprecated  Backward compatibility for ASF */
 
-/** \addtogroup SAMV_SAMV70 True Random Number Generator
+/** \addtogroup SAMV70_TRNG True Random Number Generator
  *  @{
  */
 /* ========================================================================== */

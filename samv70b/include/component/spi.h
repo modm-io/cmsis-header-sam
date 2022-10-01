@@ -3,7 +3,7 @@
  *
  * \brief Component description for SPI
  *
- * Copyright (c) 2019 Microchip Technology Inc.
+ * Copyright (c) 2022 Microchip Technology Inc.
  *
  * \license_start
  *
@@ -27,12 +27,12 @@
  *
  */
 
-/* file generated from device description version 2019-01-18T21:20:49Z */
+/* file generated from device description version 2022-06-28T09:09:02Z */
 #ifndef _SAMV70_SPI_COMPONENT_H_
 #define _SAMV70_SPI_COMPONENT_H_
 #define _SAMV70_SPI_COMPONENT_         /**< \deprecated  Backward compatibility for ASF */
 
-/** \addtogroup SAMV_SAMV70 Serial Peripheral Interface
+/** \addtogroup SAMV70_SPI Serial Peripheral Interface
  *  @{
  */
 /* ========================================================================== */
@@ -440,10 +440,10 @@ typedef union {
 #define SPI_CSR_NCPHA_Pos                   1                                              /**< (SPI_CSR) Clock Phase Position */
 #define SPI_CSR_NCPHA_Msk                   (_U_(0x1) << SPI_CSR_NCPHA_Pos)                /**< (SPI_CSR) Clock Phase Mask */
 #define SPI_CSR_NCPHA                       SPI_CSR_NCPHA_Msk                              /**< \deprecated Old style mask definition for 1 bit bitfield. Use SPI_CSR_NCPHA_Msk instead */
-#define   SPI_CSR_NCPHA_VALID_LEADING_EDGE_Val _U_(0x1)                                       /**< (SPI_CSR) Data is valid on clock leading edge (CPHA=0)  */
-#define   SPI_CSR_NCPHA_VALID_TRAILING_EDGE_Val _U_(0x0)                                       /**< (SPI_CSR) Data is valid on clock trailing edge (CPHA=1)  */
-#define SPI_CSR_NCPHA_VALID_LEADING_EDGE    (SPI_CSR_NCPHA_VALID_LEADING_EDGE_Val << SPI_CSR_NCPHA_Pos)  /**< (SPI_CSR) Data is valid on clock leading edge (CPHA=0) Position  */
-#define SPI_CSR_NCPHA_VALID_TRAILING_EDGE   (SPI_CSR_NCPHA_VALID_TRAILING_EDGE_Val << SPI_CSR_NCPHA_Pos)  /**< (SPI_CSR) Data is valid on clock trailing edge (CPHA=1) Position  */
+#define   SPI_CSR_NCPHA_VALID_LEADING_EDGE_Val _U_(0x1)                                       /**< (SPI_CSR) Data is valid on clock leading edge (NCPHA=1)  */
+#define   SPI_CSR_NCPHA_VALID_TRAILING_EDGE_Val _U_(0x0)                                       /**< (SPI_CSR) Data is valid on clock trailing edge (NCPHA=0)  */
+#define SPI_CSR_NCPHA_VALID_LEADING_EDGE    (SPI_CSR_NCPHA_VALID_LEADING_EDGE_Val << SPI_CSR_NCPHA_Pos)  /**< (SPI_CSR) Data is valid on clock leading edge (NCPHA=1) Position  */
+#define SPI_CSR_NCPHA_VALID_TRAILING_EDGE   (SPI_CSR_NCPHA_VALID_TRAILING_EDGE_Val << SPI_CSR_NCPHA_Pos)  /**< (SPI_CSR) Data is valid on clock trailing edge (NCPHA=0) Position  */
 #define SPI_CSR_CSNAAT_Pos                  2                                              /**< (SPI_CSR) Chip Select Not Active After Transfer (Ignored if CSAAT = 1) Position */
 #define SPI_CSR_CSNAAT_Msk                  (_U_(0x1) << SPI_CSR_CSNAAT_Pos)               /**< (SPI_CSR) Chip Select Not Active After Transfer (Ignored if CSAAT = 1) Mask */
 #define SPI_CSR_CSNAAT                      SPI_CSR_CSNAAT_Msk                             /**< \deprecated Old style mask definition for 1 bit bitfield. Use SPI_CSR_CSNAAT_Msk instead */

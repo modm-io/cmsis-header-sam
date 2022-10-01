@@ -3,7 +3,7 @@
  *
  * \brief Component description for MLB
  *
- * Copyright (c) 2019 Microchip Technology Inc.
+ * Copyright (c) 2022 Microchip Technology Inc.
  *
  * \license_start
  *
@@ -32,7 +32,7 @@
 #define _SAMV70_MLB_COMPONENT_H_
 #define _SAMV70_MLB_COMPONENT_         /**< \deprecated  Backward compatibility for ASF */
 
-/** \addtogroup SAMV_SAMV70 Media LB
+/** \addtogroup SAMV70_MLB Media LB
  *  @{
  */
 /* ========================================================================== */

@@ -3,7 +3,7 @@
  *
  * \brief Component description for XDMAC
  *
- * Copyright (c) 2019 Microchip Technology Inc.
+ * Copyright (c) 2022 Microchip Technology Inc.
  *
  * \license_start
  *
@@ -32,7 +32,7 @@
 #define _SAMV70_XDMAC_COMPONENT_H_
 #define _SAMV70_XDMAC_COMPONENT_         /**< \deprecated  Backward compatibility for ASF */
 
-/** \addtogroup SAMV_SAMV70 Extensible DMA Controller
+/** \addtogroup SAMV70_XDMAC Extensible DMA Controller
  *  @{
  */
 /* ========================================================================== */
