@@ -3,7 +3,7 @@
  *
  * \brief Instance description for UART2
  *
- * Copyright (c) 2019 Microchip Technology Inc.
+ * Copyright (c) 2022 Microchip Technology Inc.
  *
  * \license_start
  *

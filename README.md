@@ -20,7 +20,7 @@ Here is the list of the current device header version and release date:
 - [SAME70: v3.0.198 created 11-July-2022](http://packs.download.atmel.com/Atmel.SAME70_DFP.3.0.198.atpack)
 - [SAMS70: v3.0.165 created 11-July-2022](http://packs.download.atmel.com/Atmel.SAMS70_DFP.3.0.165.atpack)
 - [SAMV70: v3.0.159 created 11-July-2022](http://packs.download.atmel.com/Atmel.SAMV70_DFP.3.0.159.atpack)
-- [SAMV71: v2.4.182 created 31-January-2019](http://packs.download.atmel.com/Atmel.SAMV71_DFP.2.4.182.atpack)
+- [SAMV71: v3.0.214 created 11-July-2022](http://packs.download.atmel.com/Atmel.SAMV71_DFP.3.0.214.atpack)
 
 ## License
 

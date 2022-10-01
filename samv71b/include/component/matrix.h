@@ -3,7 +3,7 @@
  *
  * \brief Component description for MATRIX
  *
- * Copyright (c) 2019 Microchip Technology Inc.
+ * Copyright (c) 2022 Microchip Technology Inc.
  *
  * \license_start
  *
@@ -27,12 +27,12 @@
  *
  */
 
-/* file generated from device description version 2019-01-18T21:21:15Z */
+/* file generated from device description version 2022-06-28T09:09:35Z */
 #ifndef _SAMV71_MATRIX_COMPONENT_H_
 #define _SAMV71_MATRIX_COMPONENT_H_
 #define _SAMV71_MATRIX_COMPONENT_         /**< \deprecated  Backward compatibility for ASF */
 
-/** \addtogroup SAMV_SAMV71 AHB Bus Matrix
+/** \addtogroup SAMV71_MATRIX AHB Bus Matrix
  *  @{
  */
 /* ========================================================================== */
@@ -440,11 +440,10 @@ typedef union {
     uint32_t SMC_NFCS1:1;               /**< bit:      1  SMC NAND Flash Chip Select 1 Assignment  */
     uint32_t SMC_NFCS2:1;               /**< bit:      2  SMC NAND Flash Chip Select 2 Assignment  */
     uint32_t SMC_NFCS3:1;               /**< bit:      3  SMC NAND Flash Chip Select 3 Assignment  */
-    uint32_t SDRAMEN:1;                 /**< bit:      4  SDRAM Enable                             */
-    uint32_t :27;                       /**< bit:  5..31  Reserved */
+    uint32_t :28;                       /**< bit:  4..31  Reserved */
   } bit;                                /**< Structure used for bit  access */
   struct {
-    uint32_t SMC_NFCS:4;                /**< bit:   0..3  SMC NAND Flash Chip Select x Assignment  */
+    uint32_t SMC_NFCS:4;                /**< bit:   0..3  SMC NAND Flash Chip Select 3 Assignment  */
     uint32_t :28;                       /**< bit:  4..31 Reserved */
   } vec;                                /**< Structure used for vec  access  */
   uint32_t reg;                         /**< Type used for register access */
@@ -466,13 +465,10 @@ typedef union {
 #define CCFG_SMCNFCS_SMC_NFCS3_Pos          3                                              /**< (CCFG_SMCNFCS) SMC NAND Flash Chip Select 3 Assignment Position */
 #define CCFG_SMCNFCS_SMC_NFCS3_Msk          (_U_(0x1) << CCFG_SMCNFCS_SMC_NFCS3_Pos)       /**< (CCFG_SMCNFCS) SMC NAND Flash Chip Select 3 Assignment Mask */
 #define CCFG_SMCNFCS_SMC_NFCS3              CCFG_SMCNFCS_SMC_NFCS3_Msk                     /**< \deprecated Old style mask definition for 1 bit bitfield. Use CCFG_SMCNFCS_SMC_NFCS3_Msk instead */
-#define CCFG_SMCNFCS_SDRAMEN_Pos            4                                              /**< (CCFG_SMCNFCS) SDRAM Enable Position */
-#define CCFG_SMCNFCS_SDRAMEN_Msk            (_U_(0x1) << CCFG_SMCNFCS_SDRAMEN_Pos)         /**< (CCFG_SMCNFCS) SDRAM Enable Mask */
-#define CCFG_SMCNFCS_SDRAMEN                CCFG_SMCNFCS_SDRAMEN_Msk                       /**< \deprecated Old style mask definition for 1 bit bitfield. Use CCFG_SMCNFCS_SDRAMEN_Msk instead */
-#define CCFG_SMCNFCS_MASK                   _U_(0x1F)                                      /**< \deprecated (CCFG_SMCNFCS) Register MASK  (Use CCFG_SMCNFCS_Msk instead)  */
-#define CCFG_SMCNFCS_Msk                    _U_(0x1F)                                      /**< (CCFG_SMCNFCS) Register Mask  */
+#define CCFG_SMCNFCS_MASK                   _U_(0x0F)                                      /**< \deprecated (CCFG_SMCNFCS) Register MASK  (Use CCFG_SMCNFCS_Msk instead)  */
+#define CCFG_SMCNFCS_Msk                    _U_(0x0F)                                      /**< (CCFG_SMCNFCS) Register Mask  */
 
-#define CCFG_SMCNFCS_SMC_NFCS_Pos           0                                              /**< (CCFG_SMCNFCS Position) SMC NAND Flash Chip Select x Assignment */
+#define CCFG_SMCNFCS_SMC_NFCS_Pos           0                                              /**< (CCFG_SMCNFCS Position) SMC NAND Flash Chip Select 3 Assignment */
 #define CCFG_SMCNFCS_SMC_NFCS_Msk           (_U_(0xF) << CCFG_SMCNFCS_SMC_NFCS_Pos)        /**< (CCFG_SMCNFCS Mask) SMC_NFCS */
 #define CCFG_SMCNFCS_SMC_NFCS(value)        (CCFG_SMCNFCS_SMC_NFCS_Msk & ((value) << CCFG_SMCNFCS_SMC_NFCS_Pos))
 

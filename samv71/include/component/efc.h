@@ -3,7 +3,7 @@
  *
  * \brief Component description for EFC
  *
- * Copyright (c) 2019 Microchip Technology Inc.
+ * Copyright (c) 2022 Microchip Technology Inc.
  *
  * \license_start
  *
@@ -32,7 +32,7 @@
 #define _SAMV71_EFC_COMPONENT_H_
 #define _SAMV71_EFC_COMPONENT_         /**< \deprecated  Backward compatibility for ASF */
 
-/** \addtogroup SAMV_SAMV71 Embedded Flash Controller
+/** \addtogroup SAMV71_EFC Embedded Flash Controller
  *  @{
  */
 /* ========================================================================== */

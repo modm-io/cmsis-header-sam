@@ -3,7 +3,7 @@
  *
  * \brief Top level header file
  *
- * Copyright (c) 2019 Microchip Technology Inc.
+ * Copyright (c) 2022 Microchip Technology Inc.
  *
  * \license_start
  *
@@ -30,24 +30,24 @@
 #ifndef _SAM_
 #define _SAM_
 
-#if   defined(__SAMV71J19__) || defined(__ATSAMV71J19__)
-  #include "samv71j19.h"
-#elif defined(__SAMV71J20__) || defined(__ATSAMV71J20__)
+#if   defined(__SAMV71J20__) || defined(__ATSAMV71J20__)
   #include "samv71j20.h"
-#elif defined(__SAMV71J21__) || defined(__ATSAMV71J21__)
-  #include "samv71j21.h"
-#elif defined(__SAMV71N19__) || defined(__ATSAMV71N19__)
-  #include "samv71n19.h"
 #elif defined(__SAMV71N20__) || defined(__ATSAMV71N20__)
   #include "samv71n20.h"
 #elif defined(__SAMV71N21__) || defined(__ATSAMV71N21__)
   #include "samv71n21.h"
-#elif defined(__SAMV71Q19__) || defined(__ATSAMV71Q19__)
-  #include "samv71q19.h"
 #elif defined(__SAMV71Q20__) || defined(__ATSAMV71Q20__)
   #include "samv71q20.h"
+#elif defined(__SAMV71N19__) || defined(__ATSAMV71N19__)
+  #include "samv71n19.h"
 #elif defined(__SAMV71Q21__) || defined(__ATSAMV71Q21__)
   #include "samv71q21.h"
+#elif defined(__SAMV71Q19__) || defined(__ATSAMV71Q19__)
+  #include "samv71q19.h"
+#elif defined(__SAMV71J21__) || defined(__ATSAMV71J21__)
+  #include "samv71j21.h"
+#elif defined(__SAMV71J19__) || defined(__ATSAMV71J19__)
+  #include "samv71j19.h"
 #else
   #error Library does not support the specified device
 #endif

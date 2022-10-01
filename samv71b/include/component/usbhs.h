@@ -3,7 +3,7 @@
  *
  * \brief Component description for USBHS
  *
- * Copyright (c) 2019 Microchip Technology Inc.
+ * Copyright (c) 2022 Microchip Technology Inc.
  *
  * \license_start
  *
@@ -27,12 +27,12 @@
  *
  */
 
-/* file generated from device description version 2019-01-18T21:21:15Z */
+/* file generated from device description version 2022-06-28T09:09:35Z */
 #ifndef _SAMV71_USBHS_COMPONENT_H_
 #define _SAMV71_USBHS_COMPONENT_H_
 #define _SAMV71_USBHS_COMPONENT_         /**< \deprecated  Backward compatibility for ASF */
 
-/** \addtogroup SAMV_SAMV71 USB High-Speed Interface
+/** \addtogroup SAMV71_USBHS USB High-Speed Interface
  *  @{
  */
 /* ========================================================================== */
@@ -2408,13 +2408,13 @@ typedef union {
     uint32_t PEP_8:1;                   /**< bit:     16  Pipe 8 Interrupt                         */
     uint32_t PEP_9:1;                   /**< bit:     17  Pipe 9 Interrupt                         */
     uint32_t :7;                        /**< bit: 18..24  Reserved */
-    uint32_t DMA_0:1;                   /**< bit:     25  DMA Channel 0 Interrupt                  */
-    uint32_t DMA_1:1;                   /**< bit:     26  DMA Channel 1 Interrupt                  */
-    uint32_t DMA_2:1;                   /**< bit:     27  DMA Channel 2 Interrupt                  */
-    uint32_t DMA_3:1;                   /**< bit:     28  DMA Channel 3 Interrupt                  */
-    uint32_t DMA_4:1;                   /**< bit:     29  DMA Channel 4 Interrupt                  */
-    uint32_t DMA_5:1;                   /**< bit:     30  DMA Channel 5 Interrupt                  */
-    uint32_t DMA_6:1;                   /**< bit:     31  DMA Channel 6 Interrupt                  */
+    uint32_t DMA_1:1;                   /**< bit:     25  DMA Channel 0 Interrupt                  */
+    uint32_t DMA_2:1;                   /**< bit:     26  DMA Channel 1 Interrupt                  */
+    uint32_t DMA_3:1;                   /**< bit:     27  DMA Channel 2 Interrupt                  */
+    uint32_t DMA_4:1;                   /**< bit:     28  DMA Channel 3 Interrupt                  */
+    uint32_t DMA_5:1;                   /**< bit:     29  DMA Channel 4 Interrupt                  */
+    uint32_t DMA_6:1;                   /**< bit:     30  DMA Channel 5 Interrupt                  */
+    uint32_t DMA_7:1;                   /**< bit:     31  DMA Channel 6 Interrupt                  */
   } bit;                                /**< Structure used for bit  access */
   struct {
     uint32_t :8;                        /**< bit:   0..7  Reserved */
@@ -2480,27 +2480,27 @@ typedef union {
 #define USBHS_HSTISR_PEP_9_Pos              17                                             /**< (USBHS_HSTISR) Pipe 9 Interrupt Position */
 #define USBHS_HSTISR_PEP_9_Msk              (_U_(0x1) << USBHS_HSTISR_PEP_9_Pos)           /**< (USBHS_HSTISR) Pipe 9 Interrupt Mask */
 #define USBHS_HSTISR_PEP_9                  USBHS_HSTISR_PEP_9_Msk                         /**< \deprecated Old style mask definition for 1 bit bitfield. Use USBHS_HSTISR_PEP_9_Msk instead */
-#define USBHS_HSTISR_DMA_0_Pos              25                                             /**< (USBHS_HSTISR) DMA Channel 0 Interrupt Position */
-#define USBHS_HSTISR_DMA_0_Msk              (_U_(0x1) << USBHS_HSTISR_DMA_0_Pos)           /**< (USBHS_HSTISR) DMA Channel 0 Interrupt Mask */
-#define USBHS_HSTISR_DMA_0                  USBHS_HSTISR_DMA_0_Msk                         /**< \deprecated Old style mask definition for 1 bit bitfield. Use USBHS_HSTISR_DMA_0_Msk instead */
-#define USBHS_HSTISR_DMA_1_Pos              26                                             /**< (USBHS_HSTISR) DMA Channel 1 Interrupt Position */
-#define USBHS_HSTISR_DMA_1_Msk              (_U_(0x1) << USBHS_HSTISR_DMA_1_Pos)           /**< (USBHS_HSTISR) DMA Channel 1 Interrupt Mask */
+#define USBHS_HSTISR_DMA_1_Pos              25                                             /**< (USBHS_HSTISR) DMA Channel 0 Interrupt Position */
+#define USBHS_HSTISR_DMA_1_Msk              (_U_(0x1) << USBHS_HSTISR_DMA_1_Pos)           /**< (USBHS_HSTISR) DMA Channel 0 Interrupt Mask */
 #define USBHS_HSTISR_DMA_1                  USBHS_HSTISR_DMA_1_Msk                         /**< \deprecated Old style mask definition for 1 bit bitfield. Use USBHS_HSTISR_DMA_1_Msk instead */
-#define USBHS_HSTISR_DMA_2_Pos              27                                             /**< (USBHS_HSTISR) DMA Channel 2 Interrupt Position */
-#define USBHS_HSTISR_DMA_2_Msk              (_U_(0x1) << USBHS_HSTISR_DMA_2_Pos)           /**< (USBHS_HSTISR) DMA Channel 2 Interrupt Mask */
+#define USBHS_HSTISR_DMA_2_Pos              26                                             /**< (USBHS_HSTISR) DMA Channel 1 Interrupt Position */
+#define USBHS_HSTISR_DMA_2_Msk              (_U_(0x1) << USBHS_HSTISR_DMA_2_Pos)           /**< (USBHS_HSTISR) DMA Channel 1 Interrupt Mask */
 #define USBHS_HSTISR_DMA_2                  USBHS_HSTISR_DMA_2_Msk                         /**< \deprecated Old style mask definition for 1 bit bitfield. Use USBHS_HSTISR_DMA_2_Msk instead */
-#define USBHS_HSTISR_DMA_3_Pos              28                                             /**< (USBHS_HSTISR) DMA Channel 3 Interrupt Position */
-#define USBHS_HSTISR_DMA_3_Msk              (_U_(0x1) << USBHS_HSTISR_DMA_3_Pos)           /**< (USBHS_HSTISR) DMA Channel 3 Interrupt Mask */
+#define USBHS_HSTISR_DMA_3_Pos              27                                             /**< (USBHS_HSTISR) DMA Channel 2 Interrupt Position */
+#define USBHS_HSTISR_DMA_3_Msk              (_U_(0x1) << USBHS_HSTISR_DMA_3_Pos)           /**< (USBHS_HSTISR) DMA Channel 2 Interrupt Mask */
 #define USBHS_HSTISR_DMA_3                  USBHS_HSTISR_DMA_3_Msk                         /**< \deprecated Old style mask definition for 1 bit bitfield. Use USBHS_HSTISR_DMA_3_Msk instead */
-#define USBHS_HSTISR_DMA_4_Pos              29                                             /**< (USBHS_HSTISR) DMA Channel 4 Interrupt Position */
-#define USBHS_HSTISR_DMA_4_Msk              (_U_(0x1) << USBHS_HSTISR_DMA_4_Pos)           /**< (USBHS_HSTISR) DMA Channel 4 Interrupt Mask */
+#define USBHS_HSTISR_DMA_4_Pos              28                                             /**< (USBHS_HSTISR) DMA Channel 3 Interrupt Position */
+#define USBHS_HSTISR_DMA_4_Msk              (_U_(0x1) << USBHS_HSTISR_DMA_4_Pos)           /**< (USBHS_HSTISR) DMA Channel 3 Interrupt Mask */
 #define USBHS_HSTISR_DMA_4                  USBHS_HSTISR_DMA_4_Msk                         /**< \deprecated Old style mask definition for 1 bit bitfield. Use USBHS_HSTISR_DMA_4_Msk instead */
-#define USBHS_HSTISR_DMA_5_Pos              30                                             /**< (USBHS_HSTISR) DMA Channel 5 Interrupt Position */
-#define USBHS_HSTISR_DMA_5_Msk              (_U_(0x1) << USBHS_HSTISR_DMA_5_Pos)           /**< (USBHS_HSTISR) DMA Channel 5 Interrupt Mask */
+#define USBHS_HSTISR_DMA_5_Pos              29                                             /**< (USBHS_HSTISR) DMA Channel 4 Interrupt Position */
+#define USBHS_HSTISR_DMA_5_Msk              (_U_(0x1) << USBHS_HSTISR_DMA_5_Pos)           /**< (USBHS_HSTISR) DMA Channel 4 Interrupt Mask */
 #define USBHS_HSTISR_DMA_5                  USBHS_HSTISR_DMA_5_Msk                         /**< \deprecated Old style mask definition for 1 bit bitfield. Use USBHS_HSTISR_DMA_5_Msk instead */
-#define USBHS_HSTISR_DMA_6_Pos              31                                             /**< (USBHS_HSTISR) DMA Channel 6 Interrupt Position */
-#define USBHS_HSTISR_DMA_6_Msk              (_U_(0x1) << USBHS_HSTISR_DMA_6_Pos)           /**< (USBHS_HSTISR) DMA Channel 6 Interrupt Mask */
+#define USBHS_HSTISR_DMA_6_Pos              30                                             /**< (USBHS_HSTISR) DMA Channel 5 Interrupt Position */
+#define USBHS_HSTISR_DMA_6_Msk              (_U_(0x1) << USBHS_HSTISR_DMA_6_Pos)           /**< (USBHS_HSTISR) DMA Channel 5 Interrupt Mask */
 #define USBHS_HSTISR_DMA_6                  USBHS_HSTISR_DMA_6_Msk                         /**< \deprecated Old style mask definition for 1 bit bitfield. Use USBHS_HSTISR_DMA_6_Msk instead */
+#define USBHS_HSTISR_DMA_7_Pos              31                                             /**< (USBHS_HSTISR) DMA Channel 6 Interrupt Position */
+#define USBHS_HSTISR_DMA_7_Msk              (_U_(0x1) << USBHS_HSTISR_DMA_7_Pos)           /**< (USBHS_HSTISR) DMA Channel 6 Interrupt Mask */
+#define USBHS_HSTISR_DMA_7                  USBHS_HSTISR_DMA_7_Msk                         /**< \deprecated Old style mask definition for 1 bit bitfield. Use USBHS_HSTISR_DMA_7_Msk instead */
 #define USBHS_HSTISR_MASK                   _U_(0xFE03FF7F)                                /**< \deprecated (USBHS_HSTISR) Register MASK  (Use USBHS_HSTISR_Msk instead)  */
 #define USBHS_HSTISR_Msk                    _U_(0xFE03FF7F)                                /**< (USBHS_HSTISR) Register Mask  */
 
@@ -2570,13 +2570,13 @@ typedef union {
     uint32_t HSOFIS:1;                  /**< bit:      5  Host Start of Frame Interrupt Set        */
     uint32_t HWUPIS:1;                  /**< bit:      6  Host Wake-Up Interrupt Set               */
     uint32_t :18;                       /**< bit:  7..24  Reserved */
-    uint32_t DMA_0:1;                   /**< bit:     25  DMA Channel 0 Interrupt Set              */
-    uint32_t DMA_1:1;                   /**< bit:     26  DMA Channel 1 Interrupt Set              */
-    uint32_t DMA_2:1;                   /**< bit:     27  DMA Channel 2 Interrupt Set              */
-    uint32_t DMA_3:1;                   /**< bit:     28  DMA Channel 3 Interrupt Set              */
-    uint32_t DMA_4:1;                   /**< bit:     29  DMA Channel 4 Interrupt Set              */
-    uint32_t DMA_5:1;                   /**< bit:     30  DMA Channel 5 Interrupt Set              */
-    uint32_t DMA_6:1;                   /**< bit:     31  DMA Channel 6 Interrupt Set              */
+    uint32_t DMA_1:1;                   /**< bit:     25  DMA Channel 0 Interrupt Set              */
+    uint32_t DMA_2:1;                   /**< bit:     26  DMA Channel 1 Interrupt Set              */
+    uint32_t DMA_3:1;                   /**< bit:     27  DMA Channel 2 Interrupt Set              */
+    uint32_t DMA_4:1;                   /**< bit:     28  DMA Channel 3 Interrupt Set              */
+    uint32_t DMA_5:1;                   /**< bit:     29  DMA Channel 4 Interrupt Set              */
+    uint32_t DMA_6:1;                   /**< bit:     30  DMA Channel 5 Interrupt Set              */
+    uint32_t DMA_7:1;                   /**< bit:     31  DMA Channel 6 Interrupt Set              */
   } bit;                                /**< Structure used for bit  access */
   struct {
     uint32_t :25;                       /**< bit:  0..24  Reserved */
@@ -2610,27 +2610,27 @@ typedef union {
 #define USBHS_HSTIFR_HWUPIS_Pos             6                                              /**< (USBHS_HSTIFR) Host Wake-Up Interrupt Set Position */
 #define USBHS_HSTIFR_HWUPIS_Msk             (_U_(0x1) << USBHS_HSTIFR_HWUPIS_Pos)          /**< (USBHS_HSTIFR) Host Wake-Up Interrupt Set Mask */
 #define USBHS_HSTIFR_HWUPIS                 USBHS_HSTIFR_HWUPIS_Msk                        /**< \deprecated Old style mask definition for 1 bit bitfield. Use USBHS_HSTIFR_HWUPIS_Msk instead */
-#define USBHS_HSTIFR_DMA_0_Pos              25                                             /**< (USBHS_HSTIFR) DMA Channel 0 Interrupt Set Position */
-#define USBHS_HSTIFR_DMA_0_Msk              (_U_(0x1) << USBHS_HSTIFR_DMA_0_Pos)           /**< (USBHS_HSTIFR) DMA Channel 0 Interrupt Set Mask */
-#define USBHS_HSTIFR_DMA_0                  USBHS_HSTIFR_DMA_0_Msk                         /**< \deprecated Old style mask definition for 1 bit bitfield. Use USBHS_HSTIFR_DMA_0_Msk instead */
-#define USBHS_HSTIFR_DMA_1_Pos              26                                             /**< (USBHS_HSTIFR) DMA Channel 1 Interrupt Set Position */
-#define USBHS_HSTIFR_DMA_1_Msk              (_U_(0x1) << USBHS_HSTIFR_DMA_1_Pos)           /**< (USBHS_HSTIFR) DMA Channel 1 Interrupt Set Mask */
+#define USBHS_HSTIFR_DMA_1_Pos              25                                             /**< (USBHS_HSTIFR) DMA Channel 0 Interrupt Set Position */
+#define USBHS_HSTIFR_DMA_1_Msk              (_U_(0x1) << USBHS_HSTIFR_DMA_1_Pos)           /**< (USBHS_HSTIFR) DMA Channel 0 Interrupt Set Mask */
 #define USBHS_HSTIFR_DMA_1                  USBHS_HSTIFR_DMA_1_Msk                         /**< \deprecated Old style mask definition for 1 bit bitfield. Use USBHS_HSTIFR_DMA_1_Msk instead */
-#define USBHS_HSTIFR_DMA_2_Pos              27                                             /**< (USBHS_HSTIFR) DMA Channel 2 Interrupt Set Position */
-#define USBHS_HSTIFR_DMA_2_Msk              (_U_(0x1) << USBHS_HSTIFR_DMA_2_Pos)           /**< (USBHS_HSTIFR) DMA Channel 2 Interrupt Set Mask */
+#define USBHS_HSTIFR_DMA_2_Pos              26                                             /**< (USBHS_HSTIFR) DMA Channel 1 Interrupt Set Position */
+#define USBHS_HSTIFR_DMA_2_Msk              (_U_(0x1) << USBHS_HSTIFR_DMA_2_Pos)           /**< (USBHS_HSTIFR) DMA Channel 1 Interrupt Set Mask */
 #define USBHS_HSTIFR_DMA_2                  USBHS_HSTIFR_DMA_2_Msk                         /**< \deprecated Old style mask definition for 1 bit bitfield. Use USBHS_HSTIFR_DMA_2_Msk instead */
-#define USBHS_HSTIFR_DMA_3_Pos              28                                             /**< (USBHS_HSTIFR) DMA Channel 3 Interrupt Set Position */
-#define USBHS_HSTIFR_DMA_3_Msk              (_U_(0x1) << USBHS_HSTIFR_DMA_3_Pos)           /**< (USBHS_HSTIFR) DMA Channel 3 Interrupt Set Mask */
+#define USBHS_HSTIFR_DMA_3_Pos              27                                             /**< (USBHS_HSTIFR) DMA Channel 2 Interrupt Set Position */
+#define USBHS_HSTIFR_DMA_3_Msk              (_U_(0x1) << USBHS_HSTIFR_DMA_3_Pos)           /**< (USBHS_HSTIFR) DMA Channel 2 Interrupt Set Mask */
 #define USBHS_HSTIFR_DMA_3                  USBHS_HSTIFR_DMA_3_Msk                         /**< \deprecated Old style mask definition for 1 bit bitfield. Use USBHS_HSTIFR_DMA_3_Msk instead */
-#define USBHS_HSTIFR_DMA_4_Pos              29                                             /**< (USBHS_HSTIFR) DMA Channel 4 Interrupt Set Position */
-#define USBHS_HSTIFR_DMA_4_Msk              (_U_(0x1) << USBHS_HSTIFR_DMA_4_Pos)           /**< (USBHS_HSTIFR) DMA Channel 4 Interrupt Set Mask */
+#define USBHS_HSTIFR_DMA_4_Pos              28                                             /**< (USBHS_HSTIFR) DMA Channel 3 Interrupt Set Position */
+#define USBHS_HSTIFR_DMA_4_Msk              (_U_(0x1) << USBHS_HSTIFR_DMA_4_Pos)           /**< (USBHS_HSTIFR) DMA Channel 3 Interrupt Set Mask */
 #define USBHS_HSTIFR_DMA_4                  USBHS_HSTIFR_DMA_4_Msk                         /**< \deprecated Old style mask definition for 1 bit bitfield. Use USBHS_HSTIFR_DMA_4_Msk instead */
-#define USBHS_HSTIFR_DMA_5_Pos              30                                             /**< (USBHS_HSTIFR) DMA Channel 5 Interrupt Set Position */
-#define USBHS_HSTIFR_DMA_5_Msk              (_U_(0x1) << USBHS_HSTIFR_DMA_5_Pos)           /**< (USBHS_HSTIFR) DMA Channel 5 Interrupt Set Mask */
+#define USBHS_HSTIFR_DMA_5_Pos              29                                             /**< (USBHS_HSTIFR) DMA Channel 4 Interrupt Set Position */
+#define USBHS_HSTIFR_DMA_5_Msk              (_U_(0x1) << USBHS_HSTIFR_DMA_5_Pos)           /**< (USBHS_HSTIFR) DMA Channel 4 Interrupt Set Mask */
 #define USBHS_HSTIFR_DMA_5                  USBHS_HSTIFR_DMA_5_Msk                         /**< \deprecated Old style mask definition for 1 bit bitfield. Use USBHS_HSTIFR_DMA_5_Msk instead */
-#define USBHS_HSTIFR_DMA_6_Pos              31                                             /**< (USBHS_HSTIFR) DMA Channel 6 Interrupt Set Position */
-#define USBHS_HSTIFR_DMA_6_Msk              (_U_(0x1) << USBHS_HSTIFR_DMA_6_Pos)           /**< (USBHS_HSTIFR) DMA Channel 6 Interrupt Set Mask */
+#define USBHS_HSTIFR_DMA_6_Pos              30                                             /**< (USBHS_HSTIFR) DMA Channel 5 Interrupt Set Position */
+#define USBHS_HSTIFR_DMA_6_Msk              (_U_(0x1) << USBHS_HSTIFR_DMA_6_Pos)           /**< (USBHS_HSTIFR) DMA Channel 5 Interrupt Set Mask */
 #define USBHS_HSTIFR_DMA_6                  USBHS_HSTIFR_DMA_6_Msk                         /**< \deprecated Old style mask definition for 1 bit bitfield. Use USBHS_HSTIFR_DMA_6_Msk instead */
+#define USBHS_HSTIFR_DMA_7_Pos              31                                             /**< (USBHS_HSTIFR) DMA Channel 6 Interrupt Set Position */
+#define USBHS_HSTIFR_DMA_7_Msk              (_U_(0x1) << USBHS_HSTIFR_DMA_7_Pos)           /**< (USBHS_HSTIFR) DMA Channel 6 Interrupt Set Mask */
+#define USBHS_HSTIFR_DMA_7                  USBHS_HSTIFR_DMA_7_Msk                         /**< \deprecated Old style mask definition for 1 bit bitfield. Use USBHS_HSTIFR_DMA_7_Msk instead */
 #define USBHS_HSTIFR_MASK                   _U_(0xFE00007F)                                /**< \deprecated (USBHS_HSTIFR) Register MASK  (Use USBHS_HSTIFR_Msk instead)  */
 #define USBHS_HSTIFR_Msk                    _U_(0xFE00007F)                                /**< (USBHS_HSTIFR) Register Mask  */
 
@@ -2662,13 +2662,13 @@ typedef union {
     uint32_t PEP_8:1;                   /**< bit:     16  Pipe 8 Interrupt Enable                  */
     uint32_t PEP_9:1;                   /**< bit:     17  Pipe 9 Interrupt Enable                  */
     uint32_t :7;                        /**< bit: 18..24  Reserved */
-    uint32_t DMA_0:1;                   /**< bit:     25  DMA Channel 0 Interrupt Enable           */
-    uint32_t DMA_1:1;                   /**< bit:     26  DMA Channel 1 Interrupt Enable           */
-    uint32_t DMA_2:1;                   /**< bit:     27  DMA Channel 2 Interrupt Enable           */
-    uint32_t DMA_3:1;                   /**< bit:     28  DMA Channel 3 Interrupt Enable           */
-    uint32_t DMA_4:1;                   /**< bit:     29  DMA Channel 4 Interrupt Enable           */
-    uint32_t DMA_5:1;                   /**< bit:     30  DMA Channel 5 Interrupt Enable           */
-    uint32_t DMA_6:1;                   /**< bit:     31  DMA Channel 6 Interrupt Enable           */
+    uint32_t DMA_1:1;                   /**< bit:     25  DMA Channel 0 Interrupt Enable           */
+    uint32_t DMA_2:1;                   /**< bit:     26  DMA Channel 1 Interrupt Enable           */
+    uint32_t DMA_3:1;                   /**< bit:     27  DMA Channel 2 Interrupt Enable           */
+    uint32_t DMA_4:1;                   /**< bit:     28  DMA Channel 3 Interrupt Enable           */
+    uint32_t DMA_5:1;                   /**< bit:     29  DMA Channel 4 Interrupt Enable           */
+    uint32_t DMA_6:1;                   /**< bit:     30  DMA Channel 5 Interrupt Enable           */
+    uint32_t DMA_7:1;                   /**< bit:     31  DMA Channel 6 Interrupt Enable           */
   } bit;                                /**< Structure used for bit  access */
   struct {
     uint32_t :8;                        /**< bit:   0..7  Reserved */
@@ -2734,27 +2734,27 @@ typedef union {
 #define USBHS_HSTIMR_PEP_9_Pos              17                                             /**< (USBHS_HSTIMR) Pipe 9 Interrupt Enable Position */
 #define USBHS_HSTIMR_PEP_9_Msk              (_U_(0x1) << USBHS_HSTIMR_PEP_9_Pos)           /**< (USBHS_HSTIMR) Pipe 9 Interrupt Enable Mask */
 #define USBHS_HSTIMR_PEP_9                  USBHS_HSTIMR_PEP_9_Msk                         /**< \deprecated Old style mask definition for 1 bit bitfield. Use USBHS_HSTIMR_PEP_9_Msk instead */
-#define USBHS_HSTIMR_DMA_0_Pos              25                                             /**< (USBHS_HSTIMR) DMA Channel 0 Interrupt Enable Position */
-#define USBHS_HSTIMR_DMA_0_Msk              (_U_(0x1) << USBHS_HSTIMR_DMA_0_Pos)           /**< (USBHS_HSTIMR) DMA Channel 0 Interrupt Enable Mask */
-#define USBHS_HSTIMR_DMA_0                  USBHS_HSTIMR_DMA_0_Msk                         /**< \deprecated Old style mask definition for 1 bit bitfield. Use USBHS_HSTIMR_DMA_0_Msk instead */
-#define USBHS_HSTIMR_DMA_1_Pos              26                                             /**< (USBHS_HSTIMR) DMA Channel 1 Interrupt Enable Position */
-#define USBHS_HSTIMR_DMA_1_Msk              (_U_(0x1) << USBHS_HSTIMR_DMA_1_Pos)           /**< (USBHS_HSTIMR) DMA Channel 1 Interrupt Enable Mask */
+#define USBHS_HSTIMR_DMA_1_Pos              25                                             /**< (USBHS_HSTIMR) DMA Channel 0 Interrupt Enable Position */
+#define USBHS_HSTIMR_DMA_1_Msk              (_U_(0x1) << USBHS_HSTIMR_DMA_1_Pos)           /**< (USBHS_HSTIMR) DMA Channel 0 Interrupt Enable Mask */
 #define USBHS_HSTIMR_DMA_1                  USBHS_HSTIMR_DMA_1_Msk                         /**< \deprecated Old style mask definition for 1 bit bitfield. Use USBHS_HSTIMR_DMA_1_Msk instead */
-#define USBHS_HSTIMR_DMA_2_Pos              27                                             /**< (USBHS_HSTIMR) DMA Channel 2 Interrupt Enable Position */
-#define USBHS_HSTIMR_DMA_2_Msk              (_U_(0x1) << USBHS_HSTIMR_DMA_2_Pos)           /**< (USBHS_HSTIMR) DMA Channel 2 Interrupt Enable Mask */
+#define USBHS_HSTIMR_DMA_2_Pos              26                                             /**< (USBHS_HSTIMR) DMA Channel 1 Interrupt Enable Position */
+#define USBHS_HSTIMR_DMA_2_Msk              (_U_(0x1) << USBHS_HSTIMR_DMA_2_Pos)           /**< (USBHS_HSTIMR) DMA Channel 1 Interrupt Enable Mask */
 #define USBHS_HSTIMR_DMA_2                  USBHS_HSTIMR_DMA_2_Msk                         /**< \deprecated Old style mask definition for 1 bit bitfield. Use USBHS_HSTIMR_DMA_2_Msk instead */
-#define USBHS_HSTIMR_DMA_3_Pos              28                                             /**< (USBHS_HSTIMR) DMA Channel 3 Interrupt Enable Position */
-#define USBHS_HSTIMR_DMA_3_Msk              (_U_(0x1) << USBHS_HSTIMR_DMA_3_Pos)           /**< (USBHS_HSTIMR) DMA Channel 3 Interrupt Enable Mask */
+#define USBHS_HSTIMR_DMA_3_Pos              27                                             /**< (USBHS_HSTIMR) DMA Channel 2 Interrupt Enable Position */
+#define USBHS_HSTIMR_DMA_3_Msk              (_U_(0x1) << USBHS_HSTIMR_DMA_3_Pos)           /**< (USBHS_HSTIMR) DMA Channel 2 Interrupt Enable Mask */
 #define USBHS_HSTIMR_DMA_3                  USBHS_HSTIMR_DMA_3_Msk                         /**< \deprecated Old style mask definition for 1 bit bitfield. Use USBHS_HSTIMR_DMA_3_Msk instead */
-#define USBHS_HSTIMR_DMA_4_Pos              29                                             /**< (USBHS_HSTIMR) DMA Channel 4 Interrupt Enable Position */
-#define USBHS_HSTIMR_DMA_4_Msk              (_U_(0x1) << USBHS_HSTIMR_DMA_4_Pos)           /**< (USBHS_HSTIMR) DMA Channel 4 Interrupt Enable Mask */
+#define USBHS_HSTIMR_DMA_4_Pos              28                                             /**< (USBHS_HSTIMR) DMA Channel 3 Interrupt Enable Position */
+#define USBHS_HSTIMR_DMA_4_Msk              (_U_(0x1) << USBHS_HSTIMR_DMA_4_Pos)           /**< (USBHS_HSTIMR) DMA Channel 3 Interrupt Enable Mask */
 #define USBHS_HSTIMR_DMA_4                  USBHS_HSTIMR_DMA_4_Msk                         /**< \deprecated Old style mask definition for 1 bit bitfield. Use USBHS_HSTIMR_DMA_4_Msk instead */
-#define USBHS_HSTIMR_DMA_5_Pos              30                                             /**< (USBHS_HSTIMR) DMA Channel 5 Interrupt Enable Position */
-#define USBHS_HSTIMR_DMA_5_Msk              (_U_(0x1) << USBHS_HSTIMR_DMA_5_Pos)           /**< (USBHS_HSTIMR) DMA Channel 5 Interrupt Enable Mask */
+#define USBHS_HSTIMR_DMA_5_Pos              29                                             /**< (USBHS_HSTIMR) DMA Channel 4 Interrupt Enable Position */
+#define USBHS_HSTIMR_DMA_5_Msk              (_U_(0x1) << USBHS_HSTIMR_DMA_5_Pos)           /**< (USBHS_HSTIMR) DMA Channel 4 Interrupt Enable Mask */
 #define USBHS_HSTIMR_DMA_5                  USBHS_HSTIMR_DMA_5_Msk                         /**< \deprecated Old style mask definition for 1 bit bitfield. Use USBHS_HSTIMR_DMA_5_Msk instead */
-#define USBHS_HSTIMR_DMA_6_Pos              31                                             /**< (USBHS_HSTIMR) DMA Channel 6 Interrupt Enable Position */
-#define USBHS_HSTIMR_DMA_6_Msk              (_U_(0x1) << USBHS_HSTIMR_DMA_6_Pos)           /**< (USBHS_HSTIMR) DMA Channel 6 Interrupt Enable Mask */
+#define USBHS_HSTIMR_DMA_6_Pos              30                                             /**< (USBHS_HSTIMR) DMA Channel 5 Interrupt Enable Position */
+#define USBHS_HSTIMR_DMA_6_Msk              (_U_(0x1) << USBHS_HSTIMR_DMA_6_Pos)           /**< (USBHS_HSTIMR) DMA Channel 5 Interrupt Enable Mask */
 #define USBHS_HSTIMR_DMA_6                  USBHS_HSTIMR_DMA_6_Msk                         /**< \deprecated Old style mask definition for 1 bit bitfield. Use USBHS_HSTIMR_DMA_6_Msk instead */
+#define USBHS_HSTIMR_DMA_7_Pos              31                                             /**< (USBHS_HSTIMR) DMA Channel 6 Interrupt Enable Position */
+#define USBHS_HSTIMR_DMA_7_Msk              (_U_(0x1) << USBHS_HSTIMR_DMA_7_Pos)           /**< (USBHS_HSTIMR) DMA Channel 6 Interrupt Enable Mask */
+#define USBHS_HSTIMR_DMA_7                  USBHS_HSTIMR_DMA_7_Msk                         /**< \deprecated Old style mask definition for 1 bit bitfield. Use USBHS_HSTIMR_DMA_7_Msk instead */
 #define USBHS_HSTIMR_MASK                   _U_(0xFE03FF7F)                                /**< \deprecated (USBHS_HSTIMR) Register MASK  (Use USBHS_HSTIMR_Msk instead)  */
 #define USBHS_HSTIMR_Msk                    _U_(0xFE03FF7F)                                /**< (USBHS_HSTIMR) Register Mask  */
 
@@ -2789,13 +2789,13 @@ typedef union {
     uint32_t PEP_8:1;                   /**< bit:     16  Pipe 8 Interrupt Disable                 */
     uint32_t PEP_9:1;                   /**< bit:     17  Pipe 9 Interrupt Disable                 */
     uint32_t :7;                        /**< bit: 18..24  Reserved */
-    uint32_t DMA_0:1;                   /**< bit:     25  DMA Channel 0 Interrupt Disable          */
-    uint32_t DMA_1:1;                   /**< bit:     26  DMA Channel 1 Interrupt Disable          */
-    uint32_t DMA_2:1;                   /**< bit:     27  DMA Channel 2 Interrupt Disable          */
-    uint32_t DMA_3:1;                   /**< bit:     28  DMA Channel 3 Interrupt Disable          */
-    uint32_t DMA_4:1;                   /**< bit:     29  DMA Channel 4 Interrupt Disable          */
-    uint32_t DMA_5:1;                   /**< bit:     30  DMA Channel 5 Interrupt Disable          */
-    uint32_t DMA_6:1;                   /**< bit:     31  DMA Channel 6 Interrupt Disable          */
+    uint32_t DMA_1:1;                   /**< bit:     25  DMA Channel 0 Interrupt Disable          */
+    uint32_t DMA_2:1;                   /**< bit:     26  DMA Channel 1 Interrupt Disable          */
+    uint32_t DMA_3:1;                   /**< bit:     27  DMA Channel 2 Interrupt Disable          */
+    uint32_t DMA_4:1;                   /**< bit:     28  DMA Channel 3 Interrupt Disable          */
+    uint32_t DMA_5:1;                   /**< bit:     29  DMA Channel 4 Interrupt Disable          */
+    uint32_t DMA_6:1;                   /**< bit:     30  DMA Channel 5 Interrupt Disable          */
+    uint32_t DMA_7:1;                   /**< bit:     31  DMA Channel 6 Interrupt Disable          */
   } bit;                                /**< Structure used for bit  access */
   struct {
     uint32_t :8;                        /**< bit:   0..7  Reserved */
@@ -2861,27 +2861,27 @@ typedef union {
 #define USBHS_HSTIDR_PEP_9_Pos              17                                             /**< (USBHS_HSTIDR) Pipe 9 Interrupt Disable Position */
 #define USBHS_HSTIDR_PEP_9_Msk              (_U_(0x1) << USBHS_HSTIDR_PEP_9_Pos)           /**< (USBHS_HSTIDR) Pipe 9 Interrupt Disable Mask */
 #define USBHS_HSTIDR_PEP_9                  USBHS_HSTIDR_PEP_9_Msk                         /**< \deprecated Old style mask definition for 1 bit bitfield. Use USBHS_HSTIDR_PEP_9_Msk instead */
-#define USBHS_HSTIDR_DMA_0_Pos              25                                             /**< (USBHS_HSTIDR) DMA Channel 0 Interrupt Disable Position */
-#define USBHS_HSTIDR_DMA_0_Msk              (_U_(0x1) << USBHS_HSTIDR_DMA_0_Pos)           /**< (USBHS_HSTIDR) DMA Channel 0 Interrupt Disable Mask */
-#define USBHS_HSTIDR_DMA_0                  USBHS_HSTIDR_DMA_0_Msk                         /**< \deprecated Old style mask definition for 1 bit bitfield. Use USBHS_HSTIDR_DMA_0_Msk instead */
-#define USBHS_HSTIDR_DMA_1_Pos              26                                             /**< (USBHS_HSTIDR) DMA Channel 1 Interrupt Disable Position */
-#define USBHS_HSTIDR_DMA_1_Msk              (_U_(0x1) << USBHS_HSTIDR_DMA_1_Pos)           /**< (USBHS_HSTIDR) DMA Channel 1 Interrupt Disable Mask */
+#define USBHS_HSTIDR_DMA_1_Pos              25                                             /**< (USBHS_HSTIDR) DMA Channel 0 Interrupt Disable Position */
+#define USBHS_HSTIDR_DMA_1_Msk              (_U_(0x1) << USBHS_HSTIDR_DMA_1_Pos)           /**< (USBHS_HSTIDR) DMA Channel 0 Interrupt Disable Mask */
 #define USBHS_HSTIDR_DMA_1                  USBHS_HSTIDR_DMA_1_Msk                         /**< \deprecated Old style mask definition for 1 bit bitfield. Use USBHS_HSTIDR_DMA_1_Msk instead */
-#define USBHS_HSTIDR_DMA_2_Pos              27                                             /**< (USBHS_HSTIDR) DMA Channel 2 Interrupt Disable Position */
-#define USBHS_HSTIDR_DMA_2_Msk              (_U_(0x1) << USBHS_HSTIDR_DMA_2_Pos)           /**< (USBHS_HSTIDR) DMA Channel 2 Interrupt Disable Mask */
+#define USBHS_HSTIDR_DMA_2_Pos              26                                             /**< (USBHS_HSTIDR) DMA Channel 1 Interrupt Disable Position */
+#define USBHS_HSTIDR_DMA_2_Msk              (_U_(0x1) << USBHS_HSTIDR_DMA_2_Pos)           /**< (USBHS_HSTIDR) DMA Channel 1 Interrupt Disable Mask */
 #define USBHS_HSTIDR_DMA_2                  USBHS_HSTIDR_DMA_2_Msk                         /**< \deprecated Old style mask definition for 1 bit bitfield. Use USBHS_HSTIDR_DMA_2_Msk instead */
-#define USBHS_HSTIDR_DMA_3_Pos              28                                             /**< (USBHS_HSTIDR) DMA Channel 3 Interrupt Disable Position */
-#define USBHS_HSTIDR_DMA_3_Msk              (_U_(0x1) << USBHS_HSTIDR_DMA_3_Pos)           /**< (USBHS_HSTIDR) DMA Channel 3 Interrupt Disable Mask */
+#define USBHS_HSTIDR_DMA_3_Pos              27                                             /**< (USBHS_HSTIDR) DMA Channel 2 Interrupt Disable Position */
+#define USBHS_HSTIDR_DMA_3_Msk              (_U_(0x1) << USBHS_HSTIDR_DMA_3_Pos)           /**< (USBHS_HSTIDR) DMA Channel 2 Interrupt Disable Mask */
 #define USBHS_HSTIDR_DMA_3                  USBHS_HSTIDR_DMA_3_Msk                         /**< \deprecated Old style mask definition for 1 bit bitfield. Use USBHS_HSTIDR_DMA_3_Msk instead */
-#define USBHS_HSTIDR_DMA_4_Pos              29                                             /**< (USBHS_HSTIDR) DMA Channel 4 Interrupt Disable Position */
-#define USBHS_HSTIDR_DMA_4_Msk              (_U_(0x1) << USBHS_HSTIDR_DMA_4_Pos)           /**< (USBHS_HSTIDR) DMA Channel 4 Interrupt Disable Mask */
+#define USBHS_HSTIDR_DMA_4_Pos              28                                             /**< (USBHS_HSTIDR) DMA Channel 3 Interrupt Disable Position */
+#define USBHS_HSTIDR_DMA_4_Msk              (_U_(0x1) << USBHS_HSTIDR_DMA_4_Pos)           /**< (USBHS_HSTIDR) DMA Channel 3 Interrupt Disable Mask */
 #define USBHS_HSTIDR_DMA_4                  USBHS_HSTIDR_DMA_4_Msk                         /**< \deprecated Old style mask definition for 1 bit bitfield. Use USBHS_HSTIDR_DMA_4_Msk instead */
-#define USBHS_HSTIDR_DMA_5_Pos              30                                             /**< (USBHS_HSTIDR) DMA Channel 5 Interrupt Disable Position */
-#define USBHS_HSTIDR_DMA_5_Msk              (_U_(0x1) << USBHS_HSTIDR_DMA_5_Pos)           /**< (USBHS_HSTIDR) DMA Channel 5 Interrupt Disable Mask */
+#define USBHS_HSTIDR_DMA_5_Pos              29                                             /**< (USBHS_HSTIDR) DMA Channel 4 Interrupt Disable Position */
+#define USBHS_HSTIDR_DMA_5_Msk              (_U_(0x1) << USBHS_HSTIDR_DMA_5_Pos)           /**< (USBHS_HSTIDR) DMA Channel 4 Interrupt Disable Mask */
 #define USBHS_HSTIDR_DMA_5                  USBHS_HSTIDR_DMA_5_Msk                         /**< \deprecated Old style mask definition for 1 bit bitfield. Use USBHS_HSTIDR_DMA_5_Msk instead */
-#define USBHS_HSTIDR_DMA_6_Pos              31                                             /**< (USBHS_HSTIDR) DMA Channel 6 Interrupt Disable Position */
-#define USBHS_HSTIDR_DMA_6_Msk              (_U_(0x1) << USBHS_HSTIDR_DMA_6_Pos)           /**< (USBHS_HSTIDR) DMA Channel 6 Interrupt Disable Mask */
+#define USBHS_HSTIDR_DMA_6_Pos              30                                             /**< (USBHS_HSTIDR) DMA Channel 5 Interrupt Disable Position */
+#define USBHS_HSTIDR_DMA_6_Msk              (_U_(0x1) << USBHS_HSTIDR_DMA_6_Pos)           /**< (USBHS_HSTIDR) DMA Channel 5 Interrupt Disable Mask */
 #define USBHS_HSTIDR_DMA_6                  USBHS_HSTIDR_DMA_6_Msk                         /**< \deprecated Old style mask definition for 1 bit bitfield. Use USBHS_HSTIDR_DMA_6_Msk instead */
+#define USBHS_HSTIDR_DMA_7_Pos              31                                             /**< (USBHS_HSTIDR) DMA Channel 6 Interrupt Disable Position */
+#define USBHS_HSTIDR_DMA_7_Msk              (_U_(0x1) << USBHS_HSTIDR_DMA_7_Pos)           /**< (USBHS_HSTIDR) DMA Channel 6 Interrupt Disable Mask */
+#define USBHS_HSTIDR_DMA_7                  USBHS_HSTIDR_DMA_7_Msk                         /**< \deprecated Old style mask definition for 1 bit bitfield. Use USBHS_HSTIDR_DMA_7_Msk instead */
 #define USBHS_HSTIDR_MASK                   _U_(0xFE03FF7F)                                /**< \deprecated (USBHS_HSTIDR) Register MASK  (Use USBHS_HSTIDR_Msk instead)  */
 #define USBHS_HSTIDR_Msk                    _U_(0xFE03FF7F)                                /**< (USBHS_HSTIDR) Register Mask  */
 
@@ -2916,13 +2916,13 @@ typedef union {
     uint32_t PEP_8:1;                   /**< bit:     16  Pipe 8 Interrupt Enable                  */
     uint32_t PEP_9:1;                   /**< bit:     17  Pipe 9 Interrupt Enable                  */
     uint32_t :7;                        /**< bit: 18..24  Reserved */
-    uint32_t DMA_0:1;                   /**< bit:     25  DMA Channel 0 Interrupt Enable           */
-    uint32_t DMA_1:1;                   /**< bit:     26  DMA Channel 1 Interrupt Enable           */
-    uint32_t DMA_2:1;                   /**< bit:     27  DMA Channel 2 Interrupt Enable           */
-    uint32_t DMA_3:1;                   /**< bit:     28  DMA Channel 3 Interrupt Enable           */
-    uint32_t DMA_4:1;                   /**< bit:     29  DMA Channel 4 Interrupt Enable           */
-    uint32_t DMA_5:1;                   /**< bit:     30  DMA Channel 5 Interrupt Enable           */
-    uint32_t DMA_6:1;                   /**< bit:     31  DMA Channel 6 Interrupt Enable           */
+    uint32_t DMA_1:1;                   /**< bit:     25  DMA Channel 0 Interrupt Enable           */
+    uint32_t DMA_2:1;                   /**< bit:     26  DMA Channel 1 Interrupt Enable           */
+    uint32_t DMA_3:1;                   /**< bit:     27  DMA Channel 2 Interrupt Enable           */
+    uint32_t DMA_4:1;                   /**< bit:     28  DMA Channel 3 Interrupt Enable           */
+    uint32_t DMA_5:1;                   /**< bit:     29  DMA Channel 4 Interrupt Enable           */
+    uint32_t DMA_6:1;                   /**< bit:     30  DMA Channel 5 Interrupt Enable           */
+    uint32_t DMA_7:1;                   /**< bit:     31  DMA Channel 6 Interrupt Enable           */
   } bit;                                /**< Structure used for bit  access */
   struct {
     uint32_t :8;                        /**< bit:   0..7  Reserved */
@@ -2988,27 +2988,27 @@ typedef union {
 #define USBHS_HSTIER_PEP_9_Pos              17                                             /**< (USBHS_HSTIER) Pipe 9 Interrupt Enable Position */
 #define USBHS_HSTIER_PEP_9_Msk              (_U_(0x1) << USBHS_HSTIER_PEP_9_Pos)           /**< (USBHS_HSTIER) Pipe 9 Interrupt Enable Mask */
 #define USBHS_HSTIER_PEP_9                  USBHS_HSTIER_PEP_9_Msk                         /**< \deprecated Old style mask definition for 1 bit bitfield. Use USBHS_HSTIER_PEP_9_Msk instead */
-#define USBHS_HSTIER_DMA_0_Pos              25                                             /**< (USBHS_HSTIER) DMA Channel 0 Interrupt Enable Position */
-#define USBHS_HSTIER_DMA_0_Msk              (_U_(0x1) << USBHS_HSTIER_DMA_0_Pos)           /**< (USBHS_HSTIER) DMA Channel 0 Interrupt Enable Mask */
-#define USBHS_HSTIER_DMA_0                  USBHS_HSTIER_DMA_0_Msk                         /**< \deprecated Old style mask definition for 1 bit bitfield. Use USBHS_HSTIER_DMA_0_Msk instead */
-#define USBHS_HSTIER_DMA_1_Pos              26                                             /**< (USBHS_HSTIER) DMA Channel 1 Interrupt Enable Position */
-#define USBHS_HSTIER_DMA_1_Msk              (_U_(0x1) << USBHS_HSTIER_DMA_1_Pos)           /**< (USBHS_HSTIER) DMA Channel 1 Interrupt Enable Mask */
+#define USBHS_HSTIER_DMA_1_Pos              25                                             /**< (USBHS_HSTIER) DMA Channel 0 Interrupt Enable Position */
+#define USBHS_HSTIER_DMA_1_Msk              (_U_(0x1) << USBHS_HSTIER_DMA_1_Pos)           /**< (USBHS_HSTIER) DMA Channel 0 Interrupt Enable Mask */
 #define USBHS_HSTIER_DMA_1                  USBHS_HSTIER_DMA_1_Msk                         /**< \deprecated Old style mask definition for 1 bit bitfield. Use USBHS_HSTIER_DMA_1_Msk instead */
-#define USBHS_HSTIER_DMA_2_Pos              27                                             /**< (USBHS_HSTIER) DMA Channel 2 Interrupt Enable Position */
-#define USBHS_HSTIER_DMA_2_Msk              (_U_(0x1) << USBHS_HSTIER_DMA_2_Pos)           /**< (USBHS_HSTIER) DMA Channel 2 Interrupt Enable Mask */
+#define USBHS_HSTIER_DMA_2_Pos              26                                             /**< (USBHS_HSTIER) DMA Channel 1 Interrupt Enable Position */
+#define USBHS_HSTIER_DMA_2_Msk              (_U_(0x1) << USBHS_HSTIER_DMA_2_Pos)           /**< (USBHS_HSTIER) DMA Channel 1 Interrupt Enable Mask */
 #define USBHS_HSTIER_DMA_2                  USBHS_HSTIER_DMA_2_Msk                         /**< \deprecated Old style mask definition for 1 bit bitfield. Use USBHS_HSTIER_DMA_2_Msk instead */
-#define USBHS_HSTIER_DMA_3_Pos              28                                             /**< (USBHS_HSTIER) DMA Channel 3 Interrupt Enable Position */
-#define USBHS_HSTIER_DMA_3_Msk              (_U_(0x1) << USBHS_HSTIER_DMA_3_Pos)           /**< (USBHS_HSTIER) DMA Channel 3 Interrupt Enable Mask */
+#define USBHS_HSTIER_DMA_3_Pos              27                                             /**< (USBHS_HSTIER) DMA Channel 2 Interrupt Enable Position */
+#define USBHS_HSTIER_DMA_3_Msk              (_U_(0x1) << USBHS_HSTIER_DMA_3_Pos)           /**< (USBHS_HSTIER) DMA Channel 2 Interrupt Enable Mask */
 #define USBHS_HSTIER_DMA_3                  USBHS_HSTIER_DMA_3_Msk                         /**< \deprecated Old style mask definition for 1 bit bitfield. Use USBHS_HSTIER_DMA_3_Msk instead */
-#define USBHS_HSTIER_DMA_4_Pos              29                                             /**< (USBHS_HSTIER) DMA Channel 4 Interrupt Enable Position */
-#define USBHS_HSTIER_DMA_4_Msk              (_U_(0x1) << USBHS_HSTIER_DMA_4_Pos)           /**< (USBHS_HSTIER) DMA Channel 4 Interrupt Enable Mask */
+#define USBHS_HSTIER_DMA_4_Pos              28                                             /**< (USBHS_HSTIER) DMA Channel 3 Interrupt Enable Position */
+#define USBHS_HSTIER_DMA_4_Msk              (_U_(0x1) << USBHS_HSTIER_DMA_4_Pos)           /**< (USBHS_HSTIER) DMA Channel 3 Interrupt Enable Mask */
 #define USBHS_HSTIER_DMA_4                  USBHS_HSTIER_DMA_4_Msk                         /**< \deprecated Old style mask definition for 1 bit bitfield. Use USBHS_HSTIER_DMA_4_Msk instead */
-#define USBHS_HSTIER_DMA_5_Pos              30                                             /**< (USBHS_HSTIER) DMA Channel 5 Interrupt Enable Position */
-#define USBHS_HSTIER_DMA_5_Msk              (_U_(0x1) << USBHS_HSTIER_DMA_5_Pos)           /**< (USBHS_HSTIER) DMA Channel 5 Interrupt Enable Mask */
+#define USBHS_HSTIER_DMA_5_Pos              29                                             /**< (USBHS_HSTIER) DMA Channel 4 Interrupt Enable Position */
+#define USBHS_HSTIER_DMA_5_Msk              (_U_(0x1) << USBHS_HSTIER_DMA_5_Pos)           /**< (USBHS_HSTIER) DMA Channel 4 Interrupt Enable Mask */
 #define USBHS_HSTIER_DMA_5                  USBHS_HSTIER_DMA_5_Msk                         /**< \deprecated Old style mask definition for 1 bit bitfield. Use USBHS_HSTIER_DMA_5_Msk instead */
-#define USBHS_HSTIER_DMA_6_Pos              31                                             /**< (USBHS_HSTIER) DMA Channel 6 Interrupt Enable Position */
-#define USBHS_HSTIER_DMA_6_Msk              (_U_(0x1) << USBHS_HSTIER_DMA_6_Pos)           /**< (USBHS_HSTIER) DMA Channel 6 Interrupt Enable Mask */
+#define USBHS_HSTIER_DMA_6_Pos              30                                             /**< (USBHS_HSTIER) DMA Channel 5 Interrupt Enable Position */
+#define USBHS_HSTIER_DMA_6_Msk              (_U_(0x1) << USBHS_HSTIER_DMA_6_Pos)           /**< (USBHS_HSTIER) DMA Channel 5 Interrupt Enable Mask */
 #define USBHS_HSTIER_DMA_6                  USBHS_HSTIER_DMA_6_Msk                         /**< \deprecated Old style mask definition for 1 bit bitfield. Use USBHS_HSTIER_DMA_6_Msk instead */
+#define USBHS_HSTIER_DMA_7_Pos              31                                             /**< (USBHS_HSTIER) DMA Channel 6 Interrupt Enable Position */
+#define USBHS_HSTIER_DMA_7_Msk              (_U_(0x1) << USBHS_HSTIER_DMA_7_Pos)           /**< (USBHS_HSTIER) DMA Channel 6 Interrupt Enable Mask */
+#define USBHS_HSTIER_DMA_7                  USBHS_HSTIER_DMA_7_Msk                         /**< \deprecated Old style mask definition for 1 bit bitfield. Use USBHS_HSTIER_DMA_7_Msk instead */
 #define USBHS_HSTIER_MASK                   _U_(0xFE03FF7F)                                /**< \deprecated (USBHS_HSTIER) Register MASK  (Use USBHS_HSTIER_Msk instead)  */
 #define USBHS_HSTIER_Msk                    _U_(0xFE03FF7F)                                /**< (USBHS_HSTIER) Register Mask  */
 

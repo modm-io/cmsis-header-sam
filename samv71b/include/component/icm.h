@@ -3,7 +3,7 @@
  *
  * \brief Component description for ICM
  *
- * Copyright (c) 2019 Microchip Technology Inc.
+ * Copyright (c) 2022 Microchip Technology Inc.
  *
  * \license_start
  *
@@ -27,12 +27,12 @@
  *
  */
 
-/* file generated from device description version 2019-01-18T21:21:15Z */
+/* file generated from device description version 2022-06-28T09:09:35Z */
 #ifndef _SAMV71_ICM_COMPONENT_H_
 #define _SAMV71_ICM_COMPONENT_H_
 #define _SAMV71_ICM_COMPONENT_         /**< \deprecated  Backward compatibility for ASF */
 
-/** \addtogroup SAMV_SAMV71 Integrity Check Monitor
+/** \addtogroup SAMV71_ICM Integrity Check Monitor
  *  @{
  */
 /* ========================================================================== */

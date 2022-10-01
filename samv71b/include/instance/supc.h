@@ -3,7 +3,7 @@
  *
  * \brief Instance description for SUPC
  *
- * Copyright (c) 2019 Microchip Technology Inc.
+ * Copyright (c) 2022 Microchip Technology Inc.
  *
  * \license_start
  *
@@ -27,7 +27,7 @@
  *
  */
 
-/* file generated from device description version 2019-01-18T21:21:15Z */
+/* file generated from device description version 2022-06-28T09:09:35Z */
 #ifndef _SAMV71_SUPC_INSTANCE_H_
 #define _SAMV71_SUPC_INSTANCE_H_
 
@@ -40,6 +40,7 @@
 #define REG_SUPC_WUMR           (0x400E181C) /**< (SUPC) Supply Controller Wake-up Mode Register */
 #define REG_SUPC_WUIR           (0x400E1820) /**< (SUPC) Supply Controller Wake-up Inputs Register */
 #define REG_SUPC_SR             (0x400E1824) /**< (SUPC) Supply Controller Status Register */
+#define REG_SUPC_SYSC_WPMR      (0x400E18E4) /**< (SUPC) Write Protection Mode Register */
 
 #else
 
@@ -49,6 +50,7 @@
 #define REG_SUPC_WUMR           (*(__IO uint32_t*)0x400E181CU) /**< (SUPC) Supply Controller Wake-up Mode Register */
 #define REG_SUPC_WUIR           (*(__IO uint32_t*)0x400E1820U) /**< (SUPC) Supply Controller Wake-up Inputs Register */
 #define REG_SUPC_SR             (*(__I  uint32_t*)0x400E1824U) /**< (SUPC) Supply Controller Status Register */
+#define REG_SUPC_SYSC_WPMR      (*(__IO uint32_t*)0x400E18E4U) /**< (SUPC) Write Protection Mode Register */
 
 #endif /* (defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__)) */
 

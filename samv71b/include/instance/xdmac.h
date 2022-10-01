@@ -3,7 +3,7 @@
  *
  * \brief Instance description for XDMAC
  *
- * Copyright (c) 2019 Microchip Technology Inc.
+ * Copyright (c) 2022 Microchip Technology Inc.
  *
  * \license_start
  *
@@ -27,7 +27,7 @@
  *
  */
 
-/* file generated from device description version 2019-01-18T21:21:15Z */
+/* file generated from device description version 2022-06-28T09:09:35Z */
 #ifndef _SAMV71_XDMAC_INSTANCE_H_
 #define _SAMV71_XDMAC_INSTANCE_H_
 

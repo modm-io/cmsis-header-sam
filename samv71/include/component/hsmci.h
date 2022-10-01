@@ -3,7 +3,7 @@
  *
  * \brief Component description for HSMCI
  *
- * Copyright (c) 2019 Microchip Technology Inc.
+ * Copyright (c) 2022 Microchip Technology Inc.
  *
  * \license_start
  *
@@ -32,7 +32,7 @@
 #define _SAMV71_HSMCI_COMPONENT_H_
 #define _SAMV71_HSMCI_COMPONENT_         /**< \deprecated  Backward compatibility for ASF */
 
-/** \addtogroup SAMV_SAMV71 High Speed MultiMedia Card Interface
+/** \addtogroup SAMV71_HSMCI High Speed MultiMedia Card Interface
  *  @{
  */
 /* ========================================================================== */

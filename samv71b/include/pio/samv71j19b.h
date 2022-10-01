@@ -3,7 +3,7 @@
  *
  * \brief Peripheral I/O description for SAMV71J19B
  *
- * Copyright (c) 2019 Microchip Technology Inc.
+ * Copyright (c) 2022 Microchip Technology Inc.
  *
  * \license_start
  *
@@ -27,7 +27,7 @@
  *
  */
 
-/* file generated from device description version 2019-01-18T21:20:53Z */
+/* file generated from device description version 2022-06-28T09:09:08Z */
 #ifndef _SAMV71J19B_PIO_H_
 #define _SAMV71J19B_PIO_H_
 

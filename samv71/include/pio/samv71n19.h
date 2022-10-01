@@ -3,7 +3,7 @@
  *
  * \brief Peripheral I/O description for SAMV71N19
  *
- * Copyright (c) 2019 Microchip Technology Inc.
+ * Copyright (c) 2022 Microchip Technology Inc.
  *
  * \license_start
  *

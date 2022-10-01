@@ -3,7 +3,7 @@
  *
  * \brief Component description for AFEC
  *
- * Copyright (c) 2019 Microchip Technology Inc.
+ * Copyright (c) 2022 Microchip Technology Inc.
  *
  * \license_start
  *
@@ -32,7 +32,7 @@
 #define _SAMV71_AFEC_COMPONENT_H_
 #define _SAMV71_AFEC_COMPONENT_         /**< \deprecated  Backward compatibility for ASF */
 
-/** \addtogroup SAMV_SAMV71 Analog Front-End Controller
+/** \addtogroup SAMV71_AFEC Analog Front-End Controller
  *  @{
  */
 /* ========================================================================== */

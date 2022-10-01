@@ -3,7 +3,7 @@
  *
  * \brief Component description for WDT
  *
- * Copyright (c) 2019 Microchip Technology Inc.
+ * Copyright (c) 2022 Microchip Technology Inc.
  *
  * \license_start
  *
@@ -32,7 +32,7 @@
 #define _SAMV71_WDT_COMPONENT_H_
 #define _SAMV71_WDT_COMPONENT_         /**< \deprecated  Backward compatibility for ASF */
 
-/** \addtogroup SAMV_SAMV71 Watchdog Timer
+/** \addtogroup SAMV71_WDT Watchdog Timer
  *  @{
  */
 /* ========================================================================== */
