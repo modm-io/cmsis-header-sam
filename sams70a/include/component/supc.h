@@ -3,7 +3,7 @@
  *
  * \brief Component description for SUPC
  *
- * Copyright (c) 2019 Microchip Technology Inc.
+ * Copyright (c) 2022 Microchip Technology Inc.
  *
  * \license_start
  *
@@ -32,7 +32,7 @@
 #define _SAMS70_SUPC_COMPONENT_H_
 #define _SAMS70_SUPC_COMPONENT_         /**< \deprecated  Backward compatibility for ASF */
 
-/** \addtogroup SAMS_SAMS70 Supply Controller
+/** \addtogroup SAMS70_SUPC Supply Controller
  *  @{
  */
 /* ========================================================================== */

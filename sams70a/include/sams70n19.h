@@ -3,7 +3,7 @@
  *
  * \brief Header file for ATSAMS70N19
  *
- * Copyright (c) 2019 Microchip Technology Inc.
+ * Copyright (c) 2022 Microchip Technology Inc.
  *
  * \license_start
  *
@@ -50,7 +50,7 @@
     \li to specify the access to peripheral variables.
     \li for automatic generation of peripheral register debug information.
 
-    \remark
+    \\remark
     CMSIS core has a syntax that differs from this using i.e. __I, __O, or __IO followed by 'uint<size>_t' respective types.
     Default the header files will follow the CMSIS core syntax.
  *  @{
@@ -280,10 +280,10 @@ typedef struct _DeviceVectors
 } DeviceVectors;
 
 /* Defines for Deprecated Interrupt and Exceptions handler names */
-#define pfnMemManage_Handler      pfnMemoryManagement_Handler     /**< \deprecated  Backward compatibility for ASF */
-#define pfnDebugMon_Handler       pfnDebugMonitor_Handler         /**< \deprecated  Backward compatibility for ASF */
 #define pfnNMI_Handler            pfnNonMaskableInt_Handler       /**< \deprecated  Backward compatibility for ASF */
 #define pfnSVC_Handler            pfnSVCall_Handler               /**< \deprecated  Backward compatibility for ASF */
+#define pfnDebugMon_Handler       pfnDebugMonitor_Handler         /**< \deprecated  Backward compatibility for ASF */
+#define pfnMemManage_Handler      pfnMemoryManagement_Handler     /**< \deprecated  Backward compatibility for ASF */
 
 #endif /* !(defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__)) */
 
@@ -362,10 +362,10 @@ void XDMAC_Handler                 ( void );
 
 
 /* Defines for Deprecated Interrupt and Exceptions handler names */
-#define MemManage_Handler         MemoryManagement_Handler        /**< \deprecated  Backward compatibility for ASF */
-#define DebugMon_Handler          DebugMonitor_Handler            /**< \deprecated  Backward compatibility for ASF */
 #define NMI_Handler               NonMaskableInt_Handler          /**< \deprecated  Backward compatibility for ASF */
 #define SVC_Handler               SVCall_Handler                  /**< \deprecated  Backward compatibility for ASF */
+#define DebugMon_Handler          DebugMonitor_Handler            /**< \deprecated  Backward compatibility for ASF */
+#define MemManage_Handler         MemoryManagement_Handler        /**< \deprecated  Backward compatibility for ASF */
 
 #endif /* !(defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__)) */
 
@@ -808,7 +808,6 @@ void XDMAC_Handler                 ( void );
 #define EBI_CS1_SIZE             _U_(0x01000000)       /* 16384kB Memory segment type: other */
 #define EBI_CS2_SIZE             _U_(0x01000000)       /* 16384kB Memory segment type: other */
 #define EBI_CS3_SIZE             _U_(0x01000000)       /* 16384kB Memory segment type: other */
-#define SDRAM_CS_SIZE            _U_(0x10000000)       /* 262144kB Memory segment type: other */
 
 #define PERIPHERALS_ADDR         _U_(0x40000000)       /**< PERIPHERALS base address (type: io)*/
 #define SYSTEM_ADDR              _U_(0xe0000000)       /**< SYSTEM base address (type: io)*/
@@ -823,7 +822,6 @@ void XDMAC_Handler                 ( void );
 #define EBI_CS1_ADDR             _U_(0x61000000)       /**< EBI_CS1 base address (type: other)*/
 #define EBI_CS2_ADDR             _U_(0x62000000)       /**< EBI_CS2 base address (type: other)*/
 #define EBI_CS3_ADDR             _U_(0x63000000)       /**< EBI_CS3 base address (type: other)*/
-#define SDRAM_CS_ADDR            _U_(0x70000000)       /**< SDRAM_CS base address (type: other)*/
 
 /* ************************************************************************** */
 /**  DEVICE SIGNATURES FOR SAMS70N19 */

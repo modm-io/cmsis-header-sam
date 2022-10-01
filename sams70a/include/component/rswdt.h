@@ -3,7 +3,7 @@
  *
  * \brief Component description for RSWDT
  *
- * Copyright (c) 2019 Microchip Technology Inc.
+ * Copyright (c) 2022 Microchip Technology Inc.
  *
  * \license_start
  *
@@ -32,7 +32,7 @@
 #define _SAMS70_RSWDT_COMPONENT_H_
 #define _SAMS70_RSWDT_COMPONENT_         /**< \deprecated  Backward compatibility for ASF */
 
-/** \addtogroup SAMS_SAMS70 Reinforced Safety Watchdog Timer
+/** \addtogroup SAMS70_RSWDT Reinforced Safety Watchdog Timer
  *  @{
  */
 /* ========================================================================== */

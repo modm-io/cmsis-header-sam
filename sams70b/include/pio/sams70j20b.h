@@ -3,7 +3,7 @@
  *
  * \brief Peripheral I/O description for SAMS70J20B
  *
- * Copyright (c) 2019 Microchip Technology Inc.
+ * Copyright (c) 2022 Microchip Technology Inc.
  *
  * \license_start
  *
@@ -27,7 +27,7 @@
  *
  */
 
-/* file generated from device description version 2019-01-18T21:20:08Z */
+/* file generated from device description version 2022-06-28T09:08:06Z */
 #ifndef _SAMS70J20B_PIO_H_
 #define _SAMS70J20B_PIO_H_
 

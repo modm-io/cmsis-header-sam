@@ -3,7 +3,7 @@
  *
  * \brief Component description for SMC
  *
- * Copyright (c) 2019 Microchip Technology Inc.
+ * Copyright (c) 2022 Microchip Technology Inc.
  *
  * \license_start
  *
@@ -32,7 +32,7 @@
 #define _SAMS70_SMC_COMPONENT_H_
 #define _SAMS70_SMC_COMPONENT_         /**< \deprecated  Backward compatibility for ASF */
 
-/** \addtogroup SAMS_SAMS70 Static Memory Controller
+/** \addtogroup SAMS70_SMC Static Memory Controller
  *  @{
  */
 /* ========================================================================== */

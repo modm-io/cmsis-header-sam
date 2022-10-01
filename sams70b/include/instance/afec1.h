@@ -3,7 +3,7 @@
  *
  * \brief Instance description for AFEC1
  *
- * Copyright (c) 2019 Microchip Technology Inc.
+ * Copyright (c) 2022 Microchip Technology Inc.
  *
  * \license_start
  *
@@ -27,7 +27,7 @@
  *
  */
 
-/* file generated from device description version 2019-01-18T21:20:31Z */
+/* file generated from device description version 2022-06-28T09:08:38Z */
 #ifndef _SAMS70_AFEC1_INSTANCE_H_
 #define _SAMS70_AFEC1_INSTANCE_H_
 
