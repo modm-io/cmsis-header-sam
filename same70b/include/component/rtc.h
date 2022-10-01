@@ -3,7 +3,7 @@
  *
  * \brief Component description for RTC
  *
- * Copyright (c) 2019 Microchip Technology Inc.
+ * Copyright (c) 2022 Microchip Technology Inc.
  *
  * \license_start
  *
@@ -27,12 +27,12 @@
  *
  */
 
-/* file generated from device description version 2019-01-18T21:19:59Z */
+/* file generated from device description version 2022-06-28T09:07:51Z */
 #ifndef _SAME70_RTC_COMPONENT_H_
 #define _SAME70_RTC_COMPONENT_H_
 #define _SAME70_RTC_COMPONENT_         /**< \deprecated  Backward compatibility for ASF */
 
-/** \addtogroup SAME_SAME70 Real-time Clock
+/** \addtogroup SAME70_RTC Real-time Clock
  *  @{
  */
 /* ========================================================================== */

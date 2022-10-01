@@ -3,7 +3,7 @@
  *
  * \brief Header file for ATSAME70Q20B
  *
- * Copyright (c) 2019 Microchip Technology Inc.
+ * Copyright (c) 2022 Microchip Technology Inc.
  *
  * \license_start
  *
@@ -27,7 +27,7 @@
  *
  */
 
-/* file generated from device description version 2019-01-18T21:19:57Z */
+/* file generated from device description version 2022-06-28T09:07:49Z */
 #ifndef _SAME70Q20B_H_
 #define _SAME70Q20B_H_
 
@@ -50,7 +50,7 @@
     \li to specify the access to peripheral variables.
     \li for automatic generation of peripheral register debug information.
 
-    \remark
+    \\remark
     CMSIS core has a syntax that differs from this using i.e. __I, __O, or __IO followed by 'uint<size>_t' respective types.
     Default the header files will follow the CMSIS core syntax.
  *  @{
@@ -185,7 +185,6 @@ typedef enum IRQn
   ISI_IRQn                  = 59 , /**< 59  SAME70Q20B Image Sensor Interface (ISI) */
   PWM1_IRQn                 = 60 , /**< 60  SAME70Q20B Pulse Width Modulation Controller (PWM1) */
   FPU_IRQn                  = 61 , /**< 61  SAME70Q20B Floating Point Unit (FPU) */
-  SDRAMC_IRQn               = 62 , /**< 62  SAME70Q20B SDRAM Controller (SDRAMC) */
   RSWDT_IRQn                = 63 , /**< 63  SAME70Q20B Reinforced Safety Watchdog Timer (RSWDT) */
   CCW_IRQn                  = 64 , /**< 64  SAME70Q20B System Control Block (SCB) */
   CCF_IRQn                  = 65 , /**< 65  SAME70Q20B System Control Block (SCB) */
@@ -288,7 +287,7 @@ typedef struct _DeviceVectors
   void* pfnISI_Handler;                          /* 59  SAME70Q20B Image Sensor Interface (ISI) */
   void* pfnPWM1_Handler;                         /* 60  SAME70Q20B Pulse Width Modulation Controller (PWM1) */
   void* pfnFPU_Handler;                          /* 61  SAME70Q20B Floating Point Unit (FPU) */
-  void* pfnSDRAMC_Handler;                       /* 62  SAME70Q20B SDRAM Controller (SDRAMC) */
+  void* pvReserved62;
   void* pfnRSWDT_Handler;                        /* 63  SAME70Q20B Reinforced Safety Watchdog Timer (RSWDT) */
   void* pfnCCW_Handler;                          /* 64  SAME70Q20B System Control Block (SCB) */
   void* pfnCCF_Handler;                          /* 65  SAME70Q20B System Control Block (SCB) */
@@ -303,10 +302,10 @@ typedef struct _DeviceVectors
 } DeviceVectors;
 
 /* Defines for Deprecated Interrupt and Exceptions handler names */
-#define pfnMemManage_Handler      pfnMemoryManagement_Handler     /**< \deprecated  Backward compatibility for ASF */
-#define pfnDebugMon_Handler       pfnDebugMonitor_Handler         /**< \deprecated  Backward compatibility for ASF */
 #define pfnNMI_Handler            pfnNonMaskableInt_Handler       /**< \deprecated  Backward compatibility for ASF */
 #define pfnSVC_Handler            pfnSVCall_Handler               /**< \deprecated  Backward compatibility for ASF */
+#define pfnDebugMon_Handler       pfnDebugMonitor_Handler         /**< \deprecated  Backward compatibility for ASF */
+#define pfnMemManage_Handler      pfnMemoryManagement_Handler     /**< \deprecated  Backward compatibility for ASF */
 
 #endif /* !(defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__)) */
 
@@ -367,7 +366,6 @@ void RSTC_Handler                  ( void );
 void RSWDT_Handler                 ( void );
 void RTC_Handler                   ( void );
 void RTT_Handler                   ( void );
-void SDRAMC_Handler                ( void );
 void SPI0_Handler                  ( void );
 void SPI1_Handler                  ( void );
 void SSC_Handler                   ( void );
@@ -403,10 +401,10 @@ void XDMAC_Handler                 ( void );
 
 
 /* Defines for Deprecated Interrupt and Exceptions handler names */
-#define MemManage_Handler         MemoryManagement_Handler        /**< \deprecated  Backward compatibility for ASF */
-#define DebugMon_Handler          DebugMonitor_Handler            /**< \deprecated  Backward compatibility for ASF */
 #define NMI_Handler               NonMaskableInt_Handler          /**< \deprecated  Backward compatibility for ASF */
 #define SVC_Handler               SVCall_Handler                  /**< \deprecated  Backward compatibility for ASF */
+#define DebugMon_Handler          DebugMonitor_Handler            /**< \deprecated  Backward compatibility for ASF */
+#define MemManage_Handler         MemoryManagement_Handler        /**< \deprecated  Backward compatibility for ASF */
 
 #endif /* !(defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__)) */
 
@@ -472,7 +470,6 @@ void XDMAC_Handler                 ( void );
 #include "component/rswdt.h"
 #include "component/rtc.h"
 #include "component/rtt.h"
-#include "component/sdramc.h"
 #include "component/smc.h"
 #include "component/spi.h"
 #include "component/ssc.h"
@@ -525,7 +522,6 @@ void XDMAC_Handler                 ( void );
 #include "instance/rswdt.h"
 #include "instance/rtc.h"
 #include "instance/rtt.h"
-#include "instance/sdramc.h"
 #include "instance/smc.h"
 #include "instance/spi0.h"
 #include "instance/spi1.h"
@@ -616,7 +612,6 @@ void XDMAC_Handler                 ( void );
 #define ID_XDMAC        ( 58) /**< \brief Extensible DMA Controller (XDMAC) */
 #define ID_ISI          ( 59) /**< \brief Image Sensor Interface (ISI) */
 #define ID_PWM1         ( 60) /**< \brief Pulse Width Modulation Controller (PWM1) */
-#define ID_SDRAMC       ( 62) /**< \brief SDRAM Controller (SDRAMC) */
 #define ID_RSWDT        ( 63) /**< \brief Reinforced Safety Watchdog Timer (RSWDT) */
 #define ID_I2SC0        ( 69) /**< \brief Inter-IC Sound Controller (I2SC0) */
 #define ID_I2SC1        ( 70) /**< \brief Inter-IC Sound Controller (I2SC1) */
@@ -683,7 +678,6 @@ void XDMAC_Handler                 ( void );
 #define RSWDT                  (0x400E1900)                   /**< \brief (RSWDT     ) Base Address */
 #define RTC                    (0x400E1860)                   /**< \brief (RTC       ) Base Address */
 #define RTT                    (0x400E1830)                   /**< \brief (RTT       ) Base Address */
-#define SDRAMC                 (0x40084000)                   /**< \brief (SDRAMC    ) Base Address */
 #define SMC                    (0x40080000)                   /**< \brief (SMC       ) Base Address */
 #define SPI0                   (0x40008000)                   /**< \brief (SPI0      ) Base Address */
 #define SPI1                   (0x40058000)                   /**< \brief (SPI1      ) Base Address */
@@ -808,10 +802,6 @@ void XDMAC_Handler                 ( void );
 #define RTT_INST_NUM           1                              /**< \brief (RTT       ) Number of instances */
 #define RTT_INSTS              { RTT }                        /**< \brief (RTT       ) Instances List */
 
-#define SDRAMC                 ((Sdramc *)0x40084000U)        /**< \brief (SDRAMC    ) Base Address */
-#define SDRAMC_INST_NUM        1                              /**< \brief (SDRAMC    ) Number of instances */
-#define SDRAMC_INSTS           { SDRAMC }                     /**< \brief (SDRAMC    ) Instances List */
-
 #define SMC                    ((Smc *)0x40080000U)           /**< \brief (SMC       ) Base Address */
 #define SMC_INST_NUM           1                              /**< \brief (SMC       ) Number of instances */
 #define SMC_INSTS              { SMC }                        /**< \brief (SMC       ) Instances List */
@@ -897,7 +887,7 @@ void XDMAC_Handler                 ( void );
 #define SYSTEM_SIZE              _U_(0x10000000)       /* 262144kB Memory segment type: io */
 #define QSPIMEM_SIZE             _U_(0x20000000)       /* 524288kB Memory segment type: other */
 #define AXIMX_SIZE               _U_(0x00100000)       /* 1024kB Memory segment type: other */
-#define ITCM_SIZE                _U_(0x00200000)       /* 2048kB Memory segment type: other */
+#define ITCM_SIZE                _U_(0x00020000)       /*  128kB Memory segment type: other */
 #define IFLASH_SIZE              _U_(0x00100000)       /* 1024kB Memory segment type: flash */
 #define IFLASH_PAGE_SIZE         _U_(       512)
 #define IFLASH_NB_OF_PAGES       _U_(      2048)
@@ -909,7 +899,6 @@ void XDMAC_Handler                 ( void );
 #define EBI_CS1_SIZE             _U_(0x01000000)       /* 16384kB Memory segment type: other */
 #define EBI_CS2_SIZE             _U_(0x01000000)       /* 16384kB Memory segment type: other */
 #define EBI_CS3_SIZE             _U_(0x01000000)       /* 16384kB Memory segment type: other */
-#define SDRAM_CS_SIZE            _U_(0x10000000)       /* 262144kB Memory segment type: other */
 
 #define PERIPHERALS_ADDR         _U_(0x40000000)       /**< PERIPHERALS base address (type: io)*/
 #define SYSTEM_ADDR              _U_(0xe0000000)       /**< SYSTEM base address (type: io)*/
@@ -924,7 +913,6 @@ void XDMAC_Handler                 ( void );
 #define EBI_CS1_ADDR             _U_(0x61000000)       /**< EBI_CS1 base address (type: other)*/
 #define EBI_CS2_ADDR             _U_(0x62000000)       /**< EBI_CS2 base address (type: other)*/
 #define EBI_CS3_ADDR             _U_(0x63000000)       /**< EBI_CS3 base address (type: other)*/
-#define SDRAM_CS_ADDR            _U_(0x70000000)       /**< SDRAM_CS base address (type: other)*/
 
 /* ************************************************************************** */
 /**  DEVICE SIGNATURES FOR SAME70Q20B */

@@ -3,7 +3,7 @@
  *
  * \brief Component description for SPI
  *
- * Copyright (c) 2019 Microchip Technology Inc.
+ * Copyright (c) 2022 Microchip Technology Inc.
  *
  * \license_start
  *
@@ -32,7 +32,7 @@
 #define _SAME70_SPI_COMPONENT_H_
 #define _SAME70_SPI_COMPONENT_         /**< \deprecated  Backward compatibility for ASF */
 
-/** \addtogroup SAME_SAME70 Serial Peripheral Interface
+/** \addtogroup SAME70_SPI Serial Peripheral Interface
  *  @{
  */
 /* ========================================================================== */

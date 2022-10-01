@@ -3,7 +3,7 @@
  *
  * \brief Top level header file
  *
- * Copyright (c) 2019 Microchip Technology Inc.
+ * Copyright (c) 2022 Microchip Technology Inc.
  *
  * \license_start
  *
@@ -32,22 +32,22 @@
 
 #if   defined(__SAME70J19__) || defined(__ATSAME70J19__)
   #include "same70j19.h"
+#elif defined(__SAME70N21__) || defined(__ATSAME70N21__)
+  #include "same70n21.h"
+#elif defined(__SAME70N20__) || defined(__ATSAME70N20__)
+  #include "same70n20.h"
 #elif defined(__SAME70J20__) || defined(__ATSAME70J20__)
   #include "same70j20.h"
 #elif defined(__SAME70J21__) || defined(__ATSAME70J21__)
   #include "same70j21.h"
-#elif defined(__SAME70N19__) || defined(__ATSAME70N19__)
-  #include "same70n19.h"
-#elif defined(__SAME70N20__) || defined(__ATSAME70N20__)
-  #include "same70n20.h"
-#elif defined(__SAME70N21__) || defined(__ATSAME70N21__)
-  #include "same70n21.h"
-#elif defined(__SAME70Q19__) || defined(__ATSAME70Q19__)
-  #include "same70q19.h"
-#elif defined(__SAME70Q20__) || defined(__ATSAME70Q20__)
-  #include "same70q20.h"
 #elif defined(__SAME70Q21__) || defined(__ATSAME70Q21__)
   #include "same70q21.h"
+#elif defined(__SAME70Q19__) || defined(__ATSAME70Q19__)
+  #include "same70q19.h"
+#elif defined(__SAME70N19__) || defined(__ATSAME70N19__)
+  #include "same70n19.h"
+#elif defined(__SAME70Q20__) || defined(__ATSAME70Q20__)
+  #include "same70q20.h"
 #else
   #error Library does not support the specified device
 #endif

@@ -3,7 +3,7 @@
  *
  * \brief Component description for USART
  *
- * Copyright (c) 2019 Microchip Technology Inc.
+ * Copyright (c) 2022 Microchip Technology Inc.
  *
  * \license_start
  *
@@ -27,12 +27,12 @@
  *
  */
 
-/* file generated from device description version 2019-01-18T21:19:59Z */
+/* file generated from device description version 2022-06-28T09:07:51Z */
 #ifndef _SAME70_USART_COMPONENT_H_
 #define _SAME70_USART_COMPONENT_H_
 #define _SAME70_USART_COMPONENT_         /**< \deprecated  Backward compatibility for ASF */
 
-/** \addtogroup SAME_SAME70 Universal Synchronous Asynchronous Receiver Transmitter
+/** \addtogroup SAME70_USART Universal Synchronous Asynchronous Receiver Transmitter
  *  @{
  */
 /* ========================================================================== */
@@ -49,7 +49,7 @@
 #if !(defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__))
 #if COMPONENT_TYPEDEF_STYLE == 'N'
 typedef union {
-  struct {
+  struct { // USART mode
     uint32_t :2;                        /**< bit:   0..1  Reserved */
     uint32_t RSTRX:1;                   /**< bit:      2  Reset Receiver                           */
     uint32_t RSTTX:1;                   /**< bit:      3  Reset Transmitter                        */
@@ -58,10 +58,6 @@ typedef union {
     uint32_t TXEN:1;                    /**< bit:      6  Transmitter Enable                       */
     uint32_t TXDIS:1;                   /**< bit:      7  Transmitter Disable                      */
     uint32_t RSTSTA:1;                  /**< bit:      8  Reset Status Bits                        */
-    uint32_t :23;                       /**< bit:  9..31  Reserved */
-  } bit;                                /**< Structure used for bit  access */
-  struct { // USART mode
-    uint32_t :9;                        /**< bit:   0..8  Reserved */
     uint32_t STTBRK:1;                  /**< bit:      9  Start Break                              */
     uint32_t STPBRK:1;                  /**< bit:     10  Stop Break                               */
     uint32_t STTTO:1;                   /**< bit:     11  Clear TIMEOUT Flag and Start Timeout After Next Character Received */
@@ -76,13 +72,29 @@ typedef union {
     uint32_t :12;                       /**< bit: 20..31  Reserved */
   } USART;                                /**< Structure used for USART mode access */
   struct { // SPI mode
-    uint32_t :18;                       /**< bit:  0..17  Reserved */
+    uint32_t :2;                        /**< bit:   0..1  Reserved */
+    uint32_t RSTRX:1;                   /**< bit:      2  Reset Receiver                           */
+    uint32_t RSTTX:1;                   /**< bit:      3  Reset Transmitter                        */
+    uint32_t RXEN:1;                    /**< bit:      4  Receiver Enable                          */
+    uint32_t RXDIS:1;                   /**< bit:      5  Receiver Disable                         */
+    uint32_t TXEN:1;                    /**< bit:      6  Transmitter Enable                       */
+    uint32_t TXDIS:1;                   /**< bit:      7  Transmitter Disable                      */
+    uint32_t RSTSTA:1;                  /**< bit:      8  Reset Status Bits                        */
+    uint32_t :9;                        /**< bit:  9..17  Reserved */
     uint32_t FCS:1;                     /**< bit:     18  Force SPI Chip Select                    */
     uint32_t RCS:1;                     /**< bit:     19  Release SPI Chip Select                  */
     uint32_t :12;                       /**< bit: 20..31  Reserved */
   } SPI;                                /**< Structure used for SPI mode access */
   struct { // LIN mode
-    uint32_t :20;                       /**< bit:  0..19  Reserved */
+    uint32_t :2;                        /**< bit:   0..1  Reserved */
+    uint32_t RSTRX:1;                   /**< bit:      2  Reset Receiver                           */
+    uint32_t RSTTX:1;                   /**< bit:      3  Reset Transmitter                        */
+    uint32_t RXEN:1;                    /**< bit:      4  Receiver Enable                          */
+    uint32_t RXDIS:1;                   /**< bit:      5  Receiver Disable                         */
+    uint32_t TXEN:1;                    /**< bit:      6  Transmitter Enable                       */
+    uint32_t TXDIS:1;                   /**< bit:      7  Transmitter Disable                      */
+    uint32_t RSTSTA:1;                  /**< bit:      8  Reset Status Bits                        */
+    uint32_t :11;                       /**< bit:  9..19  Reserved */
     uint32_t LINABT:1;                  /**< bit:     20  Abort LIN Transmission                   */
     uint32_t LINWKUP:1;                 /**< bit:     21  Send LIN Wakeup Signal                   */
     uint32_t :10;                       /**< bit: 22..31  Reserved */
@@ -94,31 +106,31 @@ typedef union {
 
 #define US_CR_OFFSET                        (0x00)                                        /**<  (US_CR) Control Register  Offset */
 
-#define US_CR_RSTRX_Pos                     2                                              /**< (US_CR) Reset Receiver Position */
-#define US_CR_RSTRX_Msk                     (_U_(0x1) << US_CR_RSTRX_Pos)                  /**< (US_CR) Reset Receiver Mask */
-#define US_CR_RSTRX                         US_CR_RSTRX_Msk                                /**< \deprecated Old style mask definition for 1 bit bitfield. Use US_CR_RSTRX_Msk instead */
-#define US_CR_RSTTX_Pos                     3                                              /**< (US_CR) Reset Transmitter Position */
-#define US_CR_RSTTX_Msk                     (_U_(0x1) << US_CR_RSTTX_Pos)                  /**< (US_CR) Reset Transmitter Mask */
-#define US_CR_RSTTX                         US_CR_RSTTX_Msk                                /**< \deprecated Old style mask definition for 1 bit bitfield. Use US_CR_RSTTX_Msk instead */
-#define US_CR_RXEN_Pos                      4                                              /**< (US_CR) Receiver Enable Position */
-#define US_CR_RXEN_Msk                      (_U_(0x1) << US_CR_RXEN_Pos)                   /**< (US_CR) Receiver Enable Mask */
-#define US_CR_RXEN                          US_CR_RXEN_Msk                                 /**< \deprecated Old style mask definition for 1 bit bitfield. Use US_CR_RXEN_Msk instead */
-#define US_CR_RXDIS_Pos                     5                                              /**< (US_CR) Receiver Disable Position */
-#define US_CR_RXDIS_Msk                     (_U_(0x1) << US_CR_RXDIS_Pos)                  /**< (US_CR) Receiver Disable Mask */
-#define US_CR_RXDIS                         US_CR_RXDIS_Msk                                /**< \deprecated Old style mask definition for 1 bit bitfield. Use US_CR_RXDIS_Msk instead */
-#define US_CR_TXEN_Pos                      6                                              /**< (US_CR) Transmitter Enable Position */
-#define US_CR_TXEN_Msk                      (_U_(0x1) << US_CR_TXEN_Pos)                   /**< (US_CR) Transmitter Enable Mask */
-#define US_CR_TXEN                          US_CR_TXEN_Msk                                 /**< \deprecated Old style mask definition for 1 bit bitfield. Use US_CR_TXEN_Msk instead */
-#define US_CR_TXDIS_Pos                     7                                              /**< (US_CR) Transmitter Disable Position */
-#define US_CR_TXDIS_Msk                     (_U_(0x1) << US_CR_TXDIS_Pos)                  /**< (US_CR) Transmitter Disable Mask */
-#define US_CR_TXDIS                         US_CR_TXDIS_Msk                                /**< \deprecated Old style mask definition for 1 bit bitfield. Use US_CR_TXDIS_Msk instead */
-#define US_CR_RSTSTA_Pos                    8                                              /**< (US_CR) Reset Status Bits Position */
-#define US_CR_RSTSTA_Msk                    (_U_(0x1) << US_CR_RSTSTA_Pos)                 /**< (US_CR) Reset Status Bits Mask */
-#define US_CR_RSTSTA                        US_CR_RSTSTA_Msk                               /**< \deprecated Old style mask definition for 1 bit bitfield. Use US_CR_RSTSTA_Msk instead */
-#define US_CR_MASK                          _U_(0x1FC)                                     /**< \deprecated (US_CR) Register MASK  (Use US_CR_Msk instead)  */
-#define US_CR_Msk                           _U_(0x1FC)                                     /**< (US_CR) Register Mask  */
+#define US_CR_MASK                          _U_(0x00)                                      /**< \deprecated (US_CR) Register MASK  (Use US_CR_Msk instead)  */
+#define US_CR_Msk                           _U_(0x00)                                      /**< (US_CR) Register Mask  */
 
 /* USART mode */
+#define US_CR_USART_RSTRX_Pos               2                                              /**< (US_CR) Reset Receiver Position */
+#define US_CR_USART_RSTRX_Msk               (_U_(0x1) << US_CR_USART_RSTRX_Pos)            /**< (US_CR) Reset Receiver Mask */
+#define US_CR_USART_RSTRX                   US_CR_USART_RSTRX_Msk                          /**< \deprecated Old style mask definition for 1 bit bitfield. Use US_CR_USART_RSTRX_Msk instead */
+#define US_CR_USART_RSTTX_Pos               3                                              /**< (US_CR) Reset Transmitter Position */
+#define US_CR_USART_RSTTX_Msk               (_U_(0x1) << US_CR_USART_RSTTX_Pos)            /**< (US_CR) Reset Transmitter Mask */
+#define US_CR_USART_RSTTX                   US_CR_USART_RSTTX_Msk                          /**< \deprecated Old style mask definition for 1 bit bitfield. Use US_CR_USART_RSTTX_Msk instead */
+#define US_CR_USART_RXEN_Pos                4                                              /**< (US_CR) Receiver Enable Position */
+#define US_CR_USART_RXEN_Msk                (_U_(0x1) << US_CR_USART_RXEN_Pos)             /**< (US_CR) Receiver Enable Mask */
+#define US_CR_USART_RXEN                    US_CR_USART_RXEN_Msk                           /**< \deprecated Old style mask definition for 1 bit bitfield. Use US_CR_USART_RXEN_Msk instead */
+#define US_CR_USART_RXDIS_Pos               5                                              /**< (US_CR) Receiver Disable Position */
+#define US_CR_USART_RXDIS_Msk               (_U_(0x1) << US_CR_USART_RXDIS_Pos)            /**< (US_CR) Receiver Disable Mask */
+#define US_CR_USART_RXDIS                   US_CR_USART_RXDIS_Msk                          /**< \deprecated Old style mask definition for 1 bit bitfield. Use US_CR_USART_RXDIS_Msk instead */
+#define US_CR_USART_TXEN_Pos                6                                              /**< (US_CR) Transmitter Enable Position */
+#define US_CR_USART_TXEN_Msk                (_U_(0x1) << US_CR_USART_TXEN_Pos)             /**< (US_CR) Transmitter Enable Mask */
+#define US_CR_USART_TXEN                    US_CR_USART_TXEN_Msk                           /**< \deprecated Old style mask definition for 1 bit bitfield. Use US_CR_USART_TXEN_Msk instead */
+#define US_CR_USART_TXDIS_Pos               7                                              /**< (US_CR) Transmitter Disable Position */
+#define US_CR_USART_TXDIS_Msk               (_U_(0x1) << US_CR_USART_TXDIS_Pos)            /**< (US_CR) Transmitter Disable Mask */
+#define US_CR_USART_TXDIS                   US_CR_USART_TXDIS_Msk                          /**< \deprecated Old style mask definition for 1 bit bitfield. Use US_CR_USART_TXDIS_Msk instead */
+#define US_CR_USART_RSTSTA_Pos              8                                              /**< (US_CR) Reset Status Bits Position */
+#define US_CR_USART_RSTSTA_Msk              (_U_(0x1) << US_CR_USART_RSTSTA_Pos)           /**< (US_CR) Reset Status Bits Mask */
+#define US_CR_USART_RSTSTA                  US_CR_USART_RSTSTA_Msk                         /**< \deprecated Old style mask definition for 1 bit bitfield. Use US_CR_USART_RSTSTA_Msk instead */
 #define US_CR_USART_STTBRK_Pos              9                                              /**< (US_CR) Start Break Position */
 #define US_CR_USART_STTBRK_Msk              (_U_(0x1) << US_CR_USART_STTBRK_Pos)           /**< (US_CR) Start Break Mask */
 #define US_CR_USART_STTBRK                  US_CR_USART_STTBRK_Msk                         /**< \deprecated Old style mask definition for 1 bit bitfield. Use US_CR_USART_STTBRK_Msk instead */
@@ -152,51 +164,87 @@ typedef union {
 #define US_CR_USART_RTSDIS_Pos              19                                             /**< (US_CR) Request to Send Disable Position */
 #define US_CR_USART_RTSDIS_Msk              (_U_(0x1) << US_CR_USART_RTSDIS_Pos)           /**< (US_CR) Request to Send Disable Mask */
 #define US_CR_USART_RTSDIS                  US_CR_USART_RTSDIS_Msk                         /**< \deprecated Old style mask definition for 1 bit bitfield. Use US_CR_USART_RTSDIS_Msk instead */
-#define US_CR_USART_MASK                    _U_(0xFFE00)                                   /**< \deprecated (US_CR_USART) Register MASK  (Use US_CR_USART_Msk instead)  */
-#define US_CR_USART_Msk                     _U_(0xFFE00)                                   /**< (US_CR_USART) Register Mask  */
+#define US_CR_USART_MASK                    _U_(0xFFFFC)                                   /**< \deprecated (US_CR_USART) Register MASK  (Use US_CR_USART_Msk instead)  */
+#define US_CR_USART_Msk                     _U_(0xFFFFC)                                   /**< (US_CR_USART) Register Mask  */
 
 /* SPI mode */
+#define US_CR_SPI_RSTRX_Pos                 2                                              /**< (US_CR) Reset Receiver Position */
+#define US_CR_SPI_RSTRX_Msk                 (_U_(0x1) << US_CR_SPI_RSTRX_Pos)              /**< (US_CR) Reset Receiver Mask */
+#define US_CR_SPI_RSTRX                     US_CR_SPI_RSTRX_Msk                            /**< \deprecated Old style mask definition for 1 bit bitfield. Use US_CR_SPI_RSTRX_Msk instead */
+#define US_CR_SPI_RSTTX_Pos                 3                                              /**< (US_CR) Reset Transmitter Position */
+#define US_CR_SPI_RSTTX_Msk                 (_U_(0x1) << US_CR_SPI_RSTTX_Pos)              /**< (US_CR) Reset Transmitter Mask */
+#define US_CR_SPI_RSTTX                     US_CR_SPI_RSTTX_Msk                            /**< \deprecated Old style mask definition for 1 bit bitfield. Use US_CR_SPI_RSTTX_Msk instead */
+#define US_CR_SPI_RXEN_Pos                  4                                              /**< (US_CR) Receiver Enable Position */
+#define US_CR_SPI_RXEN_Msk                  (_U_(0x1) << US_CR_SPI_RXEN_Pos)               /**< (US_CR) Receiver Enable Mask */
+#define US_CR_SPI_RXEN                      US_CR_SPI_RXEN_Msk                             /**< \deprecated Old style mask definition for 1 bit bitfield. Use US_CR_SPI_RXEN_Msk instead */
+#define US_CR_SPI_RXDIS_Pos                 5                                              /**< (US_CR) Receiver Disable Position */
+#define US_CR_SPI_RXDIS_Msk                 (_U_(0x1) << US_CR_SPI_RXDIS_Pos)              /**< (US_CR) Receiver Disable Mask */
+#define US_CR_SPI_RXDIS                     US_CR_SPI_RXDIS_Msk                            /**< \deprecated Old style mask definition for 1 bit bitfield. Use US_CR_SPI_RXDIS_Msk instead */
+#define US_CR_SPI_TXEN_Pos                  6                                              /**< (US_CR) Transmitter Enable Position */
+#define US_CR_SPI_TXEN_Msk                  (_U_(0x1) << US_CR_SPI_TXEN_Pos)               /**< (US_CR) Transmitter Enable Mask */
+#define US_CR_SPI_TXEN                      US_CR_SPI_TXEN_Msk                             /**< \deprecated Old style mask definition for 1 bit bitfield. Use US_CR_SPI_TXEN_Msk instead */
+#define US_CR_SPI_TXDIS_Pos                 7                                              /**< (US_CR) Transmitter Disable Position */
+#define US_CR_SPI_TXDIS_Msk                 (_U_(0x1) << US_CR_SPI_TXDIS_Pos)              /**< (US_CR) Transmitter Disable Mask */
+#define US_CR_SPI_TXDIS                     US_CR_SPI_TXDIS_Msk                            /**< \deprecated Old style mask definition for 1 bit bitfield. Use US_CR_SPI_TXDIS_Msk instead */
+#define US_CR_SPI_RSTSTA_Pos                8                                              /**< (US_CR) Reset Status Bits Position */
+#define US_CR_SPI_RSTSTA_Msk                (_U_(0x1) << US_CR_SPI_RSTSTA_Pos)             /**< (US_CR) Reset Status Bits Mask */
+#define US_CR_SPI_RSTSTA                    US_CR_SPI_RSTSTA_Msk                           /**< \deprecated Old style mask definition for 1 bit bitfield. Use US_CR_SPI_RSTSTA_Msk instead */
 #define US_CR_SPI_FCS_Pos                   18                                             /**< (US_CR) Force SPI Chip Select Position */
 #define US_CR_SPI_FCS_Msk                   (_U_(0x1) << US_CR_SPI_FCS_Pos)                /**< (US_CR) Force SPI Chip Select Mask */
 #define US_CR_SPI_FCS                       US_CR_SPI_FCS_Msk                              /**< \deprecated Old style mask definition for 1 bit bitfield. Use US_CR_SPI_FCS_Msk instead */
 #define US_CR_SPI_RCS_Pos                   19                                             /**< (US_CR) Release SPI Chip Select Position */
 #define US_CR_SPI_RCS_Msk                   (_U_(0x1) << US_CR_SPI_RCS_Pos)                /**< (US_CR) Release SPI Chip Select Mask */
 #define US_CR_SPI_RCS                       US_CR_SPI_RCS_Msk                              /**< \deprecated Old style mask definition for 1 bit bitfield. Use US_CR_SPI_RCS_Msk instead */
-#define US_CR_SPI_MASK                      _U_(0xC0000)                                   /**< \deprecated (US_CR_SPI) Register MASK  (Use US_CR_SPI_Msk instead)  */
-#define US_CR_SPI_Msk                       _U_(0xC0000)                                   /**< (US_CR_SPI) Register Mask  */
+#define US_CR_SPI_MASK                      _U_(0xC01FC)                                   /**< \deprecated (US_CR_SPI) Register MASK  (Use US_CR_SPI_Msk instead)  */
+#define US_CR_SPI_Msk                       _U_(0xC01FC)                                   /**< (US_CR_SPI) Register Mask  */
 
 /* LIN mode */
+#define US_CR_LIN_RSTRX_Pos                 2                                              /**< (US_CR) Reset Receiver Position */
+#define US_CR_LIN_RSTRX_Msk                 (_U_(0x1) << US_CR_LIN_RSTRX_Pos)              /**< (US_CR) Reset Receiver Mask */
+#define US_CR_LIN_RSTRX                     US_CR_LIN_RSTRX_Msk                            /**< \deprecated Old style mask definition for 1 bit bitfield. Use US_CR_LIN_RSTRX_Msk instead */
+#define US_CR_LIN_RSTTX_Pos                 3                                              /**< (US_CR) Reset Transmitter Position */
+#define US_CR_LIN_RSTTX_Msk                 (_U_(0x1) << US_CR_LIN_RSTTX_Pos)              /**< (US_CR) Reset Transmitter Mask */
+#define US_CR_LIN_RSTTX                     US_CR_LIN_RSTTX_Msk                            /**< \deprecated Old style mask definition for 1 bit bitfield. Use US_CR_LIN_RSTTX_Msk instead */
+#define US_CR_LIN_RXEN_Pos                  4                                              /**< (US_CR) Receiver Enable Position */
+#define US_CR_LIN_RXEN_Msk                  (_U_(0x1) << US_CR_LIN_RXEN_Pos)               /**< (US_CR) Receiver Enable Mask */
+#define US_CR_LIN_RXEN                      US_CR_LIN_RXEN_Msk                             /**< \deprecated Old style mask definition for 1 bit bitfield. Use US_CR_LIN_RXEN_Msk instead */
+#define US_CR_LIN_RXDIS_Pos                 5                                              /**< (US_CR) Receiver Disable Position */
+#define US_CR_LIN_RXDIS_Msk                 (_U_(0x1) << US_CR_LIN_RXDIS_Pos)              /**< (US_CR) Receiver Disable Mask */
+#define US_CR_LIN_RXDIS                     US_CR_LIN_RXDIS_Msk                            /**< \deprecated Old style mask definition for 1 bit bitfield. Use US_CR_LIN_RXDIS_Msk instead */
+#define US_CR_LIN_TXEN_Pos                  6                                              /**< (US_CR) Transmitter Enable Position */
+#define US_CR_LIN_TXEN_Msk                  (_U_(0x1) << US_CR_LIN_TXEN_Pos)               /**< (US_CR) Transmitter Enable Mask */
+#define US_CR_LIN_TXEN                      US_CR_LIN_TXEN_Msk                             /**< \deprecated Old style mask definition for 1 bit bitfield. Use US_CR_LIN_TXEN_Msk instead */
+#define US_CR_LIN_TXDIS_Pos                 7                                              /**< (US_CR) Transmitter Disable Position */
+#define US_CR_LIN_TXDIS_Msk                 (_U_(0x1) << US_CR_LIN_TXDIS_Pos)              /**< (US_CR) Transmitter Disable Mask */
+#define US_CR_LIN_TXDIS                     US_CR_LIN_TXDIS_Msk                            /**< \deprecated Old style mask definition for 1 bit bitfield. Use US_CR_LIN_TXDIS_Msk instead */
+#define US_CR_LIN_RSTSTA_Pos                8                                              /**< (US_CR) Reset Status Bits Position */
+#define US_CR_LIN_RSTSTA_Msk                (_U_(0x1) << US_CR_LIN_RSTSTA_Pos)             /**< (US_CR) Reset Status Bits Mask */
+#define US_CR_LIN_RSTSTA                    US_CR_LIN_RSTSTA_Msk                           /**< \deprecated Old style mask definition for 1 bit bitfield. Use US_CR_LIN_RSTSTA_Msk instead */
 #define US_CR_LIN_LINABT_Pos                20                                             /**< (US_CR) Abort LIN Transmission Position */
 #define US_CR_LIN_LINABT_Msk                (_U_(0x1) << US_CR_LIN_LINABT_Pos)             /**< (US_CR) Abort LIN Transmission Mask */
 #define US_CR_LIN_LINABT                    US_CR_LIN_LINABT_Msk                           /**< \deprecated Old style mask definition for 1 bit bitfield. Use US_CR_LIN_LINABT_Msk instead */
 #define US_CR_LIN_LINWKUP_Pos               21                                             /**< (US_CR) Send LIN Wakeup Signal Position */
 #define US_CR_LIN_LINWKUP_Msk               (_U_(0x1) << US_CR_LIN_LINWKUP_Pos)            /**< (US_CR) Send LIN Wakeup Signal Mask */
 #define US_CR_LIN_LINWKUP                   US_CR_LIN_LINWKUP_Msk                          /**< \deprecated Old style mask definition for 1 bit bitfield. Use US_CR_LIN_LINWKUP_Msk instead */
-#define US_CR_LIN_MASK                      _U_(0x300000)                                  /**< \deprecated (US_CR_LIN) Register MASK  (Use US_CR_LIN_Msk instead)  */
-#define US_CR_LIN_Msk                       _U_(0x300000)                                  /**< (US_CR_LIN) Register Mask  */
+#define US_CR_LIN_MASK                      _U_(0x3001FC)                                  /**< \deprecated (US_CR_LIN) Register MASK  (Use US_CR_LIN_Msk instead)  */
+#define US_CR_LIN_Msk                       _U_(0x3001FC)                                  /**< (US_CR_LIN) Register Mask  */
 
 
 /* -------- US_MR : (USART Offset: 0x04) (R/W 32) Mode Register -------- */
 #if !(defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__))
 #if COMPONENT_TYPEDEF_STYLE == 'N'
 typedef union {
-  struct {
+  struct { // USART mode
     uint32_t USART_MODE:4;              /**< bit:   0..3  USART Mode of Operation                  */
     uint32_t USCLKS:2;                  /**< bit:   4..5  Clock Selection                          */
     uint32_t CHRL:2;                    /**< bit:   6..7  Character Length                         */
-    uint32_t :10;                       /**< bit:  8..17  Reserved */
-    uint32_t CLKO:1;                    /**< bit:     18  Clock Output Select                      */
-    uint32_t :13;                       /**< bit: 19..31  Reserved */
-  } bit;                                /**< Structure used for bit  access */
-  struct { // USART mode
-    uint32_t :8;                        /**< bit:   0..7  Reserved */
     uint32_t SYNC:1;                    /**< bit:      8  Synchronous Mode Select                  */
     uint32_t PAR:3;                     /**< bit:  9..11  Parity Type                              */
     uint32_t NBSTOP:2;                  /**< bit: 12..13  Number of Stop Bits                      */
     uint32_t CHMODE:2;                  /**< bit: 14..15  Channel Mode                             */
     uint32_t MSBF:1;                    /**< bit:     16  Bit Order                                */
     uint32_t MODE9:1;                   /**< bit:     17  9-bit Character Length                   */
-    uint32_t :1;                        /**< bit:     18  Reserved */
+    uint32_t CLKO:1;                    /**< bit:     18  Clock Output Select                      */
     uint32_t OVER:1;                    /**< bit:     19  Oversampling Mode                        */
     uint32_t INACK:1;                   /**< bit:     20  Inhibit Non Acknowledge                  */
     uint32_t DSNACK:1;                  /**< bit:     21  Disable Successive NACK                  */
@@ -210,11 +258,15 @@ typedef union {
     uint32_t ONEBIT:1;                  /**< bit:     31  Start Frame Delimiter Selector           */
   } USART;                                /**< Structure used for USART mode access */
   struct { // SPI mode
-    uint32_t :8;                        /**< bit:   0..7  Reserved */
+    uint32_t USART_MODE:4;              /**< bit:   0..3  USART Mode of Operation                  */
+    uint32_t USCLKS:2;                  /**< bit:   4..5  Clock Selection                          */
+    uint32_t CHRL:2;                    /**< bit:   6..7  Character Length                         */
     uint32_t CPHA:1;                    /**< bit:      8  SPI Clock Phase                          */
     uint32_t :7;                        /**< bit:  9..15  Reserved */
     uint32_t CPOL:1;                    /**< bit:     16  SPI Clock Polarity                       */
-    uint32_t :3;                        /**< bit: 17..19  Reserved */
+    uint32_t :1;                        /**< bit:     17  Reserved */
+    uint32_t CLKO:1;                    /**< bit:     18  Clock Output Select                      */
+    uint32_t :1;                        /**< bit:     19  Reserved */
     uint32_t WRDBT:1;                   /**< bit:     20  Wait Read Data Before Transfer           */
     uint32_t :11;                       /**< bit: 21..31  Reserved */
   } SPI;                                /**< Structure used for SPI mode access */
@@ -225,21 +277,25 @@ typedef union {
 
 #define US_MR_OFFSET                        (0x04)                                        /**<  (US_MR) Mode Register  Offset */
 
+#define US_MR_MASK                          _U_(0x00)                                      /**< \deprecated (US_MR) Register MASK  (Use US_MR_Msk instead)  */
+#define US_MR_Msk                           _U_(0x00)                                      /**< (US_MR) Register Mask  */
+
+/* USART mode */
 #define US_MR_USART_MODE_Pos                0                                              /**< (US_MR) USART Mode of Operation Position */
 #define US_MR_USART_MODE_Msk                (_U_(0xF) << US_MR_USART_MODE_Pos)             /**< (US_MR) USART Mode of Operation Mask */
 #define US_MR_USART_MODE(value)             (US_MR_USART_MODE_Msk & ((value) << US_MR_USART_MODE_Pos))
-#define   US_MR_USART_MODE_NORMAL_Val       _U_(0x0)                                       /**< (US_MR) Normal mode  */
-#define   US_MR_USART_MODE_RS485_Val        _U_(0x1)                                       /**< (US_MR) RS485  */
-#define   US_MR_USART_MODE_HW_HANDSHAKING_Val _U_(0x2)                                       /**< (US_MR) Hardware handshaking  */
-#define   US_MR_USART_MODE_MODEM_Val        _U_(0x3)                                       /**< (US_MR) Modem  */
-#define   US_MR_USART_MODE_IS07816_T_0_Val  _U_(0x4)                                       /**< (US_MR) IS07816 Protocol: T = 0  */
-#define   US_MR_USART_MODE_IS07816_T_1_Val  _U_(0x6)                                       /**< (US_MR) IS07816 Protocol: T = 1  */
-#define   US_MR_USART_MODE_IRDA_Val         _U_(0x8)                                       /**< (US_MR) IrDA  */
-#define   US_MR_USART_MODE_LON_Val          _U_(0x9)                                       /**< (US_MR) LON  */
-#define   US_MR_USART_MODE_LIN_MASTER_Val   _U_(0xA)                                       /**< (US_MR) LIN Master mode  */
-#define   US_MR_USART_MODE_LIN_SLAVE_Val    _U_(0xB)                                       /**< (US_MR) LIN Slave mode  */
-#define   US_MR_USART_MODE_SPI_MASTER_Val   _U_(0xE)                                       /**< (US_MR) SPI Master mode (CLKO must be written to 1 and USCLKS = 0, 1 or 2)  */
-#define   US_MR_USART_MODE_SPI_SLAVE_Val    _U_(0xF)                                       /**< (US_MR) SPI Slave mode  */
+#define   US_MR_USART_MODE_NORMAL_Val       _U_(0x0)                                       /**< (US_MR) USART Normal mode  */
+#define   US_MR_USART_MODE_RS485_Val        _U_(0x1)                                       /**< (US_MR) USART RS485  */
+#define   US_MR_USART_MODE_HW_HANDSHAKING_Val _U_(0x2)                                       /**< (US_MR) USART Hardware handshaking  */
+#define   US_MR_USART_MODE_MODEM_Val        _U_(0x3)                                       /**< (US_MR) USART Modem  */
+#define   US_MR_USART_MODE_IS07816_T_0_Val  _U_(0x4)                                       /**< (US_MR) USART IS07816 Protocol: T = 0  */
+#define   US_MR_USART_MODE_IS07816_T_1_Val  _U_(0x6)                                       /**< (US_MR) USART IS07816 Protocol: T = 1  */
+#define   US_MR_USART_MODE_IRDA_Val         _U_(0x8)                                       /**< (US_MR) USART IrDA  */
+#define   US_MR_USART_MODE_LON_Val          _U_(0x9)                                       /**< (US_MR) USART LON  */
+#define   US_MR_USART_MODE_LIN_MASTER_Val   _U_(0xA)                                       /**< (US_MR) USART LIN Master mode  */
+#define   US_MR_USART_MODE_LIN_SLAVE_Val    _U_(0xB)                                       /**< (US_MR) USART LIN Slave mode  */
+#define   US_MR_USART_MODE_SPI_MASTER_Val   _U_(0xE)                                       /**< (US_MR) USART SPI Master mode (CLKO must be written to 1 and USCLKS = 0, 1 or 2)  */
+#define   US_MR_USART_MODE_SPI_SLAVE_Val    _U_(0xF)                                       /**< (US_MR) USART SPI Slave mode  */
 #define US_MR_USART_MODE_NORMAL             (US_MR_USART_MODE_NORMAL_Val << US_MR_USART_MODE_Pos)  /**< (US_MR) Normal mode Position  */
 #define US_MR_USART_MODE_RS485              (US_MR_USART_MODE_RS485_Val << US_MR_USART_MODE_Pos)  /**< (US_MR) RS485 Position  */
 #define US_MR_USART_MODE_HW_HANDSHAKING     (US_MR_USART_MODE_HW_HANDSHAKING_Val << US_MR_USART_MODE_Pos)  /**< (US_MR) Hardware handshaking Position  */
@@ -252,35 +308,28 @@ typedef union {
 #define US_MR_USART_MODE_LIN_SLAVE          (US_MR_USART_MODE_LIN_SLAVE_Val << US_MR_USART_MODE_Pos)  /**< (US_MR) LIN Slave mode Position  */
 #define US_MR_USART_MODE_SPI_MASTER         (US_MR_USART_MODE_SPI_MASTER_Val << US_MR_USART_MODE_Pos)  /**< (US_MR) SPI Master mode (CLKO must be written to 1 and USCLKS = 0, 1 or 2) Position  */
 #define US_MR_USART_MODE_SPI_SLAVE          (US_MR_USART_MODE_SPI_SLAVE_Val << US_MR_USART_MODE_Pos)  /**< (US_MR) SPI Slave mode Position  */
-#define US_MR_USCLKS_Pos                    4                                              /**< (US_MR) Clock Selection Position */
-#define US_MR_USCLKS_Msk                    (_U_(0x3) << US_MR_USCLKS_Pos)                 /**< (US_MR) Clock Selection Mask */
-#define US_MR_USCLKS(value)                 (US_MR_USCLKS_Msk & ((value) << US_MR_USCLKS_Pos))
-#define   US_MR_USCLKS_MCK_Val              _U_(0x0)                                       /**< (US_MR) Peripheral clock is selected  */
-#define   US_MR_USCLKS_DIV_Val              _U_(0x1)                                       /**< (US_MR) Peripheral clock divided (DIV = 8) is selected  */
-#define   US_MR_USCLKS_PCK_Val              _U_(0x2)                                       /**< (US_MR) PMC programmable clock (PCK) is selected. If the SCK pin is driven (CLKO = 1), the CD field must be greater than 1.  */
-#define   US_MR_USCLKS_SCK_Val              _U_(0x3)                                       /**< (US_MR) Serial clock (SCK) is selected  */
-#define US_MR_USCLKS_MCK                    (US_MR_USCLKS_MCK_Val << US_MR_USCLKS_Pos)     /**< (US_MR) Peripheral clock is selected Position  */
-#define US_MR_USCLKS_DIV                    (US_MR_USCLKS_DIV_Val << US_MR_USCLKS_Pos)     /**< (US_MR) Peripheral clock divided (DIV = 8) is selected Position  */
-#define US_MR_USCLKS_PCK                    (US_MR_USCLKS_PCK_Val << US_MR_USCLKS_Pos)     /**< (US_MR) PMC programmable clock (PCK) is selected. If the SCK pin is driven (CLKO = 1), the CD field must be greater than 1. Position  */
-#define US_MR_USCLKS_SCK                    (US_MR_USCLKS_SCK_Val << US_MR_USCLKS_Pos)     /**< (US_MR) Serial clock (SCK) is selected Position  */
-#define US_MR_CHRL_Pos                      6                                              /**< (US_MR) Character Length Position */
-#define US_MR_CHRL_Msk                      (_U_(0x3) << US_MR_CHRL_Pos)                   /**< (US_MR) Character Length Mask */
-#define US_MR_CHRL(value)                   (US_MR_CHRL_Msk & ((value) << US_MR_CHRL_Pos))
-#define   US_MR_CHRL_5_BIT_Val              _U_(0x0)                                       /**< (US_MR) Character length is 5 bits  */
-#define   US_MR_CHRL_6_BIT_Val              _U_(0x1)                                       /**< (US_MR) Character length is 6 bits  */
-#define   US_MR_CHRL_7_BIT_Val              _U_(0x2)                                       /**< (US_MR) Character length is 7 bits  */
-#define   US_MR_CHRL_8_BIT_Val              _U_(0x3)                                       /**< (US_MR) Character length is 8 bits  */
-#define US_MR_CHRL_5_BIT                    (US_MR_CHRL_5_BIT_Val << US_MR_CHRL_Pos)       /**< (US_MR) Character length is 5 bits Position  */
-#define US_MR_CHRL_6_BIT                    (US_MR_CHRL_6_BIT_Val << US_MR_CHRL_Pos)       /**< (US_MR) Character length is 6 bits Position  */
-#define US_MR_CHRL_7_BIT                    (US_MR_CHRL_7_BIT_Val << US_MR_CHRL_Pos)       /**< (US_MR) Character length is 7 bits Position  */
-#define US_MR_CHRL_8_BIT                    (US_MR_CHRL_8_BIT_Val << US_MR_CHRL_Pos)       /**< (US_MR) Character length is 8 bits Position  */
-#define US_MR_CLKO_Pos                      18                                             /**< (US_MR) Clock Output Select Position */
-#define US_MR_CLKO_Msk                      (_U_(0x1) << US_MR_CLKO_Pos)                   /**< (US_MR) Clock Output Select Mask */
-#define US_MR_CLKO                          US_MR_CLKO_Msk                                 /**< \deprecated Old style mask definition for 1 bit bitfield. Use US_MR_CLKO_Msk instead */
-#define US_MR_MASK                          _U_(0x400FF)                                   /**< \deprecated (US_MR) Register MASK  (Use US_MR_Msk instead)  */
-#define US_MR_Msk                           _U_(0x400FF)                                   /**< (US_MR) Register Mask  */
-
-/* USART mode */
+#define US_MR_USART_USCLKS_Pos              4                                              /**< (US_MR) Clock Selection Position */
+#define US_MR_USART_USCLKS_Msk              (_U_(0x3) << US_MR_USART_USCLKS_Pos)           /**< (US_MR) Clock Selection Mask */
+#define US_MR_USART_USCLKS(value)           (US_MR_USART_USCLKS_Msk & ((value) << US_MR_USART_USCLKS_Pos))
+#define   US_MR_USART_USCLKS_MCK_Val        _U_(0x0)                                       /**< (US_MR) USART Peripheral clock is selected  */
+#define   US_MR_USART_USCLKS_DIV_Val        _U_(0x1)                                       /**< (US_MR) USART Peripheral clock divided (DIV = 8) is selected  */
+#define   US_MR_USART_USCLKS_PCK_Val        _U_(0x2)                                       /**< (US_MR) USART PMC programmable clock (PCK) is selected. If the SCK pin is driven (CLKO = 1), the CD field must be greater than 1.  */
+#define   US_MR_USART_USCLKS_SCK_Val        _U_(0x3)                                       /**< (US_MR) USART Serial clock (SCK) is selected  */
+#define US_MR_USART_USCLKS_MCK              (US_MR_USART_USCLKS_MCK_Val << US_MR_USART_USCLKS_Pos)  /**< (US_MR) Peripheral clock is selected Position  */
+#define US_MR_USART_USCLKS_DIV              (US_MR_USART_USCLKS_DIV_Val << US_MR_USART_USCLKS_Pos)  /**< (US_MR) Peripheral clock divided (DIV = 8) is selected Position  */
+#define US_MR_USART_USCLKS_PCK              (US_MR_USART_USCLKS_PCK_Val << US_MR_USART_USCLKS_Pos)  /**< (US_MR) PMC programmable clock (PCK) is selected. If the SCK pin is driven (CLKO = 1), the CD field must be greater than 1. Position  */
+#define US_MR_USART_USCLKS_SCK              (US_MR_USART_USCLKS_SCK_Val << US_MR_USART_USCLKS_Pos)  /**< (US_MR) Serial clock (SCK) is selected Position  */
+#define US_MR_USART_CHRL_Pos                6                                              /**< (US_MR) Character Length Position */
+#define US_MR_USART_CHRL_Msk                (_U_(0x3) << US_MR_USART_CHRL_Pos)             /**< (US_MR) Character Length Mask */
+#define US_MR_USART_CHRL(value)             (US_MR_USART_CHRL_Msk & ((value) << US_MR_USART_CHRL_Pos))
+#define   US_MR_USART_CHRL_5_BIT_Val        _U_(0x0)                                       /**< (US_MR) USART Character length is 5 bits  */
+#define   US_MR_USART_CHRL_6_BIT_Val        _U_(0x1)                                       /**< (US_MR) USART Character length is 6 bits  */
+#define   US_MR_USART_CHRL_7_BIT_Val        _U_(0x2)                                       /**< (US_MR) USART Character length is 7 bits  */
+#define   US_MR_USART_CHRL_8_BIT_Val        _U_(0x3)                                       /**< (US_MR) USART Character length is 8 bits  */
+#define US_MR_USART_CHRL_5_BIT              (US_MR_USART_CHRL_5_BIT_Val << US_MR_USART_CHRL_Pos)  /**< (US_MR) Character length is 5 bits Position  */
+#define US_MR_USART_CHRL_6_BIT              (US_MR_USART_CHRL_6_BIT_Val << US_MR_USART_CHRL_Pos)  /**< (US_MR) Character length is 6 bits Position  */
+#define US_MR_USART_CHRL_7_BIT              (US_MR_USART_CHRL_7_BIT_Val << US_MR_USART_CHRL_Pos)  /**< (US_MR) Character length is 7 bits Position  */
+#define US_MR_USART_CHRL_8_BIT              (US_MR_USART_CHRL_8_BIT_Val << US_MR_USART_CHRL_Pos)  /**< (US_MR) Character length is 8 bits Position  */
 #define US_MR_USART_SYNC_Pos                8                                              /**< (US_MR) Synchronous Mode Select Position */
 #define US_MR_USART_SYNC_Msk                (_U_(0x1) << US_MR_USART_SYNC_Pos)             /**< (US_MR) Synchronous Mode Select Mask */
 #define US_MR_USART_SYNC                    US_MR_USART_SYNC_Msk                           /**< \deprecated Old style mask definition for 1 bit bitfield. Use US_MR_USART_SYNC_Msk instead */
@@ -325,6 +374,9 @@ typedef union {
 #define US_MR_USART_MODE9_Pos               17                                             /**< (US_MR) 9-bit Character Length Position */
 #define US_MR_USART_MODE9_Msk               (_U_(0x1) << US_MR_USART_MODE9_Pos)            /**< (US_MR) 9-bit Character Length Mask */
 #define US_MR_USART_MODE9                   US_MR_USART_MODE9_Msk                          /**< \deprecated Old style mask definition for 1 bit bitfield. Use US_MR_USART_MODE9_Msk instead */
+#define US_MR_USART_CLKO_Pos                18                                             /**< (US_MR) Clock Output Select Position */
+#define US_MR_USART_CLKO_Msk                (_U_(0x1) << US_MR_USART_CLKO_Pos)             /**< (US_MR) Clock Output Select Mask */
+#define US_MR_USART_CLKO                    US_MR_USART_CLKO_Msk                           /**< \deprecated Old style mask definition for 1 bit bitfield. Use US_MR_USART_CLKO_Msk instead */
 #define US_MR_USART_OVER_Pos                19                                             /**< (US_MR) Oversampling Mode Position */
 #define US_MR_USART_OVER_Msk                (_U_(0x1) << US_MR_USART_OVER_Pos)             /**< (US_MR) Oversampling Mode Mask */
 #define US_MR_USART_OVER                    US_MR_USART_OVER_Msk                           /**< \deprecated Old style mask definition for 1 bit bitfield. Use US_MR_USART_OVER_Msk instead */
@@ -355,40 +407,89 @@ typedef union {
 #define US_MR_USART_ONEBIT_Pos              31                                             /**< (US_MR) Start Frame Delimiter Selector Position */
 #define US_MR_USART_ONEBIT_Msk              (_U_(0x1) << US_MR_USART_ONEBIT_Pos)           /**< (US_MR) Start Frame Delimiter Selector Mask */
 #define US_MR_USART_ONEBIT                  US_MR_USART_ONEBIT_Msk                         /**< \deprecated Old style mask definition for 1 bit bitfield. Use US_MR_USART_ONEBIT_Msk instead */
-#define US_MR_USART_MASK                    _U_(0xF7FBFF00)                                /**< \deprecated (US_MR_USART) Register MASK  (Use US_MR_USART_Msk instead)  */
-#define US_MR_USART_Msk                     _U_(0xF7FBFF00)                                /**< (US_MR_USART) Register Mask  */
+#define US_MR_USART_MASK                    _U_(0xF7FFFFFF)                                /**< \deprecated (US_MR_USART) Register MASK  (Use US_MR_USART_Msk instead)  */
+#define US_MR_USART_Msk                     _U_(0xF7FFFFFF)                                /**< (US_MR_USART) Register Mask  */
 
 /* SPI mode */
+#define US_MR_SPI_USART_MODE_Pos            0                                              /**< (US_MR) USART Mode of Operation Position */
+#define US_MR_SPI_USART_MODE_Msk            (_U_(0xF) << US_MR_SPI_USART_MODE_Pos)         /**< (US_MR) USART Mode of Operation Mask */
+#define US_MR_SPI_USART_MODE(value)         (US_MR_SPI_USART_MODE_Msk & ((value) << US_MR_SPI_USART_MODE_Pos))
+#define   US_MR_SPI_USART_MODE_NORMAL_Val   _U_(0x0)                                       /**< (US_MR) SPI Normal mode  */
+#define   US_MR_SPI_USART_MODE_RS485_Val    _U_(0x1)                                       /**< (US_MR) SPI RS485  */
+#define   US_MR_SPI_USART_MODE_HW_HANDSHAKING_Val _U_(0x2)                                       /**< (US_MR) SPI Hardware handshaking  */
+#define   US_MR_SPI_USART_MODE_MODEM_Val    _U_(0x3)                                       /**< (US_MR) SPI Modem  */
+#define   US_MR_SPI_USART_MODE_IS07816_T_0_Val _U_(0x4)                                       /**< (US_MR) SPI IS07816 Protocol: T = 0  */
+#define   US_MR_SPI_USART_MODE_IS07816_T_1_Val _U_(0x6)                                       /**< (US_MR) SPI IS07816 Protocol: T = 1  */
+#define   US_MR_SPI_USART_MODE_IRDA_Val     _U_(0x8)                                       /**< (US_MR) SPI IrDA  */
+#define   US_MR_SPI_USART_MODE_LON_Val      _U_(0x9)                                       /**< (US_MR) SPI LON  */
+#define   US_MR_SPI_USART_MODE_LIN_MASTER_Val _U_(0xA)                                       /**< (US_MR) SPI LIN Master mode  */
+#define   US_MR_SPI_USART_MODE_LIN_SLAVE_Val _U_(0xB)                                       /**< (US_MR) SPI LIN Slave mode  */
+#define   US_MR_SPI_USART_MODE_SPI_MASTER_Val _U_(0xE)                                       /**< (US_MR) SPI SPI Master mode (CLKO must be written to 1 and USCLKS = 0, 1 or 2)  */
+#define   US_MR_SPI_USART_MODE_SPI_SLAVE_Val _U_(0xF)                                       /**< (US_MR) SPI SPI Slave mode  */
+#define US_MR_SPI_USART_MODE_NORMAL         (US_MR_SPI_USART_MODE_NORMAL_Val << US_MR_SPI_USART_MODE_Pos)  /**< (US_MR) Normal mode Position  */
+#define US_MR_SPI_USART_MODE_RS485          (US_MR_SPI_USART_MODE_RS485_Val << US_MR_SPI_USART_MODE_Pos)  /**< (US_MR) RS485 Position  */
+#define US_MR_SPI_USART_MODE_HW_HANDSHAKING (US_MR_SPI_USART_MODE_HW_HANDSHAKING_Val << US_MR_SPI_USART_MODE_Pos)  /**< (US_MR) Hardware handshaking Position  */
+#define US_MR_SPI_USART_MODE_MODEM          (US_MR_SPI_USART_MODE_MODEM_Val << US_MR_SPI_USART_MODE_Pos)  /**< (US_MR) Modem Position  */
+#define US_MR_SPI_USART_MODE_IS07816_T_0    (US_MR_SPI_USART_MODE_IS07816_T_0_Val << US_MR_SPI_USART_MODE_Pos)  /**< (US_MR) IS07816 Protocol: T = 0 Position  */
+#define US_MR_SPI_USART_MODE_IS07816_T_1    (US_MR_SPI_USART_MODE_IS07816_T_1_Val << US_MR_SPI_USART_MODE_Pos)  /**< (US_MR) IS07816 Protocol: T = 1 Position  */
+#define US_MR_SPI_USART_MODE_IRDA           (US_MR_SPI_USART_MODE_IRDA_Val << US_MR_SPI_USART_MODE_Pos)  /**< (US_MR) IrDA Position  */
+#define US_MR_SPI_USART_MODE_LON            (US_MR_SPI_USART_MODE_LON_Val << US_MR_SPI_USART_MODE_Pos)  /**< (US_MR) LON Position  */
+#define US_MR_SPI_USART_MODE_LIN_MASTER     (US_MR_SPI_USART_MODE_LIN_MASTER_Val << US_MR_SPI_USART_MODE_Pos)  /**< (US_MR) LIN Master mode Position  */
+#define US_MR_SPI_USART_MODE_LIN_SLAVE      (US_MR_SPI_USART_MODE_LIN_SLAVE_Val << US_MR_SPI_USART_MODE_Pos)  /**< (US_MR) LIN Slave mode Position  */
+#define US_MR_SPI_USART_MODE_SPI_MASTER     (US_MR_SPI_USART_MODE_SPI_MASTER_Val << US_MR_SPI_USART_MODE_Pos)  /**< (US_MR) SPI Master mode (CLKO must be written to 1 and USCLKS = 0, 1 or 2) Position  */
+#define US_MR_SPI_USART_MODE_SPI_SLAVE      (US_MR_SPI_USART_MODE_SPI_SLAVE_Val << US_MR_SPI_USART_MODE_Pos)  /**< (US_MR) SPI Slave mode Position  */
+#define US_MR_SPI_USCLKS_Pos                4                                              /**< (US_MR) Clock Selection Position */
+#define US_MR_SPI_USCLKS_Msk                (_U_(0x3) << US_MR_SPI_USCLKS_Pos)             /**< (US_MR) Clock Selection Mask */
+#define US_MR_SPI_USCLKS(value)             (US_MR_SPI_USCLKS_Msk & ((value) << US_MR_SPI_USCLKS_Pos))
+#define   US_MR_SPI_USCLKS_MCK_Val          _U_(0x0)                                       /**< (US_MR) SPI Peripheral clock is selected  */
+#define   US_MR_SPI_USCLKS_DIV_Val          _U_(0x1)                                       /**< (US_MR) SPI Peripheral clock divided (DIV = 8) is selected  */
+#define   US_MR_SPI_USCLKS_PCK_Val          _U_(0x2)                                       /**< (US_MR) SPI PMC programmable clock (PCK) is selected. If the SCK pin is driven (CLKO = 1), the CD field must be greater than 1.  */
+#define   US_MR_SPI_USCLKS_SCK_Val          _U_(0x3)                                       /**< (US_MR) SPI Serial clock (SCK) is selected  */
+#define US_MR_SPI_USCLKS_MCK                (US_MR_SPI_USCLKS_MCK_Val << US_MR_SPI_USCLKS_Pos)  /**< (US_MR) Peripheral clock is selected Position  */
+#define US_MR_SPI_USCLKS_DIV                (US_MR_SPI_USCLKS_DIV_Val << US_MR_SPI_USCLKS_Pos)  /**< (US_MR) Peripheral clock divided (DIV = 8) is selected Position  */
+#define US_MR_SPI_USCLKS_PCK                (US_MR_SPI_USCLKS_PCK_Val << US_MR_SPI_USCLKS_Pos)  /**< (US_MR) PMC programmable clock (PCK) is selected. If the SCK pin is driven (CLKO = 1), the CD field must be greater than 1. Position  */
+#define US_MR_SPI_USCLKS_SCK                (US_MR_SPI_USCLKS_SCK_Val << US_MR_SPI_USCLKS_Pos)  /**< (US_MR) Serial clock (SCK) is selected Position  */
+#define US_MR_SPI_CHRL_Pos                  6                                              /**< (US_MR) Character Length Position */
+#define US_MR_SPI_CHRL_Msk                  (_U_(0x3) << US_MR_SPI_CHRL_Pos)               /**< (US_MR) Character Length Mask */
+#define US_MR_SPI_CHRL(value)               (US_MR_SPI_CHRL_Msk & ((value) << US_MR_SPI_CHRL_Pos))
+#define   US_MR_SPI_CHRL_5_BIT_Val          _U_(0x0)                                       /**< (US_MR) SPI Character length is 5 bits  */
+#define   US_MR_SPI_CHRL_6_BIT_Val          _U_(0x1)                                       /**< (US_MR) SPI Character length is 6 bits  */
+#define   US_MR_SPI_CHRL_7_BIT_Val          _U_(0x2)                                       /**< (US_MR) SPI Character length is 7 bits  */
+#define   US_MR_SPI_CHRL_8_BIT_Val          _U_(0x3)                                       /**< (US_MR) SPI Character length is 8 bits  */
+#define US_MR_SPI_CHRL_5_BIT                (US_MR_SPI_CHRL_5_BIT_Val << US_MR_SPI_CHRL_Pos)  /**< (US_MR) Character length is 5 bits Position  */
+#define US_MR_SPI_CHRL_6_BIT                (US_MR_SPI_CHRL_6_BIT_Val << US_MR_SPI_CHRL_Pos)  /**< (US_MR) Character length is 6 bits Position  */
+#define US_MR_SPI_CHRL_7_BIT                (US_MR_SPI_CHRL_7_BIT_Val << US_MR_SPI_CHRL_Pos)  /**< (US_MR) Character length is 7 bits Position  */
+#define US_MR_SPI_CHRL_8_BIT                (US_MR_SPI_CHRL_8_BIT_Val << US_MR_SPI_CHRL_Pos)  /**< (US_MR) Character length is 8 bits Position  */
 #define US_MR_SPI_CPHA_Pos                  8                                              /**< (US_MR) SPI Clock Phase Position */
 #define US_MR_SPI_CPHA_Msk                  (_U_(0x1) << US_MR_SPI_CPHA_Pos)               /**< (US_MR) SPI Clock Phase Mask */
 #define US_MR_SPI_CPHA                      US_MR_SPI_CPHA_Msk                             /**< \deprecated Old style mask definition for 1 bit bitfield. Use US_MR_SPI_CPHA_Msk instead */
 #define US_MR_SPI_CPOL_Pos                  16                                             /**< (US_MR) SPI Clock Polarity Position */
 #define US_MR_SPI_CPOL_Msk                  (_U_(0x1) << US_MR_SPI_CPOL_Pos)               /**< (US_MR) SPI Clock Polarity Mask */
 #define US_MR_SPI_CPOL                      US_MR_SPI_CPOL_Msk                             /**< \deprecated Old style mask definition for 1 bit bitfield. Use US_MR_SPI_CPOL_Msk instead */
+#define US_MR_SPI_CLKO_Pos                  18                                             /**< (US_MR) Clock Output Select Position */
+#define US_MR_SPI_CLKO_Msk                  (_U_(0x1) << US_MR_SPI_CLKO_Pos)               /**< (US_MR) Clock Output Select Mask */
+#define US_MR_SPI_CLKO                      US_MR_SPI_CLKO_Msk                             /**< \deprecated Old style mask definition for 1 bit bitfield. Use US_MR_SPI_CLKO_Msk instead */
 #define US_MR_SPI_WRDBT_Pos                 20                                             /**< (US_MR) Wait Read Data Before Transfer Position */
 #define US_MR_SPI_WRDBT_Msk                 (_U_(0x1) << US_MR_SPI_WRDBT_Pos)              /**< (US_MR) Wait Read Data Before Transfer Mask */
 #define US_MR_SPI_WRDBT                     US_MR_SPI_WRDBT_Msk                            /**< \deprecated Old style mask definition for 1 bit bitfield. Use US_MR_SPI_WRDBT_Msk instead */
-#define US_MR_SPI_MASK                      _U_(0x110100)                                  /**< \deprecated (US_MR_SPI) Register MASK  (Use US_MR_SPI_Msk instead)  */
-#define US_MR_SPI_Msk                       _U_(0x110100)                                  /**< (US_MR_SPI) Register Mask  */
+#define US_MR_SPI_MASK                      _U_(0x1501FF)                                  /**< \deprecated (US_MR_SPI) Register MASK  (Use US_MR_SPI_Msk instead)  */
+#define US_MR_SPI_Msk                       _U_(0x1501FF)                                  /**< (US_MR_SPI) Register Mask  */
 
 
 /* -------- US_IER : (USART Offset: 0x08) (/W 32) Interrupt Enable Register -------- */
 #if !(defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__))
 #if COMPONENT_TYPEDEF_STYLE == 'N'
 typedef union {
-  struct {
+  struct { // USART mode
     uint32_t RXRDY:1;                   /**< bit:      0  RXRDY Interrupt Enable                   */
     uint32_t TXRDY:1;                   /**< bit:      1  TXRDY Interrupt Enable                   */
-    uint32_t :3;                        /**< bit:   2..4  Reserved */
-    uint32_t OVRE:1;                    /**< bit:      5  Overrun Error Interrupt Enable           */
-    uint32_t :3;                        /**< bit:   6..8  Reserved */
-    uint32_t TXEMPTY:1;                 /**< bit:      9  TXEMPTY Interrupt Enable                 */
-    uint32_t :22;                       /**< bit: 10..31  Reserved */
-  } bit;                                /**< Structure used for bit  access */
-  struct { // USART mode
-    uint32_t :2;                        /**< bit:   0..1  Reserved */
     uint32_t RXBRK:1;                   /**< bit:      2  Receiver Break Interrupt Enable          */
-    uint32_t :7;                        /**< bit:   3..9  Reserved */
+    uint32_t :2;                        /**< bit:   3..4  Reserved */
+    uint32_t OVRE:1;                    /**< bit:      5  Overrun Error Interrupt Enable           */
+    uint32_t FRAME:1;                   /**< bit:      6  Framing Error Interrupt Enable           */
+    uint32_t PARE:1;                    /**< bit:      7  Parity Error Interrupt Enable            */
+    uint32_t TIMEOUT:1;                 /**< bit:      8  Timeout Interrupt Enable                 */
+    uint32_t TXEMPTY:1;                 /**< bit:      9  TXEMPTY Interrupt Enable                 */
     uint32_t ITER:1;                    /**< bit:     10  Max number of Repetitions Reached Interrupt Enable */
     uint32_t :2;                        /**< bit: 11..12  Reserved */
     uint32_t NACK:1;                    /**< bit:     13  Non Acknowledge Interrupt Enable         */
@@ -401,20 +502,28 @@ typedef union {
     uint32_t MANE:1;                    /**< bit:     24  Manchester Error Interrupt Enable        */
     uint32_t :7;                        /**< bit: 25..31  Reserved */
   } USART;                                /**< Structure used for USART mode access */
-  struct { // USART_LIN mode
-    uint32_t :6;                        /**< bit:   0..5  Reserved */
-    uint32_t FRAME:1;                   /**< bit:      6  Framing Error Interrupt Enable           */
-    uint32_t PARE:1;                    /**< bit:      7  Parity Error Interrupt Enable            */
-    uint32_t TIMEOUT:1;                 /**< bit:      8  Timeout Interrupt Enable                 */
-    uint32_t :23;                       /**< bit:  9..31  Reserved */
-  } USART_LIN;                                /**< Structure used for USART_LIN mode access */
   struct { // SPI mode
-    uint32_t :19;                       /**< bit:  0..18  Reserved */
+    uint32_t RXRDY:1;                   /**< bit:      0  RXRDY Interrupt Enable                   */
+    uint32_t TXRDY:1;                   /**< bit:      1  TXRDY Interrupt Enable                   */
+    uint32_t :3;                        /**< bit:   2..4  Reserved */
+    uint32_t OVRE:1;                    /**< bit:      5  Overrun Error Interrupt Enable           */
+    uint32_t :3;                        /**< bit:   6..8  Reserved */
+    uint32_t TXEMPTY:1;                 /**< bit:      9  TXEMPTY Interrupt Enable                 */
+    uint32_t UNRE:1;                    /**< bit:     10  Underrun Error Interrupt Enable          */
+    uint32_t :8;                        /**< bit: 11..18  Reserved */
     uint32_t NSSE:1;                    /**< bit:     19  NSS Line (Driving CTS Pin) Rising or Falling Edge Event */
     uint32_t :12;                       /**< bit: 20..31  Reserved */
   } SPI;                                /**< Structure used for SPI mode access */
   struct { // LIN mode
-    uint32_t :13;                       /**< bit:  0..12  Reserved */
+    uint32_t RXRDY:1;                   /**< bit:      0  RXRDY Interrupt Enable                   */
+    uint32_t TXRDY:1;                   /**< bit:      1  TXRDY Interrupt Enable                   */
+    uint32_t :3;                        /**< bit:   2..4  Reserved */
+    uint32_t OVRE:1;                    /**< bit:      5  Overrun Error Interrupt Enable           */
+    uint32_t FRAME:1;                   /**< bit:      6  Framing Error Interrupt Enable           */
+    uint32_t PARE:1;                    /**< bit:      7  Parity Error Interrupt Enable            */
+    uint32_t TIMEOUT:1;                 /**< bit:      8  Timeout Interrupt Enable                 */
+    uint32_t TXEMPTY:1;                 /**< bit:      9  TXEMPTY Interrupt Enable                 */
+    uint32_t :3;                        /**< bit: 10..12  Reserved */
     uint32_t LINBK:1;                   /**< bit:     13  LIN Break Sent or LIN Break Received Interrupt Enable */
     uint32_t LINID:1;                   /**< bit:     14  LIN Identifier Sent or LIN Identifier Received Interrupt Enable */
     uint32_t LINTC:1;                   /**< bit:     15  LIN Transfer Completed Interrupt Enable  */
@@ -428,10 +537,16 @@ typedef union {
     uint32_t LINHTE:1;                  /**< bit:     31  LIN Header Timeout Error Interrupt Enable */
   } LIN;                                /**< Structure used for LIN mode access */
   struct { // LON mode
-    uint32_t :6;                        /**< bit:   0..5  Reserved */
+    uint32_t RXRDY:1;                   /**< bit:      0  RXRDY Interrupt Enable                   */
+    uint32_t TXRDY:1;                   /**< bit:      1  TXRDY Interrupt Enable                   */
+    uint32_t :3;                        /**< bit:   2..4  Reserved */
+    uint32_t OVRE:1;                    /**< bit:      5  Overrun Error Interrupt Enable           */
     uint32_t LSFE:1;                    /**< bit:      6  LON Short Frame Error Interrupt Enable   */
     uint32_t LCRCE:1;                   /**< bit:      7  LON CRC Error Interrupt Enable           */
-    uint32_t :16;                       /**< bit:  8..23  Reserved */
+    uint32_t :1;                        /**< bit:      8  Reserved */
+    uint32_t TXEMPTY:1;                 /**< bit:      9  TXEMPTY Interrupt Enable                 */
+    uint32_t UNRE:1;                    /**< bit:     10  Underrun Error Interrupt Enable          */
+    uint32_t :13;                       /**< bit: 11..23  Reserved */
     uint32_t LTXD:1;                    /**< bit:     24  LON Transmission Done Interrupt Enable   */
     uint32_t LCOL:1;                    /**< bit:     25  LON Collision Interrupt Enable           */
     uint32_t LFET:1;                    /**< bit:     26  LON Frame Early Termination Interrupt Enable */
@@ -439,11 +554,6 @@ typedef union {
     uint32_t LBLOVFE:1;                 /**< bit:     28  LON Backlog Overflow Error Interrupt Enable */
     uint32_t :3;                        /**< bit: 29..31  Reserved */
   } LON;                                /**< Structure used for LON mode access */
-  struct { // LON_SPI mode
-    uint32_t :10;                       /**< bit:   0..9  Reserved */
-    uint32_t UNRE:1;                    /**< bit:     10  Underrun Error Interrupt Enable          */
-    uint32_t :21;                       /**< bit: 11..31  Reserved */
-  } LON_SPI;                                /**< Structure used for LON_SPI mode access */
   uint32_t reg;                         /**< Type used for register access */
 } US_IER_Type;
 #endif
@@ -451,25 +561,34 @@ typedef union {
 
 #define US_IER_OFFSET                       (0x08)                                        /**<  (US_IER) Interrupt Enable Register  Offset */
 
-#define US_IER_RXRDY_Pos                    0                                              /**< (US_IER) RXRDY Interrupt Enable Position */
-#define US_IER_RXRDY_Msk                    (_U_(0x1) << US_IER_RXRDY_Pos)                 /**< (US_IER) RXRDY Interrupt Enable Mask */
-#define US_IER_RXRDY                        US_IER_RXRDY_Msk                               /**< \deprecated Old style mask definition for 1 bit bitfield. Use US_IER_RXRDY_Msk instead */
-#define US_IER_TXRDY_Pos                    1                                              /**< (US_IER) TXRDY Interrupt Enable Position */
-#define US_IER_TXRDY_Msk                    (_U_(0x1) << US_IER_TXRDY_Pos)                 /**< (US_IER) TXRDY Interrupt Enable Mask */
-#define US_IER_TXRDY                        US_IER_TXRDY_Msk                               /**< \deprecated Old style mask definition for 1 bit bitfield. Use US_IER_TXRDY_Msk instead */
-#define US_IER_OVRE_Pos                     5                                              /**< (US_IER) Overrun Error Interrupt Enable Position */
-#define US_IER_OVRE_Msk                     (_U_(0x1) << US_IER_OVRE_Pos)                  /**< (US_IER) Overrun Error Interrupt Enable Mask */
-#define US_IER_OVRE                         US_IER_OVRE_Msk                                /**< \deprecated Old style mask definition for 1 bit bitfield. Use US_IER_OVRE_Msk instead */
-#define US_IER_TXEMPTY_Pos                  9                                              /**< (US_IER) TXEMPTY Interrupt Enable Position */
-#define US_IER_TXEMPTY_Msk                  (_U_(0x1) << US_IER_TXEMPTY_Pos)               /**< (US_IER) TXEMPTY Interrupt Enable Mask */
-#define US_IER_TXEMPTY                      US_IER_TXEMPTY_Msk                             /**< \deprecated Old style mask definition for 1 bit bitfield. Use US_IER_TXEMPTY_Msk instead */
-#define US_IER_MASK                         _U_(0x223)                                     /**< \deprecated (US_IER) Register MASK  (Use US_IER_Msk instead)  */
-#define US_IER_Msk                          _U_(0x223)                                     /**< (US_IER) Register Mask  */
+#define US_IER_MASK                         _U_(0x00)                                      /**< \deprecated (US_IER) Register MASK  (Use US_IER_Msk instead)  */
+#define US_IER_Msk                          _U_(0x00)                                      /**< (US_IER) Register Mask  */
 
 /* USART mode */
+#define US_IER_USART_RXRDY_Pos              0                                              /**< (US_IER) RXRDY Interrupt Enable Position */
+#define US_IER_USART_RXRDY_Msk              (_U_(0x1) << US_IER_USART_RXRDY_Pos)           /**< (US_IER) RXRDY Interrupt Enable Mask */
+#define US_IER_USART_RXRDY                  US_IER_USART_RXRDY_Msk                         /**< \deprecated Old style mask definition for 1 bit bitfield. Use US_IER_USART_RXRDY_Msk instead */
+#define US_IER_USART_TXRDY_Pos              1                                              /**< (US_IER) TXRDY Interrupt Enable Position */
+#define US_IER_USART_TXRDY_Msk              (_U_(0x1) << US_IER_USART_TXRDY_Pos)           /**< (US_IER) TXRDY Interrupt Enable Mask */
+#define US_IER_USART_TXRDY                  US_IER_USART_TXRDY_Msk                         /**< \deprecated Old style mask definition for 1 bit bitfield. Use US_IER_USART_TXRDY_Msk instead */
 #define US_IER_USART_RXBRK_Pos              2                                              /**< (US_IER) Receiver Break Interrupt Enable Position */
 #define US_IER_USART_RXBRK_Msk              (_U_(0x1) << US_IER_USART_RXBRK_Pos)           /**< (US_IER) Receiver Break Interrupt Enable Mask */
 #define US_IER_USART_RXBRK                  US_IER_USART_RXBRK_Msk                         /**< \deprecated Old style mask definition for 1 bit bitfield. Use US_IER_USART_RXBRK_Msk instead */
+#define US_IER_USART_OVRE_Pos               5                                              /**< (US_IER) Overrun Error Interrupt Enable Position */
+#define US_IER_USART_OVRE_Msk               (_U_(0x1) << US_IER_USART_OVRE_Pos)            /**< (US_IER) Overrun Error Interrupt Enable Mask */
+#define US_IER_USART_OVRE                   US_IER_USART_OVRE_Msk                          /**< \deprecated Old style mask definition for 1 bit bitfield. Use US_IER_USART_OVRE_Msk instead */
+#define US_IER_USART_FRAME_Pos              6                                              /**< (US_IER) Framing Error Interrupt Enable Position */
+#define US_IER_USART_FRAME_Msk              (_U_(0x1) << US_IER_USART_FRAME_Pos)           /**< (US_IER) Framing Error Interrupt Enable Mask */
+#define US_IER_USART_FRAME                  US_IER_USART_FRAME_Msk                         /**< \deprecated Old style mask definition for 1 bit bitfield. Use US_IER_USART_FRAME_Msk instead */
+#define US_IER_USART_PARE_Pos               7                                              /**< (US_IER) Parity Error Interrupt Enable Position */
+#define US_IER_USART_PARE_Msk               (_U_(0x1) << US_IER_USART_PARE_Pos)            /**< (US_IER) Parity Error Interrupt Enable Mask */
+#define US_IER_USART_PARE                   US_IER_USART_PARE_Msk                          /**< \deprecated Old style mask definition for 1 bit bitfield. Use US_IER_USART_PARE_Msk instead */
+#define US_IER_USART_TIMEOUT_Pos            8                                              /**< (US_IER) Timeout Interrupt Enable Position */
+#define US_IER_USART_TIMEOUT_Msk            (_U_(0x1) << US_IER_USART_TIMEOUT_Pos)         /**< (US_IER) Timeout Interrupt Enable Mask */
+#define US_IER_USART_TIMEOUT                US_IER_USART_TIMEOUT_Msk                       /**< \deprecated Old style mask definition for 1 bit bitfield. Use US_IER_USART_TIMEOUT_Msk instead */
+#define US_IER_USART_TXEMPTY_Pos            9                                              /**< (US_IER) TXEMPTY Interrupt Enable Position */
+#define US_IER_USART_TXEMPTY_Msk            (_U_(0x1) << US_IER_USART_TXEMPTY_Pos)         /**< (US_IER) TXEMPTY Interrupt Enable Mask */
+#define US_IER_USART_TXEMPTY                US_IER_USART_TXEMPTY_Msk                       /**< \deprecated Old style mask definition for 1 bit bitfield. Use US_IER_USART_TXEMPTY_Msk instead */
 #define US_IER_USART_ITER_Pos               10                                             /**< (US_IER) Max number of Repetitions Reached Interrupt Enable Position */
 #define US_IER_USART_ITER_Msk               (_U_(0x1) << US_IER_USART_ITER_Pos)            /**< (US_IER) Max number of Repetitions Reached Interrupt Enable Mask */
 #define US_IER_USART_ITER                   US_IER_USART_ITER_Msk                          /**< \deprecated Old style mask definition for 1 bit bitfield. Use US_IER_USART_ITER_Msk instead */
@@ -491,30 +610,53 @@ typedef union {
 #define US_IER_USART_MANE_Pos               24                                             /**< (US_IER) Manchester Error Interrupt Enable Position */
 #define US_IER_USART_MANE_Msk               (_U_(0x1) << US_IER_USART_MANE_Pos)            /**< (US_IER) Manchester Error Interrupt Enable Mask */
 #define US_IER_USART_MANE                   US_IER_USART_MANE_Msk                          /**< \deprecated Old style mask definition for 1 bit bitfield. Use US_IER_USART_MANE_Msk instead */
-#define US_IER_USART_MASK                   _U_(0x10F2404)                                 /**< \deprecated (US_IER_USART) Register MASK  (Use US_IER_USART_Msk instead)  */
-#define US_IER_USART_Msk                    _U_(0x10F2404)                                 /**< (US_IER_USART) Register Mask  */
-
-/* USART_LIN mode */
-#define US_IER_USART_LIN_FRAME_Pos          6                                              /**< (US_IER) Framing Error Interrupt Enable Position */
-#define US_IER_USART_LIN_FRAME_Msk          (_U_(0x1) << US_IER_USART_LIN_FRAME_Pos)       /**< (US_IER) Framing Error Interrupt Enable Mask */
-#define US_IER_USART_LIN_FRAME              US_IER_USART_LIN_FRAME_Msk                     /**< \deprecated Old style mask definition for 1 bit bitfield. Use US_IER_USART_LIN_FRAME_Msk instead */
-#define US_IER_USART_LIN_PARE_Pos           7                                              /**< (US_IER) Parity Error Interrupt Enable Position */
-#define US_IER_USART_LIN_PARE_Msk           (_U_(0x1) << US_IER_USART_LIN_PARE_Pos)        /**< (US_IER) Parity Error Interrupt Enable Mask */
-#define US_IER_USART_LIN_PARE               US_IER_USART_LIN_PARE_Msk                      /**< \deprecated Old style mask definition for 1 bit bitfield. Use US_IER_USART_LIN_PARE_Msk instead */
-#define US_IER_USART_LIN_TIMEOUT_Pos        8                                              /**< (US_IER) Timeout Interrupt Enable Position */
-#define US_IER_USART_LIN_TIMEOUT_Msk        (_U_(0x1) << US_IER_USART_LIN_TIMEOUT_Pos)     /**< (US_IER) Timeout Interrupt Enable Mask */
-#define US_IER_USART_LIN_TIMEOUT            US_IER_USART_LIN_TIMEOUT_Msk                   /**< \deprecated Old style mask definition for 1 bit bitfield. Use US_IER_USART_LIN_TIMEOUT_Msk instead */
-#define US_IER_USART_LIN_MASK               _U_(0x1C0)                                     /**< \deprecated (US_IER_USART_LIN) Register MASK  (Use US_IER_USART_LIN_Msk instead)  */
-#define US_IER_USART_LIN_Msk                _U_(0x1C0)                                     /**< (US_IER_USART_LIN) Register Mask  */
+#define US_IER_USART_MASK                   _U_(0x10F27E7)                                 /**< \deprecated (US_IER_USART) Register MASK  (Use US_IER_USART_Msk instead)  */
+#define US_IER_USART_Msk                    _U_(0x10F27E7)                                 /**< (US_IER_USART) Register Mask  */
 
 /* SPI mode */
+#define US_IER_SPI_RXRDY_Pos                0                                              /**< (US_IER) RXRDY Interrupt Enable Position */
+#define US_IER_SPI_RXRDY_Msk                (_U_(0x1) << US_IER_SPI_RXRDY_Pos)             /**< (US_IER) RXRDY Interrupt Enable Mask */
+#define US_IER_SPI_RXRDY                    US_IER_SPI_RXRDY_Msk                           /**< \deprecated Old style mask definition for 1 bit bitfield. Use US_IER_SPI_RXRDY_Msk instead */
+#define US_IER_SPI_TXRDY_Pos                1                                              /**< (US_IER) TXRDY Interrupt Enable Position */
+#define US_IER_SPI_TXRDY_Msk                (_U_(0x1) << US_IER_SPI_TXRDY_Pos)             /**< (US_IER) TXRDY Interrupt Enable Mask */
+#define US_IER_SPI_TXRDY                    US_IER_SPI_TXRDY_Msk                           /**< \deprecated Old style mask definition for 1 bit bitfield. Use US_IER_SPI_TXRDY_Msk instead */
+#define US_IER_SPI_OVRE_Pos                 5                                              /**< (US_IER) Overrun Error Interrupt Enable Position */
+#define US_IER_SPI_OVRE_Msk                 (_U_(0x1) << US_IER_SPI_OVRE_Pos)              /**< (US_IER) Overrun Error Interrupt Enable Mask */
+#define US_IER_SPI_OVRE                     US_IER_SPI_OVRE_Msk                            /**< \deprecated Old style mask definition for 1 bit bitfield. Use US_IER_SPI_OVRE_Msk instead */
+#define US_IER_SPI_TXEMPTY_Pos              9                                              /**< (US_IER) TXEMPTY Interrupt Enable Position */
+#define US_IER_SPI_TXEMPTY_Msk              (_U_(0x1) << US_IER_SPI_TXEMPTY_Pos)           /**< (US_IER) TXEMPTY Interrupt Enable Mask */
+#define US_IER_SPI_TXEMPTY                  US_IER_SPI_TXEMPTY_Msk                         /**< \deprecated Old style mask definition for 1 bit bitfield. Use US_IER_SPI_TXEMPTY_Msk instead */
+#define US_IER_SPI_UNRE_Pos                 10                                             /**< (US_IER) Underrun Error Interrupt Enable Position */
+#define US_IER_SPI_UNRE_Msk                 (_U_(0x1) << US_IER_SPI_UNRE_Pos)              /**< (US_IER) Underrun Error Interrupt Enable Mask */
+#define US_IER_SPI_UNRE                     US_IER_SPI_UNRE_Msk                            /**< \deprecated Old style mask definition for 1 bit bitfield. Use US_IER_SPI_UNRE_Msk instead */
 #define US_IER_SPI_NSSE_Pos                 19                                             /**< (US_IER) NSS Line (Driving CTS Pin) Rising or Falling Edge Event Position */
 #define US_IER_SPI_NSSE_Msk                 (_U_(0x1) << US_IER_SPI_NSSE_Pos)              /**< (US_IER) NSS Line (Driving CTS Pin) Rising or Falling Edge Event Mask */
 #define US_IER_SPI_NSSE                     US_IER_SPI_NSSE_Msk                            /**< \deprecated Old style mask definition for 1 bit bitfield. Use US_IER_SPI_NSSE_Msk instead */
-#define US_IER_SPI_MASK                     _U_(0x80000)                                   /**< \deprecated (US_IER_SPI) Register MASK  (Use US_IER_SPI_Msk instead)  */
-#define US_IER_SPI_Msk                      _U_(0x80000)                                   /**< (US_IER_SPI) Register Mask  */
+#define US_IER_SPI_MASK                     _U_(0x80623)                                   /**< \deprecated (US_IER_SPI) Register MASK  (Use US_IER_SPI_Msk instead)  */
+#define US_IER_SPI_Msk                      _U_(0x80623)                                   /**< (US_IER_SPI) Register Mask  */
 
 /* LIN mode */
+#define US_IER_LIN_RXRDY_Pos                0                                              /**< (US_IER) RXRDY Interrupt Enable Position */
+#define US_IER_LIN_RXRDY_Msk                (_U_(0x1) << US_IER_LIN_RXRDY_Pos)             /**< (US_IER) RXRDY Interrupt Enable Mask */
+#define US_IER_LIN_RXRDY                    US_IER_LIN_RXRDY_Msk                           /**< \deprecated Old style mask definition for 1 bit bitfield. Use US_IER_LIN_RXRDY_Msk instead */
+#define US_IER_LIN_TXRDY_Pos                1                                              /**< (US_IER) TXRDY Interrupt Enable Position */
+#define US_IER_LIN_TXRDY_Msk                (_U_(0x1) << US_IER_LIN_TXRDY_Pos)             /**< (US_IER) TXRDY Interrupt Enable Mask */
+#define US_IER_LIN_TXRDY                    US_IER_LIN_TXRDY_Msk                           /**< \deprecated Old style mask definition for 1 bit bitfield. Use US_IER_LIN_TXRDY_Msk instead */
+#define US_IER_LIN_OVRE_Pos                 5                                              /**< (US_IER) Overrun Error Interrupt Enable Position */
+#define US_IER_LIN_OVRE_Msk                 (_U_(0x1) << US_IER_LIN_OVRE_Pos)              /**< (US_IER) Overrun Error Interrupt Enable Mask */
+#define US_IER_LIN_OVRE                     US_IER_LIN_OVRE_Msk                            /**< \deprecated Old style mask definition for 1 bit bitfield. Use US_IER_LIN_OVRE_Msk instead */
+#define US_IER_LIN_FRAME_Pos                6                                              /**< (US_IER) Framing Error Interrupt Enable Position */
+#define US_IER_LIN_FRAME_Msk                (_U_(0x1) << US_IER_LIN_FRAME_Pos)             /**< (US_IER) Framing Error Interrupt Enable Mask */
+#define US_IER_LIN_FRAME                    US_IER_LIN_FRAME_Msk                           /**< \deprecated Old style mask definition for 1 bit bitfield. Use US_IER_LIN_FRAME_Msk instead */
+#define US_IER_LIN_PARE_Pos                 7                                              /**< (US_IER) Parity Error Interrupt Enable Position */
+#define US_IER_LIN_PARE_Msk                 (_U_(0x1) << US_IER_LIN_PARE_Pos)              /**< (US_IER) Parity Error Interrupt Enable Mask */
+#define US_IER_LIN_PARE                     US_IER_LIN_PARE_Msk                            /**< \deprecated Old style mask definition for 1 bit bitfield. Use US_IER_LIN_PARE_Msk instead */
+#define US_IER_LIN_TIMEOUT_Pos              8                                              /**< (US_IER) Timeout Interrupt Enable Position */
+#define US_IER_LIN_TIMEOUT_Msk              (_U_(0x1) << US_IER_LIN_TIMEOUT_Pos)           /**< (US_IER) Timeout Interrupt Enable Mask */
+#define US_IER_LIN_TIMEOUT                  US_IER_LIN_TIMEOUT_Msk                         /**< \deprecated Old style mask definition for 1 bit bitfield. Use US_IER_LIN_TIMEOUT_Msk instead */
+#define US_IER_LIN_TXEMPTY_Pos              9                                              /**< (US_IER) TXEMPTY Interrupt Enable Position */
+#define US_IER_LIN_TXEMPTY_Msk              (_U_(0x1) << US_IER_LIN_TXEMPTY_Pos)           /**< (US_IER) TXEMPTY Interrupt Enable Mask */
+#define US_IER_LIN_TXEMPTY                  US_IER_LIN_TXEMPTY_Msk                         /**< \deprecated Old style mask definition for 1 bit bitfield. Use US_IER_LIN_TXEMPTY_Msk instead */
 #define US_IER_LIN_LINBK_Pos                13                                             /**< (US_IER) LIN Break Sent or LIN Break Received Interrupt Enable Position */
 #define US_IER_LIN_LINBK_Msk                (_U_(0x1) << US_IER_LIN_LINBK_Pos)             /**< (US_IER) LIN Break Sent or LIN Break Received Interrupt Enable Mask */
 #define US_IER_LIN_LINBK                    US_IER_LIN_LINBK_Msk                           /**< \deprecated Old style mask definition for 1 bit bitfield. Use US_IER_LIN_LINBK_Msk instead */
@@ -545,16 +687,31 @@ typedef union {
 #define US_IER_LIN_LINHTE_Pos               31                                             /**< (US_IER) LIN Header Timeout Error Interrupt Enable Position */
 #define US_IER_LIN_LINHTE_Msk               (_U_(0x1) << US_IER_LIN_LINHTE_Pos)            /**< (US_IER) LIN Header Timeout Error Interrupt Enable Mask */
 #define US_IER_LIN_LINHTE                   US_IER_LIN_LINHTE_Msk                          /**< \deprecated Old style mask definition for 1 bit bitfield. Use US_IER_LIN_LINHTE_Msk instead */
-#define US_IER_LIN_MASK                     _U_(0xFE00E000)                                /**< \deprecated (US_IER_LIN) Register MASK  (Use US_IER_LIN_Msk instead)  */
-#define US_IER_LIN_Msk                      _U_(0xFE00E000)                                /**< (US_IER_LIN) Register Mask  */
+#define US_IER_LIN_MASK                     _U_(0xFE00E3E3)                                /**< \deprecated (US_IER_LIN) Register MASK  (Use US_IER_LIN_Msk instead)  */
+#define US_IER_LIN_Msk                      _U_(0xFE00E3E3)                                /**< (US_IER_LIN) Register Mask  */
 
 /* LON mode */
+#define US_IER_LON_RXRDY_Pos                0                                              /**< (US_IER) RXRDY Interrupt Enable Position */
+#define US_IER_LON_RXRDY_Msk                (_U_(0x1) << US_IER_LON_RXRDY_Pos)             /**< (US_IER) RXRDY Interrupt Enable Mask */
+#define US_IER_LON_RXRDY                    US_IER_LON_RXRDY_Msk                           /**< \deprecated Old style mask definition for 1 bit bitfield. Use US_IER_LON_RXRDY_Msk instead */
+#define US_IER_LON_TXRDY_Pos                1                                              /**< (US_IER) TXRDY Interrupt Enable Position */
+#define US_IER_LON_TXRDY_Msk                (_U_(0x1) << US_IER_LON_TXRDY_Pos)             /**< (US_IER) TXRDY Interrupt Enable Mask */
+#define US_IER_LON_TXRDY                    US_IER_LON_TXRDY_Msk                           /**< \deprecated Old style mask definition for 1 bit bitfield. Use US_IER_LON_TXRDY_Msk instead */
+#define US_IER_LON_OVRE_Pos                 5                                              /**< (US_IER) Overrun Error Interrupt Enable Position */
+#define US_IER_LON_OVRE_Msk                 (_U_(0x1) << US_IER_LON_OVRE_Pos)              /**< (US_IER) Overrun Error Interrupt Enable Mask */
+#define US_IER_LON_OVRE                     US_IER_LON_OVRE_Msk                            /**< \deprecated Old style mask definition for 1 bit bitfield. Use US_IER_LON_OVRE_Msk instead */
 #define US_IER_LON_LSFE_Pos                 6                                              /**< (US_IER) LON Short Frame Error Interrupt Enable Position */
 #define US_IER_LON_LSFE_Msk                 (_U_(0x1) << US_IER_LON_LSFE_Pos)              /**< (US_IER) LON Short Frame Error Interrupt Enable Mask */
 #define US_IER_LON_LSFE                     US_IER_LON_LSFE_Msk                            /**< \deprecated Old style mask definition for 1 bit bitfield. Use US_IER_LON_LSFE_Msk instead */
 #define US_IER_LON_LCRCE_Pos                7                                              /**< (US_IER) LON CRC Error Interrupt Enable Position */
 #define US_IER_LON_LCRCE_Msk                (_U_(0x1) << US_IER_LON_LCRCE_Pos)             /**< (US_IER) LON CRC Error Interrupt Enable Mask */
 #define US_IER_LON_LCRCE                    US_IER_LON_LCRCE_Msk                           /**< \deprecated Old style mask definition for 1 bit bitfield. Use US_IER_LON_LCRCE_Msk instead */
+#define US_IER_LON_TXEMPTY_Pos              9                                              /**< (US_IER) TXEMPTY Interrupt Enable Position */
+#define US_IER_LON_TXEMPTY_Msk              (_U_(0x1) << US_IER_LON_TXEMPTY_Pos)           /**< (US_IER) TXEMPTY Interrupt Enable Mask */
+#define US_IER_LON_TXEMPTY                  US_IER_LON_TXEMPTY_Msk                         /**< \deprecated Old style mask definition for 1 bit bitfield. Use US_IER_LON_TXEMPTY_Msk instead */
+#define US_IER_LON_UNRE_Pos                 10                                             /**< (US_IER) Underrun Error Interrupt Enable Position */
+#define US_IER_LON_UNRE_Msk                 (_U_(0x1) << US_IER_LON_UNRE_Pos)              /**< (US_IER) Underrun Error Interrupt Enable Mask */
+#define US_IER_LON_UNRE                     US_IER_LON_UNRE_Msk                            /**< \deprecated Old style mask definition for 1 bit bitfield. Use US_IER_LON_UNRE_Msk instead */
 #define US_IER_LON_LTXD_Pos                 24                                             /**< (US_IER) LON Transmission Done Interrupt Enable Position */
 #define US_IER_LON_LTXD_Msk                 (_U_(0x1) << US_IER_LON_LTXD_Pos)              /**< (US_IER) LON Transmission Done Interrupt Enable Mask */
 #define US_IER_LON_LTXD                     US_IER_LON_LTXD_Msk                            /**< \deprecated Old style mask definition for 1 bit bitfield. Use US_IER_LON_LTXD_Msk instead */
@@ -570,61 +727,58 @@ typedef union {
 #define US_IER_LON_LBLOVFE_Pos              28                                             /**< (US_IER) LON Backlog Overflow Error Interrupt Enable Position */
 #define US_IER_LON_LBLOVFE_Msk              (_U_(0x1) << US_IER_LON_LBLOVFE_Pos)           /**< (US_IER) LON Backlog Overflow Error Interrupt Enable Mask */
 #define US_IER_LON_LBLOVFE                  US_IER_LON_LBLOVFE_Msk                         /**< \deprecated Old style mask definition for 1 bit bitfield. Use US_IER_LON_LBLOVFE_Msk instead */
-#define US_IER_LON_MASK                     _U_(0x1F0000C0)                                /**< \deprecated (US_IER_LON) Register MASK  (Use US_IER_LON_Msk instead)  */
-#define US_IER_LON_Msk                      _U_(0x1F0000C0)                                /**< (US_IER_LON) Register Mask  */
-
-/* LON_SPI mode */
-#define US_IER_LON_SPI_UNRE_Pos             10                                             /**< (US_IER) Underrun Error Interrupt Enable Position */
-#define US_IER_LON_SPI_UNRE_Msk             (_U_(0x1) << US_IER_LON_SPI_UNRE_Pos)          /**< (US_IER) Underrun Error Interrupt Enable Mask */
-#define US_IER_LON_SPI_UNRE                 US_IER_LON_SPI_UNRE_Msk                        /**< \deprecated Old style mask definition for 1 bit bitfield. Use US_IER_LON_SPI_UNRE_Msk instead */
-#define US_IER_LON_SPI_MASK                 _U_(0x400)                                     /**< \deprecated (US_IER_LON_SPI) Register MASK  (Use US_IER_LON_SPI_Msk instead)  */
-#define US_IER_LON_SPI_Msk                  _U_(0x400)                                     /**< (US_IER_LON_SPI) Register Mask  */
+#define US_IER_LON_MASK                     _U_(0x1F0006E3)                                /**< \deprecated (US_IER_LON) Register MASK  (Use US_IER_LON_Msk instead)  */
+#define US_IER_LON_Msk                      _U_(0x1F0006E3)                                /**< (US_IER_LON) Register Mask  */
 
 
 /* -------- US_IDR : (USART Offset: 0x0c) (/W 32) Interrupt Disable Register -------- */
 #if !(defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__))
 #if COMPONENT_TYPEDEF_STYLE == 'N'
 typedef union {
-  struct {
+  struct { // USART mode
+    uint32_t RXRDY:1;                   /**< bit:      0  RXRDY Interrupt Disable                  */
+    uint32_t TXRDY:1;                   /**< bit:      1  TXRDY Interrupt Disable                  */
+    uint32_t RXBRK:1;                   /**< bit:      2  Receiver Break Interrupt Disable         */
+    uint32_t :2;                        /**< bit:   3..4  Reserved */
+    uint32_t OVRE:1;                    /**< bit:      5  Overrun Error Interrupt Enable           */
+    uint32_t FRAME:1;                   /**< bit:      6  Framing Error Interrupt Disable          */
+    uint32_t PARE:1;                    /**< bit:      7  Parity Error Interrupt Disable           */
+    uint32_t TIMEOUT:1;                 /**< bit:      8  Timeout Interrupt Disable                */
+    uint32_t TXEMPTY:1;                 /**< bit:      9  TXEMPTY Interrupt Disable                */
+    uint32_t ITER:1;                    /**< bit:     10  Max Number of Repetitions Reached Interrupt Disable */
+    uint32_t :2;                        /**< bit: 11..12  Reserved */
+    uint32_t NACK:1;                    /**< bit:     13  Non Acknowledge Interrupt Disable        */
+    uint32_t :2;                        /**< bit: 14..15  Reserved */
+    uint32_t RIIC:1;                    /**< bit:     16  Ring Indicator Input Change Disable      */
+    uint32_t DSRIC:1;                   /**< bit:     17  Data Set Ready Input Change Disable      */
+    uint32_t DCDIC:1;                   /**< bit:     18  Data Carrier Detect Input Change Interrupt Disable */
+    uint32_t CTSIC:1;                   /**< bit:     19  Clear to Send Input Change Interrupt Disable */
+    uint32_t :4;                        /**< bit: 20..23  Reserved */
+    uint32_t MANE:1;                    /**< bit:     24  Manchester Error Interrupt Disable       */
+    uint32_t :7;                        /**< bit: 25..31  Reserved */
+  } USART;                                /**< Structure used for USART mode access */
+  struct { // SPI mode
     uint32_t RXRDY:1;                   /**< bit:      0  RXRDY Interrupt Disable                  */
     uint32_t TXRDY:1;                   /**< bit:      1  TXRDY Interrupt Disable                  */
     uint32_t :3;                        /**< bit:   2..4  Reserved */
     uint32_t OVRE:1;                    /**< bit:      5  Overrun Error Interrupt Enable           */
     uint32_t :3;                        /**< bit:   6..8  Reserved */
     uint32_t TXEMPTY:1;                 /**< bit:      9  TXEMPTY Interrupt Disable                */
-    uint32_t :6;                        /**< bit: 10..15  Reserved */
-    uint32_t RIIC:1;                    /**< bit:     16  Ring Indicator Input Change Disable      */
-    uint32_t DSRIC:1;                   /**< bit:     17  Data Set Ready Input Change Disable      */
-    uint32_t DCDIC:1;                   /**< bit:     18  Data Carrier Detect Input Change Interrupt Disable */
-    uint32_t :13;                       /**< bit: 19..31  Reserved */
-  } bit;                                /**< Structure used for bit  access */
-  struct { // USART mode
-    uint32_t :2;                        /**< bit:   0..1  Reserved */
-    uint32_t RXBRK:1;                   /**< bit:      2  Receiver Break Interrupt Disable         */
-    uint32_t :7;                        /**< bit:   3..9  Reserved */
-    uint32_t ITER:1;                    /**< bit:     10  Max Number of Repetitions Reached Interrupt Disable */
-    uint32_t :2;                        /**< bit: 11..12  Reserved */
-    uint32_t NACK:1;                    /**< bit:     13  Non Acknowledge Interrupt Disable        */
-    uint32_t :5;                        /**< bit: 14..18  Reserved */
-    uint32_t CTSIC:1;                   /**< bit:     19  Clear to Send Input Change Interrupt Disable */
-    uint32_t :4;                        /**< bit: 20..23  Reserved */
-    uint32_t MANE:1;                    /**< bit:     24  Manchester Error Interrupt Disable       */
-    uint32_t :7;                        /**< bit: 25..31  Reserved */
-  } USART;                                /**< Structure used for USART mode access */
-  struct { // USART_LIN mode
-    uint32_t :6;                        /**< bit:   0..5  Reserved */
-    uint32_t FRAME:1;                   /**< bit:      6  Framing Error Interrupt Disable          */
-    uint32_t PARE:1;                    /**< bit:      7  Parity Error Interrupt Disable           */
-    uint32_t TIMEOUT:1;                 /**< bit:      8  Timeout Interrupt Disable                */
-    uint32_t :23;                       /**< bit:  9..31  Reserved */
-  } USART_LIN;                                /**< Structure used for USART_LIN mode access */
-  struct { // SPI mode
-    uint32_t :19;                       /**< bit:  0..18  Reserved */
+    uint32_t UNRE:1;                    /**< bit:     10  SPI Underrun Error Interrupt Disable     */
+    uint32_t :8;                        /**< bit: 11..18  Reserved */
     uint32_t NSSE:1;                    /**< bit:     19  NSS Line (Driving CTS Pin) Rising or Falling Edge Event */
     uint32_t :12;                       /**< bit: 20..31  Reserved */
   } SPI;                                /**< Structure used for SPI mode access */
   struct { // LIN mode
-    uint32_t :13;                       /**< bit:  0..12  Reserved */
+    uint32_t RXRDY:1;                   /**< bit:      0  RXRDY Interrupt Disable                  */
+    uint32_t TXRDY:1;                   /**< bit:      1  TXRDY Interrupt Disable                  */
+    uint32_t :3;                        /**< bit:   2..4  Reserved */
+    uint32_t OVRE:1;                    /**< bit:      5  Overrun Error Interrupt Enable           */
+    uint32_t FRAME:1;                   /**< bit:      6  Framing Error Interrupt Disable          */
+    uint32_t PARE:1;                    /**< bit:      7  Parity Error Interrupt Disable           */
+    uint32_t TIMEOUT:1;                 /**< bit:      8  Timeout Interrupt Disable                */
+    uint32_t TXEMPTY:1;                 /**< bit:      9  TXEMPTY Interrupt Disable                */
+    uint32_t :3;                        /**< bit: 10..12  Reserved */
     uint32_t LINBK:1;                   /**< bit:     13  LIN Break Sent or LIN Break Received Interrupt Disable */
     uint32_t LINID:1;                   /**< bit:     14  LIN Identifier Sent or LIN Identifier Received Interrupt Disable */
     uint32_t LINTC:1;                   /**< bit:     15  LIN Transfer Completed Interrupt Disable */
@@ -638,10 +792,16 @@ typedef union {
     uint32_t LINHTE:1;                  /**< bit:     31  LIN Header Timeout Error Interrupt Disable */
   } LIN;                                /**< Structure used for LIN mode access */
   struct { // LON mode
-    uint32_t :6;                        /**< bit:   0..5  Reserved */
+    uint32_t RXRDY:1;                   /**< bit:      0  RXRDY Interrupt Disable                  */
+    uint32_t TXRDY:1;                   /**< bit:      1  TXRDY Interrupt Disable                  */
+    uint32_t :3;                        /**< bit:   2..4  Reserved */
+    uint32_t OVRE:1;                    /**< bit:      5  Overrun Error Interrupt Enable           */
     uint32_t LSFE:1;                    /**< bit:      6  LON Short Frame Error Interrupt Disable  */
     uint32_t LCRCE:1;                   /**< bit:      7  LON CRC Error Interrupt Disable          */
-    uint32_t :16;                       /**< bit:  8..23  Reserved */
+    uint32_t :1;                        /**< bit:      8  Reserved */
+    uint32_t TXEMPTY:1;                 /**< bit:      9  TXEMPTY Interrupt Disable                */
+    uint32_t UNRE:1;                    /**< bit:     10  SPI Underrun Error Interrupt Disable     */
+    uint32_t :13;                       /**< bit: 11..23  Reserved */
     uint32_t LTXD:1;                    /**< bit:     24  LON Transmission Done Interrupt Disable  */
     uint32_t LCOL:1;                    /**< bit:     25  LON Collision Interrupt Disable          */
     uint32_t LFET:1;                    /**< bit:     26  LON Frame Early Termination Interrupt Disable */
@@ -649,11 +809,6 @@ typedef union {
     uint32_t LBLOVFE:1;                 /**< bit:     28  LON Backlog Overflow Error Interrupt Disable */
     uint32_t :3;                        /**< bit: 29..31  Reserved */
   } LON;                                /**< Structure used for LON mode access */
-  struct { // LON_SPI mode
-    uint32_t :10;                       /**< bit:   0..9  Reserved */
-    uint32_t UNRE:1;                    /**< bit:     10  SPI Underrun Error Interrupt Disable     */
-    uint32_t :21;                       /**< bit: 11..31  Reserved */
-  } LON_SPI;                                /**< Structure used for LON_SPI mode access */
   uint32_t reg;                         /**< Type used for register access */
 } US_IDR_Type;
 #endif
@@ -661,70 +816,102 @@ typedef union {
 
 #define US_IDR_OFFSET                       (0x0C)                                        /**<  (US_IDR) Interrupt Disable Register  Offset */
 
-#define US_IDR_RXRDY_Pos                    0                                              /**< (US_IDR) RXRDY Interrupt Disable Position */
-#define US_IDR_RXRDY_Msk                    (_U_(0x1) << US_IDR_RXRDY_Pos)                 /**< (US_IDR) RXRDY Interrupt Disable Mask */
-#define US_IDR_RXRDY                        US_IDR_RXRDY_Msk                               /**< \deprecated Old style mask definition for 1 bit bitfield. Use US_IDR_RXRDY_Msk instead */
-#define US_IDR_TXRDY_Pos                    1                                              /**< (US_IDR) TXRDY Interrupt Disable Position */
-#define US_IDR_TXRDY_Msk                    (_U_(0x1) << US_IDR_TXRDY_Pos)                 /**< (US_IDR) TXRDY Interrupt Disable Mask */
-#define US_IDR_TXRDY                        US_IDR_TXRDY_Msk                               /**< \deprecated Old style mask definition for 1 bit bitfield. Use US_IDR_TXRDY_Msk instead */
-#define US_IDR_OVRE_Pos                     5                                              /**< (US_IDR) Overrun Error Interrupt Enable Position */
-#define US_IDR_OVRE_Msk                     (_U_(0x1) << US_IDR_OVRE_Pos)                  /**< (US_IDR) Overrun Error Interrupt Enable Mask */
-#define US_IDR_OVRE                         US_IDR_OVRE_Msk                                /**< \deprecated Old style mask definition for 1 bit bitfield. Use US_IDR_OVRE_Msk instead */
-#define US_IDR_TXEMPTY_Pos                  9                                              /**< (US_IDR) TXEMPTY Interrupt Disable Position */
-#define US_IDR_TXEMPTY_Msk                  (_U_(0x1) << US_IDR_TXEMPTY_Pos)               /**< (US_IDR) TXEMPTY Interrupt Disable Mask */
-#define US_IDR_TXEMPTY                      US_IDR_TXEMPTY_Msk                             /**< \deprecated Old style mask definition for 1 bit bitfield. Use US_IDR_TXEMPTY_Msk instead */
-#define US_IDR_RIIC_Pos                     16                                             /**< (US_IDR) Ring Indicator Input Change Disable Position */
-#define US_IDR_RIIC_Msk                     (_U_(0x1) << US_IDR_RIIC_Pos)                  /**< (US_IDR) Ring Indicator Input Change Disable Mask */
-#define US_IDR_RIIC                         US_IDR_RIIC_Msk                                /**< \deprecated Old style mask definition for 1 bit bitfield. Use US_IDR_RIIC_Msk instead */
-#define US_IDR_DSRIC_Pos                    17                                             /**< (US_IDR) Data Set Ready Input Change Disable Position */
-#define US_IDR_DSRIC_Msk                    (_U_(0x1) << US_IDR_DSRIC_Pos)                 /**< (US_IDR) Data Set Ready Input Change Disable Mask */
-#define US_IDR_DSRIC                        US_IDR_DSRIC_Msk                               /**< \deprecated Old style mask definition for 1 bit bitfield. Use US_IDR_DSRIC_Msk instead */
-#define US_IDR_DCDIC_Pos                    18                                             /**< (US_IDR) Data Carrier Detect Input Change Interrupt Disable Position */
-#define US_IDR_DCDIC_Msk                    (_U_(0x1) << US_IDR_DCDIC_Pos)                 /**< (US_IDR) Data Carrier Detect Input Change Interrupt Disable Mask */
-#define US_IDR_DCDIC                        US_IDR_DCDIC_Msk                               /**< \deprecated Old style mask definition for 1 bit bitfield. Use US_IDR_DCDIC_Msk instead */
-#define US_IDR_MASK                         _U_(0x70223)                                   /**< \deprecated (US_IDR) Register MASK  (Use US_IDR_Msk instead)  */
-#define US_IDR_Msk                          _U_(0x70223)                                   /**< (US_IDR) Register Mask  */
+#define US_IDR_MASK                         _U_(0x00)                                      /**< \deprecated (US_IDR) Register MASK  (Use US_IDR_Msk instead)  */
+#define US_IDR_Msk                          _U_(0x00)                                      /**< (US_IDR) Register Mask  */
 
 /* USART mode */
+#define US_IDR_USART_RXRDY_Pos              0                                              /**< (US_IDR) RXRDY Interrupt Disable Position */
+#define US_IDR_USART_RXRDY_Msk              (_U_(0x1) << US_IDR_USART_RXRDY_Pos)           /**< (US_IDR) RXRDY Interrupt Disable Mask */
+#define US_IDR_USART_RXRDY                  US_IDR_USART_RXRDY_Msk                         /**< \deprecated Old style mask definition for 1 bit bitfield. Use US_IDR_USART_RXRDY_Msk instead */
+#define US_IDR_USART_TXRDY_Pos              1                                              /**< (US_IDR) TXRDY Interrupt Disable Position */
+#define US_IDR_USART_TXRDY_Msk              (_U_(0x1) << US_IDR_USART_TXRDY_Pos)           /**< (US_IDR) TXRDY Interrupt Disable Mask */
+#define US_IDR_USART_TXRDY                  US_IDR_USART_TXRDY_Msk                         /**< \deprecated Old style mask definition for 1 bit bitfield. Use US_IDR_USART_TXRDY_Msk instead */
 #define US_IDR_USART_RXBRK_Pos              2                                              /**< (US_IDR) Receiver Break Interrupt Disable Position */
 #define US_IDR_USART_RXBRK_Msk              (_U_(0x1) << US_IDR_USART_RXBRK_Pos)           /**< (US_IDR) Receiver Break Interrupt Disable Mask */
 #define US_IDR_USART_RXBRK                  US_IDR_USART_RXBRK_Msk                         /**< \deprecated Old style mask definition for 1 bit bitfield. Use US_IDR_USART_RXBRK_Msk instead */
+#define US_IDR_USART_OVRE_Pos               5                                              /**< (US_IDR) Overrun Error Interrupt Enable Position */
+#define US_IDR_USART_OVRE_Msk               (_U_(0x1) << US_IDR_USART_OVRE_Pos)            /**< (US_IDR) Overrun Error Interrupt Enable Mask */
+#define US_IDR_USART_OVRE                   US_IDR_USART_OVRE_Msk                          /**< \deprecated Old style mask definition for 1 bit bitfield. Use US_IDR_USART_OVRE_Msk instead */
+#define US_IDR_USART_FRAME_Pos              6                                              /**< (US_IDR) Framing Error Interrupt Disable Position */
+#define US_IDR_USART_FRAME_Msk              (_U_(0x1) << US_IDR_USART_FRAME_Pos)           /**< (US_IDR) Framing Error Interrupt Disable Mask */
+#define US_IDR_USART_FRAME                  US_IDR_USART_FRAME_Msk                         /**< \deprecated Old style mask definition for 1 bit bitfield. Use US_IDR_USART_FRAME_Msk instead */
+#define US_IDR_USART_PARE_Pos               7                                              /**< (US_IDR) Parity Error Interrupt Disable Position */
+#define US_IDR_USART_PARE_Msk               (_U_(0x1) << US_IDR_USART_PARE_Pos)            /**< (US_IDR) Parity Error Interrupt Disable Mask */
+#define US_IDR_USART_PARE                   US_IDR_USART_PARE_Msk                          /**< \deprecated Old style mask definition for 1 bit bitfield. Use US_IDR_USART_PARE_Msk instead */
+#define US_IDR_USART_TIMEOUT_Pos            8                                              /**< (US_IDR) Timeout Interrupt Disable Position */
+#define US_IDR_USART_TIMEOUT_Msk            (_U_(0x1) << US_IDR_USART_TIMEOUT_Pos)         /**< (US_IDR) Timeout Interrupt Disable Mask */
+#define US_IDR_USART_TIMEOUT                US_IDR_USART_TIMEOUT_Msk                       /**< \deprecated Old style mask definition for 1 bit bitfield. Use US_IDR_USART_TIMEOUT_Msk instead */
+#define US_IDR_USART_TXEMPTY_Pos            9                                              /**< (US_IDR) TXEMPTY Interrupt Disable Position */
+#define US_IDR_USART_TXEMPTY_Msk            (_U_(0x1) << US_IDR_USART_TXEMPTY_Pos)         /**< (US_IDR) TXEMPTY Interrupt Disable Mask */
+#define US_IDR_USART_TXEMPTY                US_IDR_USART_TXEMPTY_Msk                       /**< \deprecated Old style mask definition for 1 bit bitfield. Use US_IDR_USART_TXEMPTY_Msk instead */
 #define US_IDR_USART_ITER_Pos               10                                             /**< (US_IDR) Max Number of Repetitions Reached Interrupt Disable Position */
 #define US_IDR_USART_ITER_Msk               (_U_(0x1) << US_IDR_USART_ITER_Pos)            /**< (US_IDR) Max Number of Repetitions Reached Interrupt Disable Mask */
 #define US_IDR_USART_ITER                   US_IDR_USART_ITER_Msk                          /**< \deprecated Old style mask definition for 1 bit bitfield. Use US_IDR_USART_ITER_Msk instead */
 #define US_IDR_USART_NACK_Pos               13                                             /**< (US_IDR) Non Acknowledge Interrupt Disable Position */
 #define US_IDR_USART_NACK_Msk               (_U_(0x1) << US_IDR_USART_NACK_Pos)            /**< (US_IDR) Non Acknowledge Interrupt Disable Mask */
 #define US_IDR_USART_NACK                   US_IDR_USART_NACK_Msk                          /**< \deprecated Old style mask definition for 1 bit bitfield. Use US_IDR_USART_NACK_Msk instead */
+#define US_IDR_USART_RIIC_Pos               16                                             /**< (US_IDR) Ring Indicator Input Change Disable Position */
+#define US_IDR_USART_RIIC_Msk               (_U_(0x1) << US_IDR_USART_RIIC_Pos)            /**< (US_IDR) Ring Indicator Input Change Disable Mask */
+#define US_IDR_USART_RIIC                   US_IDR_USART_RIIC_Msk                          /**< \deprecated Old style mask definition for 1 bit bitfield. Use US_IDR_USART_RIIC_Msk instead */
+#define US_IDR_USART_DSRIC_Pos              17                                             /**< (US_IDR) Data Set Ready Input Change Disable Position */
+#define US_IDR_USART_DSRIC_Msk              (_U_(0x1) << US_IDR_USART_DSRIC_Pos)           /**< (US_IDR) Data Set Ready Input Change Disable Mask */
+#define US_IDR_USART_DSRIC                  US_IDR_USART_DSRIC_Msk                         /**< \deprecated Old style mask definition for 1 bit bitfield. Use US_IDR_USART_DSRIC_Msk instead */
+#define US_IDR_USART_DCDIC_Pos              18                                             /**< (US_IDR) Data Carrier Detect Input Change Interrupt Disable Position */
+#define US_IDR_USART_DCDIC_Msk              (_U_(0x1) << US_IDR_USART_DCDIC_Pos)           /**< (US_IDR) Data Carrier Detect Input Change Interrupt Disable Mask */
+#define US_IDR_USART_DCDIC                  US_IDR_USART_DCDIC_Msk                         /**< \deprecated Old style mask definition for 1 bit bitfield. Use US_IDR_USART_DCDIC_Msk instead */
 #define US_IDR_USART_CTSIC_Pos              19                                             /**< (US_IDR) Clear to Send Input Change Interrupt Disable Position */
 #define US_IDR_USART_CTSIC_Msk              (_U_(0x1) << US_IDR_USART_CTSIC_Pos)           /**< (US_IDR) Clear to Send Input Change Interrupt Disable Mask */
 #define US_IDR_USART_CTSIC                  US_IDR_USART_CTSIC_Msk                         /**< \deprecated Old style mask definition for 1 bit bitfield. Use US_IDR_USART_CTSIC_Msk instead */
 #define US_IDR_USART_MANE_Pos               24                                             /**< (US_IDR) Manchester Error Interrupt Disable Position */
 #define US_IDR_USART_MANE_Msk               (_U_(0x1) << US_IDR_USART_MANE_Pos)            /**< (US_IDR) Manchester Error Interrupt Disable Mask */
 #define US_IDR_USART_MANE                   US_IDR_USART_MANE_Msk                          /**< \deprecated Old style mask definition for 1 bit bitfield. Use US_IDR_USART_MANE_Msk instead */
-#define US_IDR_USART_MASK                   _U_(0x1082404)                                 /**< \deprecated (US_IDR_USART) Register MASK  (Use US_IDR_USART_Msk instead)  */
-#define US_IDR_USART_Msk                    _U_(0x1082404)                                 /**< (US_IDR_USART) Register Mask  */
-
-/* USART_LIN mode */
-#define US_IDR_USART_LIN_FRAME_Pos          6                                              /**< (US_IDR) Framing Error Interrupt Disable Position */
-#define US_IDR_USART_LIN_FRAME_Msk          (_U_(0x1) << US_IDR_USART_LIN_FRAME_Pos)       /**< (US_IDR) Framing Error Interrupt Disable Mask */
-#define US_IDR_USART_LIN_FRAME              US_IDR_USART_LIN_FRAME_Msk                     /**< \deprecated Old style mask definition for 1 bit bitfield. Use US_IDR_USART_LIN_FRAME_Msk instead */
-#define US_IDR_USART_LIN_PARE_Pos           7                                              /**< (US_IDR) Parity Error Interrupt Disable Position */
-#define US_IDR_USART_LIN_PARE_Msk           (_U_(0x1) << US_IDR_USART_LIN_PARE_Pos)        /**< (US_IDR) Parity Error Interrupt Disable Mask */
-#define US_IDR_USART_LIN_PARE               US_IDR_USART_LIN_PARE_Msk                      /**< \deprecated Old style mask definition for 1 bit bitfield. Use US_IDR_USART_LIN_PARE_Msk instead */
-#define US_IDR_USART_LIN_TIMEOUT_Pos        8                                              /**< (US_IDR) Timeout Interrupt Disable Position */
-#define US_IDR_USART_LIN_TIMEOUT_Msk        (_U_(0x1) << US_IDR_USART_LIN_TIMEOUT_Pos)     /**< (US_IDR) Timeout Interrupt Disable Mask */
-#define US_IDR_USART_LIN_TIMEOUT            US_IDR_USART_LIN_TIMEOUT_Msk                   /**< \deprecated Old style mask definition for 1 bit bitfield. Use US_IDR_USART_LIN_TIMEOUT_Msk instead */
-#define US_IDR_USART_LIN_MASK               _U_(0x1C0)                                     /**< \deprecated (US_IDR_USART_LIN) Register MASK  (Use US_IDR_USART_LIN_Msk instead)  */
-#define US_IDR_USART_LIN_Msk                _U_(0x1C0)                                     /**< (US_IDR_USART_LIN) Register Mask  */
+#define US_IDR_USART_MASK                   _U_(0x10F27E7)                                 /**< \deprecated (US_IDR_USART) Register MASK  (Use US_IDR_USART_Msk instead)  */
+#define US_IDR_USART_Msk                    _U_(0x10F27E7)                                 /**< (US_IDR_USART) Register Mask  */
 
 /* SPI mode */
+#define US_IDR_SPI_RXRDY_Pos                0                                              /**< (US_IDR) RXRDY Interrupt Disable Position */
+#define US_IDR_SPI_RXRDY_Msk                (_U_(0x1) << US_IDR_SPI_RXRDY_Pos)             /**< (US_IDR) RXRDY Interrupt Disable Mask */
+#define US_IDR_SPI_RXRDY                    US_IDR_SPI_RXRDY_Msk                           /**< \deprecated Old style mask definition for 1 bit bitfield. Use US_IDR_SPI_RXRDY_Msk instead */
+#define US_IDR_SPI_TXRDY_Pos                1                                              /**< (US_IDR) TXRDY Interrupt Disable Position */
+#define US_IDR_SPI_TXRDY_Msk                (_U_(0x1) << US_IDR_SPI_TXRDY_Pos)             /**< (US_IDR) TXRDY Interrupt Disable Mask */
+#define US_IDR_SPI_TXRDY                    US_IDR_SPI_TXRDY_Msk                           /**< \deprecated Old style mask definition for 1 bit bitfield. Use US_IDR_SPI_TXRDY_Msk instead */
+#define US_IDR_SPI_OVRE_Pos                 5                                              /**< (US_IDR) Overrun Error Interrupt Enable Position */
+#define US_IDR_SPI_OVRE_Msk                 (_U_(0x1) << US_IDR_SPI_OVRE_Pos)              /**< (US_IDR) Overrun Error Interrupt Enable Mask */
+#define US_IDR_SPI_OVRE                     US_IDR_SPI_OVRE_Msk                            /**< \deprecated Old style mask definition for 1 bit bitfield. Use US_IDR_SPI_OVRE_Msk instead */
+#define US_IDR_SPI_TXEMPTY_Pos              9                                              /**< (US_IDR) TXEMPTY Interrupt Disable Position */
+#define US_IDR_SPI_TXEMPTY_Msk              (_U_(0x1) << US_IDR_SPI_TXEMPTY_Pos)           /**< (US_IDR) TXEMPTY Interrupt Disable Mask */
+#define US_IDR_SPI_TXEMPTY                  US_IDR_SPI_TXEMPTY_Msk                         /**< \deprecated Old style mask definition for 1 bit bitfield. Use US_IDR_SPI_TXEMPTY_Msk instead */
+#define US_IDR_SPI_UNRE_Pos                 10                                             /**< (US_IDR) SPI Underrun Error Interrupt Disable Position */
+#define US_IDR_SPI_UNRE_Msk                 (_U_(0x1) << US_IDR_SPI_UNRE_Pos)              /**< (US_IDR) SPI Underrun Error Interrupt Disable Mask */
+#define US_IDR_SPI_UNRE                     US_IDR_SPI_UNRE_Msk                            /**< \deprecated Old style mask definition for 1 bit bitfield. Use US_IDR_SPI_UNRE_Msk instead */
 #define US_IDR_SPI_NSSE_Pos                 19                                             /**< (US_IDR) NSS Line (Driving CTS Pin) Rising or Falling Edge Event Position */
 #define US_IDR_SPI_NSSE_Msk                 (_U_(0x1) << US_IDR_SPI_NSSE_Pos)              /**< (US_IDR) NSS Line (Driving CTS Pin) Rising or Falling Edge Event Mask */
 #define US_IDR_SPI_NSSE                     US_IDR_SPI_NSSE_Msk                            /**< \deprecated Old style mask definition for 1 bit bitfield. Use US_IDR_SPI_NSSE_Msk instead */
-#define US_IDR_SPI_MASK                     _U_(0x80000)                                   /**< \deprecated (US_IDR_SPI) Register MASK  (Use US_IDR_SPI_Msk instead)  */
-#define US_IDR_SPI_Msk                      _U_(0x80000)                                   /**< (US_IDR_SPI) Register Mask  */
+#define US_IDR_SPI_MASK                     _U_(0x80623)                                   /**< \deprecated (US_IDR_SPI) Register MASK  (Use US_IDR_SPI_Msk instead)  */
+#define US_IDR_SPI_Msk                      _U_(0x80623)                                   /**< (US_IDR_SPI) Register Mask  */
 
 /* LIN mode */
+#define US_IDR_LIN_RXRDY_Pos                0                                              /**< (US_IDR) RXRDY Interrupt Disable Position */
+#define US_IDR_LIN_RXRDY_Msk                (_U_(0x1) << US_IDR_LIN_RXRDY_Pos)             /**< (US_IDR) RXRDY Interrupt Disable Mask */
+#define US_IDR_LIN_RXRDY                    US_IDR_LIN_RXRDY_Msk                           /**< \deprecated Old style mask definition for 1 bit bitfield. Use US_IDR_LIN_RXRDY_Msk instead */
+#define US_IDR_LIN_TXRDY_Pos                1                                              /**< (US_IDR) TXRDY Interrupt Disable Position */
+#define US_IDR_LIN_TXRDY_Msk                (_U_(0x1) << US_IDR_LIN_TXRDY_Pos)             /**< (US_IDR) TXRDY Interrupt Disable Mask */
+#define US_IDR_LIN_TXRDY                    US_IDR_LIN_TXRDY_Msk                           /**< \deprecated Old style mask definition for 1 bit bitfield. Use US_IDR_LIN_TXRDY_Msk instead */
+#define US_IDR_LIN_OVRE_Pos                 5                                              /**< (US_IDR) Overrun Error Interrupt Enable Position */
+#define US_IDR_LIN_OVRE_Msk                 (_U_(0x1) << US_IDR_LIN_OVRE_Pos)              /**< (US_IDR) Overrun Error Interrupt Enable Mask */
+#define US_IDR_LIN_OVRE                     US_IDR_LIN_OVRE_Msk                            /**< \deprecated Old style mask definition for 1 bit bitfield. Use US_IDR_LIN_OVRE_Msk instead */
+#define US_IDR_LIN_FRAME_Pos                6                                              /**< (US_IDR) Framing Error Interrupt Disable Position */
+#define US_IDR_LIN_FRAME_Msk                (_U_(0x1) << US_IDR_LIN_FRAME_Pos)             /**< (US_IDR) Framing Error Interrupt Disable Mask */
+#define US_IDR_LIN_FRAME                    US_IDR_LIN_FRAME_Msk                           /**< \deprecated Old style mask definition for 1 bit bitfield. Use US_IDR_LIN_FRAME_Msk instead */
+#define US_IDR_LIN_PARE_Pos                 7                                              /**< (US_IDR) Parity Error Interrupt Disable Position */
+#define US_IDR_LIN_PARE_Msk                 (_U_(0x1) << US_IDR_LIN_PARE_Pos)              /**< (US_IDR) Parity Error Interrupt Disable Mask */
+#define US_IDR_LIN_PARE                     US_IDR_LIN_PARE_Msk                            /**< \deprecated Old style mask definition for 1 bit bitfield. Use US_IDR_LIN_PARE_Msk instead */
+#define US_IDR_LIN_TIMEOUT_Pos              8                                              /**< (US_IDR) Timeout Interrupt Disable Position */
+#define US_IDR_LIN_TIMEOUT_Msk              (_U_(0x1) << US_IDR_LIN_TIMEOUT_Pos)           /**< (US_IDR) Timeout Interrupt Disable Mask */
+#define US_IDR_LIN_TIMEOUT                  US_IDR_LIN_TIMEOUT_Msk                         /**< \deprecated Old style mask definition for 1 bit bitfield. Use US_IDR_LIN_TIMEOUT_Msk instead */
+#define US_IDR_LIN_TXEMPTY_Pos              9                                              /**< (US_IDR) TXEMPTY Interrupt Disable Position */
+#define US_IDR_LIN_TXEMPTY_Msk              (_U_(0x1) << US_IDR_LIN_TXEMPTY_Pos)           /**< (US_IDR) TXEMPTY Interrupt Disable Mask */
+#define US_IDR_LIN_TXEMPTY                  US_IDR_LIN_TXEMPTY_Msk                         /**< \deprecated Old style mask definition for 1 bit bitfield. Use US_IDR_LIN_TXEMPTY_Msk instead */
 #define US_IDR_LIN_LINBK_Pos                13                                             /**< (US_IDR) LIN Break Sent or LIN Break Received Interrupt Disable Position */
 #define US_IDR_LIN_LINBK_Msk                (_U_(0x1) << US_IDR_LIN_LINBK_Pos)             /**< (US_IDR) LIN Break Sent or LIN Break Received Interrupt Disable Mask */
 #define US_IDR_LIN_LINBK                    US_IDR_LIN_LINBK_Msk                           /**< \deprecated Old style mask definition for 1 bit bitfield. Use US_IDR_LIN_LINBK_Msk instead */
@@ -755,16 +942,31 @@ typedef union {
 #define US_IDR_LIN_LINHTE_Pos               31                                             /**< (US_IDR) LIN Header Timeout Error Interrupt Disable Position */
 #define US_IDR_LIN_LINHTE_Msk               (_U_(0x1) << US_IDR_LIN_LINHTE_Pos)            /**< (US_IDR) LIN Header Timeout Error Interrupt Disable Mask */
 #define US_IDR_LIN_LINHTE                   US_IDR_LIN_LINHTE_Msk                          /**< \deprecated Old style mask definition for 1 bit bitfield. Use US_IDR_LIN_LINHTE_Msk instead */
-#define US_IDR_LIN_MASK                     _U_(0xFE00E000)                                /**< \deprecated (US_IDR_LIN) Register MASK  (Use US_IDR_LIN_Msk instead)  */
-#define US_IDR_LIN_Msk                      _U_(0xFE00E000)                                /**< (US_IDR_LIN) Register Mask  */
+#define US_IDR_LIN_MASK                     _U_(0xFE00E3E3)                                /**< \deprecated (US_IDR_LIN) Register MASK  (Use US_IDR_LIN_Msk instead)  */
+#define US_IDR_LIN_Msk                      _U_(0xFE00E3E3)                                /**< (US_IDR_LIN) Register Mask  */
 
 /* LON mode */
+#define US_IDR_LON_RXRDY_Pos                0                                              /**< (US_IDR) RXRDY Interrupt Disable Position */
+#define US_IDR_LON_RXRDY_Msk                (_U_(0x1) << US_IDR_LON_RXRDY_Pos)             /**< (US_IDR) RXRDY Interrupt Disable Mask */
+#define US_IDR_LON_RXRDY                    US_IDR_LON_RXRDY_Msk                           /**< \deprecated Old style mask definition for 1 bit bitfield. Use US_IDR_LON_RXRDY_Msk instead */
+#define US_IDR_LON_TXRDY_Pos                1                                              /**< (US_IDR) TXRDY Interrupt Disable Position */
+#define US_IDR_LON_TXRDY_Msk                (_U_(0x1) << US_IDR_LON_TXRDY_Pos)             /**< (US_IDR) TXRDY Interrupt Disable Mask */
+#define US_IDR_LON_TXRDY                    US_IDR_LON_TXRDY_Msk                           /**< \deprecated Old style mask definition for 1 bit bitfield. Use US_IDR_LON_TXRDY_Msk instead */
+#define US_IDR_LON_OVRE_Pos                 5                                              /**< (US_IDR) Overrun Error Interrupt Enable Position */
+#define US_IDR_LON_OVRE_Msk                 (_U_(0x1) << US_IDR_LON_OVRE_Pos)              /**< (US_IDR) Overrun Error Interrupt Enable Mask */
+#define US_IDR_LON_OVRE                     US_IDR_LON_OVRE_Msk                            /**< \deprecated Old style mask definition for 1 bit bitfield. Use US_IDR_LON_OVRE_Msk instead */
 #define US_IDR_LON_LSFE_Pos                 6                                              /**< (US_IDR) LON Short Frame Error Interrupt Disable Position */
 #define US_IDR_LON_LSFE_Msk                 (_U_(0x1) << US_IDR_LON_LSFE_Pos)              /**< (US_IDR) LON Short Frame Error Interrupt Disable Mask */
 #define US_IDR_LON_LSFE                     US_IDR_LON_LSFE_Msk                            /**< \deprecated Old style mask definition for 1 bit bitfield. Use US_IDR_LON_LSFE_Msk instead */
 #define US_IDR_LON_LCRCE_Pos                7                                              /**< (US_IDR) LON CRC Error Interrupt Disable Position */
 #define US_IDR_LON_LCRCE_Msk                (_U_(0x1) << US_IDR_LON_LCRCE_Pos)             /**< (US_IDR) LON CRC Error Interrupt Disable Mask */
 #define US_IDR_LON_LCRCE                    US_IDR_LON_LCRCE_Msk                           /**< \deprecated Old style mask definition for 1 bit bitfield. Use US_IDR_LON_LCRCE_Msk instead */
+#define US_IDR_LON_TXEMPTY_Pos              9                                              /**< (US_IDR) TXEMPTY Interrupt Disable Position */
+#define US_IDR_LON_TXEMPTY_Msk              (_U_(0x1) << US_IDR_LON_TXEMPTY_Pos)           /**< (US_IDR) TXEMPTY Interrupt Disable Mask */
+#define US_IDR_LON_TXEMPTY                  US_IDR_LON_TXEMPTY_Msk                         /**< \deprecated Old style mask definition for 1 bit bitfield. Use US_IDR_LON_TXEMPTY_Msk instead */
+#define US_IDR_LON_UNRE_Pos                 10                                             /**< (US_IDR) SPI Underrun Error Interrupt Disable Position */
+#define US_IDR_LON_UNRE_Msk                 (_U_(0x1) << US_IDR_LON_UNRE_Pos)              /**< (US_IDR) SPI Underrun Error Interrupt Disable Mask */
+#define US_IDR_LON_UNRE                     US_IDR_LON_UNRE_Msk                            /**< \deprecated Old style mask definition for 1 bit bitfield. Use US_IDR_LON_UNRE_Msk instead */
 #define US_IDR_LON_LTXD_Pos                 24                                             /**< (US_IDR) LON Transmission Done Interrupt Disable Position */
 #define US_IDR_LON_LTXD_Msk                 (_U_(0x1) << US_IDR_LON_LTXD_Pos)              /**< (US_IDR) LON Transmission Done Interrupt Disable Mask */
 #define US_IDR_LON_LTXD                     US_IDR_LON_LTXD_Msk                            /**< \deprecated Old style mask definition for 1 bit bitfield. Use US_IDR_LON_LTXD_Msk instead */
@@ -780,61 +982,58 @@ typedef union {
 #define US_IDR_LON_LBLOVFE_Pos              28                                             /**< (US_IDR) LON Backlog Overflow Error Interrupt Disable Position */
 #define US_IDR_LON_LBLOVFE_Msk              (_U_(0x1) << US_IDR_LON_LBLOVFE_Pos)           /**< (US_IDR) LON Backlog Overflow Error Interrupt Disable Mask */
 #define US_IDR_LON_LBLOVFE                  US_IDR_LON_LBLOVFE_Msk                         /**< \deprecated Old style mask definition for 1 bit bitfield. Use US_IDR_LON_LBLOVFE_Msk instead */
-#define US_IDR_LON_MASK                     _U_(0x1F0000C0)                                /**< \deprecated (US_IDR_LON) Register MASK  (Use US_IDR_LON_Msk instead)  */
-#define US_IDR_LON_Msk                      _U_(0x1F0000C0)                                /**< (US_IDR_LON) Register Mask  */
-
-/* LON_SPI mode */
-#define US_IDR_LON_SPI_UNRE_Pos             10                                             /**< (US_IDR) SPI Underrun Error Interrupt Disable Position */
-#define US_IDR_LON_SPI_UNRE_Msk             (_U_(0x1) << US_IDR_LON_SPI_UNRE_Pos)          /**< (US_IDR) SPI Underrun Error Interrupt Disable Mask */
-#define US_IDR_LON_SPI_UNRE                 US_IDR_LON_SPI_UNRE_Msk                        /**< \deprecated Old style mask definition for 1 bit bitfield. Use US_IDR_LON_SPI_UNRE_Msk instead */
-#define US_IDR_LON_SPI_MASK                 _U_(0x400)                                     /**< \deprecated (US_IDR_LON_SPI) Register MASK  (Use US_IDR_LON_SPI_Msk instead)  */
-#define US_IDR_LON_SPI_Msk                  _U_(0x400)                                     /**< (US_IDR_LON_SPI) Register Mask  */
+#define US_IDR_LON_MASK                     _U_(0x1F0006E3)                                /**< \deprecated (US_IDR_LON) Register MASK  (Use US_IDR_LON_Msk instead)  */
+#define US_IDR_LON_Msk                      _U_(0x1F0006E3)                                /**< (US_IDR_LON) Register Mask  */
 
 
 /* -------- US_IMR : (USART Offset: 0x10) (R/ 32) Interrupt Mask Register -------- */
 #if !(defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__))
 #if COMPONENT_TYPEDEF_STYLE == 'N'
 typedef union {
-  struct {
+  struct { // USART mode
+    uint32_t RXRDY:1;                   /**< bit:      0  RXRDY Interrupt Mask                     */
+    uint32_t TXRDY:1;                   /**< bit:      1  TXRDY Interrupt Mask                     */
+    uint32_t RXBRK:1;                   /**< bit:      2  Receiver Break Interrupt Mask            */
+    uint32_t :2;                        /**< bit:   3..4  Reserved */
+    uint32_t OVRE:1;                    /**< bit:      5  Overrun Error Interrupt Mask             */
+    uint32_t FRAME:1;                   /**< bit:      6  Framing Error Interrupt Mask             */
+    uint32_t PARE:1;                    /**< bit:      7  Parity Error Interrupt Mask              */
+    uint32_t TIMEOUT:1;                 /**< bit:      8  Timeout Interrupt Mask                   */
+    uint32_t TXEMPTY:1;                 /**< bit:      9  TXEMPTY Interrupt Mask                   */
+    uint32_t ITER:1;                    /**< bit:     10  Max Number of Repetitions Reached Interrupt Mask */
+    uint32_t :2;                        /**< bit: 11..12  Reserved */
+    uint32_t NACK:1;                    /**< bit:     13  Non Acknowledge Interrupt Mask           */
+    uint32_t :2;                        /**< bit: 14..15  Reserved */
+    uint32_t RIIC:1;                    /**< bit:     16  Ring Indicator Input Change Mask         */
+    uint32_t DSRIC:1;                   /**< bit:     17  Data Set Ready Input Change Mask         */
+    uint32_t DCDIC:1;                   /**< bit:     18  Data Carrier Detect Input Change Interrupt Mask */
+    uint32_t CTSIC:1;                   /**< bit:     19  Clear to Send Input Change Interrupt Mask */
+    uint32_t :4;                        /**< bit: 20..23  Reserved */
+    uint32_t MANE:1;                    /**< bit:     24  Manchester Error Interrupt Mask          */
+    uint32_t :7;                        /**< bit: 25..31  Reserved */
+  } USART;                                /**< Structure used for USART mode access */
+  struct { // SPI mode
     uint32_t RXRDY:1;                   /**< bit:      0  RXRDY Interrupt Mask                     */
     uint32_t TXRDY:1;                   /**< bit:      1  TXRDY Interrupt Mask                     */
     uint32_t :3;                        /**< bit:   2..4  Reserved */
     uint32_t OVRE:1;                    /**< bit:      5  Overrun Error Interrupt Mask             */
     uint32_t :3;                        /**< bit:   6..8  Reserved */
     uint32_t TXEMPTY:1;                 /**< bit:      9  TXEMPTY Interrupt Mask                   */
-    uint32_t :6;                        /**< bit: 10..15  Reserved */
-    uint32_t RIIC:1;                    /**< bit:     16  Ring Indicator Input Change Mask         */
-    uint32_t DSRIC:1;                   /**< bit:     17  Data Set Ready Input Change Mask         */
-    uint32_t DCDIC:1;                   /**< bit:     18  Data Carrier Detect Input Change Interrupt Mask */
-    uint32_t :13;                       /**< bit: 19..31  Reserved */
-  } bit;                                /**< Structure used for bit  access */
-  struct { // USART mode
-    uint32_t :2;                        /**< bit:   0..1  Reserved */
-    uint32_t RXBRK:1;                   /**< bit:      2  Receiver Break Interrupt Mask            */
-    uint32_t :7;                        /**< bit:   3..9  Reserved */
-    uint32_t ITER:1;                    /**< bit:     10  Max Number of Repetitions Reached Interrupt Mask */
-    uint32_t :2;                        /**< bit: 11..12  Reserved */
-    uint32_t NACK:1;                    /**< bit:     13  Non Acknowledge Interrupt Mask           */
-    uint32_t :5;                        /**< bit: 14..18  Reserved */
-    uint32_t CTSIC:1;                   /**< bit:     19  Clear to Send Input Change Interrupt Mask */
-    uint32_t :4;                        /**< bit: 20..23  Reserved */
-    uint32_t MANE:1;                    /**< bit:     24  Manchester Error Interrupt Mask          */
-    uint32_t :7;                        /**< bit: 25..31  Reserved */
-  } USART;                                /**< Structure used for USART mode access */
-  struct { // USART_LIN mode
-    uint32_t :6;                        /**< bit:   0..5  Reserved */
-    uint32_t FRAME:1;                   /**< bit:      6  Framing Error Interrupt Mask             */
-    uint32_t PARE:1;                    /**< bit:      7  Parity Error Interrupt Mask              */
-    uint32_t TIMEOUT:1;                 /**< bit:      8  Timeout Interrupt Mask                   */
-    uint32_t :23;                       /**< bit:  9..31  Reserved */
-  } USART_LIN;                                /**< Structure used for USART_LIN mode access */
-  struct { // SPI mode
-    uint32_t :19;                       /**< bit:  0..18  Reserved */
+    uint32_t UNRE:1;                    /**< bit:     10  SPI Underrun Error Interrupt Mask        */
+    uint32_t :8;                        /**< bit: 11..18  Reserved */
     uint32_t NSSE:1;                    /**< bit:     19  NSS Line (Driving CTS Pin) Rising or Falling Edge Event */
     uint32_t :12;                       /**< bit: 20..31  Reserved */
   } SPI;                                /**< Structure used for SPI mode access */
   struct { // LIN mode
-    uint32_t :13;                       /**< bit:  0..12  Reserved */
+    uint32_t RXRDY:1;                   /**< bit:      0  RXRDY Interrupt Mask                     */
+    uint32_t TXRDY:1;                   /**< bit:      1  TXRDY Interrupt Mask                     */
+    uint32_t :3;                        /**< bit:   2..4  Reserved */
+    uint32_t OVRE:1;                    /**< bit:      5  Overrun Error Interrupt Mask             */
+    uint32_t FRAME:1;                   /**< bit:      6  Framing Error Interrupt Mask             */
+    uint32_t PARE:1;                    /**< bit:      7  Parity Error Interrupt Mask              */
+    uint32_t TIMEOUT:1;                 /**< bit:      8  Timeout Interrupt Mask                   */
+    uint32_t TXEMPTY:1;                 /**< bit:      9  TXEMPTY Interrupt Mask                   */
+    uint32_t :3;                        /**< bit: 10..12  Reserved */
     uint32_t LINBK:1;                   /**< bit:     13  LIN Break Sent or LIN Break Received Interrupt Mask */
     uint32_t LINID:1;                   /**< bit:     14  LIN Identifier Sent or LIN Identifier Received Interrupt Mask */
     uint32_t LINTC:1;                   /**< bit:     15  LIN Transfer Completed Interrupt Mask    */
@@ -848,10 +1047,16 @@ typedef union {
     uint32_t LINHTE:1;                  /**< bit:     31  LIN Header Timeout Error Interrupt Mask  */
   } LIN;                                /**< Structure used for LIN mode access */
   struct { // LON mode
-    uint32_t :6;                        /**< bit:   0..5  Reserved */
+    uint32_t RXRDY:1;                   /**< bit:      0  RXRDY Interrupt Mask                     */
+    uint32_t TXRDY:1;                   /**< bit:      1  TXRDY Interrupt Mask                     */
+    uint32_t :3;                        /**< bit:   2..4  Reserved */
+    uint32_t OVRE:1;                    /**< bit:      5  Overrun Error Interrupt Mask             */
     uint32_t LSFE:1;                    /**< bit:      6  LON Short Frame Error Interrupt Mask     */
     uint32_t LCRCE:1;                   /**< bit:      7  LON CRC Error Interrupt Mask             */
-    uint32_t :16;                       /**< bit:  8..23  Reserved */
+    uint32_t :1;                        /**< bit:      8  Reserved */
+    uint32_t TXEMPTY:1;                 /**< bit:      9  TXEMPTY Interrupt Mask                   */
+    uint32_t UNRE:1;                    /**< bit:     10  SPI Underrun Error Interrupt Mask        */
+    uint32_t :13;                       /**< bit: 11..23  Reserved */
     uint32_t LTXD:1;                    /**< bit:     24  LON Transmission Done Interrupt Mask     */
     uint32_t LCOL:1;                    /**< bit:     25  LON Collision Interrupt Mask             */
     uint32_t LFET:1;                    /**< bit:     26  LON Frame Early Termination Interrupt Mask */
@@ -859,11 +1064,6 @@ typedef union {
     uint32_t LBLOVFE:1;                 /**< bit:     28  LON Backlog Overflow Error Interrupt Mask */
     uint32_t :3;                        /**< bit: 29..31  Reserved */
   } LON;                                /**< Structure used for LON mode access */
-  struct { // LON_SPI mode
-    uint32_t :10;                       /**< bit:   0..9  Reserved */
-    uint32_t UNRE:1;                    /**< bit:     10  SPI Underrun Error Interrupt Mask        */
-    uint32_t :21;                       /**< bit: 11..31  Reserved */
-  } LON_SPI;                                /**< Structure used for LON_SPI mode access */
   uint32_t reg;                         /**< Type used for register access */
 } US_IMR_Type;
 #endif
@@ -871,70 +1071,102 @@ typedef union {
 
 #define US_IMR_OFFSET                       (0x10)                                        /**<  (US_IMR) Interrupt Mask Register  Offset */
 
-#define US_IMR_RXRDY_Pos                    0                                              /**< (US_IMR) RXRDY Interrupt Mask Position */
-#define US_IMR_RXRDY_Msk                    (_U_(0x1) << US_IMR_RXRDY_Pos)                 /**< (US_IMR) RXRDY Interrupt Mask Mask */
-#define US_IMR_RXRDY                        US_IMR_RXRDY_Msk                               /**< \deprecated Old style mask definition for 1 bit bitfield. Use US_IMR_RXRDY_Msk instead */
-#define US_IMR_TXRDY_Pos                    1                                              /**< (US_IMR) TXRDY Interrupt Mask Position */
-#define US_IMR_TXRDY_Msk                    (_U_(0x1) << US_IMR_TXRDY_Pos)                 /**< (US_IMR) TXRDY Interrupt Mask Mask */
-#define US_IMR_TXRDY                        US_IMR_TXRDY_Msk                               /**< \deprecated Old style mask definition for 1 bit bitfield. Use US_IMR_TXRDY_Msk instead */
-#define US_IMR_OVRE_Pos                     5                                              /**< (US_IMR) Overrun Error Interrupt Mask Position */
-#define US_IMR_OVRE_Msk                     (_U_(0x1) << US_IMR_OVRE_Pos)                  /**< (US_IMR) Overrun Error Interrupt Mask Mask */
-#define US_IMR_OVRE                         US_IMR_OVRE_Msk                                /**< \deprecated Old style mask definition for 1 bit bitfield. Use US_IMR_OVRE_Msk instead */
-#define US_IMR_TXEMPTY_Pos                  9                                              /**< (US_IMR) TXEMPTY Interrupt Mask Position */
-#define US_IMR_TXEMPTY_Msk                  (_U_(0x1) << US_IMR_TXEMPTY_Pos)               /**< (US_IMR) TXEMPTY Interrupt Mask Mask */
-#define US_IMR_TXEMPTY                      US_IMR_TXEMPTY_Msk                             /**< \deprecated Old style mask definition for 1 bit bitfield. Use US_IMR_TXEMPTY_Msk instead */
-#define US_IMR_RIIC_Pos                     16                                             /**< (US_IMR) Ring Indicator Input Change Mask Position */
-#define US_IMR_RIIC_Msk                     (_U_(0x1) << US_IMR_RIIC_Pos)                  /**< (US_IMR) Ring Indicator Input Change Mask Mask */
-#define US_IMR_RIIC                         US_IMR_RIIC_Msk                                /**< \deprecated Old style mask definition for 1 bit bitfield. Use US_IMR_RIIC_Msk instead */
-#define US_IMR_DSRIC_Pos                    17                                             /**< (US_IMR) Data Set Ready Input Change Mask Position */
-#define US_IMR_DSRIC_Msk                    (_U_(0x1) << US_IMR_DSRIC_Pos)                 /**< (US_IMR) Data Set Ready Input Change Mask Mask */
-#define US_IMR_DSRIC                        US_IMR_DSRIC_Msk                               /**< \deprecated Old style mask definition for 1 bit bitfield. Use US_IMR_DSRIC_Msk instead */
-#define US_IMR_DCDIC_Pos                    18                                             /**< (US_IMR) Data Carrier Detect Input Change Interrupt Mask Position */
-#define US_IMR_DCDIC_Msk                    (_U_(0x1) << US_IMR_DCDIC_Pos)                 /**< (US_IMR) Data Carrier Detect Input Change Interrupt Mask Mask */
-#define US_IMR_DCDIC                        US_IMR_DCDIC_Msk                               /**< \deprecated Old style mask definition for 1 bit bitfield. Use US_IMR_DCDIC_Msk instead */
-#define US_IMR_MASK                         _U_(0x70223)                                   /**< \deprecated (US_IMR) Register MASK  (Use US_IMR_Msk instead)  */
-#define US_IMR_Msk                          _U_(0x70223)                                   /**< (US_IMR) Register Mask  */
+#define US_IMR_MASK                         _U_(0x00)                                      /**< \deprecated (US_IMR) Register MASK  (Use US_IMR_Msk instead)  */
+#define US_IMR_Msk                          _U_(0x00)                                      /**< (US_IMR) Register Mask  */
 
 /* USART mode */
+#define US_IMR_USART_RXRDY_Pos              0                                              /**< (US_IMR) RXRDY Interrupt Mask Position */
+#define US_IMR_USART_RXRDY_Msk              (_U_(0x1) << US_IMR_USART_RXRDY_Pos)           /**< (US_IMR) RXRDY Interrupt Mask Mask */
+#define US_IMR_USART_RXRDY                  US_IMR_USART_RXRDY_Msk                         /**< \deprecated Old style mask definition for 1 bit bitfield. Use US_IMR_USART_RXRDY_Msk instead */
+#define US_IMR_USART_TXRDY_Pos              1                                              /**< (US_IMR) TXRDY Interrupt Mask Position */
+#define US_IMR_USART_TXRDY_Msk              (_U_(0x1) << US_IMR_USART_TXRDY_Pos)           /**< (US_IMR) TXRDY Interrupt Mask Mask */
+#define US_IMR_USART_TXRDY                  US_IMR_USART_TXRDY_Msk                         /**< \deprecated Old style mask definition for 1 bit bitfield. Use US_IMR_USART_TXRDY_Msk instead */
 #define US_IMR_USART_RXBRK_Pos              2                                              /**< (US_IMR) Receiver Break Interrupt Mask Position */
 #define US_IMR_USART_RXBRK_Msk              (_U_(0x1) << US_IMR_USART_RXBRK_Pos)           /**< (US_IMR) Receiver Break Interrupt Mask Mask */
 #define US_IMR_USART_RXBRK                  US_IMR_USART_RXBRK_Msk                         /**< \deprecated Old style mask definition for 1 bit bitfield. Use US_IMR_USART_RXBRK_Msk instead */
+#define US_IMR_USART_OVRE_Pos               5                                              /**< (US_IMR) Overrun Error Interrupt Mask Position */
+#define US_IMR_USART_OVRE_Msk               (_U_(0x1) << US_IMR_USART_OVRE_Pos)            /**< (US_IMR) Overrun Error Interrupt Mask Mask */
+#define US_IMR_USART_OVRE                   US_IMR_USART_OVRE_Msk                          /**< \deprecated Old style mask definition for 1 bit bitfield. Use US_IMR_USART_OVRE_Msk instead */
+#define US_IMR_USART_FRAME_Pos              6                                              /**< (US_IMR) Framing Error Interrupt Mask Position */
+#define US_IMR_USART_FRAME_Msk              (_U_(0x1) << US_IMR_USART_FRAME_Pos)           /**< (US_IMR) Framing Error Interrupt Mask Mask */
+#define US_IMR_USART_FRAME                  US_IMR_USART_FRAME_Msk                         /**< \deprecated Old style mask definition for 1 bit bitfield. Use US_IMR_USART_FRAME_Msk instead */
+#define US_IMR_USART_PARE_Pos               7                                              /**< (US_IMR) Parity Error Interrupt Mask Position */
+#define US_IMR_USART_PARE_Msk               (_U_(0x1) << US_IMR_USART_PARE_Pos)            /**< (US_IMR) Parity Error Interrupt Mask Mask */
+#define US_IMR_USART_PARE                   US_IMR_USART_PARE_Msk                          /**< \deprecated Old style mask definition for 1 bit bitfield. Use US_IMR_USART_PARE_Msk instead */
+#define US_IMR_USART_TIMEOUT_Pos            8                                              /**< (US_IMR) Timeout Interrupt Mask Position */
+#define US_IMR_USART_TIMEOUT_Msk            (_U_(0x1) << US_IMR_USART_TIMEOUT_Pos)         /**< (US_IMR) Timeout Interrupt Mask Mask */
+#define US_IMR_USART_TIMEOUT                US_IMR_USART_TIMEOUT_Msk                       /**< \deprecated Old style mask definition for 1 bit bitfield. Use US_IMR_USART_TIMEOUT_Msk instead */
+#define US_IMR_USART_TXEMPTY_Pos            9                                              /**< (US_IMR) TXEMPTY Interrupt Mask Position */
+#define US_IMR_USART_TXEMPTY_Msk            (_U_(0x1) << US_IMR_USART_TXEMPTY_Pos)         /**< (US_IMR) TXEMPTY Interrupt Mask Mask */
+#define US_IMR_USART_TXEMPTY                US_IMR_USART_TXEMPTY_Msk                       /**< \deprecated Old style mask definition for 1 bit bitfield. Use US_IMR_USART_TXEMPTY_Msk instead */
 #define US_IMR_USART_ITER_Pos               10                                             /**< (US_IMR) Max Number of Repetitions Reached Interrupt Mask Position */
 #define US_IMR_USART_ITER_Msk               (_U_(0x1) << US_IMR_USART_ITER_Pos)            /**< (US_IMR) Max Number of Repetitions Reached Interrupt Mask Mask */
 #define US_IMR_USART_ITER                   US_IMR_USART_ITER_Msk                          /**< \deprecated Old style mask definition for 1 bit bitfield. Use US_IMR_USART_ITER_Msk instead */
 #define US_IMR_USART_NACK_Pos               13                                             /**< (US_IMR) Non Acknowledge Interrupt Mask Position */
 #define US_IMR_USART_NACK_Msk               (_U_(0x1) << US_IMR_USART_NACK_Pos)            /**< (US_IMR) Non Acknowledge Interrupt Mask Mask */
 #define US_IMR_USART_NACK                   US_IMR_USART_NACK_Msk                          /**< \deprecated Old style mask definition for 1 bit bitfield. Use US_IMR_USART_NACK_Msk instead */
+#define US_IMR_USART_RIIC_Pos               16                                             /**< (US_IMR) Ring Indicator Input Change Mask Position */
+#define US_IMR_USART_RIIC_Msk               (_U_(0x1) << US_IMR_USART_RIIC_Pos)            /**< (US_IMR) Ring Indicator Input Change Mask Mask */
+#define US_IMR_USART_RIIC                   US_IMR_USART_RIIC_Msk                          /**< \deprecated Old style mask definition for 1 bit bitfield. Use US_IMR_USART_RIIC_Msk instead */
+#define US_IMR_USART_DSRIC_Pos              17                                             /**< (US_IMR) Data Set Ready Input Change Mask Position */
+#define US_IMR_USART_DSRIC_Msk              (_U_(0x1) << US_IMR_USART_DSRIC_Pos)           /**< (US_IMR) Data Set Ready Input Change Mask Mask */
+#define US_IMR_USART_DSRIC                  US_IMR_USART_DSRIC_Msk                         /**< \deprecated Old style mask definition for 1 bit bitfield. Use US_IMR_USART_DSRIC_Msk instead */
+#define US_IMR_USART_DCDIC_Pos              18                                             /**< (US_IMR) Data Carrier Detect Input Change Interrupt Mask Position */
+#define US_IMR_USART_DCDIC_Msk              (_U_(0x1) << US_IMR_USART_DCDIC_Pos)           /**< (US_IMR) Data Carrier Detect Input Change Interrupt Mask Mask */
+#define US_IMR_USART_DCDIC                  US_IMR_USART_DCDIC_Msk                         /**< \deprecated Old style mask definition for 1 bit bitfield. Use US_IMR_USART_DCDIC_Msk instead */
 #define US_IMR_USART_CTSIC_Pos              19                                             /**< (US_IMR) Clear to Send Input Change Interrupt Mask Position */
 #define US_IMR_USART_CTSIC_Msk              (_U_(0x1) << US_IMR_USART_CTSIC_Pos)           /**< (US_IMR) Clear to Send Input Change Interrupt Mask Mask */
 #define US_IMR_USART_CTSIC                  US_IMR_USART_CTSIC_Msk                         /**< \deprecated Old style mask definition for 1 bit bitfield. Use US_IMR_USART_CTSIC_Msk instead */
 #define US_IMR_USART_MANE_Pos               24                                             /**< (US_IMR) Manchester Error Interrupt Mask Position */
 #define US_IMR_USART_MANE_Msk               (_U_(0x1) << US_IMR_USART_MANE_Pos)            /**< (US_IMR) Manchester Error Interrupt Mask Mask */
 #define US_IMR_USART_MANE                   US_IMR_USART_MANE_Msk                          /**< \deprecated Old style mask definition for 1 bit bitfield. Use US_IMR_USART_MANE_Msk instead */
-#define US_IMR_USART_MASK                   _U_(0x1082404)                                 /**< \deprecated (US_IMR_USART) Register MASK  (Use US_IMR_USART_Msk instead)  */
-#define US_IMR_USART_Msk                    _U_(0x1082404)                                 /**< (US_IMR_USART) Register Mask  */
-
-/* USART_LIN mode */
-#define US_IMR_USART_LIN_FRAME_Pos          6                                              /**< (US_IMR) Framing Error Interrupt Mask Position */
-#define US_IMR_USART_LIN_FRAME_Msk          (_U_(0x1) << US_IMR_USART_LIN_FRAME_Pos)       /**< (US_IMR) Framing Error Interrupt Mask Mask */
-#define US_IMR_USART_LIN_FRAME              US_IMR_USART_LIN_FRAME_Msk                     /**< \deprecated Old style mask definition for 1 bit bitfield. Use US_IMR_USART_LIN_FRAME_Msk instead */
-#define US_IMR_USART_LIN_PARE_Pos           7                                              /**< (US_IMR) Parity Error Interrupt Mask Position */
-#define US_IMR_USART_LIN_PARE_Msk           (_U_(0x1) << US_IMR_USART_LIN_PARE_Pos)        /**< (US_IMR) Parity Error Interrupt Mask Mask */
-#define US_IMR_USART_LIN_PARE               US_IMR_USART_LIN_PARE_Msk                      /**< \deprecated Old style mask definition for 1 bit bitfield. Use US_IMR_USART_LIN_PARE_Msk instead */
-#define US_IMR_USART_LIN_TIMEOUT_Pos        8                                              /**< (US_IMR) Timeout Interrupt Mask Position */
-#define US_IMR_USART_LIN_TIMEOUT_Msk        (_U_(0x1) << US_IMR_USART_LIN_TIMEOUT_Pos)     /**< (US_IMR) Timeout Interrupt Mask Mask */
-#define US_IMR_USART_LIN_TIMEOUT            US_IMR_USART_LIN_TIMEOUT_Msk                   /**< \deprecated Old style mask definition for 1 bit bitfield. Use US_IMR_USART_LIN_TIMEOUT_Msk instead */
-#define US_IMR_USART_LIN_MASK               _U_(0x1C0)                                     /**< \deprecated (US_IMR_USART_LIN) Register MASK  (Use US_IMR_USART_LIN_Msk instead)  */
-#define US_IMR_USART_LIN_Msk                _U_(0x1C0)                                     /**< (US_IMR_USART_LIN) Register Mask  */
+#define US_IMR_USART_MASK                   _U_(0x10F27E7)                                 /**< \deprecated (US_IMR_USART) Register MASK  (Use US_IMR_USART_Msk instead)  */
+#define US_IMR_USART_Msk                    _U_(0x10F27E7)                                 /**< (US_IMR_USART) Register Mask  */
 
 /* SPI mode */
+#define US_IMR_SPI_RXRDY_Pos                0                                              /**< (US_IMR) RXRDY Interrupt Mask Position */
+#define US_IMR_SPI_RXRDY_Msk                (_U_(0x1) << US_IMR_SPI_RXRDY_Pos)             /**< (US_IMR) RXRDY Interrupt Mask Mask */
+#define US_IMR_SPI_RXRDY                    US_IMR_SPI_RXRDY_Msk                           /**< \deprecated Old style mask definition for 1 bit bitfield. Use US_IMR_SPI_RXRDY_Msk instead */
+#define US_IMR_SPI_TXRDY_Pos                1                                              /**< (US_IMR) TXRDY Interrupt Mask Position */
+#define US_IMR_SPI_TXRDY_Msk                (_U_(0x1) << US_IMR_SPI_TXRDY_Pos)             /**< (US_IMR) TXRDY Interrupt Mask Mask */
+#define US_IMR_SPI_TXRDY                    US_IMR_SPI_TXRDY_Msk                           /**< \deprecated Old style mask definition for 1 bit bitfield. Use US_IMR_SPI_TXRDY_Msk instead */
+#define US_IMR_SPI_OVRE_Pos                 5                                              /**< (US_IMR) Overrun Error Interrupt Mask Position */
+#define US_IMR_SPI_OVRE_Msk                 (_U_(0x1) << US_IMR_SPI_OVRE_Pos)              /**< (US_IMR) Overrun Error Interrupt Mask Mask */
+#define US_IMR_SPI_OVRE                     US_IMR_SPI_OVRE_Msk                            /**< \deprecated Old style mask definition for 1 bit bitfield. Use US_IMR_SPI_OVRE_Msk instead */
+#define US_IMR_SPI_TXEMPTY_Pos              9                                              /**< (US_IMR) TXEMPTY Interrupt Mask Position */
+#define US_IMR_SPI_TXEMPTY_Msk              (_U_(0x1) << US_IMR_SPI_TXEMPTY_Pos)           /**< (US_IMR) TXEMPTY Interrupt Mask Mask */
+#define US_IMR_SPI_TXEMPTY                  US_IMR_SPI_TXEMPTY_Msk                         /**< \deprecated Old style mask definition for 1 bit bitfield. Use US_IMR_SPI_TXEMPTY_Msk instead */
+#define US_IMR_SPI_UNRE_Pos                 10                                             /**< (US_IMR) SPI Underrun Error Interrupt Mask Position */
+#define US_IMR_SPI_UNRE_Msk                 (_U_(0x1) << US_IMR_SPI_UNRE_Pos)              /**< (US_IMR) SPI Underrun Error Interrupt Mask Mask */
+#define US_IMR_SPI_UNRE                     US_IMR_SPI_UNRE_Msk                            /**< \deprecated Old style mask definition for 1 bit bitfield. Use US_IMR_SPI_UNRE_Msk instead */
 #define US_IMR_SPI_NSSE_Pos                 19                                             /**< (US_IMR) NSS Line (Driving CTS Pin) Rising or Falling Edge Event Position */
 #define US_IMR_SPI_NSSE_Msk                 (_U_(0x1) << US_IMR_SPI_NSSE_Pos)              /**< (US_IMR) NSS Line (Driving CTS Pin) Rising or Falling Edge Event Mask */
 #define US_IMR_SPI_NSSE                     US_IMR_SPI_NSSE_Msk                            /**< \deprecated Old style mask definition for 1 bit bitfield. Use US_IMR_SPI_NSSE_Msk instead */
-#define US_IMR_SPI_MASK                     _U_(0x80000)                                   /**< \deprecated (US_IMR_SPI) Register MASK  (Use US_IMR_SPI_Msk instead)  */
-#define US_IMR_SPI_Msk                      _U_(0x80000)                                   /**< (US_IMR_SPI) Register Mask  */
+#define US_IMR_SPI_MASK                     _U_(0x80623)                                   /**< \deprecated (US_IMR_SPI) Register MASK  (Use US_IMR_SPI_Msk instead)  */
+#define US_IMR_SPI_Msk                      _U_(0x80623)                                   /**< (US_IMR_SPI) Register Mask  */
 
 /* LIN mode */
+#define US_IMR_LIN_RXRDY_Pos                0                                              /**< (US_IMR) RXRDY Interrupt Mask Position */
+#define US_IMR_LIN_RXRDY_Msk                (_U_(0x1) << US_IMR_LIN_RXRDY_Pos)             /**< (US_IMR) RXRDY Interrupt Mask Mask */
+#define US_IMR_LIN_RXRDY                    US_IMR_LIN_RXRDY_Msk                           /**< \deprecated Old style mask definition for 1 bit bitfield. Use US_IMR_LIN_RXRDY_Msk instead */
+#define US_IMR_LIN_TXRDY_Pos                1                                              /**< (US_IMR) TXRDY Interrupt Mask Position */
+#define US_IMR_LIN_TXRDY_Msk                (_U_(0x1) << US_IMR_LIN_TXRDY_Pos)             /**< (US_IMR) TXRDY Interrupt Mask Mask */
+#define US_IMR_LIN_TXRDY                    US_IMR_LIN_TXRDY_Msk                           /**< \deprecated Old style mask definition for 1 bit bitfield. Use US_IMR_LIN_TXRDY_Msk instead */
+#define US_IMR_LIN_OVRE_Pos                 5                                              /**< (US_IMR) Overrun Error Interrupt Mask Position */
+#define US_IMR_LIN_OVRE_Msk                 (_U_(0x1) << US_IMR_LIN_OVRE_Pos)              /**< (US_IMR) Overrun Error Interrupt Mask Mask */
+#define US_IMR_LIN_OVRE                     US_IMR_LIN_OVRE_Msk                            /**< \deprecated Old style mask definition for 1 bit bitfield. Use US_IMR_LIN_OVRE_Msk instead */
+#define US_IMR_LIN_FRAME_Pos                6                                              /**< (US_IMR) Framing Error Interrupt Mask Position */
+#define US_IMR_LIN_FRAME_Msk                (_U_(0x1) << US_IMR_LIN_FRAME_Pos)             /**< (US_IMR) Framing Error Interrupt Mask Mask */
+#define US_IMR_LIN_FRAME                    US_IMR_LIN_FRAME_Msk                           /**< \deprecated Old style mask definition for 1 bit bitfield. Use US_IMR_LIN_FRAME_Msk instead */
+#define US_IMR_LIN_PARE_Pos                 7                                              /**< (US_IMR) Parity Error Interrupt Mask Position */
+#define US_IMR_LIN_PARE_Msk                 (_U_(0x1) << US_IMR_LIN_PARE_Pos)              /**< (US_IMR) Parity Error Interrupt Mask Mask */
+#define US_IMR_LIN_PARE                     US_IMR_LIN_PARE_Msk                            /**< \deprecated Old style mask definition for 1 bit bitfield. Use US_IMR_LIN_PARE_Msk instead */
+#define US_IMR_LIN_TIMEOUT_Pos              8                                              /**< (US_IMR) Timeout Interrupt Mask Position */
+#define US_IMR_LIN_TIMEOUT_Msk              (_U_(0x1) << US_IMR_LIN_TIMEOUT_Pos)           /**< (US_IMR) Timeout Interrupt Mask Mask */
+#define US_IMR_LIN_TIMEOUT                  US_IMR_LIN_TIMEOUT_Msk                         /**< \deprecated Old style mask definition for 1 bit bitfield. Use US_IMR_LIN_TIMEOUT_Msk instead */
+#define US_IMR_LIN_TXEMPTY_Pos              9                                              /**< (US_IMR) TXEMPTY Interrupt Mask Position */
+#define US_IMR_LIN_TXEMPTY_Msk              (_U_(0x1) << US_IMR_LIN_TXEMPTY_Pos)           /**< (US_IMR) TXEMPTY Interrupt Mask Mask */
+#define US_IMR_LIN_TXEMPTY                  US_IMR_LIN_TXEMPTY_Msk                         /**< \deprecated Old style mask definition for 1 bit bitfield. Use US_IMR_LIN_TXEMPTY_Msk instead */
 #define US_IMR_LIN_LINBK_Pos                13                                             /**< (US_IMR) LIN Break Sent or LIN Break Received Interrupt Mask Position */
 #define US_IMR_LIN_LINBK_Msk                (_U_(0x1) << US_IMR_LIN_LINBK_Pos)             /**< (US_IMR) LIN Break Sent or LIN Break Received Interrupt Mask Mask */
 #define US_IMR_LIN_LINBK                    US_IMR_LIN_LINBK_Msk                           /**< \deprecated Old style mask definition for 1 bit bitfield. Use US_IMR_LIN_LINBK_Msk instead */
@@ -965,16 +1197,31 @@ typedef union {
 #define US_IMR_LIN_LINHTE_Pos               31                                             /**< (US_IMR) LIN Header Timeout Error Interrupt Mask Position */
 #define US_IMR_LIN_LINHTE_Msk               (_U_(0x1) << US_IMR_LIN_LINHTE_Pos)            /**< (US_IMR) LIN Header Timeout Error Interrupt Mask Mask */
 #define US_IMR_LIN_LINHTE                   US_IMR_LIN_LINHTE_Msk                          /**< \deprecated Old style mask definition for 1 bit bitfield. Use US_IMR_LIN_LINHTE_Msk instead */
-#define US_IMR_LIN_MASK                     _U_(0xFE00E000)                                /**< \deprecated (US_IMR_LIN) Register MASK  (Use US_IMR_LIN_Msk instead)  */
-#define US_IMR_LIN_Msk                      _U_(0xFE00E000)                                /**< (US_IMR_LIN) Register Mask  */
+#define US_IMR_LIN_MASK                     _U_(0xFE00E3E3)                                /**< \deprecated (US_IMR_LIN) Register MASK  (Use US_IMR_LIN_Msk instead)  */
+#define US_IMR_LIN_Msk                      _U_(0xFE00E3E3)                                /**< (US_IMR_LIN) Register Mask  */
 
 /* LON mode */
+#define US_IMR_LON_RXRDY_Pos                0                                              /**< (US_IMR) RXRDY Interrupt Mask Position */
+#define US_IMR_LON_RXRDY_Msk                (_U_(0x1) << US_IMR_LON_RXRDY_Pos)             /**< (US_IMR) RXRDY Interrupt Mask Mask */
+#define US_IMR_LON_RXRDY                    US_IMR_LON_RXRDY_Msk                           /**< \deprecated Old style mask definition for 1 bit bitfield. Use US_IMR_LON_RXRDY_Msk instead */
+#define US_IMR_LON_TXRDY_Pos                1                                              /**< (US_IMR) TXRDY Interrupt Mask Position */
+#define US_IMR_LON_TXRDY_Msk                (_U_(0x1) << US_IMR_LON_TXRDY_Pos)             /**< (US_IMR) TXRDY Interrupt Mask Mask */
+#define US_IMR_LON_TXRDY                    US_IMR_LON_TXRDY_Msk                           /**< \deprecated Old style mask definition for 1 bit bitfield. Use US_IMR_LON_TXRDY_Msk instead */
+#define US_IMR_LON_OVRE_Pos                 5                                              /**< (US_IMR) Overrun Error Interrupt Mask Position */
+#define US_IMR_LON_OVRE_Msk                 (_U_(0x1) << US_IMR_LON_OVRE_Pos)              /**< (US_IMR) Overrun Error Interrupt Mask Mask */
+#define US_IMR_LON_OVRE                     US_IMR_LON_OVRE_Msk                            /**< \deprecated Old style mask definition for 1 bit bitfield. Use US_IMR_LON_OVRE_Msk instead */
 #define US_IMR_LON_LSFE_Pos                 6                                              /**< (US_IMR) LON Short Frame Error Interrupt Mask Position */
 #define US_IMR_LON_LSFE_Msk                 (_U_(0x1) << US_IMR_LON_LSFE_Pos)              /**< (US_IMR) LON Short Frame Error Interrupt Mask Mask */
 #define US_IMR_LON_LSFE                     US_IMR_LON_LSFE_Msk                            /**< \deprecated Old style mask definition for 1 bit bitfield. Use US_IMR_LON_LSFE_Msk instead */
 #define US_IMR_LON_LCRCE_Pos                7                                              /**< (US_IMR) LON CRC Error Interrupt Mask Position */
 #define US_IMR_LON_LCRCE_Msk                (_U_(0x1) << US_IMR_LON_LCRCE_Pos)             /**< (US_IMR) LON CRC Error Interrupt Mask Mask */
 #define US_IMR_LON_LCRCE                    US_IMR_LON_LCRCE_Msk                           /**< \deprecated Old style mask definition for 1 bit bitfield. Use US_IMR_LON_LCRCE_Msk instead */
+#define US_IMR_LON_TXEMPTY_Pos              9                                              /**< (US_IMR) TXEMPTY Interrupt Mask Position */
+#define US_IMR_LON_TXEMPTY_Msk              (_U_(0x1) << US_IMR_LON_TXEMPTY_Pos)           /**< (US_IMR) TXEMPTY Interrupt Mask Mask */
+#define US_IMR_LON_TXEMPTY                  US_IMR_LON_TXEMPTY_Msk                         /**< \deprecated Old style mask definition for 1 bit bitfield. Use US_IMR_LON_TXEMPTY_Msk instead */
+#define US_IMR_LON_UNRE_Pos                 10                                             /**< (US_IMR) SPI Underrun Error Interrupt Mask Position */
+#define US_IMR_LON_UNRE_Msk                 (_U_(0x1) << US_IMR_LON_UNRE_Pos)              /**< (US_IMR) SPI Underrun Error Interrupt Mask Mask */
+#define US_IMR_LON_UNRE                     US_IMR_LON_UNRE_Msk                            /**< \deprecated Old style mask definition for 1 bit bitfield. Use US_IMR_LON_UNRE_Msk instead */
 #define US_IMR_LON_LTXD_Pos                 24                                             /**< (US_IMR) LON Transmission Done Interrupt Mask Position */
 #define US_IMR_LON_LTXD_Msk                 (_U_(0x1) << US_IMR_LON_LTXD_Pos)              /**< (US_IMR) LON Transmission Done Interrupt Mask Mask */
 #define US_IMR_LON_LTXD                     US_IMR_LON_LTXD_Msk                            /**< \deprecated Old style mask definition for 1 bit bitfield. Use US_IMR_LON_LTXD_Msk instead */
@@ -990,42 +1237,31 @@ typedef union {
 #define US_IMR_LON_LBLOVFE_Pos              28                                             /**< (US_IMR) LON Backlog Overflow Error Interrupt Mask Position */
 #define US_IMR_LON_LBLOVFE_Msk              (_U_(0x1) << US_IMR_LON_LBLOVFE_Pos)           /**< (US_IMR) LON Backlog Overflow Error Interrupt Mask Mask */
 #define US_IMR_LON_LBLOVFE                  US_IMR_LON_LBLOVFE_Msk                         /**< \deprecated Old style mask definition for 1 bit bitfield. Use US_IMR_LON_LBLOVFE_Msk instead */
-#define US_IMR_LON_MASK                     _U_(0x1F0000C0)                                /**< \deprecated (US_IMR_LON) Register MASK  (Use US_IMR_LON_Msk instead)  */
-#define US_IMR_LON_Msk                      _U_(0x1F0000C0)                                /**< (US_IMR_LON) Register Mask  */
-
-/* LON_SPI mode */
-#define US_IMR_LON_SPI_UNRE_Pos             10                                             /**< (US_IMR) SPI Underrun Error Interrupt Mask Position */
-#define US_IMR_LON_SPI_UNRE_Msk             (_U_(0x1) << US_IMR_LON_SPI_UNRE_Pos)          /**< (US_IMR) SPI Underrun Error Interrupt Mask Mask */
-#define US_IMR_LON_SPI_UNRE                 US_IMR_LON_SPI_UNRE_Msk                        /**< \deprecated Old style mask definition for 1 bit bitfield. Use US_IMR_LON_SPI_UNRE_Msk instead */
-#define US_IMR_LON_SPI_MASK                 _U_(0x400)                                     /**< \deprecated (US_IMR_LON_SPI) Register MASK  (Use US_IMR_LON_SPI_Msk instead)  */
-#define US_IMR_LON_SPI_Msk                  _U_(0x400)                                     /**< (US_IMR_LON_SPI) Register Mask  */
+#define US_IMR_LON_MASK                     _U_(0x1F0006E3)                                /**< \deprecated (US_IMR_LON) Register MASK  (Use US_IMR_LON_Msk instead)  */
+#define US_IMR_LON_Msk                      _U_(0x1F0006E3)                                /**< (US_IMR_LON) Register Mask  */
 
 
 /* -------- US_CSR : (USART Offset: 0x14) (R/ 32) Channel Status Register -------- */
 #if !(defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__))
 #if COMPONENT_TYPEDEF_STYLE == 'N'
 typedef union {
-  struct {
+  struct { // USART mode
     uint32_t RXRDY:1;                   /**< bit:      0  Receiver Ready (cleared by reading US_RHR) */
     uint32_t TXRDY:1;                   /**< bit:      1  Transmitter Ready (cleared by writing US_THR) */
-    uint32_t :3;                        /**< bit:   2..4  Reserved */
-    uint32_t OVRE:1;                    /**< bit:      5  Overrun Error (cleared by writing a one to bit US_CR.RSTSTA) */
-    uint32_t :3;                        /**< bit:   6..8  Reserved */
-    uint32_t TXEMPTY:1;                 /**< bit:      9  Transmitter Empty (cleared by writing US_THR) */
-    uint32_t :6;                        /**< bit: 10..15  Reserved */
-    uint32_t RIIC:1;                    /**< bit:     16  Ring Indicator Input Change Flag (cleared on read) */
-    uint32_t DSRIC:1;                   /**< bit:     17  Data Set Ready Input Change Flag (cleared on read) */
-    uint32_t DCDIC:1;                   /**< bit:     18  Data Carrier Detect Input Change Flag (cleared on read) */
-    uint32_t :13;                       /**< bit: 19..31  Reserved */
-  } bit;                                /**< Structure used for bit  access */
-  struct { // USART mode
-    uint32_t :2;                        /**< bit:   0..1  Reserved */
     uint32_t RXBRK:1;                   /**< bit:      2  Break Received/End of Break (cleared by writing a one to bit US_CR.RSTSTA) */
-    uint32_t :7;                        /**< bit:   3..9  Reserved */
+    uint32_t :2;                        /**< bit:   3..4  Reserved */
+    uint32_t OVRE:1;                    /**< bit:      5  Overrun Error (cleared by writing a one to bit US_CR.RSTSTA) */
+    uint32_t FRAME:1;                   /**< bit:      6  Framing Error (cleared by writing a one to bit US_CR.RSTSTA) */
+    uint32_t PARE:1;                    /**< bit:      7  Parity Error (cleared by writing a one to bit US_CR.RSTSTA) */
+    uint32_t TIMEOUT:1;                 /**< bit:      8  Receiver Timeout (cleared by writing a one to bit US_CR.STTTO) */
+    uint32_t TXEMPTY:1;                 /**< bit:      9  Transmitter Empty (cleared by writing US_THR) */
     uint32_t ITER:1;                    /**< bit:     10  Max Number of Repetitions Reached (cleared by writing a one to bit US_CR.RSTIT) */
     uint32_t :2;                        /**< bit: 11..12  Reserved */
     uint32_t NACK:1;                    /**< bit:     13  Non Acknowledge Interrupt (cleared by writing a one to bit US_CR.RSTNACK) */
-    uint32_t :5;                        /**< bit: 14..18  Reserved */
+    uint32_t :2;                        /**< bit: 14..15  Reserved */
+    uint32_t RIIC:1;                    /**< bit:     16  Ring Indicator Input Change Flag (cleared on read) */
+    uint32_t DSRIC:1;                   /**< bit:     17  Data Set Ready Input Change Flag (cleared on read) */
+    uint32_t DCDIC:1;                   /**< bit:     18  Data Carrier Detect Input Change Flag (cleared on read) */
     uint32_t CTSIC:1;                   /**< bit:     19  Clear to Send Input Change Flag (cleared on read) */
     uint32_t RI:1;                      /**< bit:     20  Image of RI Input                        */
     uint32_t DSR:1;                     /**< bit:     21  Image of DSR Input                       */
@@ -1034,22 +1270,30 @@ typedef union {
     uint32_t MANERR:1;                  /**< bit:     24  Manchester Error (cleared by writing a one to the bit US_CR.RSTSTA) */
     uint32_t :7;                        /**< bit: 25..31  Reserved */
   } USART;                                /**< Structure used for USART mode access */
-  struct { // USART_LIN mode
-    uint32_t :6;                        /**< bit:   0..5  Reserved */
-    uint32_t FRAME:1;                   /**< bit:      6  Framing Error (cleared by writing a one to bit US_CR.RSTSTA) */
-    uint32_t PARE:1;                    /**< bit:      7  Parity Error (cleared by writing a one to bit US_CR.RSTSTA) */
-    uint32_t TIMEOUT:1;                 /**< bit:      8  Receiver Timeout (cleared by writing a one to bit US_CR.STTTO) */
-    uint32_t :23;                       /**< bit:  9..31  Reserved */
-  } USART_LIN;                                /**< Structure used for USART_LIN mode access */
   struct { // SPI mode
-    uint32_t :19;                       /**< bit:  0..18  Reserved */
+    uint32_t RXRDY:1;                   /**< bit:      0  Receiver Ready (cleared by reading US_RHR) */
+    uint32_t TXRDY:1;                   /**< bit:      1  Transmitter Ready (cleared by writing US_THR) */
+    uint32_t :3;                        /**< bit:   2..4  Reserved */
+    uint32_t OVRE:1;                    /**< bit:      5  Overrun Error (cleared by writing a one to bit US_CR.RSTSTA) */
+    uint32_t :3;                        /**< bit:   6..8  Reserved */
+    uint32_t TXEMPTY:1;                 /**< bit:      9  Transmitter Empty (cleared by writing US_THR) */
+    uint32_t UNRE:1;                    /**< bit:     10  SPI Underrun Error                       */
+    uint32_t :8;                        /**< bit: 11..18  Reserved */
     uint32_t NSSE:1;                    /**< bit:     19  NSS Line (Driving CTS Pin) Rising or Falling Edge Event */
     uint32_t :3;                        /**< bit: 20..22  Reserved */
     uint32_t NSS:1;                     /**< bit:     23  Image of NSS Line                        */
     uint32_t :8;                        /**< bit: 24..31  Reserved */
   } SPI;                                /**< Structure used for SPI mode access */
   struct { // LIN mode
-    uint32_t :13;                       /**< bit:  0..12  Reserved */
+    uint32_t RXRDY:1;                   /**< bit:      0  Receiver Ready (cleared by reading US_RHR) */
+    uint32_t TXRDY:1;                   /**< bit:      1  Transmitter Ready (cleared by writing US_THR) */
+    uint32_t :3;                        /**< bit:   2..4  Reserved */
+    uint32_t OVRE:1;                    /**< bit:      5  Overrun Error (cleared by writing a one to bit US_CR.RSTSTA) */
+    uint32_t FRAME:1;                   /**< bit:      6  Framing Error (cleared by writing a one to bit US_CR.RSTSTA) */
+    uint32_t PARE:1;                    /**< bit:      7  Parity Error (cleared by writing a one to bit US_CR.RSTSTA) */
+    uint32_t TIMEOUT:1;                 /**< bit:      8  Receiver Timeout (cleared by writing a one to bit US_CR.STTTO) */
+    uint32_t TXEMPTY:1;                 /**< bit:      9  Transmitter Empty (cleared by writing US_THR) */
+    uint32_t :3;                        /**< bit: 10..12  Reserved */
     uint32_t LINBK:1;                   /**< bit:     13  LIN Break Sent or LIN Break Received     */
     uint32_t LINID:1;                   /**< bit:     14  LIN Identifier Sent or LIN Identifier Received */
     uint32_t LINTC:1;                   /**< bit:     15  LIN Transfer Completed                   */
@@ -1065,10 +1309,16 @@ typedef union {
     uint32_t LINHTE:1;                  /**< bit:     31  LIN Header Timeout Error                 */
   } LIN;                                /**< Structure used for LIN mode access */
   struct { // LON mode
-    uint32_t :6;                        /**< bit:   0..5  Reserved */
+    uint32_t RXRDY:1;                   /**< bit:      0  Receiver Ready (cleared by reading US_RHR) */
+    uint32_t TXRDY:1;                   /**< bit:      1  Transmitter Ready (cleared by writing US_THR) */
+    uint32_t :3;                        /**< bit:   2..4  Reserved */
+    uint32_t OVRE:1;                    /**< bit:      5  Overrun Error (cleared by writing a one to bit US_CR.RSTSTA) */
     uint32_t LSFE:1;                    /**< bit:      6  LON Short Frame Error                    */
     uint32_t LCRCE:1;                   /**< bit:      7  LON CRC Error                            */
-    uint32_t :16;                       /**< bit:  8..23  Reserved */
+    uint32_t :1;                        /**< bit:      8  Reserved */
+    uint32_t TXEMPTY:1;                 /**< bit:      9  Transmitter Empty (cleared by writing US_THR) */
+    uint32_t UNRE:1;                    /**< bit:     10  Underrun Error                           */
+    uint32_t :13;                       /**< bit: 11..23  Reserved */
     uint32_t LTXD:1;                    /**< bit:     24  LON Transmission End Flag                */
     uint32_t LCOL:1;                    /**< bit:     25  LON Collision Detected Flag              */
     uint32_t LFET:1;                    /**< bit:     26  LON Frame Early Termination              */
@@ -1076,11 +1326,6 @@ typedef union {
     uint32_t LBLOVFE:1;                 /**< bit:     28  LON Backlog Overflow Error               */
     uint32_t :3;                        /**< bit: 29..31  Reserved */
   } LON;                                /**< Structure used for LON mode access */
-  struct { // LON_SPI mode
-    uint32_t :10;                       /**< bit:   0..9  Reserved */
-    uint32_t UNRE:1;                    /**< bit:     10  SPI Underrun Error                       */
-    uint32_t :21;                       /**< bit: 11..31  Reserved */
-  } LON_SPI;                                /**< Structure used for LON_SPI mode access */
   uint32_t reg;                         /**< Type used for register access */
 } US_CSR_Type;
 #endif
@@ -1088,40 +1333,49 @@ typedef union {
 
 #define US_CSR_OFFSET                       (0x14)                                        /**<  (US_CSR) Channel Status Register  Offset */
 
-#define US_CSR_RXRDY_Pos                    0                                              /**< (US_CSR) Receiver Ready (cleared by reading US_RHR) Position */
-#define US_CSR_RXRDY_Msk                    (_U_(0x1) << US_CSR_RXRDY_Pos)                 /**< (US_CSR) Receiver Ready (cleared by reading US_RHR) Mask */
-#define US_CSR_RXRDY                        US_CSR_RXRDY_Msk                               /**< \deprecated Old style mask definition for 1 bit bitfield. Use US_CSR_RXRDY_Msk instead */
-#define US_CSR_TXRDY_Pos                    1                                              /**< (US_CSR) Transmitter Ready (cleared by writing US_THR) Position */
-#define US_CSR_TXRDY_Msk                    (_U_(0x1) << US_CSR_TXRDY_Pos)                 /**< (US_CSR) Transmitter Ready (cleared by writing US_THR) Mask */
-#define US_CSR_TXRDY                        US_CSR_TXRDY_Msk                               /**< \deprecated Old style mask definition for 1 bit bitfield. Use US_CSR_TXRDY_Msk instead */
-#define US_CSR_OVRE_Pos                     5                                              /**< (US_CSR) Overrun Error (cleared by writing a one to bit US_CR.RSTSTA) Position */
-#define US_CSR_OVRE_Msk                     (_U_(0x1) << US_CSR_OVRE_Pos)                  /**< (US_CSR) Overrun Error (cleared by writing a one to bit US_CR.RSTSTA) Mask */
-#define US_CSR_OVRE                         US_CSR_OVRE_Msk                                /**< \deprecated Old style mask definition for 1 bit bitfield. Use US_CSR_OVRE_Msk instead */
-#define US_CSR_TXEMPTY_Pos                  9                                              /**< (US_CSR) Transmitter Empty (cleared by writing US_THR) Position */
-#define US_CSR_TXEMPTY_Msk                  (_U_(0x1) << US_CSR_TXEMPTY_Pos)               /**< (US_CSR) Transmitter Empty (cleared by writing US_THR) Mask */
-#define US_CSR_TXEMPTY                      US_CSR_TXEMPTY_Msk                             /**< \deprecated Old style mask definition for 1 bit bitfield. Use US_CSR_TXEMPTY_Msk instead */
-#define US_CSR_RIIC_Pos                     16                                             /**< (US_CSR) Ring Indicator Input Change Flag (cleared on read) Position */
-#define US_CSR_RIIC_Msk                     (_U_(0x1) << US_CSR_RIIC_Pos)                  /**< (US_CSR) Ring Indicator Input Change Flag (cleared on read) Mask */
-#define US_CSR_RIIC                         US_CSR_RIIC_Msk                                /**< \deprecated Old style mask definition for 1 bit bitfield. Use US_CSR_RIIC_Msk instead */
-#define US_CSR_DSRIC_Pos                    17                                             /**< (US_CSR) Data Set Ready Input Change Flag (cleared on read) Position */
-#define US_CSR_DSRIC_Msk                    (_U_(0x1) << US_CSR_DSRIC_Pos)                 /**< (US_CSR) Data Set Ready Input Change Flag (cleared on read) Mask */
-#define US_CSR_DSRIC                        US_CSR_DSRIC_Msk                               /**< \deprecated Old style mask definition for 1 bit bitfield. Use US_CSR_DSRIC_Msk instead */
-#define US_CSR_DCDIC_Pos                    18                                             /**< (US_CSR) Data Carrier Detect Input Change Flag (cleared on read) Position */
-#define US_CSR_DCDIC_Msk                    (_U_(0x1) << US_CSR_DCDIC_Pos)                 /**< (US_CSR) Data Carrier Detect Input Change Flag (cleared on read) Mask */
-#define US_CSR_DCDIC                        US_CSR_DCDIC_Msk                               /**< \deprecated Old style mask definition for 1 bit bitfield. Use US_CSR_DCDIC_Msk instead */
-#define US_CSR_MASK                         _U_(0x70223)                                   /**< \deprecated (US_CSR) Register MASK  (Use US_CSR_Msk instead)  */
-#define US_CSR_Msk                          _U_(0x70223)                                   /**< (US_CSR) Register Mask  */
+#define US_CSR_MASK                         _U_(0x00)                                      /**< \deprecated (US_CSR) Register MASK  (Use US_CSR_Msk instead)  */
+#define US_CSR_Msk                          _U_(0x00)                                      /**< (US_CSR) Register Mask  */
 
 /* USART mode */
+#define US_CSR_USART_RXRDY_Pos              0                                              /**< (US_CSR) Receiver Ready (cleared by reading US_RHR) Position */
+#define US_CSR_USART_RXRDY_Msk              (_U_(0x1) << US_CSR_USART_RXRDY_Pos)           /**< (US_CSR) Receiver Ready (cleared by reading US_RHR) Mask */
+#define US_CSR_USART_RXRDY                  US_CSR_USART_RXRDY_Msk                         /**< \deprecated Old style mask definition for 1 bit bitfield. Use US_CSR_USART_RXRDY_Msk instead */
+#define US_CSR_USART_TXRDY_Pos              1                                              /**< (US_CSR) Transmitter Ready (cleared by writing US_THR) Position */
+#define US_CSR_USART_TXRDY_Msk              (_U_(0x1) << US_CSR_USART_TXRDY_Pos)           /**< (US_CSR) Transmitter Ready (cleared by writing US_THR) Mask */
+#define US_CSR_USART_TXRDY                  US_CSR_USART_TXRDY_Msk                         /**< \deprecated Old style mask definition for 1 bit bitfield. Use US_CSR_USART_TXRDY_Msk instead */
 #define US_CSR_USART_RXBRK_Pos              2                                              /**< (US_CSR) Break Received/End of Break (cleared by writing a one to bit US_CR.RSTSTA) Position */
 #define US_CSR_USART_RXBRK_Msk              (_U_(0x1) << US_CSR_USART_RXBRK_Pos)           /**< (US_CSR) Break Received/End of Break (cleared by writing a one to bit US_CR.RSTSTA) Mask */
 #define US_CSR_USART_RXBRK                  US_CSR_USART_RXBRK_Msk                         /**< \deprecated Old style mask definition for 1 bit bitfield. Use US_CSR_USART_RXBRK_Msk instead */
+#define US_CSR_USART_OVRE_Pos               5                                              /**< (US_CSR) Overrun Error (cleared by writing a one to bit US_CR.RSTSTA) Position */
+#define US_CSR_USART_OVRE_Msk               (_U_(0x1) << US_CSR_USART_OVRE_Pos)            /**< (US_CSR) Overrun Error (cleared by writing a one to bit US_CR.RSTSTA) Mask */
+#define US_CSR_USART_OVRE                   US_CSR_USART_OVRE_Msk                          /**< \deprecated Old style mask definition for 1 bit bitfield. Use US_CSR_USART_OVRE_Msk instead */
+#define US_CSR_USART_FRAME_Pos              6                                              /**< (US_CSR) Framing Error (cleared by writing a one to bit US_CR.RSTSTA) Position */
+#define US_CSR_USART_FRAME_Msk              (_U_(0x1) << US_CSR_USART_FRAME_Pos)           /**< (US_CSR) Framing Error (cleared by writing a one to bit US_CR.RSTSTA) Mask */
+#define US_CSR_USART_FRAME                  US_CSR_USART_FRAME_Msk                         /**< \deprecated Old style mask definition for 1 bit bitfield. Use US_CSR_USART_FRAME_Msk instead */
+#define US_CSR_USART_PARE_Pos               7                                              /**< (US_CSR) Parity Error (cleared by writing a one to bit US_CR.RSTSTA) Position */
+#define US_CSR_USART_PARE_Msk               (_U_(0x1) << US_CSR_USART_PARE_Pos)            /**< (US_CSR) Parity Error (cleared by writing a one to bit US_CR.RSTSTA) Mask */
+#define US_CSR_USART_PARE                   US_CSR_USART_PARE_Msk                          /**< \deprecated Old style mask definition for 1 bit bitfield. Use US_CSR_USART_PARE_Msk instead */
+#define US_CSR_USART_TIMEOUT_Pos            8                                              /**< (US_CSR) Receiver Timeout (cleared by writing a one to bit US_CR.STTTO) Position */
+#define US_CSR_USART_TIMEOUT_Msk            (_U_(0x1) << US_CSR_USART_TIMEOUT_Pos)         /**< (US_CSR) Receiver Timeout (cleared by writing a one to bit US_CR.STTTO) Mask */
+#define US_CSR_USART_TIMEOUT                US_CSR_USART_TIMEOUT_Msk                       /**< \deprecated Old style mask definition for 1 bit bitfield. Use US_CSR_USART_TIMEOUT_Msk instead */
+#define US_CSR_USART_TXEMPTY_Pos            9                                              /**< (US_CSR) Transmitter Empty (cleared by writing US_THR) Position */
+#define US_CSR_USART_TXEMPTY_Msk            (_U_(0x1) << US_CSR_USART_TXEMPTY_Pos)         /**< (US_CSR) Transmitter Empty (cleared by writing US_THR) Mask */
+#define US_CSR_USART_TXEMPTY                US_CSR_USART_TXEMPTY_Msk                       /**< \deprecated Old style mask definition for 1 bit bitfield. Use US_CSR_USART_TXEMPTY_Msk instead */
 #define US_CSR_USART_ITER_Pos               10                                             /**< (US_CSR) Max Number of Repetitions Reached (cleared by writing a one to bit US_CR.RSTIT) Position */
 #define US_CSR_USART_ITER_Msk               (_U_(0x1) << US_CSR_USART_ITER_Pos)            /**< (US_CSR) Max Number of Repetitions Reached (cleared by writing a one to bit US_CR.RSTIT) Mask */
 #define US_CSR_USART_ITER                   US_CSR_USART_ITER_Msk                          /**< \deprecated Old style mask definition for 1 bit bitfield. Use US_CSR_USART_ITER_Msk instead */
 #define US_CSR_USART_NACK_Pos               13                                             /**< (US_CSR) Non Acknowledge Interrupt (cleared by writing a one to bit US_CR.RSTNACK) Position */
 #define US_CSR_USART_NACK_Msk               (_U_(0x1) << US_CSR_USART_NACK_Pos)            /**< (US_CSR) Non Acknowledge Interrupt (cleared by writing a one to bit US_CR.RSTNACK) Mask */
 #define US_CSR_USART_NACK                   US_CSR_USART_NACK_Msk                          /**< \deprecated Old style mask definition for 1 bit bitfield. Use US_CSR_USART_NACK_Msk instead */
+#define US_CSR_USART_RIIC_Pos               16                                             /**< (US_CSR) Ring Indicator Input Change Flag (cleared on read) Position */
+#define US_CSR_USART_RIIC_Msk               (_U_(0x1) << US_CSR_USART_RIIC_Pos)            /**< (US_CSR) Ring Indicator Input Change Flag (cleared on read) Mask */
+#define US_CSR_USART_RIIC                   US_CSR_USART_RIIC_Msk                          /**< \deprecated Old style mask definition for 1 bit bitfield. Use US_CSR_USART_RIIC_Msk instead */
+#define US_CSR_USART_DSRIC_Pos              17                                             /**< (US_CSR) Data Set Ready Input Change Flag (cleared on read) Position */
+#define US_CSR_USART_DSRIC_Msk              (_U_(0x1) << US_CSR_USART_DSRIC_Pos)           /**< (US_CSR) Data Set Ready Input Change Flag (cleared on read) Mask */
+#define US_CSR_USART_DSRIC                  US_CSR_USART_DSRIC_Msk                         /**< \deprecated Old style mask definition for 1 bit bitfield. Use US_CSR_USART_DSRIC_Msk instead */
+#define US_CSR_USART_DCDIC_Pos              18                                             /**< (US_CSR) Data Carrier Detect Input Change Flag (cleared on read) Position */
+#define US_CSR_USART_DCDIC_Msk              (_U_(0x1) << US_CSR_USART_DCDIC_Pos)           /**< (US_CSR) Data Carrier Detect Input Change Flag (cleared on read) Mask */
+#define US_CSR_USART_DCDIC                  US_CSR_USART_DCDIC_Msk                         /**< \deprecated Old style mask definition for 1 bit bitfield. Use US_CSR_USART_DCDIC_Msk instead */
 #define US_CSR_USART_CTSIC_Pos              19                                             /**< (US_CSR) Clear to Send Input Change Flag (cleared on read) Position */
 #define US_CSR_USART_CTSIC_Msk              (_U_(0x1) << US_CSR_USART_CTSIC_Pos)           /**< (US_CSR) Clear to Send Input Change Flag (cleared on read) Mask */
 #define US_CSR_USART_CTSIC                  US_CSR_USART_CTSIC_Msk                         /**< \deprecated Old style mask definition for 1 bit bitfield. Use US_CSR_USART_CTSIC_Msk instead */
@@ -1140,33 +1394,56 @@ typedef union {
 #define US_CSR_USART_MANERR_Pos             24                                             /**< (US_CSR) Manchester Error (cleared by writing a one to the bit US_CR.RSTSTA) Position */
 #define US_CSR_USART_MANERR_Msk             (_U_(0x1) << US_CSR_USART_MANERR_Pos)          /**< (US_CSR) Manchester Error (cleared by writing a one to the bit US_CR.RSTSTA) Mask */
 #define US_CSR_USART_MANERR                 US_CSR_USART_MANERR_Msk                        /**< \deprecated Old style mask definition for 1 bit bitfield. Use US_CSR_USART_MANERR_Msk instead */
-#define US_CSR_USART_MASK                   _U_(0x1F82404)                                 /**< \deprecated (US_CSR_USART) Register MASK  (Use US_CSR_USART_Msk instead)  */
-#define US_CSR_USART_Msk                    _U_(0x1F82404)                                 /**< (US_CSR_USART) Register Mask  */
-
-/* USART_LIN mode */
-#define US_CSR_USART_LIN_FRAME_Pos          6                                              /**< (US_CSR) Framing Error (cleared by writing a one to bit US_CR.RSTSTA) Position */
-#define US_CSR_USART_LIN_FRAME_Msk          (_U_(0x1) << US_CSR_USART_LIN_FRAME_Pos)       /**< (US_CSR) Framing Error (cleared by writing a one to bit US_CR.RSTSTA) Mask */
-#define US_CSR_USART_LIN_FRAME              US_CSR_USART_LIN_FRAME_Msk                     /**< \deprecated Old style mask definition for 1 bit bitfield. Use US_CSR_USART_LIN_FRAME_Msk instead */
-#define US_CSR_USART_LIN_PARE_Pos           7                                              /**< (US_CSR) Parity Error (cleared by writing a one to bit US_CR.RSTSTA) Position */
-#define US_CSR_USART_LIN_PARE_Msk           (_U_(0x1) << US_CSR_USART_LIN_PARE_Pos)        /**< (US_CSR) Parity Error (cleared by writing a one to bit US_CR.RSTSTA) Mask */
-#define US_CSR_USART_LIN_PARE               US_CSR_USART_LIN_PARE_Msk                      /**< \deprecated Old style mask definition for 1 bit bitfield. Use US_CSR_USART_LIN_PARE_Msk instead */
-#define US_CSR_USART_LIN_TIMEOUT_Pos        8                                              /**< (US_CSR) Receiver Timeout (cleared by writing a one to bit US_CR.STTTO) Position */
-#define US_CSR_USART_LIN_TIMEOUT_Msk        (_U_(0x1) << US_CSR_USART_LIN_TIMEOUT_Pos)     /**< (US_CSR) Receiver Timeout (cleared by writing a one to bit US_CR.STTTO) Mask */
-#define US_CSR_USART_LIN_TIMEOUT            US_CSR_USART_LIN_TIMEOUT_Msk                   /**< \deprecated Old style mask definition for 1 bit bitfield. Use US_CSR_USART_LIN_TIMEOUT_Msk instead */
-#define US_CSR_USART_LIN_MASK               _U_(0x1C0)                                     /**< \deprecated (US_CSR_USART_LIN) Register MASK  (Use US_CSR_USART_LIN_Msk instead)  */
-#define US_CSR_USART_LIN_Msk                _U_(0x1C0)                                     /**< (US_CSR_USART_LIN) Register Mask  */
+#define US_CSR_USART_MASK                   _U_(0x1FF27E7)                                 /**< \deprecated (US_CSR_USART) Register MASK  (Use US_CSR_USART_Msk instead)  */
+#define US_CSR_USART_Msk                    _U_(0x1FF27E7)                                 /**< (US_CSR_USART) Register Mask  */
 
 /* SPI mode */
+#define US_CSR_SPI_RXRDY_Pos                0                                              /**< (US_CSR) Receiver Ready (cleared by reading US_RHR) Position */
+#define US_CSR_SPI_RXRDY_Msk                (_U_(0x1) << US_CSR_SPI_RXRDY_Pos)             /**< (US_CSR) Receiver Ready (cleared by reading US_RHR) Mask */
+#define US_CSR_SPI_RXRDY                    US_CSR_SPI_RXRDY_Msk                           /**< \deprecated Old style mask definition for 1 bit bitfield. Use US_CSR_SPI_RXRDY_Msk instead */
+#define US_CSR_SPI_TXRDY_Pos                1                                              /**< (US_CSR) Transmitter Ready (cleared by writing US_THR) Position */
+#define US_CSR_SPI_TXRDY_Msk                (_U_(0x1) << US_CSR_SPI_TXRDY_Pos)             /**< (US_CSR) Transmitter Ready (cleared by writing US_THR) Mask */
+#define US_CSR_SPI_TXRDY                    US_CSR_SPI_TXRDY_Msk                           /**< \deprecated Old style mask definition for 1 bit bitfield. Use US_CSR_SPI_TXRDY_Msk instead */
+#define US_CSR_SPI_OVRE_Pos                 5                                              /**< (US_CSR) Overrun Error (cleared by writing a one to bit US_CR.RSTSTA) Position */
+#define US_CSR_SPI_OVRE_Msk                 (_U_(0x1) << US_CSR_SPI_OVRE_Pos)              /**< (US_CSR) Overrun Error (cleared by writing a one to bit US_CR.RSTSTA) Mask */
+#define US_CSR_SPI_OVRE                     US_CSR_SPI_OVRE_Msk                            /**< \deprecated Old style mask definition for 1 bit bitfield. Use US_CSR_SPI_OVRE_Msk instead */
+#define US_CSR_SPI_TXEMPTY_Pos              9                                              /**< (US_CSR) Transmitter Empty (cleared by writing US_THR) Position */
+#define US_CSR_SPI_TXEMPTY_Msk              (_U_(0x1) << US_CSR_SPI_TXEMPTY_Pos)           /**< (US_CSR) Transmitter Empty (cleared by writing US_THR) Mask */
+#define US_CSR_SPI_TXEMPTY                  US_CSR_SPI_TXEMPTY_Msk                         /**< \deprecated Old style mask definition for 1 bit bitfield. Use US_CSR_SPI_TXEMPTY_Msk instead */
+#define US_CSR_SPI_UNRE_Pos                 10                                             /**< (US_CSR) SPI Underrun Error Position */
+#define US_CSR_SPI_UNRE_Msk                 (_U_(0x1) << US_CSR_SPI_UNRE_Pos)              /**< (US_CSR) SPI Underrun Error Mask */
+#define US_CSR_SPI_UNRE                     US_CSR_SPI_UNRE_Msk                            /**< \deprecated Old style mask definition for 1 bit bitfield. Use US_CSR_SPI_UNRE_Msk instead */
 #define US_CSR_SPI_NSSE_Pos                 19                                             /**< (US_CSR) NSS Line (Driving CTS Pin) Rising or Falling Edge Event Position */
 #define US_CSR_SPI_NSSE_Msk                 (_U_(0x1) << US_CSR_SPI_NSSE_Pos)              /**< (US_CSR) NSS Line (Driving CTS Pin) Rising or Falling Edge Event Mask */
 #define US_CSR_SPI_NSSE                     US_CSR_SPI_NSSE_Msk                            /**< \deprecated Old style mask definition for 1 bit bitfield. Use US_CSR_SPI_NSSE_Msk instead */
 #define US_CSR_SPI_NSS_Pos                  23                                             /**< (US_CSR) Image of NSS Line Position */
 #define US_CSR_SPI_NSS_Msk                  (_U_(0x1) << US_CSR_SPI_NSS_Pos)               /**< (US_CSR) Image of NSS Line Mask */
 #define US_CSR_SPI_NSS                      US_CSR_SPI_NSS_Msk                             /**< \deprecated Old style mask definition for 1 bit bitfield. Use US_CSR_SPI_NSS_Msk instead */
-#define US_CSR_SPI_MASK                     _U_(0x880000)                                  /**< \deprecated (US_CSR_SPI) Register MASK  (Use US_CSR_SPI_Msk instead)  */
-#define US_CSR_SPI_Msk                      _U_(0x880000)                                  /**< (US_CSR_SPI) Register Mask  */
+#define US_CSR_SPI_MASK                     _U_(0x880623)                                  /**< \deprecated (US_CSR_SPI) Register MASK  (Use US_CSR_SPI_Msk instead)  */
+#define US_CSR_SPI_Msk                      _U_(0x880623)                                  /**< (US_CSR_SPI) Register Mask  */
 
 /* LIN mode */
+#define US_CSR_LIN_RXRDY_Pos                0                                              /**< (US_CSR) Receiver Ready (cleared by reading US_RHR) Position */
+#define US_CSR_LIN_RXRDY_Msk                (_U_(0x1) << US_CSR_LIN_RXRDY_Pos)             /**< (US_CSR) Receiver Ready (cleared by reading US_RHR) Mask */
+#define US_CSR_LIN_RXRDY                    US_CSR_LIN_RXRDY_Msk                           /**< \deprecated Old style mask definition for 1 bit bitfield. Use US_CSR_LIN_RXRDY_Msk instead */
+#define US_CSR_LIN_TXRDY_Pos                1                                              /**< (US_CSR) Transmitter Ready (cleared by writing US_THR) Position */
+#define US_CSR_LIN_TXRDY_Msk                (_U_(0x1) << US_CSR_LIN_TXRDY_Pos)             /**< (US_CSR) Transmitter Ready (cleared by writing US_THR) Mask */
+#define US_CSR_LIN_TXRDY                    US_CSR_LIN_TXRDY_Msk                           /**< \deprecated Old style mask definition for 1 bit bitfield. Use US_CSR_LIN_TXRDY_Msk instead */
+#define US_CSR_LIN_OVRE_Pos                 5                                              /**< (US_CSR) Overrun Error (cleared by writing a one to bit US_CR.RSTSTA) Position */
+#define US_CSR_LIN_OVRE_Msk                 (_U_(0x1) << US_CSR_LIN_OVRE_Pos)              /**< (US_CSR) Overrun Error (cleared by writing a one to bit US_CR.RSTSTA) Mask */
+#define US_CSR_LIN_OVRE                     US_CSR_LIN_OVRE_Msk                            /**< \deprecated Old style mask definition for 1 bit bitfield. Use US_CSR_LIN_OVRE_Msk instead */
+#define US_CSR_LIN_FRAME_Pos                6                                              /**< (US_CSR) Framing Error (cleared by writing a one to bit US_CR.RSTSTA) Position */
+#define US_CSR_LIN_FRAME_Msk                (_U_(0x1) << US_CSR_LIN_FRAME_Pos)             /**< (US_CSR) Framing Error (cleared by writing a one to bit US_CR.RSTSTA) Mask */
+#define US_CSR_LIN_FRAME                    US_CSR_LIN_FRAME_Msk                           /**< \deprecated Old style mask definition for 1 bit bitfield. Use US_CSR_LIN_FRAME_Msk instead */
+#define US_CSR_LIN_PARE_Pos                 7                                              /**< (US_CSR) Parity Error (cleared by writing a one to bit US_CR.RSTSTA) Position */
+#define US_CSR_LIN_PARE_Msk                 (_U_(0x1) << US_CSR_LIN_PARE_Pos)              /**< (US_CSR) Parity Error (cleared by writing a one to bit US_CR.RSTSTA) Mask */
+#define US_CSR_LIN_PARE                     US_CSR_LIN_PARE_Msk                            /**< \deprecated Old style mask definition for 1 bit bitfield. Use US_CSR_LIN_PARE_Msk instead */
+#define US_CSR_LIN_TIMEOUT_Pos              8                                              /**< (US_CSR) Receiver Timeout (cleared by writing a one to bit US_CR.STTTO) Position */
+#define US_CSR_LIN_TIMEOUT_Msk              (_U_(0x1) << US_CSR_LIN_TIMEOUT_Pos)           /**< (US_CSR) Receiver Timeout (cleared by writing a one to bit US_CR.STTTO) Mask */
+#define US_CSR_LIN_TIMEOUT                  US_CSR_LIN_TIMEOUT_Msk                         /**< \deprecated Old style mask definition for 1 bit bitfield. Use US_CSR_LIN_TIMEOUT_Msk instead */
+#define US_CSR_LIN_TXEMPTY_Pos              9                                              /**< (US_CSR) Transmitter Empty (cleared by writing US_THR) Position */
+#define US_CSR_LIN_TXEMPTY_Msk              (_U_(0x1) << US_CSR_LIN_TXEMPTY_Pos)           /**< (US_CSR) Transmitter Empty (cleared by writing US_THR) Mask */
+#define US_CSR_LIN_TXEMPTY                  US_CSR_LIN_TXEMPTY_Msk                         /**< \deprecated Old style mask definition for 1 bit bitfield. Use US_CSR_LIN_TXEMPTY_Msk instead */
 #define US_CSR_LIN_LINBK_Pos                13                                             /**< (US_CSR) LIN Break Sent or LIN Break Received Position */
 #define US_CSR_LIN_LINBK_Msk                (_U_(0x1) << US_CSR_LIN_LINBK_Pos)             /**< (US_CSR) LIN Break Sent or LIN Break Received Mask */
 #define US_CSR_LIN_LINBK                    US_CSR_LIN_LINBK_Msk                           /**< \deprecated Old style mask definition for 1 bit bitfield. Use US_CSR_LIN_LINBK_Msk instead */
@@ -1200,16 +1477,31 @@ typedef union {
 #define US_CSR_LIN_LINHTE_Pos               31                                             /**< (US_CSR) LIN Header Timeout Error Position */
 #define US_CSR_LIN_LINHTE_Msk               (_U_(0x1) << US_CSR_LIN_LINHTE_Pos)            /**< (US_CSR) LIN Header Timeout Error Mask */
 #define US_CSR_LIN_LINHTE                   US_CSR_LIN_LINHTE_Msk                          /**< \deprecated Old style mask definition for 1 bit bitfield. Use US_CSR_LIN_LINHTE_Msk instead */
-#define US_CSR_LIN_MASK                     _U_(0xFE80E000)                                /**< \deprecated (US_CSR_LIN) Register MASK  (Use US_CSR_LIN_Msk instead)  */
-#define US_CSR_LIN_Msk                      _U_(0xFE80E000)                                /**< (US_CSR_LIN) Register Mask  */
+#define US_CSR_LIN_MASK                     _U_(0xFE80E3E3)                                /**< \deprecated (US_CSR_LIN) Register MASK  (Use US_CSR_LIN_Msk instead)  */
+#define US_CSR_LIN_Msk                      _U_(0xFE80E3E3)                                /**< (US_CSR_LIN) Register Mask  */
 
 /* LON mode */
+#define US_CSR_LON_RXRDY_Pos                0                                              /**< (US_CSR) Receiver Ready (cleared by reading US_RHR) Position */
+#define US_CSR_LON_RXRDY_Msk                (_U_(0x1) << US_CSR_LON_RXRDY_Pos)             /**< (US_CSR) Receiver Ready (cleared by reading US_RHR) Mask */
+#define US_CSR_LON_RXRDY                    US_CSR_LON_RXRDY_Msk                           /**< \deprecated Old style mask definition for 1 bit bitfield. Use US_CSR_LON_RXRDY_Msk instead */
+#define US_CSR_LON_TXRDY_Pos                1                                              /**< (US_CSR) Transmitter Ready (cleared by writing US_THR) Position */
+#define US_CSR_LON_TXRDY_Msk                (_U_(0x1) << US_CSR_LON_TXRDY_Pos)             /**< (US_CSR) Transmitter Ready (cleared by writing US_THR) Mask */
+#define US_CSR_LON_TXRDY                    US_CSR_LON_TXRDY_Msk                           /**< \deprecated Old style mask definition for 1 bit bitfield. Use US_CSR_LON_TXRDY_Msk instead */
+#define US_CSR_LON_OVRE_Pos                 5                                              /**< (US_CSR) Overrun Error (cleared by writing a one to bit US_CR.RSTSTA) Position */
+#define US_CSR_LON_OVRE_Msk                 (_U_(0x1) << US_CSR_LON_OVRE_Pos)              /**< (US_CSR) Overrun Error (cleared by writing a one to bit US_CR.RSTSTA) Mask */
+#define US_CSR_LON_OVRE                     US_CSR_LON_OVRE_Msk                            /**< \deprecated Old style mask definition for 1 bit bitfield. Use US_CSR_LON_OVRE_Msk instead */
 #define US_CSR_LON_LSFE_Pos                 6                                              /**< (US_CSR) LON Short Frame Error Position */
 #define US_CSR_LON_LSFE_Msk                 (_U_(0x1) << US_CSR_LON_LSFE_Pos)              /**< (US_CSR) LON Short Frame Error Mask */
 #define US_CSR_LON_LSFE                     US_CSR_LON_LSFE_Msk                            /**< \deprecated Old style mask definition for 1 bit bitfield. Use US_CSR_LON_LSFE_Msk instead */
 #define US_CSR_LON_LCRCE_Pos                7                                              /**< (US_CSR) LON CRC Error Position */
 #define US_CSR_LON_LCRCE_Msk                (_U_(0x1) << US_CSR_LON_LCRCE_Pos)             /**< (US_CSR) LON CRC Error Mask */
 #define US_CSR_LON_LCRCE                    US_CSR_LON_LCRCE_Msk                           /**< \deprecated Old style mask definition for 1 bit bitfield. Use US_CSR_LON_LCRCE_Msk instead */
+#define US_CSR_LON_TXEMPTY_Pos              9                                              /**< (US_CSR) Transmitter Empty (cleared by writing US_THR) Position */
+#define US_CSR_LON_TXEMPTY_Msk              (_U_(0x1) << US_CSR_LON_TXEMPTY_Pos)           /**< (US_CSR) Transmitter Empty (cleared by writing US_THR) Mask */
+#define US_CSR_LON_TXEMPTY                  US_CSR_LON_TXEMPTY_Msk                         /**< \deprecated Old style mask definition for 1 bit bitfield. Use US_CSR_LON_TXEMPTY_Msk instead */
+#define US_CSR_LON_UNRE_Pos                 10                                             /**< (US_CSR) Underrun Error Position */
+#define US_CSR_LON_UNRE_Msk                 (_U_(0x1) << US_CSR_LON_UNRE_Pos)              /**< (US_CSR) Underrun Error Mask */
+#define US_CSR_LON_UNRE                     US_CSR_LON_UNRE_Msk                            /**< \deprecated Old style mask definition for 1 bit bitfield. Use US_CSR_LON_UNRE_Msk instead */
 #define US_CSR_LON_LTXD_Pos                 24                                             /**< (US_CSR) LON Transmission End Flag Position */
 #define US_CSR_LON_LTXD_Msk                 (_U_(0x1) << US_CSR_LON_LTXD_Pos)              /**< (US_CSR) LON Transmission End Flag Mask */
 #define US_CSR_LON_LTXD                     US_CSR_LON_LTXD_Msk                            /**< \deprecated Old style mask definition for 1 bit bitfield. Use US_CSR_LON_LTXD_Msk instead */
@@ -1225,15 +1517,8 @@ typedef union {
 #define US_CSR_LON_LBLOVFE_Pos              28                                             /**< (US_CSR) LON Backlog Overflow Error Position */
 #define US_CSR_LON_LBLOVFE_Msk              (_U_(0x1) << US_CSR_LON_LBLOVFE_Pos)           /**< (US_CSR) LON Backlog Overflow Error Mask */
 #define US_CSR_LON_LBLOVFE                  US_CSR_LON_LBLOVFE_Msk                         /**< \deprecated Old style mask definition for 1 bit bitfield. Use US_CSR_LON_LBLOVFE_Msk instead */
-#define US_CSR_LON_MASK                     _U_(0x1F0000C0)                                /**< \deprecated (US_CSR_LON) Register MASK  (Use US_CSR_LON_Msk instead)  */
-#define US_CSR_LON_Msk                      _U_(0x1F0000C0)                                /**< (US_CSR_LON) Register Mask  */
-
-/* LON_SPI mode */
-#define US_CSR_LON_SPI_UNRE_Pos             10                                             /**< (US_CSR) SPI Underrun Error Position */
-#define US_CSR_LON_SPI_UNRE_Msk             (_U_(0x1) << US_CSR_LON_SPI_UNRE_Pos)          /**< (US_CSR) SPI Underrun Error Mask */
-#define US_CSR_LON_SPI_UNRE                 US_CSR_LON_SPI_UNRE_Msk                        /**< \deprecated Old style mask definition for 1 bit bitfield. Use US_CSR_LON_SPI_UNRE_Msk instead */
-#define US_CSR_LON_SPI_MASK                 _U_(0x400)                                     /**< \deprecated (US_CSR_LON_SPI) Register MASK  (Use US_CSR_LON_SPI_Msk instead)  */
-#define US_CSR_LON_SPI_Msk                  _U_(0x400)                                     /**< (US_CSR_LON_SPI) Register Mask  */
+#define US_CSR_LON_MASK                     _U_(0x1F0006E3)                                /**< \deprecated (US_CSR_LON) Register MASK  (Use US_CSR_LON_Msk instead)  */
+#define US_CSR_LON_Msk                      _U_(0x1F0006E3)                                /**< (US_CSR_LON) Register Mask  */
 
 
 /* -------- US_RHR : (USART Offset: 0x18) (R/ 32) Receive Holding Register -------- */

@@ -3,7 +3,7 @@
  *
  * \brief Component description for TWIHS
  *
- * Copyright (c) 2019 Microchip Technology Inc.
+ * Copyright (c) 2022 Microchip Technology Inc.
  *
  * \license_start
  *
@@ -32,7 +32,7 @@
 #define _SAME70_TWIHS_COMPONENT_H_
 #define _SAME70_TWIHS_COMPONENT_         /**< \deprecated  Backward compatibility for ASF */
 
-/** \addtogroup SAME_SAME70 Two-wire Interface High Speed
+/** \addtogroup SAME70_TWIHS Two-wire Interface High Speed
  *  @{
  */
 /* ========================================================================== */

@@ -3,7 +3,7 @@
  *
  * \brief Component description for MCAN
  *
- * Copyright (c) 2019 Microchip Technology Inc.
+ * Copyright (c) 2022 Microchip Technology Inc.
  *
  * \license_start
  *
@@ -32,7 +32,7 @@
 #define _SAME70_MCAN_COMPONENT_H_
 #define _SAME70_MCAN_COMPONENT_         /**< \deprecated  Backward compatibility for ASF */
 
-/** \addtogroup SAME_SAME70 Controller Area Network
+/** \addtogroup SAME70_MCAN Controller Area Network
  *  @{
  */
 /* ========================================================================== */

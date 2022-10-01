@@ -3,7 +3,7 @@
  *
  * \brief Peripheral I/O description for SAME70N19B
  *
- * Copyright (c) 2019 Microchip Technology Inc.
+ * Copyright (c) 2022 Microchip Technology Inc.
  *
  * \license_start
  *
@@ -27,7 +27,7 @@
  *
  */
 
-/* file generated from device description version 2019-01-18T21:19:48Z */
+/* file generated from device description version 2022-06-28T09:07:37Z */
 #ifndef _SAME70N19B_PIO_H_
 #define _SAME70N19B_PIO_H_
 

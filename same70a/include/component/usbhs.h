@@ -3,7 +3,7 @@
  *
  * \brief Component description for USBHS
  *
- * Copyright (c) 2019 Microchip Technology Inc.
+ * Copyright (c) 2022 Microchip Technology Inc.
  *
  * \license_start
  *
@@ -32,7 +32,7 @@
 #define _SAME70_USBHS_COMPONENT_H_
 #define _SAME70_USBHS_COMPONENT_         /**< \deprecated  Backward compatibility for ASF */
 
-/** \addtogroup SAME_SAME70 USB High-Speed Interface
+/** \addtogroup SAME70_USBHS USB High-Speed Interface
  *  @{
  */
 /* ========================================================================== */
