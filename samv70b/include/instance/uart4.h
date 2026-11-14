@@ -1,13 +1,7 @@
-/**
- * \file
+/*
+ * Instance header file for ATSAMV70Q20B
  *
- * \brief Instance description for UART4
- *
- * Copyright (c) 2022 Microchip Technology Inc.
- *
- * \license_start
- *
- * \page License
+ * Copyright (c) 2026 Microchip Technology Inc. and its subsidiaries.
  *
  * SPDX-License-Identifier: Apache-2.0
  *
@@ -23,51 +17,19 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  *
- * \license_stop
- *
  */
 
-/* file generated from device description version 2022-06-28T09:09:02Z */
-#ifndef _SAMV70_UART4_INSTANCE_H_
-#define _SAMV70_UART4_INSTANCE_H_
+/* file generated from device description file (ATDF) version 2025-07-21T07:57:05Z */
+#ifndef _SAMV70_UART4_INSTANCE_
+#define _SAMV70_UART4_INSTANCE_
 
-/* ========== Register definition for UART4 peripheral ========== */
-#if (defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__))
-
-#define REG_UART4_CR            (0x400E1E00) /**< (UART4) Control Register */
-#define REG_UART4_MR            (0x400E1E04) /**< (UART4) Mode Register */
-#define REG_UART4_IER           (0x400E1E08) /**< (UART4) Interrupt Enable Register */
-#define REG_UART4_IDR           (0x400E1E0C) /**< (UART4) Interrupt Disable Register */
-#define REG_UART4_IMR           (0x400E1E10) /**< (UART4) Interrupt Mask Register */
-#define REG_UART4_SR            (0x400E1E14) /**< (UART4) Status Register */
-#define REG_UART4_RHR           (0x400E1E18) /**< (UART4) Receive Holding Register */
-#define REG_UART4_THR           (0x400E1E1C) /**< (UART4) Transmit Holding Register */
-#define REG_UART4_BRGR          (0x400E1E20) /**< (UART4) Baud Rate Generator Register */
-#define REG_UART4_CMPR          (0x400E1E24) /**< (UART4) Comparison Register */
-#define REG_UART4_WPMR          (0x400E1EE4) /**< (UART4) Write Protection Mode Register */
-
-#else
-
-#define REG_UART4_CR            (*(__O  uint32_t*)0x400E1E00U) /**< (UART4) Control Register */
-#define REG_UART4_MR            (*(__IO uint32_t*)0x400E1E04U) /**< (UART4) Mode Register */
-#define REG_UART4_IER           (*(__O  uint32_t*)0x400E1E08U) /**< (UART4) Interrupt Enable Register */
-#define REG_UART4_IDR           (*(__O  uint32_t*)0x400E1E0CU) /**< (UART4) Interrupt Disable Register */
-#define REG_UART4_IMR           (*(__I  uint32_t*)0x400E1E10U) /**< (UART4) Interrupt Mask Register */
-#define REG_UART4_SR            (*(__I  uint32_t*)0x400E1E14U) /**< (UART4) Status Register */
-#define REG_UART4_RHR           (*(__I  uint32_t*)0x400E1E18U) /**< (UART4) Receive Holding Register */
-#define REG_UART4_THR           (*(__O  uint32_t*)0x400E1E1CU) /**< (UART4) Transmit Holding Register */
-#define REG_UART4_BRGR          (*(__IO uint32_t*)0x400E1E20U) /**< (UART4) Baud Rate Generator Register */
-#define REG_UART4_CMPR          (*(__IO uint32_t*)0x400E1E24U) /**< (UART4) Comparison Register */
-#define REG_UART4_WPMR          (*(__IO uint32_t*)0x400E1EE4U) /**< (UART4) Write Protection Mode Register */
-
-#endif /* (defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__)) */
 
 /* ========== Instance Parameter definitions for UART4 peripheral ========== */
-#define UART4_DMAC_ID_RX                         29
-#define UART4_DMAC_ID_TX                         28
-#define UART4_INSTANCE_ID                        46
-#define UART4_CLOCK_ID                           46
-#define UART4_BRSRCCK_PERIPH_CLK                 0          /* MCK */
-#define UART4_BRSRCCK_PMC_PCK                    0          /* PCK4 */
+#define UART4_BRSRCCK_PERIPH_CLK                 (0)        /* MCK */
+#define UART4_BRSRCCK_PMC_PCK                    (0)        /* PCK4 */
+#define UART4_CLOCK_ID                           (46)
+#define UART4_DMAC_ID_RX                         (29)
+#define UART4_DMAC_ID_TX                         (28)
+#define UART4_INSTANCE_ID                        (46)
 
 #endif /* _SAMV70_UART4_INSTANCE_ */

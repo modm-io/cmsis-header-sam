@@ -1,13 +1,7 @@
-/**
- * \file
+/*
+ * Low-level initialization functions called upon device startup
  *
- * \brief Low-level initialization functions called upon device startup
- *
- * Copyright (c) 2022 Microchip Technology Inc.
- *
- * \license_start
- *
- * \page License
+ * Copyright (c) 2026 Microchip Technology Inc. and its subsidiaries.
  *
  * SPDX-License-Identifier: Apache-2.0
  *
@@ -23,12 +17,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  *
- * \license_stop
- *
  */
 
-#ifndef _SYSTEM_SAMV70_H_INCLUDED_
-#define _SYSTEM_SAMV70_H_INCLUDED_
+#ifndef _SYSTEM_ATSAMV70J19B_H_INCLUDED_
+#define _SYSTEM_ATSAMV70J19B_H_INCLUDED_
 
 #ifdef __cplusplus
 extern "C" {
@@ -45,4 +37,4 @@ void SystemCoreClockUpdate(void);
 }
 #endif
 
-#endif /* _SYSTEM_SAMV70_H_INCLUDED */
+#endif /* _SYSTEM_ATSAMV70J19B_H_INCLUDED */

@@ -1,13 +1,7 @@
-/**
- * \file
+/*
+ * Instance header file for ATSAMV70Q20B
  *
- * \brief Low-level initialization functions called upon device startup
- *
- * Copyright (c) 2022 Microchip Technology Inc.
- *
- * \license_start
- *
- * \page License
+ * Copyright (c) 2026 Microchip Technology Inc. and its subsidiaries.
  *
  * SPDX-License-Identifier: Apache-2.0
  *
@@ -23,26 +17,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  *
- * \license_stop
- *
  */
 
-#ifndef _SYSTEM_SAMV70_H_INCLUDED_
-#define _SYSTEM_SAMV70_H_INCLUDED_
+/* file generated from device description file (ATDF) version 2025-07-21T07:57:05Z */
+#ifndef _SAMV70_FUSES_INSTANCE_
+#define _SAMV70_FUSES_INSTANCE_
 
-#ifdef __cplusplus
-extern "C" {
-#endif
-
-#include <stdint.h>
-
-extern uint32_t SystemCoreClock;   /*!< System Clock Frequency (Core Clock)  */
-
-void SystemInit(void);
-void SystemCoreClockUpdate(void);
-
-#ifdef __cplusplus
-}
-#endif
-
-#endif /* _SYSTEM_SAMV70_H_INCLUDED */
+#endif /* _SAMV70_FUSES_INSTANCE_ */

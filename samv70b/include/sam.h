@@ -1,13 +1,7 @@
-/**
- * \file
+/*
+ * Top level header file
  *
- * \brief Top level header file
- *
- * Copyright (c) 2022 Microchip Technology Inc.
- *
- * \license_start
- *
- * \page License
+ * Copyright (c) 2026 Microchip Technology Inc. and its subsidiaries.
  *
  * SPDX-License-Identifier: Apache-2.0
  *
@@ -23,12 +17,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  *
- * \license_stop
- *
  */
 
-#ifndef _SAM_
-#define _SAM_
+#ifndef _SAM_H_
+#define _SAM_H_
 
 #if   defined(__SAMV70J19B__) || defined(__ATSAMV70J19B__)
   #include "samv70j19b.h"
@@ -38,13 +30,13 @@
   #include "samv70n19b.h"
 #elif defined(__SAMV70N20B__) || defined(__ATSAMV70N20B__)
   #include "samv70n20b.h"
-#elif defined(__SAMV70Q20B__) || defined(__ATSAMV70Q20B__)
-  #include "samv70q20b.h"
 #elif defined(__SAMV70Q19B__) || defined(__ATSAMV70Q19B__)
   #include "samv70q19b.h"
+#elif defined(__SAMV70Q20B__) || defined(__ATSAMV70Q20B__)
+  #include "samv70q20b.h"
 #else
   #error Library does not support the specified device
 #endif
 
-#endif /* _SAM_ */
+#endif /* _SAM_H_ */
 

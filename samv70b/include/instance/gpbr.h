@@ -1,13 +1,7 @@
-/**
- * \file
+/*
+ * Instance header file for ATSAMV70Q20B
  *
- * \brief Instance description for GPBR
- *
- * Copyright (c) 2022 Microchip Technology Inc.
- *
- * \license_start
- *
- * \page License
+ * Copyright (c) 2026 Microchip Technology Inc. and its subsidiaries.
  *
  * SPDX-License-Identifier: Apache-2.0
  *
@@ -23,38 +17,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  *
- * \license_stop
- *
  */
 
-/* file generated from device description version 2022-06-28T09:09:02Z */
-#ifndef _SAMV70_GPBR_INSTANCE_H_
-#define _SAMV70_GPBR_INSTANCE_H_
+/* file generated from device description file (ATDF) version 2025-07-21T07:57:05Z */
+#ifndef _SAMV70_GPBR_INSTANCE_
+#define _SAMV70_GPBR_INSTANCE_
 
-/* ========== Register definition for GPBR peripheral ========== */
-#if (defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__))
-
-#define REG_GPBR_SYS_GPBR       (0x400E1890) /**< (GPBR) General Purpose Backup Register 0 */
-#define REG_GPBR_SYS_GPBR0      (0x400E1890) /**< (GPBR) General Purpose Backup Register 0 */
-#define REG_GPBR_SYS_GPBR1      (0x400E1894) /**< (GPBR) General Purpose Backup Register 1 */
-#define REG_GPBR_SYS_GPBR2      (0x400E1898) /**< (GPBR) General Purpose Backup Register 2 */
-#define REG_GPBR_SYS_GPBR3      (0x400E189C) /**< (GPBR) General Purpose Backup Register 3 */
-#define REG_GPBR_SYS_GPBR4      (0x400E18A0) /**< (GPBR) General Purpose Backup Register 4 */
-#define REG_GPBR_SYS_GPBR5      (0x400E18A4) /**< (GPBR) General Purpose Backup Register 5 */
-#define REG_GPBR_SYS_GPBR6      (0x400E18A8) /**< (GPBR) General Purpose Backup Register 6 */
-#define REG_GPBR_SYS_GPBR7      (0x400E18AC) /**< (GPBR) General Purpose Backup Register 7 */
-
-#else
-
-#define REG_GPBR_SYS_GPBR       (*(__IO uint32_t*)0x400E1890U) /**< (GPBR) General Purpose Backup Register 0 */
-#define REG_GPBR_SYS_GPBR0      (*(__IO uint32_t*)0x400E1890U) /**< (GPBR) General Purpose Backup Register 0 */
-#define REG_GPBR_SYS_GPBR1      (*(__IO uint32_t*)0x400E1894U) /**< (GPBR) General Purpose Backup Register 1 */
-#define REG_GPBR_SYS_GPBR2      (*(__IO uint32_t*)0x400E1898U) /**< (GPBR) General Purpose Backup Register 2 */
-#define REG_GPBR_SYS_GPBR3      (*(__IO uint32_t*)0x400E189CU) /**< (GPBR) General Purpose Backup Register 3 */
-#define REG_GPBR_SYS_GPBR4      (*(__IO uint32_t*)0x400E18A0U) /**< (GPBR) General Purpose Backup Register 4 */
-#define REG_GPBR_SYS_GPBR5      (*(__IO uint32_t*)0x400E18A4U) /**< (GPBR) General Purpose Backup Register 5 */
-#define REG_GPBR_SYS_GPBR6      (*(__IO uint32_t*)0x400E18A8U) /**< (GPBR) General Purpose Backup Register 6 */
-#define REG_GPBR_SYS_GPBR7      (*(__IO uint32_t*)0x400E18ACU) /**< (GPBR) General Purpose Backup Register 7 */
-
-#endif /* (defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__)) */
 #endif /* _SAMV70_GPBR_INSTANCE_ */
