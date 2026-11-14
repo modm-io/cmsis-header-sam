@@ -66,7 +66,7 @@ for family in sam_families:
         # but retain structure. Different directory for each variant
         for f in z.infolist():
             pack_remote_date[family] = f.date_time + (0,0,-1)
-            if re.match(r'(sam.*?\/)?include\/.*?\.h', f.filename):
+            if re.match(r'(sam[^/]*/)?include/.*\.h', f.filename):
                 print(f.filename)
                 if f.filename.startswith("include"):
                     dest = Path(family.lower()) / Path(f.filename)
