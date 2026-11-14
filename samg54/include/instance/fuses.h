@@ -1,13 +1,9 @@
-/**
- * \file
+/*
+ * Instance header file for ATSAMG54N19
  *
- * \brief Low-level initialization functions called upon device startup
+ * Copyright (c) 2026 Microchip Technology Inc. and its subsidiaries.
  *
- * Copyright (c) 2017 Atmel Corporation, a wholly owned subsidiary of Microchip Technology Inc.
- *
- * \license_start
- *
- * \page License
+ * SPDX-License-Identifier: Apache-2.0
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,23 +17,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  *
- * \license_stop
- *
  */
 
-#ifndef _SYSTEM_SAMG55_H_INCLUDED_
-#define _SYSTEM_SAMG55_H_INCLUDED_
+/* file generated from device description file (ATDF) version 2023-04-11T10:29:08Z */
+#ifndef _SAMG54_FUSES_INSTANCE_
+#define _SAMG54_FUSES_INSTANCE_
 
-#ifdef __cplusplus
-extern "C" {
-#endif
-
-#include <stdint.h>
-
-void SystemInit(void);
-
-#ifdef __cplusplus
-}
-#endif
-
-#endif /* _SYSTEM_SAMG55_H_INCLUDED */
+#endif /* _SAMG54_FUSES_INSTANCE_ */

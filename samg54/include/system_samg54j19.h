@@ -1,13 +1,9 @@
-/**
- * \file
+/*
+ * Low-level initialization functions called upon device startup
  *
- * \brief Low-level initialization functions called upon device startup
+ * Copyright (c) 2026 Microchip Technology Inc. and its subsidiaries.
  *
- * Copyright (c) 2017 Atmel Corporation, a wholly owned subsidiary of Microchip Technology Inc.
- *
- * \license_start
- *
- * \page License
+ * SPDX-License-Identifier: Apache-2.0
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,12 +17,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  *
- * \license_stop
- *
  */
 
-#ifndef _SYSTEM_SAMG53_H_INCLUDED_
-#define _SYSTEM_SAMG53_H_INCLUDED_
+#ifndef _SYSTEM_ATSAMG54J19_H_INCLUDED_
+#define _SYSTEM_ATSAMG54J19_H_INCLUDED_
 
 #ifdef __cplusplus
 extern "C" {
@@ -34,10 +28,13 @@ extern "C" {
 
 #include <stdint.h>
 
-void SystemInit(void);
+extern uint32_t SystemCoreClock;   /*!< System Clock Frequency (Core Clock)  */
+
+extern void SystemInit (void);   /*!< Initialize the System and update the SystemCoreClock variable. */
+extern void SystemCoreClockUpdate (void);   /*!< Update the SystemCoreClock variable. */
 
 #ifdef __cplusplus
 }
 #endif
 
-#endif /* _SYSTEM_SAMG53_H_INCLUDED */
+#endif /* _SYSTEM_ATSAMG54J19_H_INCLUDED */

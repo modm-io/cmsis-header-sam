@@ -1,13 +1,9 @@
-/**
- * \file
+/*
+ * Top level header file
  *
- * \brief Top level header file
+ * Copyright (c) 2026 Microchip Technology Inc. and its subsidiaries.
  *
- * Copyright (c) 2017 Atmel Corporation, a wholly owned subsidiary of Microchip Technology Inc.
- *
- * \license_start
- *
- * \page License
+ * SPDX-License-Identifier: Apache-2.0
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,12 +17,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  *
- * \license_stop
- *
  */
 
-#ifndef _SAM_
-#define _SAM_
+#ifndef _SAM_H_
+#define _SAM_H_
 
 #if   defined(__SAMG51G18__) || defined(__ATSAMG51G18__)
   #include "samg51g18.h"
@@ -36,5 +30,5 @@
   #error Library does not support the specified device
 #endif
 
-#endif /* _SAM_ */
+#endif /* _SAM_H_ */
 

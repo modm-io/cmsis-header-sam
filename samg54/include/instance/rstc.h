@@ -1,13 +1,9 @@
-/**
- * \file
+/*
+ * Instance header file for ATSAMG54N19
  *
- * \brief Instance description for RSTC
+ * Copyright (c) 2026 Microchip Technology Inc. and its subsidiaries.
  *
- * Copyright (c) 2017 Atmel Corporation, a wholly owned subsidiary of Microchip Technology Inc.
- *
- * \license_start
- *
- * \page License
+ * SPDX-License-Identifier: Apache-2.0
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,30 +17,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  *
- * \license_stop
- *
  */
 
-/* file generated from device description version 2017-07-05T18:00:00Z */
-#ifndef _SAMG54_RSTC_INSTANCE_H_
-#define _SAMG54_RSTC_INSTANCE_H_
+/* file generated from device description file (ATDF) version 2023-04-11T10:29:08Z */
+#ifndef _SAMG54_RSTC_INSTANCE_
+#define _SAMG54_RSTC_INSTANCE_
 
-/* ========== Register definition for RSTC peripheral ========== */
-#if (defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__))
-
-#define REG_RSTC_CR             (0x400E1400) /**< (RSTC) Control Register */
-#define REG_RSTC_SR             (0x400E1404) /**< (RSTC) Status Register */
-#define REG_RSTC_MR             (0x400E1408) /**< (RSTC) Mode Register */
-
-#else
-
-#define REG_RSTC_CR             (*(__O  uint32_t*)0x400E1400U) /**< (RSTC) Control Register */
-#define REG_RSTC_SR             (*(__I  uint32_t*)0x400E1404U) /**< (RSTC) Status Register */
-#define REG_RSTC_MR             (*(__IO uint32_t*)0x400E1408U) /**< (RSTC) Mode Register */
-
-#endif /* (defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__)) */
 
 /* ========== Instance Parameter definitions for RSTC peripheral ========== */
-#define RSTC_INSTANCE_ID                         1
+#define RSTC_INSTANCE_ID                         (1)
 
 #endif /* _SAMG54_RSTC_INSTANCE_ */

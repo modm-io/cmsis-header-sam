@@ -1,13 +1,9 @@
-/**
- * \file
+/*
+ * Instance header file for ATSAMG55J19
  *
- * \brief Instance description for CHIPID
+ * Copyright (c) 2026 Microchip Technology Inc. and its subsidiaries.
  *
- * Copyright (c) 2017 Atmel Corporation, a wholly owned subsidiary of Microchip Technology Inc.
- *
- * \license_start
- *
- * \page License
+ * SPDX-License-Identifier: Apache-2.0
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,24 +17,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  *
- * \license_stop
- *
  */
 
-/* file generated from device description version 2017-07-05T18:00:00Z */
-#ifndef _SAMG55_CHIPID_INSTANCE_H_
-#define _SAMG55_CHIPID_INSTANCE_H_
+/* file generated from device description file (ATDF) version 2023-08-02T16:53:21Z */
+#ifndef _SAMG55_CHIPID_INSTANCE_
+#define _SAMG55_CHIPID_INSTANCE_
 
-/* ========== Register definition for CHIPID peripheral ========== */
-#if (defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__))
-
-#define REG_CHIPID_CIDR         (0x400E0740) /**< (CHIPID) Chip ID Register */
-#define REG_CHIPID_EXID         (0x400E0744) /**< (CHIPID) Chip ID Extension Register */
-
-#else
-
-#define REG_CHIPID_CIDR         (*(__I  uint32_t*)0x400E0740U) /**< (CHIPID) Chip ID Register */
-#define REG_CHIPID_EXID         (*(__I  uint32_t*)0x400E0744U) /**< (CHIPID) Chip ID Extension Register */
-
-#endif /* (defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__)) */
 #endif /* _SAMG55_CHIPID_INSTANCE_ */
