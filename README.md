@@ -2,7 +2,7 @@
 
 This folder includes the CMSIS device headers for all Microchip SAM devices.
 The files located here are part of the device packs provided by Microchip at
-[packs.download.atmel.com](http://packs.download.atmel.com/) and can be found
+[packs.download.microchip.com](https://packs.download.microchip.com/) and can be found
 inside the `include` folder of each device pack.
 
 The files are copied and modified by converting all line endings from Windows
