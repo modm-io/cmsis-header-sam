@@ -1,13 +1,7 @@
-/**
- * \file
+/*
+ * Top level header file
  *
- * \brief Top level header file
- *
- * Copyright (c) 2019 Microchip Technology Inc.
- *
- * \license_start
- *
- * \page License
+ * Copyright (c) 2026 Microchip Technology Inc. and its subsidiaries.
  *
  * SPDX-License-Identifier: Apache-2.0
  *
@@ -23,30 +17,28 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  *
- * \license_stop
- *
  */
 
-#ifndef _SAM_
-#define _SAM_
+#ifndef _SAM_H_
+#define _SAM_H_
 
-#if   defined(__SAME51G19A__) || defined(__ATSAME51G19A__)
-  #include "same51g19a.h"
-#elif defined(__SAME51G18A__) || defined(__ATSAME51G18A__)
+#if   defined(__SAME51G18A__) || defined(__ATSAME51G18A__)
   #include "same51g18a.h"
-#elif defined(__SAME51N20A__) || defined(__ATSAME51N20A__)
-  #include "same51n20a.h"
-#elif defined(__SAME51N19A__) || defined(__ATSAME51N19A__)
-  #include "same51n19a.h"
-#elif defined(__SAME51J19A__) || defined(__ATSAME51J19A__)
-  #include "same51j19a.h"
+#elif defined(__SAME51G19A__) || defined(__ATSAME51G19A__)
+  #include "same51g19a.h"
 #elif defined(__SAME51J18A__) || defined(__ATSAME51J18A__)
   #include "same51j18a.h"
+#elif defined(__SAME51J19A__) || defined(__ATSAME51J19A__)
+  #include "same51j19a.h"
 #elif defined(__SAME51J20A__) || defined(__ATSAME51J20A__)
   #include "same51j20a.h"
+#elif defined(__SAME51N19A__) || defined(__ATSAME51N19A__)
+  #include "same51n19a.h"
+#elif defined(__SAME51N20A__) || defined(__ATSAME51N20A__)
+  #include "same51n20a.h"
 #else
   #error Library does not support the specified device
 #endif
 
-#endif /* _SAM_ */
+#endif /* _SAM_H_ */
 
