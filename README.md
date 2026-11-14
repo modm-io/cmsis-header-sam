@@ -14,7 +14,7 @@ Here is the list of the current device header version and release date:
 - [SAMD51: v3.10.283 created 02-November-2026](https://packs.download.microchip.com/Microchip.SAMD51_DFP.3.10.283.atpack)
 - [SAME51: v3.10.289 created 02-November-2026](https://packs.download.microchip.com/Microchip.SAME51_DFP.3.10.289.atpack)
 - [SAME53: v3.10.248 created 04-November-2025](https://packs.download.microchip.com/Microchip.SAME53_DFP.3.10.248.atpack)
-- [SAME54: v1.1.134 created 09-April-2019](http://packs.download.atmel.com/Atmel.SAME54_DFP.1.1.134.atpack)
+- [SAME54: v3.12.283 created 02-November-2026](https://packs.download.microchip.com/Microchip.SAME54_DFP.3.12.283.atpack)
 - [SAML21: v1.2.125 created 31-August-2018](http://packs.download.atmel.com/Atmel.SAML21_DFP.1.2.125.atpack)
 - [SAMG: v2.1.97 created 26-September-2017](http://packs.download.atmel.com/Atmel.SAMG_DFP.2.1.97.atpack)
 - [SAME70: v3.0.198 created 11-July-2022](http://packs.download.atmel.com/Atmel.SAME70_DFP.3.0.198.atpack)
