@@ -1,104 +1,95 @@
-/**
- * \file
+/*
+ * Component description for HMATRIXB
  *
- * \brief Component description for HMATRIXB
- *
- * Copyright (c) 2018 Microchip Technology Inc.
- *
- * \asf_license_start
- *
- * \page License
+ * Copyright (c) 2026 Microchip Technology Inc. and its subsidiaries.
  *
  * SPDX-License-Identifier: Apache-2.0
  *
- * Licensed under the Apache License, Version 2.0 (the "License"); you may
- * not use this file except in compliance with the License.
- * You may obtain a copy of the Licence at
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
  *
- * http://www.apache.org/licenses/LICENSE-2.0
+ *   http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an AS IS BASIS, WITHOUT
- * WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
  *
- * \asf_license_stop
- *
  */
 
-#ifndef _SAMD21_HMATRIXB_COMPONENT_
-#define _SAMD21_HMATRIXB_COMPONENT_
+/*  file generated from device description file (ATDF) version 2019-11-25T06:52:33Z  */
+#ifndef _SAMD21_HMATRIXB_COMPONENT_H_
+#define _SAMD21_HMATRIXB_COMPONENT_H_
 
-/* ========================================================================== */
-/**  SOFTWARE API DEFINITION FOR HMATRIXB */
-/* ========================================================================== */
-/** \addtogroup SAMD21_HMATRIXB HSB Matrix */
-/*@{*/
+#include "core_cm0plus.h"
 
-#define HMATRIXB_I7638
-#define REV_HMATRIXB                0x212
+/* ************************************************************************** */
+/*                    SOFTWARE API DEFINITION FOR HMATRIXB                    */
+/* ************************************************************************** */
 
-/* -------- HMATRIXB_PRAS : (HMATRIXB Offset: 0x080) (R/W 32) PRS Priority A for Slave -------- */
-#if !(defined(__ASSEMBLY__) || defined(__IAR_SYSTEMS_ASM__))
-typedef union {
-  uint32_t reg;                /*!< Type      used for register access              */
-} HMATRIXB_PRAS_Type;
-#endif /* !(defined(__ASSEMBLY__) || defined(__IAR_SYSTEMS_ASM__)) */
+/* -------- HMATRIXB_PRAS : (HMATRIXB Offset: 0x00) (R/W 32) Priority A for Slave -------- */
+#define HMATRIXB_PRAS_RESETVALUE              _UINT32_(0x00)                                       /*  (HMATRIXB_PRAS) Priority A for Slave  Reset Value */
 
-#define HMATRIXB_PRAS_OFFSET        0x080        /**< \brief (HMATRIXB_PRAS offset) Priority A for Slave */
-#define HMATRIXB_PRAS_RESETVALUE    _U_(0x00000000) /**< \brief (HMATRIXB_PRAS reset_value) Priority A for Slave */
+#define HMATRIXB_PRAS_Msk                     _UINT32_(0x00000000)                                 /* (HMATRIXB_PRAS) Register Mask  */
 
-#define HMATRIXB_PRAS_MASK          _U_(0x00000000) /**< \brief (HMATRIXB_PRAS) MASK Register */
 
-/* -------- HMATRIXB_PRBS : (HMATRIXB Offset: 0x084) (R/W 32) PRS Priority B for Slave -------- */
-#if !(defined(__ASSEMBLY__) || defined(__IAR_SYSTEMS_ASM__))
-typedef union {
-  uint32_t reg;                /*!< Type      used for register access              */
-} HMATRIXB_PRBS_Type;
-#endif /* !(defined(__ASSEMBLY__) || defined(__IAR_SYSTEMS_ASM__)) */
+/* -------- HMATRIXB_PRBS : (HMATRIXB Offset: 0x04) (R/W 32) Priority B for Slave -------- */
+#define HMATRIXB_PRBS_RESETVALUE              _UINT32_(0x00)                                       /*  (HMATRIXB_PRBS) Priority B for Slave  Reset Value */
 
-#define HMATRIXB_PRBS_OFFSET        0x084        /**< \brief (HMATRIXB_PRBS offset) Priority B for Slave */
-#define HMATRIXB_PRBS_RESETVALUE    _U_(0x00000000) /**< \brief (HMATRIXB_PRBS reset_value) Priority B for Slave */
+#define HMATRIXB_PRBS_Msk                     _UINT32_(0x00000000)                                 /* (HMATRIXB_PRBS) Register Mask  */
 
-#define HMATRIXB_PRBS_MASK          _U_(0x00000000) /**< \brief (HMATRIXB_PRBS) MASK Register */
 
 /* -------- HMATRIXB_SFR : (HMATRIXB Offset: 0x110) (R/W 32) Special Function -------- */
-#if !(defined(__ASSEMBLY__) || defined(__IAR_SYSTEMS_ASM__))
-typedef union {
-  struct {
-    uint32_t SFR:32;           /*!< bit:  0..31  Special Function Register          */
-  } bit;                       /*!< Structure used for bit  access                  */
-  uint32_t reg;                /*!< Type      used for register access              */
-} HMATRIXB_SFR_Type;
-#endif /* !(defined(__ASSEMBLY__) || defined(__IAR_SYSTEMS_ASM__)) */
+#define HMATRIXB_SFR_RESETVALUE               _UINT32_(0x00)                                       /*  (HMATRIXB_SFR) Special Function  Reset Value */
 
-#define HMATRIXB_SFR_OFFSET         0x110        /**< \brief (HMATRIXB_SFR offset) Special Function */
-#define HMATRIXB_SFR_RESETVALUE     _U_(0x00000000) /**< \brief (HMATRIXB_SFR reset_value) Special Function */
+#define HMATRIXB_SFR_SFR_Pos                  _UINT32_(0)                                          /* (HMATRIXB_SFR) Special Function Register Position */
+#define HMATRIXB_SFR_SFR_Msk                  (_UINT32_(0xFFFFFFFF) << HMATRIXB_SFR_SFR_Pos)       /* (HMATRIXB_SFR) Special Function Register Mask */
+#define HMATRIXB_SFR_SFR(value)               (HMATRIXB_SFR_SFR_Msk & (_UINT32_(value) << HMATRIXB_SFR_SFR_Pos)) /* Assignment of value for SFR in the HMATRIXB_SFR register */
+#define HMATRIXB_SFR_Msk                      _UINT32_(0xFFFFFFFF)                                 /* (HMATRIXB_SFR) Register Mask  */
 
-#define HMATRIXB_SFR_SFR_Pos        0            /**< \brief (HMATRIXB_SFR) Special Function Register */
-#define HMATRIXB_SFR_SFR_Msk        (_U_(0xFFFFFFFF) << HMATRIXB_SFR_SFR_Pos)
-#define HMATRIXB_SFR_SFR(value)     (HMATRIXB_SFR_SFR_Msk & ((value) << HMATRIXB_SFR_SFR_Pos))
-#define HMATRIXB_SFR_MASK           _U_(0xFFFFFFFF) /**< \brief (HMATRIXB_SFR) MASK Register */
 
-/** \brief HmatrixbPrs hardware registers */
-#if !(defined(__ASSEMBLY__) || defined(__IAR_SYSTEMS_ASM__))
-typedef struct {
-  __IO HMATRIXB_PRAS_Type        PRAS;        /**< \brief Offset: 0x000 (R/W 32) Priority A for Slave */
-  __IO HMATRIXB_PRBS_Type        PRBS;        /**< \brief Offset: 0x004 (R/W 32) Priority B for Slave */
-} HmatrixbPrs;
-#endif /* !(defined(__ASSEMBLY__) || defined(__IAR_SYSTEMS_ASM__)) */
+/* HMATRIXB register offsets definitions */
+#define HMATRIXB_PRAS_REG_OFST         _UINT32_(0x00)      /* (HMATRIXB_PRAS) Priority A for Slave Offset */
+#define HMATRIXB_PRBS_REG_OFST         _UINT32_(0x04)      /* (HMATRIXB_PRBS) Priority B for Slave Offset */
+#define HMATRIXB_SFR_REG_OFST          _UINT32_(0x110)     /* (HMATRIXB_SFR) Special Function Offset */
+#define HMATRIXB_SFR0_REG_OFST         _UINT32_(0x110)     /* (HMATRIXB_SFR0) Special Function Offset */
+#define HMATRIXB_SFR1_REG_OFST         _UINT32_(0x114)     /* (HMATRIXB_SFR1) Special Function Offset */
+#define HMATRIXB_SFR2_REG_OFST         _UINT32_(0x118)     /* (HMATRIXB_SFR2) Special Function Offset */
+#define HMATRIXB_SFR3_REG_OFST         _UINT32_(0x11C)     /* (HMATRIXB_SFR3) Special Function Offset */
+#define HMATRIXB_SFR4_REG_OFST         _UINT32_(0x120)     /* (HMATRIXB_SFR4) Special Function Offset */
+#define HMATRIXB_SFR5_REG_OFST         _UINT32_(0x124)     /* (HMATRIXB_SFR5) Special Function Offset */
+#define HMATRIXB_SFR6_REG_OFST         _UINT32_(0x128)     /* (HMATRIXB_SFR6) Special Function Offset */
+#define HMATRIXB_SFR7_REG_OFST         _UINT32_(0x12C)     /* (HMATRIXB_SFR7) Special Function Offset */
+#define HMATRIXB_SFR8_REG_OFST         _UINT32_(0x130)     /* (HMATRIXB_SFR8) Special Function Offset */
+#define HMATRIXB_SFR9_REG_OFST         _UINT32_(0x134)     /* (HMATRIXB_SFR9) Special Function Offset */
+#define HMATRIXB_SFR10_REG_OFST        _UINT32_(0x138)     /* (HMATRIXB_SFR10) Special Function Offset */
+#define HMATRIXB_SFR11_REG_OFST        _UINT32_(0x13C)     /* (HMATRIXB_SFR11) Special Function Offset */
+#define HMATRIXB_SFR12_REG_OFST        _UINT32_(0x140)     /* (HMATRIXB_SFR12) Special Function Offset */
+#define HMATRIXB_SFR13_REG_OFST        _UINT32_(0x144)     /* (HMATRIXB_SFR13) Special Function Offset */
+#define HMATRIXB_SFR14_REG_OFST        _UINT32_(0x148)     /* (HMATRIXB_SFR14) Special Function Offset */
+#define HMATRIXB_SFR15_REG_OFST        _UINT32_(0x14C)     /* (HMATRIXB_SFR15) Special Function Offset */
 
-/** \brief HMATRIXB hardware registers */
-#if !(defined(__ASSEMBLY__) || defined(__IAR_SYSTEMS_ASM__))
-typedef struct {
-       RoReg8                    Reserved1[0x80];
-       HmatrixbPrs               Prs[16];     /**< \brief Offset: 0x080 HmatrixbPrs groups */
-       RoReg8                    Reserved2[0x10];
-  __IO HMATRIXB_SFR_Type         SFR[16];     /**< \brief Offset: 0x110 (R/W 32) Special Function */
-} Hmatrixb;
-#endif /* !(defined(__ASSEMBLY__) || defined(__IAR_SYSTEMS_ASM__)) */
+#if !(defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__))
+/* PRS register API structure */
+typedef struct
+{
+  __IO  uint32_t                       HMATRIXB_PRAS;      /* Offset: 0x00 (R/W  32) Priority A for Slave */
+  __IO  uint32_t                       HMATRIXB_PRBS;      /* Offset: 0x04 (R/W  32) Priority B for Slave */
+} hmatrixb_prs_registers_t;
 
-/*@}*/
+#define HMATRIXB_PRS_NUMBER 16
 
-#endif /* _SAMD21_HMATRIXB_COMPONENT_ */
+/* HMATRIXB register API structure */
+typedef struct
+{  /* HSB Matrix */
+  __I   uint8_t                        Reserved1[0x80];
+        hmatrixb_prs_registers_t       PRS[HMATRIXB_PRS_NUMBER]; /* Offset: 0x80  */
+  __I   uint8_t                        Reserved2[0x10];
+  __IO  uint32_t                       HMATRIXB_SFR[16];   /* Offset: 0x110 (R/W  32) Special Function */
+} hmatrixb_registers_t;
+
+
+#endif /* !(defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__)) */
+#endif /* _SAMD21_HMATRIXB_COMPONENT_H_ */

@@ -1,13 +1,7 @@
-/**
- * \file
+/*
+ * Top level header file
  *
- * \brief Top level header file
- *
- * Copyright (c) 2019 Microchip Technology Inc.
- *
- * \license_start
- *
- * \page License
+ * Copyright (c) 2026 Microchip Technology Inc. and its subsidiaries.
  *
  * SPDX-License-Identifier: Apache-2.0
  *
@@ -23,20 +17,30 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  *
- * \license_stop
- *
  */
 
-#ifndef _SAM_
-#define _SAM_
+#ifndef _SAM_H_
+#define _SAM_H_
 
-#if   defined(__SAMD21E16BU__) || defined(__ATSAMD21E16BU__)
-  #include "samd21e16bu.h"
+#if   defined(__SAMD21E15B__) || defined(__ATSAMD21E15B__)
+  #include "samd21e15b.h"
 #elif defined(__SAMD21E15BU__) || defined(__ATSAMD21E15BU__)
   #include "samd21e15bu.h"
+#elif defined(__SAMD21E16B__) || defined(__ATSAMD21E16B__)
+  #include "samd21e16b.h"
+#elif defined(__SAMD21E16BU__) || defined(__ATSAMD21E16BU__)
+  #include "samd21e16bu.h"
+#elif defined(__SAMD21G15B__) || defined(__ATSAMD21G15B__)
+  #include "samd21g15b.h"
+#elif defined(__SAMD21G16B__) || defined(__ATSAMD21G16B__)
+  #include "samd21g16b.h"
+#elif defined(__SAMD21J15B__) || defined(__ATSAMD21J15B__)
+  #include "samd21j15b.h"
+#elif defined(__SAMD21J16B__) || defined(__ATSAMD21J16B__)
+  #include "samd21j16b.h"
 #else
   #error Library does not support the specified device
 #endif
 
-#endif /* _SAM_ */
+#endif /* _SAM_H_ */
 

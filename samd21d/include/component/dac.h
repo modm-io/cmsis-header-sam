@@ -1,272 +1,191 @@
-/**
- * \file
+/*
+ * Component description for DAC
  *
- * \brief Component description for DAC
- *
- * Copyright (c) 2018 Microchip Technology Inc.
- *
- * \asf_license_start
- *
- * \page License
+ * Copyright (c) 2026 Microchip Technology Inc. and its subsidiaries.
  *
  * SPDX-License-Identifier: Apache-2.0
  *
- * Licensed under the Apache License, Version 2.0 (the "License"); you may
- * not use this file except in compliance with the License.
- * You may obtain a copy of the Licence at
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
  *
- * http://www.apache.org/licenses/LICENSE-2.0
+ *   http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an AS IS BASIS, WITHOUT
- * WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
  *
- * \asf_license_stop
- *
  */
 
-#ifndef _SAMD21_DAC_COMPONENT_
-#define _SAMD21_DAC_COMPONENT_
+/*  file generated from device description file (ATDF) version 2020-11-19T13:00:05Z  */
+#ifndef _SAMD21_DAC_COMPONENT_H_
+#define _SAMD21_DAC_COMPONENT_H_
 
-/* ========================================================================== */
-/**  SOFTWARE API DEFINITION FOR DAC */
-/* ========================================================================== */
-/** \addtogroup SAMD21_DAC Digital Analog Converter */
-/*@{*/
+#include "core_cm0plus.h"
 
-#define DAC_U2214
-#define REV_DAC                     0x110
+/* ************************************************************************** */
+/*                      SOFTWARE API DEFINITION FOR DAC                       */
+/* ************************************************************************** */
 
-/* -------- DAC_CTRLA : (DAC Offset: 0x0) (R/W  8) Control A -------- */
-#if !(defined(__ASSEMBLY__) || defined(__IAR_SYSTEMS_ASM__))
-typedef union {
-  struct {
-    uint8_t  SWRST:1;          /*!< bit:      0  Software Reset                     */
-    uint8_t  ENABLE:1;         /*!< bit:      1  Enable                             */
-    uint8_t  RUNSTDBY:1;       /*!< bit:      2  Run in Standby                     */
-    uint8_t  :5;               /*!< bit:  3.. 7  Reserved                           */
-  } bit;                       /*!< Structure used for bit  access                  */
-  uint8_t reg;                 /*!< Type      used for register access              */
-} DAC_CTRLA_Type;
-#endif /* !(defined(__ASSEMBLY__) || defined(__IAR_SYSTEMS_ASM__)) */
+/* -------- DAC_CTRLA : (DAC Offset: 0x00) (R/W 8) Control A -------- */
+#define DAC_CTRLA_RESETVALUE                  _UINT8_(0x00)                                        /*  (DAC_CTRLA) Control A  Reset Value */
 
-#define DAC_CTRLA_OFFSET            0x0          /**< \brief (DAC_CTRLA offset) Control A */
-#define DAC_CTRLA_RESETVALUE        _U_(0x00)    /**< \brief (DAC_CTRLA reset_value) Control A */
+#define DAC_CTRLA_SWRST_Pos                   _UINT8_(0)                                           /* (DAC_CTRLA) Software Reset Position */
+#define DAC_CTRLA_SWRST_Msk                   (_UINT8_(0x1) << DAC_CTRLA_SWRST_Pos)                /* (DAC_CTRLA) Software Reset Mask */
+#define DAC_CTRLA_SWRST(value)                (DAC_CTRLA_SWRST_Msk & (_UINT8_(value) << DAC_CTRLA_SWRST_Pos)) /* Assignment of value for SWRST in the DAC_CTRLA register */
+#define DAC_CTRLA_ENABLE_Pos                  _UINT8_(1)                                           /* (DAC_CTRLA) Enable Position */
+#define DAC_CTRLA_ENABLE_Msk                  (_UINT8_(0x1) << DAC_CTRLA_ENABLE_Pos)               /* (DAC_CTRLA) Enable Mask */
+#define DAC_CTRLA_ENABLE(value)               (DAC_CTRLA_ENABLE_Msk & (_UINT8_(value) << DAC_CTRLA_ENABLE_Pos)) /* Assignment of value for ENABLE in the DAC_CTRLA register */
+#define DAC_CTRLA_RUNSTDBY_Pos                _UINT8_(2)                                           /* (DAC_CTRLA) Run in Standby Position */
+#define DAC_CTRLA_RUNSTDBY_Msk                (_UINT8_(0x1) << DAC_CTRLA_RUNSTDBY_Pos)             /* (DAC_CTRLA) Run in Standby Mask */
+#define DAC_CTRLA_RUNSTDBY(value)             (DAC_CTRLA_RUNSTDBY_Msk & (_UINT8_(value) << DAC_CTRLA_RUNSTDBY_Pos)) /* Assignment of value for RUNSTDBY in the DAC_CTRLA register */
+#define DAC_CTRLA_Msk                         _UINT8_(0x07)                                        /* (DAC_CTRLA) Register Mask  */
 
-#define DAC_CTRLA_SWRST_Pos         0            /**< \brief (DAC_CTRLA) Software Reset */
-#define DAC_CTRLA_SWRST             (_U_(0x1) << DAC_CTRLA_SWRST_Pos)
-#define DAC_CTRLA_ENABLE_Pos        1            /**< \brief (DAC_CTRLA) Enable */
-#define DAC_CTRLA_ENABLE            (_U_(0x1) << DAC_CTRLA_ENABLE_Pos)
-#define DAC_CTRLA_RUNSTDBY_Pos      2            /**< \brief (DAC_CTRLA) Run in Standby */
-#define DAC_CTRLA_RUNSTDBY          (_U_(0x1) << DAC_CTRLA_RUNSTDBY_Pos)
-#define DAC_CTRLA_MASK              _U_(0x07)    /**< \brief (DAC_CTRLA) MASK Register */
 
-/* -------- DAC_CTRLB : (DAC Offset: 0x1) (R/W  8) Control B -------- */
-#if !(defined(__ASSEMBLY__) || defined(__IAR_SYSTEMS_ASM__))
-typedef union {
-  struct {
-    uint8_t  EOEN:1;           /*!< bit:      0  External Output Enable             */
-    uint8_t  IOEN:1;           /*!< bit:      1  Internal Output Enable             */
-    uint8_t  LEFTADJ:1;        /*!< bit:      2  Left Adjusted Data                 */
-    uint8_t  VPD:1;            /*!< bit:      3  Voltage Pump Disable               */
-    uint8_t  BDWP:1;           /*!< bit:      4  Bypass DATABUF Write Protection    */
-    uint8_t  :1;               /*!< bit:      5  Reserved                           */
-    uint8_t  REFSEL:2;         /*!< bit:  6.. 7  Reference Selection                */
-  } bit;                       /*!< Structure used for bit  access                  */
-  uint8_t reg;                 /*!< Type      used for register access              */
-} DAC_CTRLB_Type;
-#endif /* !(defined(__ASSEMBLY__) || defined(__IAR_SYSTEMS_ASM__)) */
+/* -------- DAC_CTRLB : (DAC Offset: 0x01) (R/W 8) Control B -------- */
+#define DAC_CTRLB_RESETVALUE                  _UINT8_(0x00)                                        /*  (DAC_CTRLB) Control B  Reset Value */
 
-#define DAC_CTRLB_OFFSET            0x1          /**< \brief (DAC_CTRLB offset) Control B */
-#define DAC_CTRLB_RESETVALUE        _U_(0x00)    /**< \brief (DAC_CTRLB reset_value) Control B */
+#define DAC_CTRLB_EOEN_Pos                    _UINT8_(0)                                           /* (DAC_CTRLB) External Output Enable Position */
+#define DAC_CTRLB_EOEN_Msk                    (_UINT8_(0x1) << DAC_CTRLB_EOEN_Pos)                 /* (DAC_CTRLB) External Output Enable Mask */
+#define DAC_CTRLB_EOEN(value)                 (DAC_CTRLB_EOEN_Msk & (_UINT8_(value) << DAC_CTRLB_EOEN_Pos)) /* Assignment of value for EOEN in the DAC_CTRLB register */
+#define DAC_CTRLB_IOEN_Pos                    _UINT8_(1)                                           /* (DAC_CTRLB) Internal Output Enable Position */
+#define DAC_CTRLB_IOEN_Msk                    (_UINT8_(0x1) << DAC_CTRLB_IOEN_Pos)                 /* (DAC_CTRLB) Internal Output Enable Mask */
+#define DAC_CTRLB_IOEN(value)                 (DAC_CTRLB_IOEN_Msk & (_UINT8_(value) << DAC_CTRLB_IOEN_Pos)) /* Assignment of value for IOEN in the DAC_CTRLB register */
+#define DAC_CTRLB_LEFTADJ_Pos                 _UINT8_(2)                                           /* (DAC_CTRLB) Left Adjusted Data Position */
+#define DAC_CTRLB_LEFTADJ_Msk                 (_UINT8_(0x1) << DAC_CTRLB_LEFTADJ_Pos)              /* (DAC_CTRLB) Left Adjusted Data Mask */
+#define DAC_CTRLB_LEFTADJ(value)              (DAC_CTRLB_LEFTADJ_Msk & (_UINT8_(value) << DAC_CTRLB_LEFTADJ_Pos)) /* Assignment of value for LEFTADJ in the DAC_CTRLB register */
+#define DAC_CTRLB_VPD_Pos                     _UINT8_(3)                                           /* (DAC_CTRLB) Voltage Pump Disable Position */
+#define DAC_CTRLB_VPD_Msk                     (_UINT8_(0x1) << DAC_CTRLB_VPD_Pos)                  /* (DAC_CTRLB) Voltage Pump Disable Mask */
+#define DAC_CTRLB_VPD(value)                  (DAC_CTRLB_VPD_Msk & (_UINT8_(value) << DAC_CTRLB_VPD_Pos)) /* Assignment of value for VPD in the DAC_CTRLB register */
+#define DAC_CTRLB_BDWP_Pos                    _UINT8_(4)                                           /* (DAC_CTRLB) Bypass DATABUF Write Protection Position */
+#define DAC_CTRLB_BDWP_Msk                    (_UINT8_(0x1) << DAC_CTRLB_BDWP_Pos)                 /* (DAC_CTRLB) Bypass DATABUF Write Protection Mask */
+#define DAC_CTRLB_BDWP(value)                 (DAC_CTRLB_BDWP_Msk & (_UINT8_(value) << DAC_CTRLB_BDWP_Pos)) /* Assignment of value for BDWP in the DAC_CTRLB register */
+#define DAC_CTRLB_REFSEL_Pos                  _UINT8_(6)                                           /* (DAC_CTRLB) Reference Selection Position */
+#define DAC_CTRLB_REFSEL_Msk                  (_UINT8_(0x3) << DAC_CTRLB_REFSEL_Pos)               /* (DAC_CTRLB) Reference Selection Mask */
+#define DAC_CTRLB_REFSEL(value)               (DAC_CTRLB_REFSEL_Msk & (_UINT8_(value) << DAC_CTRLB_REFSEL_Pos)) /* Assignment of value for REFSEL in the DAC_CTRLB register */
+#define   DAC_CTRLB_REFSEL_INT1V_Val          _UINT8_(0x0)                                         /* (DAC_CTRLB) Internal 1.0V reference  */
+#define   DAC_CTRLB_REFSEL_AVCC_Val           _UINT8_(0x1)                                         /* (DAC_CTRLB) AVCC  */
+#define   DAC_CTRLB_REFSEL_VREFP_Val          _UINT8_(0x2)                                         /* (DAC_CTRLB) External reference  */
+#define DAC_CTRLB_REFSEL_INT1V                (DAC_CTRLB_REFSEL_INT1V_Val << DAC_CTRLB_REFSEL_Pos) /* (DAC_CTRLB) Internal 1.0V reference Position */
+#define DAC_CTRLB_REFSEL_AVCC                 (DAC_CTRLB_REFSEL_AVCC_Val << DAC_CTRLB_REFSEL_Pos)  /* (DAC_CTRLB) AVCC Position */
+#define DAC_CTRLB_REFSEL_VREFP                (DAC_CTRLB_REFSEL_VREFP_Val << DAC_CTRLB_REFSEL_Pos) /* (DAC_CTRLB) External reference Position */
+#define DAC_CTRLB_Msk                         _UINT8_(0xDF)                                        /* (DAC_CTRLB) Register Mask  */
 
-#define DAC_CTRLB_EOEN_Pos          0            /**< \brief (DAC_CTRLB) External Output Enable */
-#define DAC_CTRLB_EOEN              (_U_(0x1) << DAC_CTRLB_EOEN_Pos)
-#define DAC_CTRLB_IOEN_Pos          1            /**< \brief (DAC_CTRLB) Internal Output Enable */
-#define DAC_CTRLB_IOEN              (_U_(0x1) << DAC_CTRLB_IOEN_Pos)
-#define DAC_CTRLB_LEFTADJ_Pos       2            /**< \brief (DAC_CTRLB) Left Adjusted Data */
-#define DAC_CTRLB_LEFTADJ           (_U_(0x1) << DAC_CTRLB_LEFTADJ_Pos)
-#define DAC_CTRLB_VPD_Pos           3            /**< \brief (DAC_CTRLB) Voltage Pump Disable */
-#define DAC_CTRLB_VPD               (_U_(0x1) << DAC_CTRLB_VPD_Pos)
-#define DAC_CTRLB_BDWP_Pos          4            /**< \brief (DAC_CTRLB) Bypass DATABUF Write Protection */
-#define DAC_CTRLB_BDWP              (_U_(0x1) << DAC_CTRLB_BDWP_Pos)
-#define DAC_CTRLB_REFSEL_Pos        6            /**< \brief (DAC_CTRLB) Reference Selection */
-#define DAC_CTRLB_REFSEL_Msk        (_U_(0x3) << DAC_CTRLB_REFSEL_Pos)
-#define DAC_CTRLB_REFSEL(value)     (DAC_CTRLB_REFSEL_Msk & ((value) << DAC_CTRLB_REFSEL_Pos))
-#define   DAC_CTRLB_REFSEL_INT1V_Val      _U_(0x0)   /**< \brief (DAC_CTRLB) Internal 1.0V reference */
-#define   DAC_CTRLB_REFSEL_AVCC_Val       _U_(0x1)   /**< \brief (DAC_CTRLB) AVCC */
-#define   DAC_CTRLB_REFSEL_VREFP_Val      _U_(0x2)   /**< \brief (DAC_CTRLB) External reference */
-#define DAC_CTRLB_REFSEL_INT1V      (DAC_CTRLB_REFSEL_INT1V_Val    << DAC_CTRLB_REFSEL_Pos)
-#define DAC_CTRLB_REFSEL_AVCC       (DAC_CTRLB_REFSEL_AVCC_Val     << DAC_CTRLB_REFSEL_Pos)
-#define DAC_CTRLB_REFSEL_VREFP      (DAC_CTRLB_REFSEL_VREFP_Val    << DAC_CTRLB_REFSEL_Pos)
-#define DAC_CTRLB_MASK              _U_(0xDF)    /**< \brief (DAC_CTRLB) MASK Register */
 
-/* -------- DAC_EVCTRL : (DAC Offset: 0x2) (R/W  8) Event Control -------- */
-#if !(defined(__ASSEMBLY__) || defined(__IAR_SYSTEMS_ASM__))
-typedef union {
-  struct {
-    uint8_t  STARTEI:1;        /*!< bit:      0  Start Conversion Event Input       */
-    uint8_t  EMPTYEO:1;        /*!< bit:      1  Data Buffer Empty Event Output     */
-    uint8_t  :6;               /*!< bit:  2.. 7  Reserved                           */
-  } bit;                       /*!< Structure used for bit  access                  */
-  uint8_t reg;                 /*!< Type      used for register access              */
-} DAC_EVCTRL_Type;
-#endif /* !(defined(__ASSEMBLY__) || defined(__IAR_SYSTEMS_ASM__)) */
+/* -------- DAC_EVCTRL : (DAC Offset: 0x02) (R/W 8) Event Control -------- */
+#define DAC_EVCTRL_RESETVALUE                 _UINT8_(0x00)                                        /*  (DAC_EVCTRL) Event Control  Reset Value */
 
-#define DAC_EVCTRL_OFFSET           0x2          /**< \brief (DAC_EVCTRL offset) Event Control */
-#define DAC_EVCTRL_RESETVALUE       _U_(0x00)    /**< \brief (DAC_EVCTRL reset_value) Event Control */
+#define DAC_EVCTRL_STARTEI_Pos                _UINT8_(0)                                           /* (DAC_EVCTRL) Start Conversion Event Input Position */
+#define DAC_EVCTRL_STARTEI_Msk                (_UINT8_(0x1) << DAC_EVCTRL_STARTEI_Pos)             /* (DAC_EVCTRL) Start Conversion Event Input Mask */
+#define DAC_EVCTRL_STARTEI(value)             (DAC_EVCTRL_STARTEI_Msk & (_UINT8_(value) << DAC_EVCTRL_STARTEI_Pos)) /* Assignment of value for STARTEI in the DAC_EVCTRL register */
+#define DAC_EVCTRL_EMPTYEO_Pos                _UINT8_(1)                                           /* (DAC_EVCTRL) Data Buffer Empty Event Output Position */
+#define DAC_EVCTRL_EMPTYEO_Msk                (_UINT8_(0x1) << DAC_EVCTRL_EMPTYEO_Pos)             /* (DAC_EVCTRL) Data Buffer Empty Event Output Mask */
+#define DAC_EVCTRL_EMPTYEO(value)             (DAC_EVCTRL_EMPTYEO_Msk & (_UINT8_(value) << DAC_EVCTRL_EMPTYEO_Pos)) /* Assignment of value for EMPTYEO in the DAC_EVCTRL register */
+#define DAC_EVCTRL_Msk                        _UINT8_(0x03)                                        /* (DAC_EVCTRL) Register Mask  */
 
-#define DAC_EVCTRL_STARTEI_Pos      0            /**< \brief (DAC_EVCTRL) Start Conversion Event Input */
-#define DAC_EVCTRL_STARTEI          (_U_(0x1) << DAC_EVCTRL_STARTEI_Pos)
-#define DAC_EVCTRL_EMPTYEO_Pos      1            /**< \brief (DAC_EVCTRL) Data Buffer Empty Event Output */
-#define DAC_EVCTRL_EMPTYEO          (_U_(0x1) << DAC_EVCTRL_EMPTYEO_Pos)
-#define DAC_EVCTRL_MASK             _U_(0x03)    /**< \brief (DAC_EVCTRL) MASK Register */
 
-/* -------- DAC_INTENCLR : (DAC Offset: 0x4) (R/W  8) Interrupt Enable Clear -------- */
-#if !(defined(__ASSEMBLY__) || defined(__IAR_SYSTEMS_ASM__))
-typedef union {
-  struct {
-    uint8_t  UNDERRUN:1;       /*!< bit:      0  Underrun Interrupt Enable          */
-    uint8_t  EMPTY:1;          /*!< bit:      1  Data Buffer Empty Interrupt Enable */
-    uint8_t  SYNCRDY:1;        /*!< bit:      2  Synchronization Ready Interrupt Enable */
-    uint8_t  :5;               /*!< bit:  3.. 7  Reserved                           */
-  } bit;                       /*!< Structure used for bit  access                  */
-  uint8_t reg;                 /*!< Type      used for register access              */
-} DAC_INTENCLR_Type;
-#endif /* !(defined(__ASSEMBLY__) || defined(__IAR_SYSTEMS_ASM__)) */
+/* -------- DAC_INTENCLR : (DAC Offset: 0x04) (R/W 8) Interrupt Enable Clear -------- */
+#define DAC_INTENCLR_RESETVALUE               _UINT8_(0x00)                                        /*  (DAC_INTENCLR) Interrupt Enable Clear  Reset Value */
 
-#define DAC_INTENCLR_OFFSET         0x4          /**< \brief (DAC_INTENCLR offset) Interrupt Enable Clear */
-#define DAC_INTENCLR_RESETVALUE     _U_(0x00)    /**< \brief (DAC_INTENCLR reset_value) Interrupt Enable Clear */
+#define DAC_INTENCLR_UNDERRUN_Pos             _UINT8_(0)                                           /* (DAC_INTENCLR) Underrun Interrupt Enable Position */
+#define DAC_INTENCLR_UNDERRUN_Msk             (_UINT8_(0x1) << DAC_INTENCLR_UNDERRUN_Pos)          /* (DAC_INTENCLR) Underrun Interrupt Enable Mask */
+#define DAC_INTENCLR_UNDERRUN(value)          (DAC_INTENCLR_UNDERRUN_Msk & (_UINT8_(value) << DAC_INTENCLR_UNDERRUN_Pos)) /* Assignment of value for UNDERRUN in the DAC_INTENCLR register */
+#define DAC_INTENCLR_EMPTY_Pos                _UINT8_(1)                                           /* (DAC_INTENCLR) Data Buffer Empty Interrupt Enable Position */
+#define DAC_INTENCLR_EMPTY_Msk                (_UINT8_(0x1) << DAC_INTENCLR_EMPTY_Pos)             /* (DAC_INTENCLR) Data Buffer Empty Interrupt Enable Mask */
+#define DAC_INTENCLR_EMPTY(value)             (DAC_INTENCLR_EMPTY_Msk & (_UINT8_(value) << DAC_INTENCLR_EMPTY_Pos)) /* Assignment of value for EMPTY in the DAC_INTENCLR register */
+#define DAC_INTENCLR_SYNCRDY_Pos              _UINT8_(2)                                           /* (DAC_INTENCLR) Synchronization Ready Interrupt Enable Position */
+#define DAC_INTENCLR_SYNCRDY_Msk              (_UINT8_(0x1) << DAC_INTENCLR_SYNCRDY_Pos)           /* (DAC_INTENCLR) Synchronization Ready Interrupt Enable Mask */
+#define DAC_INTENCLR_SYNCRDY(value)           (DAC_INTENCLR_SYNCRDY_Msk & (_UINT8_(value) << DAC_INTENCLR_SYNCRDY_Pos)) /* Assignment of value for SYNCRDY in the DAC_INTENCLR register */
+#define DAC_INTENCLR_Msk                      _UINT8_(0x07)                                        /* (DAC_INTENCLR) Register Mask  */
 
-#define DAC_INTENCLR_UNDERRUN_Pos   0            /**< \brief (DAC_INTENCLR) Underrun Interrupt Enable */
-#define DAC_INTENCLR_UNDERRUN       (_U_(0x1) << DAC_INTENCLR_UNDERRUN_Pos)
-#define DAC_INTENCLR_EMPTY_Pos      1            /**< \brief (DAC_INTENCLR) Data Buffer Empty Interrupt Enable */
-#define DAC_INTENCLR_EMPTY          (_U_(0x1) << DAC_INTENCLR_EMPTY_Pos)
-#define DAC_INTENCLR_SYNCRDY_Pos    2            /**< \brief (DAC_INTENCLR) Synchronization Ready Interrupt Enable */
-#define DAC_INTENCLR_SYNCRDY        (_U_(0x1) << DAC_INTENCLR_SYNCRDY_Pos)
-#define DAC_INTENCLR_MASK           _U_(0x07)    /**< \brief (DAC_INTENCLR) MASK Register */
 
-/* -------- DAC_INTENSET : (DAC Offset: 0x5) (R/W  8) Interrupt Enable Set -------- */
-#if !(defined(__ASSEMBLY__) || defined(__IAR_SYSTEMS_ASM__))
-typedef union {
-  struct {
-    uint8_t  UNDERRUN:1;       /*!< bit:      0  Underrun Interrupt Enable          */
-    uint8_t  EMPTY:1;          /*!< bit:      1  Data Buffer Empty Interrupt Enable */
-    uint8_t  SYNCRDY:1;        /*!< bit:      2  Synchronization Ready Interrupt Enable */
-    uint8_t  :5;               /*!< bit:  3.. 7  Reserved                           */
-  } bit;                       /*!< Structure used for bit  access                  */
-  uint8_t reg;                 /*!< Type      used for register access              */
-} DAC_INTENSET_Type;
-#endif /* !(defined(__ASSEMBLY__) || defined(__IAR_SYSTEMS_ASM__)) */
+/* -------- DAC_INTENSET : (DAC Offset: 0x05) (R/W 8) Interrupt Enable Set -------- */
+#define DAC_INTENSET_RESETVALUE               _UINT8_(0x00)                                        /*  (DAC_INTENSET) Interrupt Enable Set  Reset Value */
 
-#define DAC_INTENSET_OFFSET         0x5          /**< \brief (DAC_INTENSET offset) Interrupt Enable Set */
-#define DAC_INTENSET_RESETVALUE     _U_(0x00)    /**< \brief (DAC_INTENSET reset_value) Interrupt Enable Set */
+#define DAC_INTENSET_UNDERRUN_Pos             _UINT8_(0)                                           /* (DAC_INTENSET) Underrun Interrupt Enable Position */
+#define DAC_INTENSET_UNDERRUN_Msk             (_UINT8_(0x1) << DAC_INTENSET_UNDERRUN_Pos)          /* (DAC_INTENSET) Underrun Interrupt Enable Mask */
+#define DAC_INTENSET_UNDERRUN(value)          (DAC_INTENSET_UNDERRUN_Msk & (_UINT8_(value) << DAC_INTENSET_UNDERRUN_Pos)) /* Assignment of value for UNDERRUN in the DAC_INTENSET register */
+#define DAC_INTENSET_EMPTY_Pos                _UINT8_(1)                                           /* (DAC_INTENSET) Data Buffer Empty Interrupt Enable Position */
+#define DAC_INTENSET_EMPTY_Msk                (_UINT8_(0x1) << DAC_INTENSET_EMPTY_Pos)             /* (DAC_INTENSET) Data Buffer Empty Interrupt Enable Mask */
+#define DAC_INTENSET_EMPTY(value)             (DAC_INTENSET_EMPTY_Msk & (_UINT8_(value) << DAC_INTENSET_EMPTY_Pos)) /* Assignment of value for EMPTY in the DAC_INTENSET register */
+#define DAC_INTENSET_SYNCRDY_Pos              _UINT8_(2)                                           /* (DAC_INTENSET) Synchronization Ready Interrupt Enable Position */
+#define DAC_INTENSET_SYNCRDY_Msk              (_UINT8_(0x1) << DAC_INTENSET_SYNCRDY_Pos)           /* (DAC_INTENSET) Synchronization Ready Interrupt Enable Mask */
+#define DAC_INTENSET_SYNCRDY(value)           (DAC_INTENSET_SYNCRDY_Msk & (_UINT8_(value) << DAC_INTENSET_SYNCRDY_Pos)) /* Assignment of value for SYNCRDY in the DAC_INTENSET register */
+#define DAC_INTENSET_Msk                      _UINT8_(0x07)                                        /* (DAC_INTENSET) Register Mask  */
 
-#define DAC_INTENSET_UNDERRUN_Pos   0            /**< \brief (DAC_INTENSET) Underrun Interrupt Enable */
-#define DAC_INTENSET_UNDERRUN       (_U_(0x1) << DAC_INTENSET_UNDERRUN_Pos)
-#define DAC_INTENSET_EMPTY_Pos      1            /**< \brief (DAC_INTENSET) Data Buffer Empty Interrupt Enable */
-#define DAC_INTENSET_EMPTY          (_U_(0x1) << DAC_INTENSET_EMPTY_Pos)
-#define DAC_INTENSET_SYNCRDY_Pos    2            /**< \brief (DAC_INTENSET) Synchronization Ready Interrupt Enable */
-#define DAC_INTENSET_SYNCRDY        (_U_(0x1) << DAC_INTENSET_SYNCRDY_Pos)
-#define DAC_INTENSET_MASK           _U_(0x07)    /**< \brief (DAC_INTENSET) MASK Register */
 
-/* -------- DAC_INTFLAG : (DAC Offset: 0x6) (R/W  8) Interrupt Flag Status and Clear -------- */
-#if !(defined(__ASSEMBLY__) || defined(__IAR_SYSTEMS_ASM__))
-typedef union { // __I to avoid read-modify-write on write-to-clear register
-  struct {
-    __I uint8_t  UNDERRUN:1;       /*!< bit:      0  Underrun                           */
-    __I uint8_t  EMPTY:1;          /*!< bit:      1  Data Buffer Empty                  */
-    __I uint8_t  SYNCRDY:1;        /*!< bit:      2  Synchronization Ready              */
-    __I uint8_t  :5;               /*!< bit:  3.. 7  Reserved                           */
-  } bit;                       /*!< Structure used for bit  access                  */
-  uint8_t reg;                 /*!< Type      used for register access              */
-} DAC_INTFLAG_Type;
-#endif /* !(defined(__ASSEMBLY__) || defined(__IAR_SYSTEMS_ASM__)) */
+/* -------- DAC_INTFLAG : (DAC Offset: 0x06) (R/W 8) Interrupt Flag Status and Clear -------- */
+#define DAC_INTFLAG_RESETVALUE                _UINT8_(0x00)                                        /*  (DAC_INTFLAG) Interrupt Flag Status and Clear  Reset Value */
 
-#define DAC_INTFLAG_OFFSET          0x6          /**< \brief (DAC_INTFLAG offset) Interrupt Flag Status and Clear */
-#define DAC_INTFLAG_RESETVALUE      _U_(0x00)    /**< \brief (DAC_INTFLAG reset_value) Interrupt Flag Status and Clear */
+#define DAC_INTFLAG_UNDERRUN_Pos              _UINT8_(0)                                           /* (DAC_INTFLAG) Underrun Position */
+#define DAC_INTFLAG_UNDERRUN_Msk              (_UINT8_(0x1) << DAC_INTFLAG_UNDERRUN_Pos)           /* (DAC_INTFLAG) Underrun Mask */
+#define DAC_INTFLAG_UNDERRUN(value)           (DAC_INTFLAG_UNDERRUN_Msk & (_UINT8_(value) << DAC_INTFLAG_UNDERRUN_Pos)) /* Assignment of value for UNDERRUN in the DAC_INTFLAG register */
+#define DAC_INTFLAG_EMPTY_Pos                 _UINT8_(1)                                           /* (DAC_INTFLAG) Data Buffer Empty Position */
+#define DAC_INTFLAG_EMPTY_Msk                 (_UINT8_(0x1) << DAC_INTFLAG_EMPTY_Pos)              /* (DAC_INTFLAG) Data Buffer Empty Mask */
+#define DAC_INTFLAG_EMPTY(value)              (DAC_INTFLAG_EMPTY_Msk & (_UINT8_(value) << DAC_INTFLAG_EMPTY_Pos)) /* Assignment of value for EMPTY in the DAC_INTFLAG register */
+#define DAC_INTFLAG_SYNCRDY_Pos               _UINT8_(2)                                           /* (DAC_INTFLAG) Synchronization Ready Position */
+#define DAC_INTFLAG_SYNCRDY_Msk               (_UINT8_(0x1) << DAC_INTFLAG_SYNCRDY_Pos)            /* (DAC_INTFLAG) Synchronization Ready Mask */
+#define DAC_INTFLAG_SYNCRDY(value)            (DAC_INTFLAG_SYNCRDY_Msk & (_UINT8_(value) << DAC_INTFLAG_SYNCRDY_Pos)) /* Assignment of value for SYNCRDY in the DAC_INTFLAG register */
+#define DAC_INTFLAG_Msk                       _UINT8_(0x07)                                        /* (DAC_INTFLAG) Register Mask  */
 
-#define DAC_INTFLAG_UNDERRUN_Pos    0            /**< \brief (DAC_INTFLAG) Underrun */
-#define DAC_INTFLAG_UNDERRUN        (_U_(0x1) << DAC_INTFLAG_UNDERRUN_Pos)
-#define DAC_INTFLAG_EMPTY_Pos       1            /**< \brief (DAC_INTFLAG) Data Buffer Empty */
-#define DAC_INTFLAG_EMPTY           (_U_(0x1) << DAC_INTFLAG_EMPTY_Pos)
-#define DAC_INTFLAG_SYNCRDY_Pos     2            /**< \brief (DAC_INTFLAG) Synchronization Ready */
-#define DAC_INTFLAG_SYNCRDY         (_U_(0x1) << DAC_INTFLAG_SYNCRDY_Pos)
-#define DAC_INTFLAG_MASK            _U_(0x07)    /**< \brief (DAC_INTFLAG) MASK Register */
 
-/* -------- DAC_STATUS : (DAC Offset: 0x7) (R/   8) Status -------- */
-#if !(defined(__ASSEMBLY__) || defined(__IAR_SYSTEMS_ASM__))
-typedef union {
-  struct {
-    uint8_t  :7;               /*!< bit:  0.. 6  Reserved                           */
-    uint8_t  SYNCBUSY:1;       /*!< bit:      7  Synchronization Busy Status        */
-  } bit;                       /*!< Structure used for bit  access                  */
-  uint8_t reg;                 /*!< Type      used for register access              */
-} DAC_STATUS_Type;
-#endif /* !(defined(__ASSEMBLY__) || defined(__IAR_SYSTEMS_ASM__)) */
+/* -------- DAC_STATUS : (DAC Offset: 0x07) ( R/ 8) Status -------- */
+#define DAC_STATUS_RESETVALUE                 _UINT8_(0x00)                                        /*  (DAC_STATUS) Status  Reset Value */
 
-#define DAC_STATUS_OFFSET           0x7          /**< \brief (DAC_STATUS offset) Status */
-#define DAC_STATUS_RESETVALUE       _U_(0x00)    /**< \brief (DAC_STATUS reset_value) Status */
+#define DAC_STATUS_SYNCBUSY_Pos               _UINT8_(7)                                           /* (DAC_STATUS) Synchronization Busy Status Position */
+#define DAC_STATUS_SYNCBUSY_Msk               (_UINT8_(0x1) << DAC_STATUS_SYNCBUSY_Pos)            /* (DAC_STATUS) Synchronization Busy Status Mask */
+#define DAC_STATUS_SYNCBUSY(value)            (DAC_STATUS_SYNCBUSY_Msk & (_UINT8_(value) << DAC_STATUS_SYNCBUSY_Pos)) /* Assignment of value for SYNCBUSY in the DAC_STATUS register */
+#define DAC_STATUS_Msk                        _UINT8_(0x80)                                        /* (DAC_STATUS) Register Mask  */
 
-#define DAC_STATUS_SYNCBUSY_Pos     7            /**< \brief (DAC_STATUS) Synchronization Busy Status */
-#define DAC_STATUS_SYNCBUSY         (_U_(0x1) << DAC_STATUS_SYNCBUSY_Pos)
-#define DAC_STATUS_MASK             _U_(0x80)    /**< \brief (DAC_STATUS) MASK Register */
 
-/* -------- DAC_DATA : (DAC Offset: 0x8) (R/W 16) Data -------- */
-#if !(defined(__ASSEMBLY__) || defined(__IAR_SYSTEMS_ASM__))
-typedef union {
-  struct {
-    uint16_t DATA:16;          /*!< bit:  0..15  Data value to be converted         */
-  } bit;                       /*!< Structure used for bit  access                  */
-  uint16_t reg;                /*!< Type      used for register access              */
-} DAC_DATA_Type;
-#endif /* !(defined(__ASSEMBLY__) || defined(__IAR_SYSTEMS_ASM__)) */
+/* -------- DAC_DATA : (DAC Offset: 0x08) (R/W 16) Data -------- */
+#define DAC_DATA_RESETVALUE                   _UINT16_(0x00)                                       /*  (DAC_DATA) Data  Reset Value */
 
-#define DAC_DATA_OFFSET             0x8          /**< \brief (DAC_DATA offset) Data */
-#define DAC_DATA_RESETVALUE         _U_(0x0000)  /**< \brief (DAC_DATA reset_value) Data */
+#define DAC_DATA_DATA_Pos                     _UINT16_(0)                                          /* (DAC_DATA) Data value to be converted Position */
+#define DAC_DATA_DATA_Msk                     (_UINT16_(0xFFFF) << DAC_DATA_DATA_Pos)              /* (DAC_DATA) Data value to be converted Mask */
+#define DAC_DATA_DATA(value)                  (DAC_DATA_DATA_Msk & (_UINT16_(value) << DAC_DATA_DATA_Pos)) /* Assignment of value for DATA in the DAC_DATA register */
+#define DAC_DATA_Msk                          _UINT16_(0xFFFF)                                     /* (DAC_DATA) Register Mask  */
 
-#define DAC_DATA_DATA_Pos           0            /**< \brief (DAC_DATA) Data value to be converted */
-#define DAC_DATA_DATA_Msk           (_U_(0xFFFF) << DAC_DATA_DATA_Pos)
-#define DAC_DATA_DATA(value)        (DAC_DATA_DATA_Msk & ((value) << DAC_DATA_DATA_Pos))
-#define DAC_DATA_MASK               _U_(0xFFFF)  /**< \brief (DAC_DATA) MASK Register */
 
-/* -------- DAC_DATABUF : (DAC Offset: 0xC) (R/W 16) Data Buffer -------- */
-#if !(defined(__ASSEMBLY__) || defined(__IAR_SYSTEMS_ASM__))
-typedef union {
-  struct {
-    uint16_t DATABUF:16;       /*!< bit:  0..15  Data Buffer                        */
-  } bit;                       /*!< Structure used for bit  access                  */
-  uint16_t reg;                /*!< Type      used for register access              */
-} DAC_DATABUF_Type;
-#endif /* !(defined(__ASSEMBLY__) || defined(__IAR_SYSTEMS_ASM__)) */
+/* -------- DAC_DATABUF : (DAC Offset: 0x0C) (R/W 16) Data Buffer -------- */
+#define DAC_DATABUF_RESETVALUE                _UINT16_(0x00)                                       /*  (DAC_DATABUF) Data Buffer  Reset Value */
 
-#define DAC_DATABUF_OFFSET          0xC          /**< \brief (DAC_DATABUF offset) Data Buffer */
-#define DAC_DATABUF_RESETVALUE      _U_(0x0000)  /**< \brief (DAC_DATABUF reset_value) Data Buffer */
+#define DAC_DATABUF_DATABUF_Pos               _UINT16_(0)                                          /* (DAC_DATABUF) Data Buffer Position */
+#define DAC_DATABUF_DATABUF_Msk               (_UINT16_(0xFFFF) << DAC_DATABUF_DATABUF_Pos)        /* (DAC_DATABUF) Data Buffer Mask */
+#define DAC_DATABUF_DATABUF(value)            (DAC_DATABUF_DATABUF_Msk & (_UINT16_(value) << DAC_DATABUF_DATABUF_Pos)) /* Assignment of value for DATABUF in the DAC_DATABUF register */
+#define DAC_DATABUF_Msk                       _UINT16_(0xFFFF)                                     /* (DAC_DATABUF) Register Mask  */
 
-#define DAC_DATABUF_DATABUF_Pos     0            /**< \brief (DAC_DATABUF) Data Buffer */
-#define DAC_DATABUF_DATABUF_Msk     (_U_(0xFFFF) << DAC_DATABUF_DATABUF_Pos)
-#define DAC_DATABUF_DATABUF(value)  (DAC_DATABUF_DATABUF_Msk & ((value) << DAC_DATABUF_DATABUF_Pos))
-#define DAC_DATABUF_MASK            _U_(0xFFFF)  /**< \brief (DAC_DATABUF) MASK Register */
 
-/** \brief DAC hardware registers */
-#if !(defined(__ASSEMBLY__) || defined(__IAR_SYSTEMS_ASM__))
-typedef struct {
-  __IO DAC_CTRLA_Type            CTRLA;       /**< \brief Offset: 0x0 (R/W  8) Control A */
-  __IO DAC_CTRLB_Type            CTRLB;       /**< \brief Offset: 0x1 (R/W  8) Control B */
-  __IO DAC_EVCTRL_Type           EVCTRL;      /**< \brief Offset: 0x2 (R/W  8) Event Control */
-       RoReg8                    Reserved1[0x1];
-  __IO DAC_INTENCLR_Type         INTENCLR;    /**< \brief Offset: 0x4 (R/W  8) Interrupt Enable Clear */
-  __IO DAC_INTENSET_Type         INTENSET;    /**< \brief Offset: 0x5 (R/W  8) Interrupt Enable Set */
-  __IO DAC_INTFLAG_Type          INTFLAG;     /**< \brief Offset: 0x6 (R/W  8) Interrupt Flag Status and Clear */
-  __I  DAC_STATUS_Type           STATUS;      /**< \brief Offset: 0x7 (R/   8) Status */
-  __IO DAC_DATA_Type             DATA;        /**< \brief Offset: 0x8 (R/W 16) Data */
-       RoReg8                    Reserved2[0x2];
-  __IO DAC_DATABUF_Type          DATABUF;     /**< \brief Offset: 0xC (R/W 16) Data Buffer */
-} Dac;
-#endif /* !(defined(__ASSEMBLY__) || defined(__IAR_SYSTEMS_ASM__)) */
+/* DAC register offsets definitions */
+#define DAC_CTRLA_REG_OFST             _UINT32_(0x00)      /* (DAC_CTRLA) Control A Offset */
+#define DAC_CTRLB_REG_OFST             _UINT32_(0x01)      /* (DAC_CTRLB) Control B Offset */
+#define DAC_EVCTRL_REG_OFST            _UINT32_(0x02)      /* (DAC_EVCTRL) Event Control Offset */
+#define DAC_INTENCLR_REG_OFST          _UINT32_(0x04)      /* (DAC_INTENCLR) Interrupt Enable Clear Offset */
+#define DAC_INTENSET_REG_OFST          _UINT32_(0x05)      /* (DAC_INTENSET) Interrupt Enable Set Offset */
+#define DAC_INTFLAG_REG_OFST           _UINT32_(0x06)      /* (DAC_INTFLAG) Interrupt Flag Status and Clear Offset */
+#define DAC_STATUS_REG_OFST            _UINT32_(0x07)      /* (DAC_STATUS) Status Offset */
+#define DAC_DATA_REG_OFST              _UINT32_(0x08)      /* (DAC_DATA) Data Offset */
+#define DAC_DATABUF_REG_OFST           _UINT32_(0x0C)      /* (DAC_DATABUF) Data Buffer Offset */
 
-/*@}*/
+#if !(defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__))
+/* DAC register API structure */
+typedef struct
+{  /* Digital Analog Converter */
+  __IO  uint8_t                        DAC_CTRLA;          /* Offset: 0x00 (R/W  8) Control A */
+  __IO  uint8_t                        DAC_CTRLB;          /* Offset: 0x01 (R/W  8) Control B */
+  __IO  uint8_t                        DAC_EVCTRL;         /* Offset: 0x02 (R/W  8) Event Control */
+  __I   uint8_t                        Reserved1[0x01];
+  __IO  uint8_t                        DAC_INTENCLR;       /* Offset: 0x04 (R/W  8) Interrupt Enable Clear */
+  __IO  uint8_t                        DAC_INTENSET;       /* Offset: 0x05 (R/W  8) Interrupt Enable Set */
+  __IO  uint8_t                        DAC_INTFLAG;        /* Offset: 0x06 (R/W  8) Interrupt Flag Status and Clear */
+  __I   uint8_t                        DAC_STATUS;         /* Offset: 0x07 (R/   8) Status */
+  __IO  uint16_t                       DAC_DATA;           /* Offset: 0x08 (R/W  16) Data */
+  __I   uint8_t                        Reserved2[0x02];
+  __IO  uint16_t                       DAC_DATABUF;        /* Offset: 0x0C (R/W  16) Data Buffer */
+} dac_registers_t;
 
-#endif /* _SAMD21_DAC_COMPONENT_ */
+
+#endif /* !(defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__)) */
+#endif /* _SAMD21_DAC_COMPONENT_H_ */

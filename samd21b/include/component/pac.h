@@ -1,90 +1,64 @@
-/**
- * \file
+/*
+ * Component description for PAC
  *
- * \brief Component description for PAC
- *
- * Copyright (c) 2018 Microchip Technology Inc.
- *
- * \asf_license_start
- *
- * \page License
+ * Copyright (c) 2026 Microchip Technology Inc. and its subsidiaries.
  *
  * SPDX-License-Identifier: Apache-2.0
  *
- * Licensed under the Apache License, Version 2.0 (the "License"); you may
- * not use this file except in compliance with the License.
- * You may obtain a copy of the Licence at
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
  *
- * http://www.apache.org/licenses/LICENSE-2.0
+ *   http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an AS IS BASIS, WITHOUT
- * WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
  *
- * \asf_license_stop
- *
  */
 
-#ifndef _SAMD21_PAC_COMPONENT_
-#define _SAMD21_PAC_COMPONENT_
+/*  file generated from device description file (ATDF) version 2019-11-25T06:55:40Z  */
+#ifndef _SAMD21_PAC_COMPONENT_H_
+#define _SAMD21_PAC_COMPONENT_H_
 
-/* ========================================================================== */
-/**  SOFTWARE API DEFINITION FOR PAC */
-/* ========================================================================== */
-/** \addtogroup SAMD21_PAC Peripheral Access Controller */
-/*@{*/
+#include "core_cm0plus.h"
 
-#define PAC_U2211
-#define REV_PAC                     0x101
+/* ************************************************************************** */
+/*                      SOFTWARE API DEFINITION FOR PAC                       */
+/* ************************************************************************** */
 
-/* -------- PAC_WPCLR : (PAC Offset: 0x0) (R/W 32) Write Protection Clear -------- */
-#if !(defined(__ASSEMBLY__) || defined(__IAR_SYSTEMS_ASM__))
-typedef union {
-  struct {
-    uint32_t :1;               /*!< bit:      0  Reserved                           */
-    uint32_t WP:31;            /*!< bit:  1..31  Write Protection Clear             */
-  } bit;                       /*!< Structure used for bit  access                  */
-  uint32_t reg;                /*!< Type      used for register access              */
-} PAC_WPCLR_Type;
-#endif /* !(defined(__ASSEMBLY__) || defined(__IAR_SYSTEMS_ASM__)) */
+/* -------- PAC_WPCLR : (PAC Offset: 0x00) (R/W 32) Write Protection Clear -------- */
+#define PAC_WPCLR_RESETVALUE                  _UINT32_(0x00)                                       /*  (PAC_WPCLR) Write Protection Clear  Reset Value */
 
-#define PAC_WPCLR_OFFSET            0x0          /**< \brief (PAC_WPCLR offset) Write Protection Clear */
-#define PAC_WPCLR_RESETVALUE        _U_(0x00000000) /**< \brief (PAC_WPCLR reset_value) Write Protection Clear */
+#define PAC_WPCLR_WP_Pos                      _UINT32_(1)                                          /* (PAC_WPCLR) Write Protection Clear Position */
+#define PAC_WPCLR_WP_Msk                      (_UINT32_(0x7FFFFFFF) << PAC_WPCLR_WP_Pos)           /* (PAC_WPCLR) Write Protection Clear Mask */
+#define PAC_WPCLR_WP(value)                   (PAC_WPCLR_WP_Msk & (_UINT32_(value) << PAC_WPCLR_WP_Pos)) /* Assignment of value for WP in the PAC_WPCLR register */
+#define PAC_WPCLR_Msk                         _UINT32_(0xFFFFFFFE)                                 /* (PAC_WPCLR) Register Mask  */
 
-#define PAC_WPCLR_WP_Pos            1            /**< \brief (PAC_WPCLR) Write Protection Clear */
-#define PAC_WPCLR_WP_Msk            (_U_(0x7FFFFFFF) << PAC_WPCLR_WP_Pos)
-#define PAC_WPCLR_WP(value)         (PAC_WPCLR_WP_Msk & ((value) << PAC_WPCLR_WP_Pos))
-#define PAC_WPCLR_MASK              _U_(0xFFFFFFFE) /**< \brief (PAC_WPCLR) MASK Register */
 
-/* -------- PAC_WPSET : (PAC Offset: 0x4) (R/W 32) Write Protection Set -------- */
-#if !(defined(__ASSEMBLY__) || defined(__IAR_SYSTEMS_ASM__))
-typedef union {
-  struct {
-    uint32_t :1;               /*!< bit:      0  Reserved                           */
-    uint32_t WP:31;            /*!< bit:  1..31  Write Protection Set               */
-  } bit;                       /*!< Structure used for bit  access                  */
-  uint32_t reg;                /*!< Type      used for register access              */
-} PAC_WPSET_Type;
-#endif /* !(defined(__ASSEMBLY__) || defined(__IAR_SYSTEMS_ASM__)) */
+/* -------- PAC_WPSET : (PAC Offset: 0x04) (R/W 32) Write Protection Set -------- */
+#define PAC_WPSET_RESETVALUE                  _UINT32_(0x00)                                       /*  (PAC_WPSET) Write Protection Set  Reset Value */
 
-#define PAC_WPSET_OFFSET            0x4          /**< \brief (PAC_WPSET offset) Write Protection Set */
-#define PAC_WPSET_RESETVALUE        _U_(0x00000000) /**< \brief (PAC_WPSET reset_value) Write Protection Set */
+#define PAC_WPSET_WP_Pos                      _UINT32_(1)                                          /* (PAC_WPSET) Write Protection Set Position */
+#define PAC_WPSET_WP_Msk                      (_UINT32_(0x7FFFFFFF) << PAC_WPSET_WP_Pos)           /* (PAC_WPSET) Write Protection Set Mask */
+#define PAC_WPSET_WP(value)                   (PAC_WPSET_WP_Msk & (_UINT32_(value) << PAC_WPSET_WP_Pos)) /* Assignment of value for WP in the PAC_WPSET register */
+#define PAC_WPSET_Msk                         _UINT32_(0xFFFFFFFE)                                 /* (PAC_WPSET) Register Mask  */
 
-#define PAC_WPSET_WP_Pos            1            /**< \brief (PAC_WPSET) Write Protection Set */
-#define PAC_WPSET_WP_Msk            (_U_(0x7FFFFFFF) << PAC_WPSET_WP_Pos)
-#define PAC_WPSET_WP(value)         (PAC_WPSET_WP_Msk & ((value) << PAC_WPSET_WP_Pos))
-#define PAC_WPSET_MASK              _U_(0xFFFFFFFE) /**< \brief (PAC_WPSET) MASK Register */
 
-/** \brief PAC hardware registers */
-#if !(defined(__ASSEMBLY__) || defined(__IAR_SYSTEMS_ASM__))
-typedef struct {
-  __IO PAC_WPCLR_Type            WPCLR;       /**< \brief Offset: 0x0 (R/W 32) Write Protection Clear */
-  __IO PAC_WPSET_Type            WPSET;       /**< \brief Offset: 0x4 (R/W 32) Write Protection Set */
-} Pac;
-#endif /* !(defined(__ASSEMBLY__) || defined(__IAR_SYSTEMS_ASM__)) */
+/* PAC register offsets definitions */
+#define PAC_WPCLR_REG_OFST             _UINT32_(0x00)      /* (PAC_WPCLR) Write Protection Clear Offset */
+#define PAC_WPSET_REG_OFST             _UINT32_(0x04)      /* (PAC_WPSET) Write Protection Set Offset */
 
-/*@}*/
+#if !(defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__))
+/* PAC register API structure */
+typedef struct
+{  /* Peripheral Access Controller */
+  __IO  uint32_t                       PAC_WPCLR;          /* Offset: 0x00 (R/W  32) Write Protection Clear */
+  __IO  uint32_t                       PAC_WPSET;          /* Offset: 0x04 (R/W  32) Write Protection Set */
+} pac_registers_t;
 
-#endif /* _SAMD21_PAC_COMPONENT_ */
+
+#endif /* !(defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__)) */
+#endif /* _SAMD21_PAC_COMPONENT_H_ */
