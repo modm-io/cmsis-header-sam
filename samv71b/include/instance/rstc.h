@@ -1,13 +1,7 @@
-/**
- * \file
+/*
+ * Instance header file for ATSAMV71Q21B
  *
- * \brief Instance description for RSTC
- *
- * Copyright (c) 2022 Microchip Technology Inc.
- *
- * \license_start
- *
- * \page License
+ * Copyright (c) 2026 Microchip Technology Inc. and its subsidiaries.
  *
  * SPDX-License-Identifier: Apache-2.0
  *
@@ -23,30 +17,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  *
- * \license_stop
- *
  */
 
-/* file generated from device description version 2022-06-28T09:09:35Z */
-#ifndef _SAMV71_RSTC_INSTANCE_H_
-#define _SAMV71_RSTC_INSTANCE_H_
+/* file generated from device description file (ATDF) version 2025-07-21T07:57:33Z */
+#ifndef _SAMV71_RSTC_INSTANCE_
+#define _SAMV71_RSTC_INSTANCE_
 
-/* ========== Register definition for RSTC peripheral ========== */
-#if (defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__))
-
-#define REG_RSTC_CR             (0x400E1800) /**< (RSTC) Control Register */
-#define REG_RSTC_SR             (0x400E1804) /**< (RSTC) Status Register */
-#define REG_RSTC_MR             (0x400E1808) /**< (RSTC) Mode Register */
-
-#else
-
-#define REG_RSTC_CR             (*(__O  uint32_t*)0x400E1800U) /**< (RSTC) Control Register */
-#define REG_RSTC_SR             (*(__I  uint32_t*)0x400E1804U) /**< (RSTC) Status Register */
-#define REG_RSTC_MR             (*(__IO uint32_t*)0x400E1808U) /**< (RSTC) Mode Register */
-
-#endif /* (defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__)) */
 
 /* ========== Instance Parameter definitions for RSTC peripheral ========== */
-#define RSTC_INSTANCE_ID                         1
+#define RSTC_INSTANCE_ID                         (1)
 
 #endif /* _SAMV71_RSTC_INSTANCE_ */

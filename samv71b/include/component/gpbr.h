@@ -1,13 +1,7 @@
-/**
- * \file
+/*
+ * Component description for GPBR
  *
- * \brief Component description for GPBR
- *
- * Copyright (c) 2022 Microchip Technology Inc.
- *
- * \license_start
- *
- * \page License
+ * Copyright (c) 2026 Microchip Technology Inc. and its subsidiaries.
  *
  * SPDX-License-Identifier: Apache-2.0
  *
@@ -23,67 +17,43 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  *
- * \license_stop
- *
  */
 
-/* file generated from device description version 2022-06-28T09:09:35Z */
+/*  file generated from device description file (ATDF) version 2025-07-21T07:57:33Z  */
 #ifndef _SAMV71_GPBR_COMPONENT_H_
 #define _SAMV71_GPBR_COMPONENT_H_
-#define _SAMV71_GPBR_COMPONENT_         /**< \deprecated  Backward compatibility for ASF */
 
-/** \addtogroup SAMV71_GPBR General Purpose Backup Registers
- *  @{
- */
-/* ========================================================================== */
-/**  SOFTWARE API DEFINITION FOR GPBR */
-/* ========================================================================== */
-#ifndef COMPONENT_TYPEDEF_STYLE
-  #define COMPONENT_TYPEDEF_STYLE 'R'  /**< Defines default style of typedefs for the component header files ('R' = RFO, 'N' = NTO)*/
-#endif
+#include "core_cm7.h"
 
-#define GPBR_6378                       /**< (GPBR) Module ID */
-#define REV_GPBR J                      /**< (GPBR) Module revision */
+/* ************************************************************************** */
+/*                      SOFTWARE API DEFINITION FOR GPBR                      */
+/* ************************************************************************** */
 
-/* -------- GPBR_SYS_GPBR : (GPBR Offset: 0x00) (R/W 32) General Purpose Backup Register 0 -------- */
-#if !(defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__))
-#if COMPONENT_TYPEDEF_STYLE == 'N'
-typedef union {
-  struct {
-    uint32_t GPBR_VALUE:32;             /**< bit:  0..31  Value of GPBR x                          */
-  } bit;                                /**< Structure used for bit  access */
-  uint32_t reg;                         /**< Type used for register access */
-} GPBR_SYS_GPBR_Type;
-#endif
-#endif /* !(defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__)) */
+/* -------- SYS_GPBR : (GPBR Offset: 0x00) (R/W 32) General Purpose Backup Register 0 -------- */
+#define SYS_GPBR_GPBR_VALUE_Pos               _UINT32_(0)                                          /* (SYS_GPBR) Value of GPBR x Position */
+#define SYS_GPBR_GPBR_VALUE_Msk               (_UINT32_(0xFFFFFFFF) << SYS_GPBR_GPBR_VALUE_Pos)    /* (SYS_GPBR) Value of GPBR x Mask */
+#define SYS_GPBR_GPBR_VALUE(value)            (SYS_GPBR_GPBR_VALUE_Msk & (_UINT32_(value) << SYS_GPBR_GPBR_VALUE_Pos)) /* Assignment of value for GPBR_VALUE in the SYS_GPBR register */
+#define SYS_GPBR_Msk                          _UINT32_(0xFFFFFFFF)                                 /* (SYS_GPBR) Register Mask  */
 
-#define GPBR_SYS_GPBR_OFFSET                (0x00)                                        /**<  (GPBR_SYS_GPBR) General Purpose Backup Register 0  Offset */
 
-#define GPBR_SYS_GPBR_GPBR_VALUE_Pos        0                                              /**< (GPBR_SYS_GPBR) Value of GPBR x Position */
-#define GPBR_SYS_GPBR_GPBR_VALUE_Msk        (_U_(0xFFFFFFFF) << GPBR_SYS_GPBR_GPBR_VALUE_Pos)  /**< (GPBR_SYS_GPBR) Value of GPBR x Mask */
-#define GPBR_SYS_GPBR_GPBR_VALUE(value)     (GPBR_SYS_GPBR_GPBR_VALUE_Msk & ((value) << GPBR_SYS_GPBR_GPBR_VALUE_Pos))
-#define GPBR_SYS_GPBR_MASK                  _U_(0xFFFFFFFF)                                /**< \deprecated (GPBR_SYS_GPBR) Register MASK  (Use GPBR_SYS_GPBR_Msk instead)  */
-#define GPBR_SYS_GPBR_Msk                   _U_(0xFFFFFFFF)                                /**< (GPBR_SYS_GPBR) Register Mask  */
-
+/* GPBR register offsets definitions */
+#define SYS_GPBR_REG_OFST              _UINT32_(0x00)      /* (SYS_GPBR) General Purpose Backup Register 0 Offset */
+#define SYS_GPBR0_REG_OFST             _UINT32_(0x00)      /* (SYS_GPBR0) General Purpose Backup Register 0 Offset */
+#define SYS_GPBR1_REG_OFST             _UINT32_(0x04)      /* (SYS_GPBR1) General Purpose Backup Register 0 Offset */
+#define SYS_GPBR2_REG_OFST             _UINT32_(0x08)      /* (SYS_GPBR2) General Purpose Backup Register 0 Offset */
+#define SYS_GPBR3_REG_OFST             _UINT32_(0x0C)      /* (SYS_GPBR3) General Purpose Backup Register 0 Offset */
+#define SYS_GPBR4_REG_OFST             _UINT32_(0x10)      /* (SYS_GPBR4) General Purpose Backup Register 0 Offset */
+#define SYS_GPBR5_REG_OFST             _UINT32_(0x14)      /* (SYS_GPBR5) General Purpose Backup Register 0 Offset */
+#define SYS_GPBR6_REG_OFST             _UINT32_(0x18)      /* (SYS_GPBR6) General Purpose Backup Register 0 Offset */
+#define SYS_GPBR7_REG_OFST             _UINT32_(0x1C)      /* (SYS_GPBR7) General Purpose Backup Register 0 Offset */
 
 #if !(defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__))
-#if COMPONENT_TYPEDEF_STYLE == 'R'
-/** \brief GPBR hardware registers */
-typedef struct {
-  __IO uint32_t SYS_GPBR[8];    /**< (GPBR Offset: 0x00) General Purpose Backup Register 0 */
-} Gpbr;
+/* GPBR register API structure */
+typedef struct
+{
+  __IO  uint32_t                       SYS_GPBR[8];        /* Offset: 0x00 (R/W  32) General Purpose Backup Register 0 */
+} gpbr_registers_t;
 
-#elif COMPONENT_TYPEDEF_STYLE == 'N'
-/** \brief GPBR hardware registers */
-typedef struct {
-  __IO GPBR_SYS_GPBR_Type             SYS_GPBR[8];    /**< Offset: 0x00 (R/W  32) General Purpose Backup Register 0 */
-} Gpbr;
-
-#else /* COMPONENT_TYPEDEF_STYLE */
-#error Unknown component typedef style
-#endif /* COMPONENT_TYPEDEF_STYLE */
 
 #endif /* !(defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__)) */
-/** @}  end of General Purpose Backup Registers */
-
 #endif /* _SAMV71_GPBR_COMPONENT_H_ */

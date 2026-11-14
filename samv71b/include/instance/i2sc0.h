@@ -1,13 +1,7 @@
-/**
- * \file
+/*
+ * Instance header file for ATSAMV71Q21B
  *
- * \brief Instance description for I2SC0
- *
- * Copyright (c) 2022 Microchip Technology Inc.
- *
- * \license_start
- *
- * \page License
+ * Copyright (c) 2026 Microchip Technology Inc. and its subsidiaries.
  *
  * SPDX-License-Identifier: Apache-2.0
  *
@@ -23,49 +17,19 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  *
- * \license_stop
- *
  */
 
-/* file generated from device description version 2022-06-28T09:09:35Z */
-#ifndef _SAMV71_I2SC0_INSTANCE_H_
-#define _SAMV71_I2SC0_INSTANCE_H_
+/* file generated from device description file (ATDF) version 2025-07-21T07:57:33Z */
+#ifndef _SAMV71_I2SC0_INSTANCE_
+#define _SAMV71_I2SC0_INSTANCE_
 
-/* ========== Register definition for I2SC0 peripheral ========== */
-#if (defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__))
-
-#define REG_I2SC0_CR            (0x4008C000) /**< (I2SC0) Control Register */
-#define REG_I2SC0_MR            (0x4008C004) /**< (I2SC0) Mode Register */
-#define REG_I2SC0_SR            (0x4008C008) /**< (I2SC0) Status Register */
-#define REG_I2SC0_SCR           (0x4008C00C) /**< (I2SC0) Status Clear Register */
-#define REG_I2SC0_SSR           (0x4008C010) /**< (I2SC0) Status Set Register */
-#define REG_I2SC0_IER           (0x4008C014) /**< (I2SC0) Interrupt Enable Register */
-#define REG_I2SC0_IDR           (0x4008C018) /**< (I2SC0) Interrupt Disable Register */
-#define REG_I2SC0_IMR           (0x4008C01C) /**< (I2SC0) Interrupt Mask Register */
-#define REG_I2SC0_RHR           (0x4008C020) /**< (I2SC0) Receiver Holding Register */
-#define REG_I2SC0_THR           (0x4008C024) /**< (I2SC0) Transmitter Holding Register */
-
-#else
-
-#define REG_I2SC0_CR            (*(__O  uint32_t*)0x4008C000U) /**< (I2SC0) Control Register */
-#define REG_I2SC0_MR            (*(__IO uint32_t*)0x4008C004U) /**< (I2SC0) Mode Register */
-#define REG_I2SC0_SR            (*(__I  uint32_t*)0x4008C008U) /**< (I2SC0) Status Register */
-#define REG_I2SC0_SCR           (*(__O  uint32_t*)0x4008C00CU) /**< (I2SC0) Status Clear Register */
-#define REG_I2SC0_SSR           (*(__O  uint32_t*)0x4008C010U) /**< (I2SC0) Status Set Register */
-#define REG_I2SC0_IER           (*(__O  uint32_t*)0x4008C014U) /**< (I2SC0) Interrupt Enable Register */
-#define REG_I2SC0_IDR           (*(__O  uint32_t*)0x4008C018U) /**< (I2SC0) Interrupt Disable Register */
-#define REG_I2SC0_IMR           (*(__I  uint32_t*)0x4008C01CU) /**< (I2SC0) Interrupt Mask Register */
-#define REG_I2SC0_RHR           (*(__I  uint32_t*)0x4008C020U) /**< (I2SC0) Receiver Holding Register */
-#define REG_I2SC0_THR           (*(__O  uint32_t*)0x4008C024U) /**< (I2SC0) Transmitter Holding Register */
-
-#endif /* (defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__)) */
 
 /* ========== Instance Parameter definitions for I2SC0 peripheral ========== */
-#define I2SC0_INSTANCE_ID                        69
-#define I2SC0_CLOCK_ID                           69
-#define I2SC0_DMAC_ID_TX_LEFT                    44
-#define I2SC0_DMAC_ID_RX_LEFT                    45
-#define I2SC0_DMAC_ID_TX_RIGHT                   48
-#define I2SC0_DMAC_ID_RX_RIGHT                   49
+#define I2SC0_CLOCK_ID                           (69)
+#define I2SC0_DMAC_ID_RX_LEFT                    (45)
+#define I2SC0_DMAC_ID_RX_RIGHT                   (49)
+#define I2SC0_DMAC_ID_TX_LEFT                    (44)
+#define I2SC0_DMAC_ID_TX_RIGHT                   (48)
+#define I2SC0_INSTANCE_ID                        (69)
 
 #endif /* _SAMV71_I2SC0_INSTANCE_ */
