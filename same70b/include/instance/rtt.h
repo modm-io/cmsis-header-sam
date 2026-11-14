@@ -1,13 +1,7 @@
-/**
- * \file
+/*
+ * Instance header file for ATSAME70Q21B
  *
- * \brief Instance description for RTT
- *
- * Copyright (c) 2022 Microchip Technology Inc.
- *
- * \license_start
- *
- * \page License
+ * Copyright (c) 2026 Microchip Technology Inc. and its subsidiaries.
  *
  * SPDX-License-Identifier: Apache-2.0
  *
@@ -23,32 +17,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  *
- * \license_stop
- *
  */
 
-/* file generated from device description version 2022-06-28T09:07:51Z */
-#ifndef _SAME70_RTT_INSTANCE_H_
-#define _SAME70_RTT_INSTANCE_H_
+/* file generated from device description file (ATDF) version 2025-07-21T07:56:16Z */
+#ifndef _SAME70_RTT_INSTANCE_
+#define _SAME70_RTT_INSTANCE_
 
-/* ========== Register definition for RTT peripheral ========== */
-#if (defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__))
-
-#define REG_RTT_MR              (0x400E1830) /**< (RTT) Mode Register */
-#define REG_RTT_AR              (0x400E1834) /**< (RTT) Alarm Register */
-#define REG_RTT_VR              (0x400E1838) /**< (RTT) Value Register */
-#define REG_RTT_SR              (0x400E183C) /**< (RTT) Status Register */
-
-#else
-
-#define REG_RTT_MR              (*(__IO uint32_t*)0x400E1830U) /**< (RTT) Mode Register */
-#define REG_RTT_AR              (*(__IO uint32_t*)0x400E1834U) /**< (RTT) Alarm Register */
-#define REG_RTT_VR              (*(__I  uint32_t*)0x400E1838U) /**< (RTT) Value Register */
-#define REG_RTT_SR              (*(__I  uint32_t*)0x400E183CU) /**< (RTT) Status Register */
-
-#endif /* (defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__)) */
 
 /* ========== Instance Parameter definitions for RTT peripheral ========== */
-#define RTT_INSTANCE_ID                          3
+#define RTT_INSTANCE_ID                          (3)
 
 #endif /* _SAME70_RTT_INSTANCE_ */

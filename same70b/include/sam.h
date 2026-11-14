@@ -1,13 +1,7 @@
-/**
- * \file
+/*
+ * Top level header file
  *
- * \brief Top level header file
- *
- * Copyright (c) 2022 Microchip Technology Inc.
- *
- * \license_start
- *
- * \page License
+ * Copyright (c) 2026 Microchip Technology Inc. and its subsidiaries.
  *
  * SPDX-License-Identifier: Apache-2.0
  *
@@ -23,34 +17,32 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  *
- * \license_stop
- *
  */
 
-#ifndef _SAM_
-#define _SAM_
+#ifndef _SAM_H_
+#define _SAM_H_
 
-#if   defined(__SAME70N20B__) || defined(__ATSAME70N20B__)
-  #include "same70n20b.h"
+#if   defined(__SAME70J19B__) || defined(__ATSAME70J19B__)
+  #include "same70j19b.h"
 #elif defined(__SAME70J20B__) || defined(__ATSAME70J20B__)
   #include "same70j20b.h"
-#elif defined(__SAME70J19B__) || defined(__ATSAME70J19B__)
-  #include "same70j19b.h"
-#elif defined(__SAME70Q21B__) || defined(__ATSAME70Q21B__)
-  #include "same70q21b.h"
-#elif defined(__SAME70N21B__) || defined(__ATSAME70N21B__)
-  #include "same70n21b.h"
-#elif defined(__SAME70Q20B__) || defined(__ATSAME70Q20B__)
-  #include "same70q20b.h"
-#elif defined(__SAME70Q19B__) || defined(__ATSAME70Q19B__)
-  #include "same70q19b.h"
-#elif defined(__SAME70N19B__) || defined(__ATSAME70N19B__)
-  #include "same70n19b.h"
 #elif defined(__SAME70J21B__) || defined(__ATSAME70J21B__)
   #include "same70j21b.h"
+#elif defined(__SAME70N19B__) || defined(__ATSAME70N19B__)
+  #include "same70n19b.h"
+#elif defined(__SAME70N20B__) || defined(__ATSAME70N20B__)
+  #include "same70n20b.h"
+#elif defined(__SAME70N21B__) || defined(__ATSAME70N21B__)
+  #include "same70n21b.h"
+#elif defined(__SAME70Q19B__) || defined(__ATSAME70Q19B__)
+  #include "same70q19b.h"
+#elif defined(__SAME70Q20B__) || defined(__ATSAME70Q20B__)
+  #include "same70q20b.h"
+#elif defined(__SAME70Q21B__) || defined(__ATSAME70Q21B__)
+  #include "same70q21b.h"
 #else
   #error Library does not support the specified device
 #endif
 
-#endif /* _SAM_ */
+#endif /* _SAM_H_ */
 

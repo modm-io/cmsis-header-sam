@@ -1,13 +1,7 @@
-/**
- * \file
+/*
+ * Instance header file for ATSAME70Q21B
  *
- * \brief Instance description for SUPC
- *
- * Copyright (c) 2022 Microchip Technology Inc.
- *
- * \license_start
- *
- * \page License
+ * Copyright (c) 2026 Microchip Technology Inc. and its subsidiaries.
  *
  * SPDX-License-Identifier: Apache-2.0
  *
@@ -23,38 +17,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  *
- * \license_stop
- *
  */
 
-/* file generated from device description version 2022-06-28T09:07:51Z */
-#ifndef _SAME70_SUPC_INSTANCE_H_
-#define _SAME70_SUPC_INSTANCE_H_
+/* file generated from device description file (ATDF) version 2025-07-21T07:56:16Z */
+#ifndef _SAME70_SUPC_INSTANCE_
+#define _SAME70_SUPC_INSTANCE_
 
-/* ========== Register definition for SUPC peripheral ========== */
-#if (defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__))
-
-#define REG_SUPC_CR             (0x400E1810) /**< (SUPC) Supply Controller Control Register */
-#define REG_SUPC_SMMR           (0x400E1814) /**< (SUPC) Supply Controller Supply Monitor Mode Register */
-#define REG_SUPC_MR             (0x400E1818) /**< (SUPC) Supply Controller Mode Register */
-#define REG_SUPC_WUMR           (0x400E181C) /**< (SUPC) Supply Controller Wake-up Mode Register */
-#define REG_SUPC_WUIR           (0x400E1820) /**< (SUPC) Supply Controller Wake-up Inputs Register */
-#define REG_SUPC_SR             (0x400E1824) /**< (SUPC) Supply Controller Status Register */
-#define REG_SUPC_SYSC_WPMR      (0x400E18E4) /**< (SUPC) Write Protection Mode Register */
-
-#else
-
-#define REG_SUPC_CR             (*(__O  uint32_t*)0x400E1810U) /**< (SUPC) Supply Controller Control Register */
-#define REG_SUPC_SMMR           (*(__IO uint32_t*)0x400E1814U) /**< (SUPC) Supply Controller Supply Monitor Mode Register */
-#define REG_SUPC_MR             (*(__IO uint32_t*)0x400E1818U) /**< (SUPC) Supply Controller Mode Register */
-#define REG_SUPC_WUMR           (*(__IO uint32_t*)0x400E181CU) /**< (SUPC) Supply Controller Wake-up Mode Register */
-#define REG_SUPC_WUIR           (*(__IO uint32_t*)0x400E1820U) /**< (SUPC) Supply Controller Wake-up Inputs Register */
-#define REG_SUPC_SR             (*(__I  uint32_t*)0x400E1824U) /**< (SUPC) Supply Controller Status Register */
-#define REG_SUPC_SYSC_WPMR      (*(__IO uint32_t*)0x400E18E4U) /**< (SUPC) Write Protection Mode Register */
-
-#endif /* (defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__)) */
 
 /* ========== Instance Parameter definitions for SUPC peripheral ========== */
-#define SUPC_INSTANCE_ID                         0
+#define SUPC_INSTANCE_ID                         (0)
 
 #endif /* _SAME70_SUPC_INSTANCE_ */
