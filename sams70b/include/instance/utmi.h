@@ -1,13 +1,7 @@
-/**
- * \file
+/*
+ * Instance header file for ATSAMS70Q21B
  *
- * \brief Instance description for UTMI
- *
- * Copyright (c) 2022 Microchip Technology Inc.
- *
- * \license_start
- *
- * \page License
+ * Copyright (c) 2026 Microchip Technology Inc. and its subsidiaries.
  *
  * SPDX-License-Identifier: Apache-2.0
  *
@@ -23,24 +17,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  *
- * \license_stop
- *
  */
 
-/* file generated from device description version 2022-06-28T09:08:38Z */
-#ifndef _SAMS70_UTMI_INSTANCE_H_
-#define _SAMS70_UTMI_INSTANCE_H_
+/* file generated from device description file (ATDF) version 2025-07-21T07:56:48Z */
+#ifndef _SAMS70_UTMI_INSTANCE_
+#define _SAMS70_UTMI_INSTANCE_
 
-/* ========== Register definition for UTMI peripheral ========== */
-#if (defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__))
-
-#define REG_UTMI_OHCIICR        (0x400E0410) /**< (UTMI) OHCI Interrupt Configuration Register */
-#define REG_UTMI_CKTRIM         (0x400E0430) /**< (UTMI) UTMI Clock Trimming Register */
-
-#else
-
-#define REG_UTMI_OHCIICR        (*(__IO uint32_t*)0x400E0410U) /**< (UTMI) OHCI Interrupt Configuration Register */
-#define REG_UTMI_CKTRIM         (*(__IO uint32_t*)0x400E0430U) /**< (UTMI) UTMI Clock Trimming Register */
-
-#endif /* (defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__)) */
 #endif /* _SAMS70_UTMI_INSTANCE_ */

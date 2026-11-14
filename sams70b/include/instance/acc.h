@@ -1,13 +1,7 @@
-/**
- * \file
+/*
+ * Instance header file for ATSAMS70Q21B
  *
- * \brief Instance description for ACC
- *
- * Copyright (c) 2022 Microchip Technology Inc.
- *
- * \license_start
- *
- * \page License
+ * Copyright (c) 2026 Microchip Technology Inc. and its subsidiaries.
  *
  * SPDX-License-Identifier: Apache-2.0
  *
@@ -23,51 +17,23 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  *
- * \license_stop
- *
  */
 
-/* file generated from device description version 2022-06-28T09:08:38Z */
-#ifndef _SAMS70_ACC_INSTANCE_H_
-#define _SAMS70_ACC_INSTANCE_H_
+/* file generated from device description file (ATDF) version 2025-07-21T07:56:48Z */
+#ifndef _SAMS70_ACC_INSTANCE_
+#define _SAMS70_ACC_INSTANCE_
 
-/* ========== Register definition for ACC peripheral ========== */
-#if (defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__))
-
-#define REG_ACC_CR              (0x40044000) /**< (ACC) Control Register */
-#define REG_ACC_MR              (0x40044004) /**< (ACC) Mode Register */
-#define REG_ACC_IER             (0x40044024) /**< (ACC) Interrupt Enable Register */
-#define REG_ACC_IDR             (0x40044028) /**< (ACC) Interrupt Disable Register */
-#define REG_ACC_IMR             (0x4004402C) /**< (ACC) Interrupt Mask Register */
-#define REG_ACC_ISR             (0x40044030) /**< (ACC) Interrupt Status Register */
-#define REG_ACC_ACR             (0x40044094) /**< (ACC) Analog Control Register */
-#define REG_ACC_WPMR            (0x400440E4) /**< (ACC) Write Protection Mode Register */
-#define REG_ACC_WPSR            (0x400440E8) /**< (ACC) Write Protection Status Register */
-
-#else
-
-#define REG_ACC_CR              (*(__O  uint32_t*)0x40044000U) /**< (ACC) Control Register */
-#define REG_ACC_MR              (*(__IO uint32_t*)0x40044004U) /**< (ACC) Mode Register */
-#define REG_ACC_IER             (*(__O  uint32_t*)0x40044024U) /**< (ACC) Interrupt Enable Register */
-#define REG_ACC_IDR             (*(__O  uint32_t*)0x40044028U) /**< (ACC) Interrupt Disable Register */
-#define REG_ACC_IMR             (*(__I  uint32_t*)0x4004402CU) /**< (ACC) Interrupt Mask Register */
-#define REG_ACC_ISR             (*(__I  uint32_t*)0x40044030U) /**< (ACC) Interrupt Status Register */
-#define REG_ACC_ACR             (*(__IO uint32_t*)0x40044094U) /**< (ACC) Analog Control Register */
-#define REG_ACC_WPMR            (*(__IO uint32_t*)0x400440E4U) /**< (ACC) Write Protection Mode Register */
-#define REG_ACC_WPSR            (*(__I  uint32_t*)0x400440E8U) /**< (ACC) Write Protection Status Register */
-
-#endif /* (defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__)) */
 
 /* ========== Instance Parameter definitions for ACC peripheral ========== */
-#define ACC_INSTANCE_ID                          33
-#define ACC_CLOCK_ID                             33
-#define ACC_HAS_PLUS_COMPARATOR_SELECTION        1
-#define ACC_HAS_MINUS_COMPARATOR_SELECTION       1
-#define ACC_HAS_INVERTED_COMPARATOR              1
-#define ACC_HAS_EDGETYPE_SELECTION               1
-#define ACC_HAS_INTERRUPTS                       1
-#define ACC_HAS_CURRENT_SELECTION                1
-#define ACC_HAS_HYSTERESIS                       1
-#define ACC_HAS_FAULT_ENABLE                     1
+#define ACC_CLOCK_ID                             (33)
+#define ACC_HAS_CURRENT_SELECTION                (1)
+#define ACC_HAS_EDGETYPE_SELECTION               (1)
+#define ACC_HAS_FAULT_ENABLE                     (1)
+#define ACC_HAS_HYSTERESIS                       (1)
+#define ACC_HAS_INTERRUPTS                       (1)
+#define ACC_HAS_INVERTED_COMPARATOR              (1)
+#define ACC_HAS_MINUS_COMPARATOR_SELECTION       (1)
+#define ACC_HAS_PLUS_COMPARATOR_SELECTION        (1)
+#define ACC_INSTANCE_ID                          (33)
 
 #endif /* _SAMS70_ACC_INSTANCE_ */

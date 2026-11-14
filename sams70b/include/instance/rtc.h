@@ -1,13 +1,7 @@
-/**
- * \file
+/*
+ * Instance header file for ATSAMS70Q21B
  *
- * \brief Instance description for RTC
- *
- * Copyright (c) 2022 Microchip Technology Inc.
- *
- * \license_start
- *
- * \page License
+ * Copyright (c) 2026 Microchip Technology Inc. and its subsidiaries.
  *
  * SPDX-License-Identifier: Apache-2.0
  *
@@ -23,48 +17,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  *
- * \license_stop
- *
  */
 
-/* file generated from device description version 2022-06-28T09:08:38Z */
-#ifndef _SAMS70_RTC_INSTANCE_H_
-#define _SAMS70_RTC_INSTANCE_H_
+/* file generated from device description file (ATDF) version 2025-07-21T07:56:48Z */
+#ifndef _SAMS70_RTC_INSTANCE_
+#define _SAMS70_RTC_INSTANCE_
 
-/* ========== Register definition for RTC peripheral ========== */
-#if (defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__))
-
-#define REG_RTC_CR              (0x400E1860) /**< (RTC) Control Register */
-#define REG_RTC_MR              (0x400E1864) /**< (RTC) Mode Register */
-#define REG_RTC_TIMR            (0x400E1868) /**< (RTC) Time Register */
-#define REG_RTC_CALR            (0x400E186C) /**< (RTC) Calendar Register */
-#define REG_RTC_TIMALR          (0x400E1870) /**< (RTC) Time Alarm Register */
-#define REG_RTC_CALALR          (0x400E1874) /**< (RTC) Calendar Alarm Register */
-#define REG_RTC_SR              (0x400E1878) /**< (RTC) Status Register */
-#define REG_RTC_SCCR            (0x400E187C) /**< (RTC) Status Clear Command Register */
-#define REG_RTC_IER             (0x400E1880) /**< (RTC) Interrupt Enable Register */
-#define REG_RTC_IDR             (0x400E1884) /**< (RTC) Interrupt Disable Register */
-#define REG_RTC_IMR             (0x400E1888) /**< (RTC) Interrupt Mask Register */
-#define REG_RTC_VER             (0x400E188C) /**< (RTC) Valid Entry Register */
-
-#else
-
-#define REG_RTC_CR              (*(__IO uint32_t*)0x400E1860U) /**< (RTC) Control Register */
-#define REG_RTC_MR              (*(__IO uint32_t*)0x400E1864U) /**< (RTC) Mode Register */
-#define REG_RTC_TIMR            (*(__IO uint32_t*)0x400E1868U) /**< (RTC) Time Register */
-#define REG_RTC_CALR            (*(__IO uint32_t*)0x400E186CU) /**< (RTC) Calendar Register */
-#define REG_RTC_TIMALR          (*(__IO uint32_t*)0x400E1870U) /**< (RTC) Time Alarm Register */
-#define REG_RTC_CALALR          (*(__IO uint32_t*)0x400E1874U) /**< (RTC) Calendar Alarm Register */
-#define REG_RTC_SR              (*(__I  uint32_t*)0x400E1878U) /**< (RTC) Status Register */
-#define REG_RTC_SCCR            (*(__O  uint32_t*)0x400E187CU) /**< (RTC) Status Clear Command Register */
-#define REG_RTC_IER             (*(__O  uint32_t*)0x400E1880U) /**< (RTC) Interrupt Enable Register */
-#define REG_RTC_IDR             (*(__O  uint32_t*)0x400E1884U) /**< (RTC) Interrupt Disable Register */
-#define REG_RTC_IMR             (*(__I  uint32_t*)0x400E1888U) /**< (RTC) Interrupt Mask Register */
-#define REG_RTC_VER             (*(__I  uint32_t*)0x400E188CU) /**< (RTC) Valid Entry Register */
-
-#endif /* (defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__)) */
 
 /* ========== Instance Parameter definitions for RTC peripheral ========== */
-#define RTC_INSTANCE_ID                          2
+#define RTC_INSTANCE_ID                          (2)
 
 #endif /* _SAMS70_RTC_INSTANCE_ */

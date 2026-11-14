@@ -1,13 +1,7 @@
-/**
- * \file
+/*
+ * Instance header file for ATSAMS70Q21B
  *
- * \brief Instance description for TRNG
- *
- * Copyright (c) 2022 Microchip Technology Inc.
- *
- * \license_start
- *
- * \page License
+ * Copyright (c) 2026 Microchip Technology Inc. and its subsidiaries.
  *
  * SPDX-License-Identifier: Apache-2.0
  *
@@ -23,37 +17,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  *
- * \license_stop
- *
  */
 
-/* file generated from device description version 2022-06-28T09:08:38Z */
-#ifndef _SAMS70_TRNG_INSTANCE_H_
-#define _SAMS70_TRNG_INSTANCE_H_
+/* file generated from device description file (ATDF) version 2025-07-21T07:56:48Z */
+#ifndef _SAMS70_TRNG_INSTANCE_
+#define _SAMS70_TRNG_INSTANCE_
 
-/* ========== Register definition for TRNG peripheral ========== */
-#if (defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__))
-
-#define REG_TRNG_CR             (0x40070000) /**< (TRNG) Control Register */
-#define REG_TRNG_IER            (0x40070010) /**< (TRNG) Interrupt Enable Register */
-#define REG_TRNG_IDR            (0x40070014) /**< (TRNG) Interrupt Disable Register */
-#define REG_TRNG_IMR            (0x40070018) /**< (TRNG) Interrupt Mask Register */
-#define REG_TRNG_ISR            (0x4007001C) /**< (TRNG) Interrupt Status Register */
-#define REG_TRNG_ODATA          (0x40070050) /**< (TRNG) Output Data Register */
-
-#else
-
-#define REG_TRNG_CR             (*(__O  uint32_t*)0x40070000U) /**< (TRNG) Control Register */
-#define REG_TRNG_IER            (*(__O  uint32_t*)0x40070010U) /**< (TRNG) Interrupt Enable Register */
-#define REG_TRNG_IDR            (*(__O  uint32_t*)0x40070014U) /**< (TRNG) Interrupt Disable Register */
-#define REG_TRNG_IMR            (*(__I  uint32_t*)0x40070018U) /**< (TRNG) Interrupt Mask Register */
-#define REG_TRNG_ISR            (*(__I  uint32_t*)0x4007001CU) /**< (TRNG) Interrupt Status Register */
-#define REG_TRNG_ODATA          (*(__I  uint32_t*)0x40070050U) /**< (TRNG) Output Data Register */
-
-#endif /* (defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__)) */
 
 /* ========== Instance Parameter definitions for TRNG peripheral ========== */
-#define TRNG_INSTANCE_ID                         57
-#define TRNG_CLOCK_ID                            57
+#define TRNG_CLOCK_ID                            (57)
+#define TRNG_INSTANCE_ID                         (57)
 
 #endif /* _SAMS70_TRNG_INSTANCE_ */
