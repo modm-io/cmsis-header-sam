@@ -23,7 +23,9 @@
 #ifndef _SAMD21_HMATRIXB_COMPONENT_H_
 #define _SAMD21_HMATRIXB_COMPONENT_H_
 
+#if !defined(DISABLE_CMSIS)
 #include "core_cm0plus.h"
+#endif /* !defined(DISABLE_CMSIS) */
 
 /* ************************************************************************** */
 /*                    SOFTWARE API DEFINITION FOR HMATRIXB                    */
@@ -46,7 +48,7 @@
 
 #define HMATRIXB_SFR_SFR_Pos                  _UINT32_(0)                                          /* (HMATRIXB_SFR) Special Function Register Position */
 #define HMATRIXB_SFR_SFR_Msk                  (_UINT32_(0xFFFFFFFF) << HMATRIXB_SFR_SFR_Pos)       /* (HMATRIXB_SFR) Special Function Register Mask */
-#define HMATRIXB_SFR_SFR(value)               (HMATRIXB_SFR_SFR_Msk & (_UINT32_(value) << HMATRIXB_SFR_SFR_Pos)) /* Assignment of value for SFR in the HMATRIXB_SFR register */
+#define HMATRIXB_SFR_SFR(value)               (HMATRIXB_SFR_SFR_Msk & ((uint32_t)(value) << HMATRIXB_SFR_SFR_Pos)) /* Assignment of value for SFR in the HMATRIXB_SFR register */
 #define HMATRIXB_SFR_Msk                      _UINT32_(0xFFFFFFFF)                                 /* (HMATRIXB_SFR) Register Mask  */
 
 

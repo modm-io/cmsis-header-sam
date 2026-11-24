@@ -23,7 +23,9 @@
 #ifndef _SAMD21_PORT_COMPONENT_H_
 #define _SAMD21_PORT_COMPONENT_H_
 
+#if !defined(DISABLE_CMSIS)
 #include "core_cm0plus.h"
+#endif /* !defined(DISABLE_CMSIS) */
 
 /* ************************************************************************** */
 /*                      SOFTWARE API DEFINITION FOR PORT                      */
@@ -34,7 +36,7 @@
 
 #define PORT_DIR_DIR_Pos                      _UINT32_(0)                                          /* (PORT_DIR) Port Data Direction Position */
 #define PORT_DIR_DIR_Msk                      (_UINT32_(0xFFFFFFFF) << PORT_DIR_DIR_Pos)           /* (PORT_DIR) Port Data Direction Mask */
-#define PORT_DIR_DIR(value)                   (PORT_DIR_DIR_Msk & (_UINT32_(value) << PORT_DIR_DIR_Pos)) /* Assignment of value for DIR in the PORT_DIR register */
+#define PORT_DIR_DIR(value)                   (PORT_DIR_DIR_Msk & ((uint32_t)(value) << PORT_DIR_DIR_Pos)) /* Assignment of value for DIR in the PORT_DIR register */
 #define PORT_DIR_Msk                          _UINT32_(0xFFFFFFFF)                                 /* (PORT_DIR) Register Mask  */
 
 
@@ -43,7 +45,7 @@
 
 #define PORT_DIRCLR_DIRCLR_Pos                _UINT32_(0)                                          /* (PORT_DIRCLR) Port Data Direction Clear Position */
 #define PORT_DIRCLR_DIRCLR_Msk                (_UINT32_(0xFFFFFFFF) << PORT_DIRCLR_DIRCLR_Pos)     /* (PORT_DIRCLR) Port Data Direction Clear Mask */
-#define PORT_DIRCLR_DIRCLR(value)             (PORT_DIRCLR_DIRCLR_Msk & (_UINT32_(value) << PORT_DIRCLR_DIRCLR_Pos)) /* Assignment of value for DIRCLR in the PORT_DIRCLR register */
+#define PORT_DIRCLR_DIRCLR(value)             (PORT_DIRCLR_DIRCLR_Msk & ((uint32_t)(value) << PORT_DIRCLR_DIRCLR_Pos)) /* Assignment of value for DIRCLR in the PORT_DIRCLR register */
 #define PORT_DIRCLR_Msk                       _UINT32_(0xFFFFFFFF)                                 /* (PORT_DIRCLR) Register Mask  */
 
 
@@ -52,7 +54,7 @@
 
 #define PORT_DIRSET_DIRSET_Pos                _UINT32_(0)                                          /* (PORT_DIRSET) Port Data Direction Set Position */
 #define PORT_DIRSET_DIRSET_Msk                (_UINT32_(0xFFFFFFFF) << PORT_DIRSET_DIRSET_Pos)     /* (PORT_DIRSET) Port Data Direction Set Mask */
-#define PORT_DIRSET_DIRSET(value)             (PORT_DIRSET_DIRSET_Msk & (_UINT32_(value) << PORT_DIRSET_DIRSET_Pos)) /* Assignment of value for DIRSET in the PORT_DIRSET register */
+#define PORT_DIRSET_DIRSET(value)             (PORT_DIRSET_DIRSET_Msk & ((uint32_t)(value) << PORT_DIRSET_DIRSET_Pos)) /* Assignment of value for DIRSET in the PORT_DIRSET register */
 #define PORT_DIRSET_Msk                       _UINT32_(0xFFFFFFFF)                                 /* (PORT_DIRSET) Register Mask  */
 
 
@@ -61,7 +63,7 @@
 
 #define PORT_DIRTGL_DIRTGL_Pos                _UINT32_(0)                                          /* (PORT_DIRTGL) Port Data Direction Toggle Position */
 #define PORT_DIRTGL_DIRTGL_Msk                (_UINT32_(0xFFFFFFFF) << PORT_DIRTGL_DIRTGL_Pos)     /* (PORT_DIRTGL) Port Data Direction Toggle Mask */
-#define PORT_DIRTGL_DIRTGL(value)             (PORT_DIRTGL_DIRTGL_Msk & (_UINT32_(value) << PORT_DIRTGL_DIRTGL_Pos)) /* Assignment of value for DIRTGL in the PORT_DIRTGL register */
+#define PORT_DIRTGL_DIRTGL(value)             (PORT_DIRTGL_DIRTGL_Msk & ((uint32_t)(value) << PORT_DIRTGL_DIRTGL_Pos)) /* Assignment of value for DIRTGL in the PORT_DIRTGL register */
 #define PORT_DIRTGL_Msk                       _UINT32_(0xFFFFFFFF)                                 /* (PORT_DIRTGL) Register Mask  */
 
 
@@ -70,7 +72,7 @@
 
 #define PORT_OUT_OUT_Pos                      _UINT32_(0)                                          /* (PORT_OUT) Port Data Output Value Position */
 #define PORT_OUT_OUT_Msk                      (_UINT32_(0xFFFFFFFF) << PORT_OUT_OUT_Pos)           /* (PORT_OUT) Port Data Output Value Mask */
-#define PORT_OUT_OUT(value)                   (PORT_OUT_OUT_Msk & (_UINT32_(value) << PORT_OUT_OUT_Pos)) /* Assignment of value for OUT in the PORT_OUT register */
+#define PORT_OUT_OUT(value)                   (PORT_OUT_OUT_Msk & ((uint32_t)(value) << PORT_OUT_OUT_Pos)) /* Assignment of value for OUT in the PORT_OUT register */
 #define PORT_OUT_Msk                          _UINT32_(0xFFFFFFFF)                                 /* (PORT_OUT) Register Mask  */
 
 
@@ -79,7 +81,7 @@
 
 #define PORT_OUTCLR_OUTCLR_Pos                _UINT32_(0)                                          /* (PORT_OUTCLR) Port Data Output Value Clear Position */
 #define PORT_OUTCLR_OUTCLR_Msk                (_UINT32_(0xFFFFFFFF) << PORT_OUTCLR_OUTCLR_Pos)     /* (PORT_OUTCLR) Port Data Output Value Clear Mask */
-#define PORT_OUTCLR_OUTCLR(value)             (PORT_OUTCLR_OUTCLR_Msk & (_UINT32_(value) << PORT_OUTCLR_OUTCLR_Pos)) /* Assignment of value for OUTCLR in the PORT_OUTCLR register */
+#define PORT_OUTCLR_OUTCLR(value)             (PORT_OUTCLR_OUTCLR_Msk & ((uint32_t)(value) << PORT_OUTCLR_OUTCLR_Pos)) /* Assignment of value for OUTCLR in the PORT_OUTCLR register */
 #define PORT_OUTCLR_Msk                       _UINT32_(0xFFFFFFFF)                                 /* (PORT_OUTCLR) Register Mask  */
 
 
@@ -88,7 +90,7 @@
 
 #define PORT_OUTSET_OUTSET_Pos                _UINT32_(0)                                          /* (PORT_OUTSET) Port Data Output Value Set Position */
 #define PORT_OUTSET_OUTSET_Msk                (_UINT32_(0xFFFFFFFF) << PORT_OUTSET_OUTSET_Pos)     /* (PORT_OUTSET) Port Data Output Value Set Mask */
-#define PORT_OUTSET_OUTSET(value)             (PORT_OUTSET_OUTSET_Msk & (_UINT32_(value) << PORT_OUTSET_OUTSET_Pos)) /* Assignment of value for OUTSET in the PORT_OUTSET register */
+#define PORT_OUTSET_OUTSET(value)             (PORT_OUTSET_OUTSET_Msk & ((uint32_t)(value) << PORT_OUTSET_OUTSET_Pos)) /* Assignment of value for OUTSET in the PORT_OUTSET register */
 #define PORT_OUTSET_Msk                       _UINT32_(0xFFFFFFFF)                                 /* (PORT_OUTSET) Register Mask  */
 
 
@@ -97,7 +99,7 @@
 
 #define PORT_OUTTGL_OUTTGL_Pos                _UINT32_(0)                                          /* (PORT_OUTTGL) Port Data Output Value Toggle Position */
 #define PORT_OUTTGL_OUTTGL_Msk                (_UINT32_(0xFFFFFFFF) << PORT_OUTTGL_OUTTGL_Pos)     /* (PORT_OUTTGL) Port Data Output Value Toggle Mask */
-#define PORT_OUTTGL_OUTTGL(value)             (PORT_OUTTGL_OUTTGL_Msk & (_UINT32_(value) << PORT_OUTTGL_OUTTGL_Pos)) /* Assignment of value for OUTTGL in the PORT_OUTTGL register */
+#define PORT_OUTTGL_OUTTGL(value)             (PORT_OUTTGL_OUTTGL_Msk & ((uint32_t)(value) << PORT_OUTTGL_OUTTGL_Pos)) /* Assignment of value for OUTTGL in the PORT_OUTTGL register */
 #define PORT_OUTTGL_Msk                       _UINT32_(0xFFFFFFFF)                                 /* (PORT_OUTTGL) Register Mask  */
 
 
@@ -106,7 +108,7 @@
 
 #define PORT_IN_IN_Pos                        _UINT32_(0)                                          /* (PORT_IN) Port Data Input Value Position */
 #define PORT_IN_IN_Msk                        (_UINT32_(0xFFFFFFFF) << PORT_IN_IN_Pos)             /* (PORT_IN) Port Data Input Value Mask */
-#define PORT_IN_IN(value)                     (PORT_IN_IN_Msk & (_UINT32_(value) << PORT_IN_IN_Pos)) /* Assignment of value for IN in the PORT_IN register */
+#define PORT_IN_IN(value)                     (PORT_IN_IN_Msk & ((uint32_t)(value) << PORT_IN_IN_Pos)) /* Assignment of value for IN in the PORT_IN register */
 #define PORT_IN_Msk                           _UINT32_(0xFFFFFFFF)                                 /* (PORT_IN) Register Mask  */
 
 
@@ -115,7 +117,7 @@
 
 #define PORT_CTRL_SAMPLING_Pos                _UINT32_(0)                                          /* (PORT_CTRL) Input Sampling Mode Position */
 #define PORT_CTRL_SAMPLING_Msk                (_UINT32_(0xFFFFFFFF) << PORT_CTRL_SAMPLING_Pos)     /* (PORT_CTRL) Input Sampling Mode Mask */
-#define PORT_CTRL_SAMPLING(value)             (PORT_CTRL_SAMPLING_Msk & (_UINT32_(value) << PORT_CTRL_SAMPLING_Pos)) /* Assignment of value for SAMPLING in the PORT_CTRL register */
+#define PORT_CTRL_SAMPLING(value)             (PORT_CTRL_SAMPLING_Msk & ((uint32_t)(value) << PORT_CTRL_SAMPLING_Pos)) /* Assignment of value for SAMPLING in the PORT_CTRL register */
 #define PORT_CTRL_Msk                         _UINT32_(0xFFFFFFFF)                                 /* (PORT_CTRL) Register Mask  */
 
 
@@ -124,31 +126,31 @@
 
 #define PORT_WRCONFIG_PINMASK_Pos             _UINT32_(0)                                          /* (PORT_WRCONFIG) Pin Mask for Multiple Pin Configuration Position */
 #define PORT_WRCONFIG_PINMASK_Msk             (_UINT32_(0xFFFF) << PORT_WRCONFIG_PINMASK_Pos)      /* (PORT_WRCONFIG) Pin Mask for Multiple Pin Configuration Mask */
-#define PORT_WRCONFIG_PINMASK(value)          (PORT_WRCONFIG_PINMASK_Msk & (_UINT32_(value) << PORT_WRCONFIG_PINMASK_Pos)) /* Assignment of value for PINMASK in the PORT_WRCONFIG register */
+#define PORT_WRCONFIG_PINMASK(value)          (PORT_WRCONFIG_PINMASK_Msk & ((uint32_t)(value) << PORT_WRCONFIG_PINMASK_Pos)) /* Assignment of value for PINMASK in the PORT_WRCONFIG register */
 #define PORT_WRCONFIG_PMUXEN_Pos              _UINT32_(16)                                         /* (PORT_WRCONFIG) Peripheral Multiplexer Enable Position */
 #define PORT_WRCONFIG_PMUXEN_Msk              (_UINT32_(0x1) << PORT_WRCONFIG_PMUXEN_Pos)          /* (PORT_WRCONFIG) Peripheral Multiplexer Enable Mask */
-#define PORT_WRCONFIG_PMUXEN(value)           (PORT_WRCONFIG_PMUXEN_Msk & (_UINT32_(value) << PORT_WRCONFIG_PMUXEN_Pos)) /* Assignment of value for PMUXEN in the PORT_WRCONFIG register */
+#define PORT_WRCONFIG_PMUXEN(value)           (PORT_WRCONFIG_PMUXEN_Msk & ((uint32_t)(value) << PORT_WRCONFIG_PMUXEN_Pos)) /* Assignment of value for PMUXEN in the PORT_WRCONFIG register */
 #define PORT_WRCONFIG_INEN_Pos                _UINT32_(17)                                         /* (PORT_WRCONFIG) Input Enable Position */
 #define PORT_WRCONFIG_INEN_Msk                (_UINT32_(0x1) << PORT_WRCONFIG_INEN_Pos)            /* (PORT_WRCONFIG) Input Enable Mask */
-#define PORT_WRCONFIG_INEN(value)             (PORT_WRCONFIG_INEN_Msk & (_UINT32_(value) << PORT_WRCONFIG_INEN_Pos)) /* Assignment of value for INEN in the PORT_WRCONFIG register */
+#define PORT_WRCONFIG_INEN(value)             (PORT_WRCONFIG_INEN_Msk & ((uint32_t)(value) << PORT_WRCONFIG_INEN_Pos)) /* Assignment of value for INEN in the PORT_WRCONFIG register */
 #define PORT_WRCONFIG_PULLEN_Pos              _UINT32_(18)                                         /* (PORT_WRCONFIG) Pull Enable Position */
 #define PORT_WRCONFIG_PULLEN_Msk              (_UINT32_(0x1) << PORT_WRCONFIG_PULLEN_Pos)          /* (PORT_WRCONFIG) Pull Enable Mask */
-#define PORT_WRCONFIG_PULLEN(value)           (PORT_WRCONFIG_PULLEN_Msk & (_UINT32_(value) << PORT_WRCONFIG_PULLEN_Pos)) /* Assignment of value for PULLEN in the PORT_WRCONFIG register */
+#define PORT_WRCONFIG_PULLEN(value)           (PORT_WRCONFIG_PULLEN_Msk & ((uint32_t)(value) << PORT_WRCONFIG_PULLEN_Pos)) /* Assignment of value for PULLEN in the PORT_WRCONFIG register */
 #define PORT_WRCONFIG_DRVSTR_Pos              _UINT32_(22)                                         /* (PORT_WRCONFIG) Output Driver Strength Selection Position */
 #define PORT_WRCONFIG_DRVSTR_Msk              (_UINT32_(0x1) << PORT_WRCONFIG_DRVSTR_Pos)          /* (PORT_WRCONFIG) Output Driver Strength Selection Mask */
-#define PORT_WRCONFIG_DRVSTR(value)           (PORT_WRCONFIG_DRVSTR_Msk & (_UINT32_(value) << PORT_WRCONFIG_DRVSTR_Pos)) /* Assignment of value for DRVSTR in the PORT_WRCONFIG register */
+#define PORT_WRCONFIG_DRVSTR(value)           (PORT_WRCONFIG_DRVSTR_Msk & ((uint32_t)(value) << PORT_WRCONFIG_DRVSTR_Pos)) /* Assignment of value for DRVSTR in the PORT_WRCONFIG register */
 #define PORT_WRCONFIG_PMUX_Pos                _UINT32_(24)                                         /* (PORT_WRCONFIG) Peripheral Multiplexing Position */
 #define PORT_WRCONFIG_PMUX_Msk                (_UINT32_(0xF) << PORT_WRCONFIG_PMUX_Pos)            /* (PORT_WRCONFIG) Peripheral Multiplexing Mask */
-#define PORT_WRCONFIG_PMUX(value)             (PORT_WRCONFIG_PMUX_Msk & (_UINT32_(value) << PORT_WRCONFIG_PMUX_Pos)) /* Assignment of value for PMUX in the PORT_WRCONFIG register */
+#define PORT_WRCONFIG_PMUX(value)             (PORT_WRCONFIG_PMUX_Msk & ((uint32_t)(value) << PORT_WRCONFIG_PMUX_Pos)) /* Assignment of value for PMUX in the PORT_WRCONFIG register */
 #define PORT_WRCONFIG_WRPMUX_Pos              _UINT32_(28)                                         /* (PORT_WRCONFIG) Write PMUX Position */
 #define PORT_WRCONFIG_WRPMUX_Msk              (_UINT32_(0x1) << PORT_WRCONFIG_WRPMUX_Pos)          /* (PORT_WRCONFIG) Write PMUX Mask */
-#define PORT_WRCONFIG_WRPMUX(value)           (PORT_WRCONFIG_WRPMUX_Msk & (_UINT32_(value) << PORT_WRCONFIG_WRPMUX_Pos)) /* Assignment of value for WRPMUX in the PORT_WRCONFIG register */
+#define PORT_WRCONFIG_WRPMUX(value)           (PORT_WRCONFIG_WRPMUX_Msk & ((uint32_t)(value) << PORT_WRCONFIG_WRPMUX_Pos)) /* Assignment of value for WRPMUX in the PORT_WRCONFIG register */
 #define PORT_WRCONFIG_WRPINCFG_Pos            _UINT32_(30)                                         /* (PORT_WRCONFIG) Write PINCFG Position */
 #define PORT_WRCONFIG_WRPINCFG_Msk            (_UINT32_(0x1) << PORT_WRCONFIG_WRPINCFG_Pos)        /* (PORT_WRCONFIG) Write PINCFG Mask */
-#define PORT_WRCONFIG_WRPINCFG(value)         (PORT_WRCONFIG_WRPINCFG_Msk & (_UINT32_(value) << PORT_WRCONFIG_WRPINCFG_Pos)) /* Assignment of value for WRPINCFG in the PORT_WRCONFIG register */
+#define PORT_WRCONFIG_WRPINCFG(value)         (PORT_WRCONFIG_WRPINCFG_Msk & ((uint32_t)(value) << PORT_WRCONFIG_WRPINCFG_Pos)) /* Assignment of value for WRPINCFG in the PORT_WRCONFIG register */
 #define PORT_WRCONFIG_HWSEL_Pos               _UINT32_(31)                                         /* (PORT_WRCONFIG) Half-Word Select Position */
 #define PORT_WRCONFIG_HWSEL_Msk               (_UINT32_(0x1) << PORT_WRCONFIG_HWSEL_Pos)           /* (PORT_WRCONFIG) Half-Word Select Mask */
-#define PORT_WRCONFIG_HWSEL(value)            (PORT_WRCONFIG_HWSEL_Msk & (_UINT32_(value) << PORT_WRCONFIG_HWSEL_Pos)) /* Assignment of value for HWSEL in the PORT_WRCONFIG register */
+#define PORT_WRCONFIG_HWSEL(value)            (PORT_WRCONFIG_HWSEL_Msk & ((uint32_t)(value) << PORT_WRCONFIG_HWSEL_Pos)) /* Assignment of value for HWSEL in the PORT_WRCONFIG register */
 #define PORT_WRCONFIG_Msk                     _UINT32_(0xDF47FFFF)                                 /* (PORT_WRCONFIG) Register Mask  */
 
 
@@ -157,7 +159,7 @@
 
 #define PORT_PMUX_PMUXE_Pos                   _UINT8_(0)                                           /* (PORT_PMUX) Peripheral Multiplexing Even Position */
 #define PORT_PMUX_PMUXE_Msk                   (_UINT8_(0xF) << PORT_PMUX_PMUXE_Pos)                /* (PORT_PMUX) Peripheral Multiplexing Even Mask */
-#define PORT_PMUX_PMUXE(value)                (PORT_PMUX_PMUXE_Msk & (_UINT8_(value) << PORT_PMUX_PMUXE_Pos)) /* Assignment of value for PMUXE in the PORT_PMUX register */
+#define PORT_PMUX_PMUXE(value)                (PORT_PMUX_PMUXE_Msk & ((uint8_t)(value) << PORT_PMUX_PMUXE_Pos)) /* Assignment of value for PMUXE in the PORT_PMUX register */
 #define   PORT_PMUX_PMUXE_A_Val               _UINT8_(0x0)                                         /* (PORT_PMUX) Peripheral function A selected  */
 #define   PORT_PMUX_PMUXE_B_Val               _UINT8_(0x1)                                         /* (PORT_PMUX) Peripheral function B selected  */
 #define   PORT_PMUX_PMUXE_C_Val               _UINT8_(0x2)                                         /* (PORT_PMUX) Peripheral function C selected  */
@@ -176,7 +178,7 @@
 #define PORT_PMUX_PMUXE_H                     (PORT_PMUX_PMUXE_H_Val << PORT_PMUX_PMUXE_Pos)       /* (PORT_PMUX) Peripheral function H selected Position */
 #define PORT_PMUX_PMUXO_Pos                   _UINT8_(4)                                           /* (PORT_PMUX) Peripheral Multiplexing Odd Position */
 #define PORT_PMUX_PMUXO_Msk                   (_UINT8_(0xF) << PORT_PMUX_PMUXO_Pos)                /* (PORT_PMUX) Peripheral Multiplexing Odd Mask */
-#define PORT_PMUX_PMUXO(value)                (PORT_PMUX_PMUXO_Msk & (_UINT8_(value) << PORT_PMUX_PMUXO_Pos)) /* Assignment of value for PMUXO in the PORT_PMUX register */
+#define PORT_PMUX_PMUXO(value)                (PORT_PMUX_PMUXO_Msk & ((uint8_t)(value) << PORT_PMUX_PMUXO_Pos)) /* Assignment of value for PMUXO in the PORT_PMUX register */
 #define   PORT_PMUX_PMUXO_A_Val               _UINT8_(0x0)                                         /* (PORT_PMUX) Peripheral function A selected  */
 #define   PORT_PMUX_PMUXO_B_Val               _UINT8_(0x1)                                         /* (PORT_PMUX) Peripheral function B selected  */
 #define   PORT_PMUX_PMUXO_C_Val               _UINT8_(0x2)                                         /* (PORT_PMUX) Peripheral function C selected  */
@@ -201,16 +203,16 @@
 
 #define PORT_PINCFG_PMUXEN_Pos                _UINT8_(0)                                           /* (PORT_PINCFG) Peripheral Multiplexer Enable Position */
 #define PORT_PINCFG_PMUXEN_Msk                (_UINT8_(0x1) << PORT_PINCFG_PMUXEN_Pos)             /* (PORT_PINCFG) Peripheral Multiplexer Enable Mask */
-#define PORT_PINCFG_PMUXEN(value)             (PORT_PINCFG_PMUXEN_Msk & (_UINT8_(value) << PORT_PINCFG_PMUXEN_Pos)) /* Assignment of value for PMUXEN in the PORT_PINCFG register */
+#define PORT_PINCFG_PMUXEN(value)             (PORT_PINCFG_PMUXEN_Msk & ((uint8_t)(value) << PORT_PINCFG_PMUXEN_Pos)) /* Assignment of value for PMUXEN in the PORT_PINCFG register */
 #define PORT_PINCFG_INEN_Pos                  _UINT8_(1)                                           /* (PORT_PINCFG) Input Enable Position */
 #define PORT_PINCFG_INEN_Msk                  (_UINT8_(0x1) << PORT_PINCFG_INEN_Pos)               /* (PORT_PINCFG) Input Enable Mask */
-#define PORT_PINCFG_INEN(value)               (PORT_PINCFG_INEN_Msk & (_UINT8_(value) << PORT_PINCFG_INEN_Pos)) /* Assignment of value for INEN in the PORT_PINCFG register */
+#define PORT_PINCFG_INEN(value)               (PORT_PINCFG_INEN_Msk & ((uint8_t)(value) << PORT_PINCFG_INEN_Pos)) /* Assignment of value for INEN in the PORT_PINCFG register */
 #define PORT_PINCFG_PULLEN_Pos                _UINT8_(2)                                           /* (PORT_PINCFG) Pull Enable Position */
 #define PORT_PINCFG_PULLEN_Msk                (_UINT8_(0x1) << PORT_PINCFG_PULLEN_Pos)             /* (PORT_PINCFG) Pull Enable Mask */
-#define PORT_PINCFG_PULLEN(value)             (PORT_PINCFG_PULLEN_Msk & (_UINT8_(value) << PORT_PINCFG_PULLEN_Pos)) /* Assignment of value for PULLEN in the PORT_PINCFG register */
+#define PORT_PINCFG_PULLEN(value)             (PORT_PINCFG_PULLEN_Msk & ((uint8_t)(value) << PORT_PINCFG_PULLEN_Pos)) /* Assignment of value for PULLEN in the PORT_PINCFG register */
 #define PORT_PINCFG_DRVSTR_Pos                _UINT8_(6)                                           /* (PORT_PINCFG) Output Driver Strength Selection Position */
 #define PORT_PINCFG_DRVSTR_Msk                (_UINT8_(0x1) << PORT_PINCFG_DRVSTR_Pos)             /* (PORT_PINCFG) Output Driver Strength Selection Mask */
-#define PORT_PINCFG_DRVSTR(value)             (PORT_PINCFG_DRVSTR_Msk & (_UINT8_(value) << PORT_PINCFG_DRVSTR_Pos)) /* Assignment of value for DRVSTR in the PORT_PINCFG register */
+#define PORT_PINCFG_DRVSTR(value)             (PORT_PINCFG_DRVSTR_Msk & ((uint8_t)(value) << PORT_PINCFG_DRVSTR_Pos)) /* Assignment of value for DRVSTR in the PORT_PINCFG register */
 #define PORT_PINCFG_Msk                       _UINT8_(0x47)                                        /* (PORT_PINCFG) Register Mask  */
 
 

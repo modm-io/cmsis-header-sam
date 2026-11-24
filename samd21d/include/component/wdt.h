@@ -23,7 +23,9 @@
 #ifndef _SAMD21_WDT_COMPONENT_H_
 #define _SAMD21_WDT_COMPONENT_H_
 
+#if !defined(DISABLE_CMSIS)
 #include "core_cm0plus.h"
+#endif /* !defined(DISABLE_CMSIS) */
 
 /* ************************************************************************** */
 /*                      SOFTWARE API DEFINITION FOR WDT                       */
@@ -34,13 +36,13 @@
 
 #define WDT_CTRL_ENABLE_Pos                   _UINT8_(1)                                           /* (WDT_CTRL) Enable Position */
 #define WDT_CTRL_ENABLE_Msk                   (_UINT8_(0x1) << WDT_CTRL_ENABLE_Pos)                /* (WDT_CTRL) Enable Mask */
-#define WDT_CTRL_ENABLE(value)                (WDT_CTRL_ENABLE_Msk & (_UINT8_(value) << WDT_CTRL_ENABLE_Pos)) /* Assignment of value for ENABLE in the WDT_CTRL register */
+#define WDT_CTRL_ENABLE(value)                (WDT_CTRL_ENABLE_Msk & ((uint8_t)(value) << WDT_CTRL_ENABLE_Pos)) /* Assignment of value for ENABLE in the WDT_CTRL register */
 #define WDT_CTRL_WEN_Pos                      _UINT8_(2)                                           /* (WDT_CTRL) Watchdog Timer Window Mode Enable Position */
 #define WDT_CTRL_WEN_Msk                      (_UINT8_(0x1) << WDT_CTRL_WEN_Pos)                   /* (WDT_CTRL) Watchdog Timer Window Mode Enable Mask */
-#define WDT_CTRL_WEN(value)                   (WDT_CTRL_WEN_Msk & (_UINT8_(value) << WDT_CTRL_WEN_Pos)) /* Assignment of value for WEN in the WDT_CTRL register */
+#define WDT_CTRL_WEN(value)                   (WDT_CTRL_WEN_Msk & ((uint8_t)(value) << WDT_CTRL_WEN_Pos)) /* Assignment of value for WEN in the WDT_CTRL register */
 #define WDT_CTRL_ALWAYSON_Pos                 _UINT8_(7)                                           /* (WDT_CTRL) Always-On Position */
 #define WDT_CTRL_ALWAYSON_Msk                 (_UINT8_(0x1) << WDT_CTRL_ALWAYSON_Pos)              /* (WDT_CTRL) Always-On Mask */
-#define WDT_CTRL_ALWAYSON(value)              (WDT_CTRL_ALWAYSON_Msk & (_UINT8_(value) << WDT_CTRL_ALWAYSON_Pos)) /* Assignment of value for ALWAYSON in the WDT_CTRL register */
+#define WDT_CTRL_ALWAYSON(value)              (WDT_CTRL_ALWAYSON_Msk & ((uint8_t)(value) << WDT_CTRL_ALWAYSON_Pos)) /* Assignment of value for ALWAYSON in the WDT_CTRL register */
 #define WDT_CTRL_Msk                          _UINT8_(0x86)                                        /* (WDT_CTRL) Register Mask  */
 
 
@@ -49,7 +51,7 @@
 
 #define WDT_CONFIG_PER_Pos                    _UINT8_(0)                                           /* (WDT_CONFIG) Time-Out Period Position */
 #define WDT_CONFIG_PER_Msk                    (_UINT8_(0xF) << WDT_CONFIG_PER_Pos)                 /* (WDT_CONFIG) Time-Out Period Mask */
-#define WDT_CONFIG_PER(value)                 (WDT_CONFIG_PER_Msk & (_UINT8_(value) << WDT_CONFIG_PER_Pos)) /* Assignment of value for PER in the WDT_CONFIG register */
+#define WDT_CONFIG_PER(value)                 (WDT_CONFIG_PER_Msk & ((uint8_t)(value) << WDT_CONFIG_PER_Pos)) /* Assignment of value for PER in the WDT_CONFIG register */
 #define   WDT_CONFIG_PER_8_Val                _UINT8_(0x0)                                         /* (WDT_CONFIG) 8 clock cycles  */
 #define   WDT_CONFIG_PER_16_Val               _UINT8_(0x1)                                         /* (WDT_CONFIG) 16 clock cycles  */
 #define   WDT_CONFIG_PER_32_Val               _UINT8_(0x2)                                         /* (WDT_CONFIG) 32 clock cycles  */
@@ -76,7 +78,7 @@
 #define WDT_CONFIG_PER_16K                    (WDT_CONFIG_PER_16K_Val << WDT_CONFIG_PER_Pos)       /* (WDT_CONFIG) 16384 clock cycles Position */
 #define WDT_CONFIG_WINDOW_Pos                 _UINT8_(4)                                           /* (WDT_CONFIG) Window Mode Time-Out Period Position */
 #define WDT_CONFIG_WINDOW_Msk                 (_UINT8_(0xF) << WDT_CONFIG_WINDOW_Pos)              /* (WDT_CONFIG) Window Mode Time-Out Period Mask */
-#define WDT_CONFIG_WINDOW(value)              (WDT_CONFIG_WINDOW_Msk & (_UINT8_(value) << WDT_CONFIG_WINDOW_Pos)) /* Assignment of value for WINDOW in the WDT_CONFIG register */
+#define WDT_CONFIG_WINDOW(value)              (WDT_CONFIG_WINDOW_Msk & ((uint8_t)(value) << WDT_CONFIG_WINDOW_Pos)) /* Assignment of value for WINDOW in the WDT_CONFIG register */
 #define   WDT_CONFIG_WINDOW_8_Val             _UINT8_(0x0)                                         /* (WDT_CONFIG) 8 clock cycles  */
 #define   WDT_CONFIG_WINDOW_16_Val            _UINT8_(0x1)                                         /* (WDT_CONFIG) 16 clock cycles  */
 #define   WDT_CONFIG_WINDOW_32_Val            _UINT8_(0x2)                                         /* (WDT_CONFIG) 32 clock cycles  */
@@ -109,7 +111,7 @@
 
 #define WDT_EWCTRL_EWOFFSET_Pos               _UINT8_(0)                                           /* (WDT_EWCTRL) Early Warning Interrupt Time Offset Position */
 #define WDT_EWCTRL_EWOFFSET_Msk               (_UINT8_(0xF) << WDT_EWCTRL_EWOFFSET_Pos)            /* (WDT_EWCTRL) Early Warning Interrupt Time Offset Mask */
-#define WDT_EWCTRL_EWOFFSET(value)            (WDT_EWCTRL_EWOFFSET_Msk & (_UINT8_(value) << WDT_EWCTRL_EWOFFSET_Pos)) /* Assignment of value for EWOFFSET in the WDT_EWCTRL register */
+#define WDT_EWCTRL_EWOFFSET(value)            (WDT_EWCTRL_EWOFFSET_Msk & ((uint8_t)(value) << WDT_EWCTRL_EWOFFSET_Pos)) /* Assignment of value for EWOFFSET in the WDT_EWCTRL register */
 #define   WDT_EWCTRL_EWOFFSET_8_Val           _UINT8_(0x0)                                         /* (WDT_EWCTRL) 8 clock cycles  */
 #define   WDT_EWCTRL_EWOFFSET_16_Val          _UINT8_(0x1)                                         /* (WDT_EWCTRL) 16 clock cycles  */
 #define   WDT_EWCTRL_EWOFFSET_32_Val          _UINT8_(0x2)                                         /* (WDT_EWCTRL) 32 clock cycles  */
@@ -142,7 +144,7 @@
 
 #define WDT_INTENCLR_EW_Pos                   _UINT8_(0)                                           /* (WDT_INTENCLR) Early Warning Interrupt Enable Position */
 #define WDT_INTENCLR_EW_Msk                   (_UINT8_(0x1) << WDT_INTENCLR_EW_Pos)                /* (WDT_INTENCLR) Early Warning Interrupt Enable Mask */
-#define WDT_INTENCLR_EW(value)                (WDT_INTENCLR_EW_Msk & (_UINT8_(value) << WDT_INTENCLR_EW_Pos)) /* Assignment of value for EW in the WDT_INTENCLR register */
+#define WDT_INTENCLR_EW(value)                (WDT_INTENCLR_EW_Msk & ((uint8_t)(value) << WDT_INTENCLR_EW_Pos)) /* Assignment of value for EW in the WDT_INTENCLR register */
 #define WDT_INTENCLR_Msk                      _UINT8_(0x01)                                        /* (WDT_INTENCLR) Register Mask  */
 
 
@@ -151,7 +153,7 @@
 
 #define WDT_INTENSET_EW_Pos                   _UINT8_(0)                                           /* (WDT_INTENSET) Early Warning Interrupt Enable Position */
 #define WDT_INTENSET_EW_Msk                   (_UINT8_(0x1) << WDT_INTENSET_EW_Pos)                /* (WDT_INTENSET) Early Warning Interrupt Enable Mask */
-#define WDT_INTENSET_EW(value)                (WDT_INTENSET_EW_Msk & (_UINT8_(value) << WDT_INTENSET_EW_Pos)) /* Assignment of value for EW in the WDT_INTENSET register */
+#define WDT_INTENSET_EW(value)                (WDT_INTENSET_EW_Msk & ((uint8_t)(value) << WDT_INTENSET_EW_Pos)) /* Assignment of value for EW in the WDT_INTENSET register */
 #define WDT_INTENSET_Msk                      _UINT8_(0x01)                                        /* (WDT_INTENSET) Register Mask  */
 
 
@@ -160,7 +162,7 @@
 
 #define WDT_INTFLAG_EW_Pos                    _UINT8_(0)                                           /* (WDT_INTFLAG) Early Warning Position */
 #define WDT_INTFLAG_EW_Msk                    (_UINT8_(0x1) << WDT_INTFLAG_EW_Pos)                 /* (WDT_INTFLAG) Early Warning Mask */
-#define WDT_INTFLAG_EW(value)                 (WDT_INTFLAG_EW_Msk & (_UINT8_(value) << WDT_INTFLAG_EW_Pos)) /* Assignment of value for EW in the WDT_INTFLAG register */
+#define WDT_INTFLAG_EW(value)                 (WDT_INTFLAG_EW_Msk & ((uint8_t)(value) << WDT_INTFLAG_EW_Pos)) /* Assignment of value for EW in the WDT_INTFLAG register */
 #define WDT_INTFLAG_Msk                       _UINT8_(0x01)                                        /* (WDT_INTFLAG) Register Mask  */
 
 
@@ -169,7 +171,7 @@
 
 #define WDT_STATUS_SYNCBUSY_Pos               _UINT8_(7)                                           /* (WDT_STATUS) Synchronization Busy Position */
 #define WDT_STATUS_SYNCBUSY_Msk               (_UINT8_(0x1) << WDT_STATUS_SYNCBUSY_Pos)            /* (WDT_STATUS) Synchronization Busy Mask */
-#define WDT_STATUS_SYNCBUSY(value)            (WDT_STATUS_SYNCBUSY_Msk & (_UINT8_(value) << WDT_STATUS_SYNCBUSY_Pos)) /* Assignment of value for SYNCBUSY in the WDT_STATUS register */
+#define WDT_STATUS_SYNCBUSY(value)            (WDT_STATUS_SYNCBUSY_Msk & ((uint8_t)(value) << WDT_STATUS_SYNCBUSY_Pos)) /* Assignment of value for SYNCBUSY in the WDT_STATUS register */
 #define WDT_STATUS_Msk                        _UINT8_(0x80)                                        /* (WDT_STATUS) Register Mask  */
 
 
@@ -178,7 +180,7 @@
 
 #define WDT_CLEAR_CLEAR_Pos                   _UINT8_(0)                                           /* (WDT_CLEAR) Watchdog Clear Position */
 #define WDT_CLEAR_CLEAR_Msk                   (_UINT8_(0xFF) << WDT_CLEAR_CLEAR_Pos)               /* (WDT_CLEAR) Watchdog Clear Mask */
-#define WDT_CLEAR_CLEAR(value)                (WDT_CLEAR_CLEAR_Msk & (_UINT8_(value) << WDT_CLEAR_CLEAR_Pos)) /* Assignment of value for CLEAR in the WDT_CLEAR register */
+#define WDT_CLEAR_CLEAR(value)                (WDT_CLEAR_CLEAR_Msk & ((uint8_t)(value) << WDT_CLEAR_CLEAR_Pos)) /* Assignment of value for CLEAR in the WDT_CLEAR register */
 #define   WDT_CLEAR_CLEAR_KEY_Val             _UINT8_(0xA5)                                        /* (WDT_CLEAR) Clear Key  */
 #define WDT_CLEAR_CLEAR_KEY                   (WDT_CLEAR_CLEAR_KEY_Val << WDT_CLEAR_CLEAR_Pos)     /* (WDT_CLEAR) Clear Key Position */
 #define WDT_CLEAR_Msk                         _UINT8_(0xFF)                                        /* (WDT_CLEAR) Register Mask  */

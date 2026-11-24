@@ -23,7 +23,9 @@
 #ifndef _SAMD21_PTC_COMPONENT_H_
 #define _SAMD21_PTC_COMPONENT_H_
 
+#if !defined(DISABLE_CMSIS)
 #include "core_cm0plus.h"
+#endif /* !defined(DISABLE_CMSIS) */
 
 /* ************************************************************************** */
 /*                      SOFTWARE API DEFINITION FOR PTC                       */

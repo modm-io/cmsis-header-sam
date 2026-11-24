@@ -23,7 +23,9 @@
 #ifndef _SAMD21_ADC_COMPONENT_H_
 #define _SAMD21_ADC_COMPONENT_H_
 
+#if !defined(DISABLE_CMSIS)
 #include "core_cm0plus.h"
+#endif /* !defined(DISABLE_CMSIS) */
 
 /* ************************************************************************** */
 /*                      SOFTWARE API DEFINITION FOR ADC                       */
@@ -34,13 +36,13 @@
 
 #define ADC_CTRLA_SWRST_Pos                   _UINT8_(0)                                           /* (ADC_CTRLA) Software Reset Position */
 #define ADC_CTRLA_SWRST_Msk                   (_UINT8_(0x1) << ADC_CTRLA_SWRST_Pos)                /* (ADC_CTRLA) Software Reset Mask */
-#define ADC_CTRLA_SWRST(value)                (ADC_CTRLA_SWRST_Msk & (_UINT8_(value) << ADC_CTRLA_SWRST_Pos)) /* Assignment of value for SWRST in the ADC_CTRLA register */
+#define ADC_CTRLA_SWRST(value)                (ADC_CTRLA_SWRST_Msk & ((uint8_t)(value) << ADC_CTRLA_SWRST_Pos)) /* Assignment of value for SWRST in the ADC_CTRLA register */
 #define ADC_CTRLA_ENABLE_Pos                  _UINT8_(1)                                           /* (ADC_CTRLA) Enable Position */
 #define ADC_CTRLA_ENABLE_Msk                  (_UINT8_(0x1) << ADC_CTRLA_ENABLE_Pos)               /* (ADC_CTRLA) Enable Mask */
-#define ADC_CTRLA_ENABLE(value)               (ADC_CTRLA_ENABLE_Msk & (_UINT8_(value) << ADC_CTRLA_ENABLE_Pos)) /* Assignment of value for ENABLE in the ADC_CTRLA register */
+#define ADC_CTRLA_ENABLE(value)               (ADC_CTRLA_ENABLE_Msk & ((uint8_t)(value) << ADC_CTRLA_ENABLE_Pos)) /* Assignment of value for ENABLE in the ADC_CTRLA register */
 #define ADC_CTRLA_RUNSTDBY_Pos                _UINT8_(2)                                           /* (ADC_CTRLA) Run in Standby Position */
 #define ADC_CTRLA_RUNSTDBY_Msk                (_UINT8_(0x1) << ADC_CTRLA_RUNSTDBY_Pos)             /* (ADC_CTRLA) Run in Standby Mask */
-#define ADC_CTRLA_RUNSTDBY(value)             (ADC_CTRLA_RUNSTDBY_Msk & (_UINT8_(value) << ADC_CTRLA_RUNSTDBY_Pos)) /* Assignment of value for RUNSTDBY in the ADC_CTRLA register */
+#define ADC_CTRLA_RUNSTDBY(value)             (ADC_CTRLA_RUNSTDBY_Msk & ((uint8_t)(value) << ADC_CTRLA_RUNSTDBY_Pos)) /* Assignment of value for RUNSTDBY in the ADC_CTRLA register */
 #define ADC_CTRLA_Msk                         _UINT8_(0x07)                                        /* (ADC_CTRLA) Register Mask  */
 
 
@@ -49,7 +51,7 @@
 
 #define ADC_REFCTRL_REFSEL_Pos                _UINT8_(0)                                           /* (ADC_REFCTRL) Reference Selection Position */
 #define ADC_REFCTRL_REFSEL_Msk                (_UINT8_(0xF) << ADC_REFCTRL_REFSEL_Pos)             /* (ADC_REFCTRL) Reference Selection Mask */
-#define ADC_REFCTRL_REFSEL(value)             (ADC_REFCTRL_REFSEL_Msk & (_UINT8_(value) << ADC_REFCTRL_REFSEL_Pos)) /* Assignment of value for REFSEL in the ADC_REFCTRL register */
+#define ADC_REFCTRL_REFSEL(value)             (ADC_REFCTRL_REFSEL_Msk & ((uint8_t)(value) << ADC_REFCTRL_REFSEL_Pos)) /* Assignment of value for REFSEL in the ADC_REFCTRL register */
 #define   ADC_REFCTRL_REFSEL_INT1V_Val        _UINT8_(0x0)                                         /* (ADC_REFCTRL) 1.0V voltage reference  */
 #define   ADC_REFCTRL_REFSEL_INTVCC0_Val      _UINT8_(0x1)                                         /* (ADC_REFCTRL) 1/1.48 VDDANA  */
 #define   ADC_REFCTRL_REFSEL_INTVCC1_Val      _UINT8_(0x2)                                         /* (ADC_REFCTRL) 1/2 VDDANA (only for VDDANA > 2.0V)  */
@@ -62,7 +64,7 @@
 #define ADC_REFCTRL_REFSEL_AREFB              (ADC_REFCTRL_REFSEL_AREFB_Val << ADC_REFCTRL_REFSEL_Pos) /* (ADC_REFCTRL) External reference B Position */
 #define ADC_REFCTRL_REFCOMP_Pos               _UINT8_(7)                                           /* (ADC_REFCTRL) Reference Buffer Offset Compensation Enable Position */
 #define ADC_REFCTRL_REFCOMP_Msk               (_UINT8_(0x1) << ADC_REFCTRL_REFCOMP_Pos)            /* (ADC_REFCTRL) Reference Buffer Offset Compensation Enable Mask */
-#define ADC_REFCTRL_REFCOMP(value)            (ADC_REFCTRL_REFCOMP_Msk & (_UINT8_(value) << ADC_REFCTRL_REFCOMP_Pos)) /* Assignment of value for REFCOMP in the ADC_REFCTRL register */
+#define ADC_REFCTRL_REFCOMP(value)            (ADC_REFCTRL_REFCOMP_Msk & ((uint8_t)(value) << ADC_REFCTRL_REFCOMP_Pos)) /* Assignment of value for REFCOMP in the ADC_REFCTRL register */
 #define ADC_REFCTRL_Msk                       _UINT8_(0x8F)                                        /* (ADC_REFCTRL) Register Mask  */
 
 
@@ -71,7 +73,7 @@
 
 #define ADC_AVGCTRL_SAMPLENUM_Pos             _UINT8_(0)                                           /* (ADC_AVGCTRL) Number of Samples to be Collected Position */
 #define ADC_AVGCTRL_SAMPLENUM_Msk             (_UINT8_(0xF) << ADC_AVGCTRL_SAMPLENUM_Pos)          /* (ADC_AVGCTRL) Number of Samples to be Collected Mask */
-#define ADC_AVGCTRL_SAMPLENUM(value)          (ADC_AVGCTRL_SAMPLENUM_Msk & (_UINT8_(value) << ADC_AVGCTRL_SAMPLENUM_Pos)) /* Assignment of value for SAMPLENUM in the ADC_AVGCTRL register */
+#define ADC_AVGCTRL_SAMPLENUM(value)          (ADC_AVGCTRL_SAMPLENUM_Msk & ((uint8_t)(value) << ADC_AVGCTRL_SAMPLENUM_Pos)) /* Assignment of value for SAMPLENUM in the ADC_AVGCTRL register */
 #define   ADC_AVGCTRL_SAMPLENUM_1_Val         _UINT8_(0x0)                                         /* (ADC_AVGCTRL) 1 sample  */
 #define   ADC_AVGCTRL_SAMPLENUM_2_Val         _UINT8_(0x1)                                         /* (ADC_AVGCTRL) 2 samples  */
 #define   ADC_AVGCTRL_SAMPLENUM_4_Val         _UINT8_(0x2)                                         /* (ADC_AVGCTRL) 4 samples  */
@@ -96,7 +98,7 @@
 #define ADC_AVGCTRL_SAMPLENUM_1024            (ADC_AVGCTRL_SAMPLENUM_1024_Val << ADC_AVGCTRL_SAMPLENUM_Pos) /* (ADC_AVGCTRL) 1024 samples Position */
 #define ADC_AVGCTRL_ADJRES_Pos                _UINT8_(4)                                           /* (ADC_AVGCTRL) Adjusting Result / Division Coefficient Position */
 #define ADC_AVGCTRL_ADJRES_Msk                (_UINT8_(0x7) << ADC_AVGCTRL_ADJRES_Pos)             /* (ADC_AVGCTRL) Adjusting Result / Division Coefficient Mask */
-#define ADC_AVGCTRL_ADJRES(value)             (ADC_AVGCTRL_ADJRES_Msk & (_UINT8_(value) << ADC_AVGCTRL_ADJRES_Pos)) /* Assignment of value for ADJRES in the ADC_AVGCTRL register */
+#define ADC_AVGCTRL_ADJRES(value)             (ADC_AVGCTRL_ADJRES_Msk & ((uint8_t)(value) << ADC_AVGCTRL_ADJRES_Pos)) /* Assignment of value for ADJRES in the ADC_AVGCTRL register */
 #define ADC_AVGCTRL_Msk                       _UINT8_(0x7F)                                        /* (ADC_AVGCTRL) Register Mask  */
 
 
@@ -105,7 +107,7 @@
 
 #define ADC_SAMPCTRL_SAMPLEN_Pos              _UINT8_(0)                                           /* (ADC_SAMPCTRL) Sampling Time Length Position */
 #define ADC_SAMPCTRL_SAMPLEN_Msk              (_UINT8_(0x3F) << ADC_SAMPCTRL_SAMPLEN_Pos)          /* (ADC_SAMPCTRL) Sampling Time Length Mask */
-#define ADC_SAMPCTRL_SAMPLEN(value)           (ADC_SAMPCTRL_SAMPLEN_Msk & (_UINT8_(value) << ADC_SAMPCTRL_SAMPLEN_Pos)) /* Assignment of value for SAMPLEN in the ADC_SAMPCTRL register */
+#define ADC_SAMPCTRL_SAMPLEN(value)           (ADC_SAMPCTRL_SAMPLEN_Msk & ((uint8_t)(value) << ADC_SAMPCTRL_SAMPLEN_Pos)) /* Assignment of value for SAMPLEN in the ADC_SAMPCTRL register */
 #define ADC_SAMPCTRL_Msk                      _UINT8_(0x3F)                                        /* (ADC_SAMPCTRL) Register Mask  */
 
 
@@ -114,19 +116,19 @@
 
 #define ADC_CTRLB_DIFFMODE_Pos                _UINT16_(0)                                          /* (ADC_CTRLB) Differential Mode Position */
 #define ADC_CTRLB_DIFFMODE_Msk                (_UINT16_(0x1) << ADC_CTRLB_DIFFMODE_Pos)            /* (ADC_CTRLB) Differential Mode Mask */
-#define ADC_CTRLB_DIFFMODE(value)             (ADC_CTRLB_DIFFMODE_Msk & (_UINT16_(value) << ADC_CTRLB_DIFFMODE_Pos)) /* Assignment of value for DIFFMODE in the ADC_CTRLB register */
+#define ADC_CTRLB_DIFFMODE(value)             (ADC_CTRLB_DIFFMODE_Msk & ((uint16_t)(value) << ADC_CTRLB_DIFFMODE_Pos)) /* Assignment of value for DIFFMODE in the ADC_CTRLB register */
 #define ADC_CTRLB_LEFTADJ_Pos                 _UINT16_(1)                                          /* (ADC_CTRLB) Left-Adjusted Result Position */
 #define ADC_CTRLB_LEFTADJ_Msk                 (_UINT16_(0x1) << ADC_CTRLB_LEFTADJ_Pos)             /* (ADC_CTRLB) Left-Adjusted Result Mask */
-#define ADC_CTRLB_LEFTADJ(value)              (ADC_CTRLB_LEFTADJ_Msk & (_UINT16_(value) << ADC_CTRLB_LEFTADJ_Pos)) /* Assignment of value for LEFTADJ in the ADC_CTRLB register */
+#define ADC_CTRLB_LEFTADJ(value)              (ADC_CTRLB_LEFTADJ_Msk & ((uint16_t)(value) << ADC_CTRLB_LEFTADJ_Pos)) /* Assignment of value for LEFTADJ in the ADC_CTRLB register */
 #define ADC_CTRLB_FREERUN_Pos                 _UINT16_(2)                                          /* (ADC_CTRLB) Free Running Mode Position */
 #define ADC_CTRLB_FREERUN_Msk                 (_UINT16_(0x1) << ADC_CTRLB_FREERUN_Pos)             /* (ADC_CTRLB) Free Running Mode Mask */
-#define ADC_CTRLB_FREERUN(value)              (ADC_CTRLB_FREERUN_Msk & (_UINT16_(value) << ADC_CTRLB_FREERUN_Pos)) /* Assignment of value for FREERUN in the ADC_CTRLB register */
+#define ADC_CTRLB_FREERUN(value)              (ADC_CTRLB_FREERUN_Msk & ((uint16_t)(value) << ADC_CTRLB_FREERUN_Pos)) /* Assignment of value for FREERUN in the ADC_CTRLB register */
 #define ADC_CTRLB_CORREN_Pos                  _UINT16_(3)                                          /* (ADC_CTRLB) Digital Correction Logic Enabled Position */
 #define ADC_CTRLB_CORREN_Msk                  (_UINT16_(0x1) << ADC_CTRLB_CORREN_Pos)              /* (ADC_CTRLB) Digital Correction Logic Enabled Mask */
-#define ADC_CTRLB_CORREN(value)               (ADC_CTRLB_CORREN_Msk & (_UINT16_(value) << ADC_CTRLB_CORREN_Pos)) /* Assignment of value for CORREN in the ADC_CTRLB register */
+#define ADC_CTRLB_CORREN(value)               (ADC_CTRLB_CORREN_Msk & ((uint16_t)(value) << ADC_CTRLB_CORREN_Pos)) /* Assignment of value for CORREN in the ADC_CTRLB register */
 #define ADC_CTRLB_RESSEL_Pos                  _UINT16_(4)                                          /* (ADC_CTRLB) Conversion Result Resolution Position */
 #define ADC_CTRLB_RESSEL_Msk                  (_UINT16_(0x3) << ADC_CTRLB_RESSEL_Pos)              /* (ADC_CTRLB) Conversion Result Resolution Mask */
-#define ADC_CTRLB_RESSEL(value)               (ADC_CTRLB_RESSEL_Msk & (_UINT16_(value) << ADC_CTRLB_RESSEL_Pos)) /* Assignment of value for RESSEL in the ADC_CTRLB register */
+#define ADC_CTRLB_RESSEL(value)               (ADC_CTRLB_RESSEL_Msk & ((uint16_t)(value) << ADC_CTRLB_RESSEL_Pos)) /* Assignment of value for RESSEL in the ADC_CTRLB register */
 #define   ADC_CTRLB_RESSEL_12BIT_Val          _UINT16_(0x0)                                        /* (ADC_CTRLB) 12-bit result  */
 #define   ADC_CTRLB_RESSEL_16BIT_Val          _UINT16_(0x1)                                        /* (ADC_CTRLB) 16-bit averaging mode  */
 #define   ADC_CTRLB_RESSEL_10BIT_Val          _UINT16_(0x2)                                        /* (ADC_CTRLB) 10-bit result  */
@@ -137,7 +139,7 @@
 #define ADC_CTRLB_RESSEL_8BIT                 (ADC_CTRLB_RESSEL_8BIT_Val << ADC_CTRLB_RESSEL_Pos)  /* (ADC_CTRLB) 8-bit result Position */
 #define ADC_CTRLB_PRESCALER_Pos               _UINT16_(8)                                          /* (ADC_CTRLB) Prescaler Configuration Position */
 #define ADC_CTRLB_PRESCALER_Msk               (_UINT16_(0x7) << ADC_CTRLB_PRESCALER_Pos)           /* (ADC_CTRLB) Prescaler Configuration Mask */
-#define ADC_CTRLB_PRESCALER(value)            (ADC_CTRLB_PRESCALER_Msk & (_UINT16_(value) << ADC_CTRLB_PRESCALER_Pos)) /* Assignment of value for PRESCALER in the ADC_CTRLB register */
+#define ADC_CTRLB_PRESCALER(value)            (ADC_CTRLB_PRESCALER_Msk & ((uint16_t)(value) << ADC_CTRLB_PRESCALER_Pos)) /* Assignment of value for PRESCALER in the ADC_CTRLB register */
 #define   ADC_CTRLB_PRESCALER_DIV4_Val        _UINT16_(0x0)                                        /* (ADC_CTRLB) Peripheral clock divided by 4  */
 #define   ADC_CTRLB_PRESCALER_DIV8_Val        _UINT16_(0x1)                                        /* (ADC_CTRLB) Peripheral clock divided by 8  */
 #define   ADC_CTRLB_PRESCALER_DIV16_Val       _UINT16_(0x2)                                        /* (ADC_CTRLB) Peripheral clock divided by 16  */
@@ -162,7 +164,7 @@
 
 #define ADC_WINCTRL_WINMODE_Pos               _UINT8_(0)                                           /* (ADC_WINCTRL) Window Monitor Mode Position */
 #define ADC_WINCTRL_WINMODE_Msk               (_UINT8_(0x7) << ADC_WINCTRL_WINMODE_Pos)            /* (ADC_WINCTRL) Window Monitor Mode Mask */
-#define ADC_WINCTRL_WINMODE(value)            (ADC_WINCTRL_WINMODE_Msk & (_UINT8_(value) << ADC_WINCTRL_WINMODE_Pos)) /* Assignment of value for WINMODE in the ADC_WINCTRL register */
+#define ADC_WINCTRL_WINMODE(value)            (ADC_WINCTRL_WINMODE_Msk & ((uint8_t)(value) << ADC_WINCTRL_WINMODE_Pos)) /* Assignment of value for WINMODE in the ADC_WINCTRL register */
 #define   ADC_WINCTRL_WINMODE_DISABLE_Val     _UINT8_(0x0)                                         /* (ADC_WINCTRL) No window mode (default)  */
 #define   ADC_WINCTRL_WINMODE_MODE1_Val       _UINT8_(0x1)                                         /* (ADC_WINCTRL) Mode 1: RESULT > WINLT  */
 #define   ADC_WINCTRL_WINMODE_MODE2_Val       _UINT8_(0x2)                                         /* (ADC_WINCTRL) Mode 2: RESULT < WINUT  */
@@ -181,10 +183,10 @@
 
 #define ADC_SWTRIG_FLUSH_Pos                  _UINT8_(0)                                           /* (ADC_SWTRIG) ADC Conversion Flush Position */
 #define ADC_SWTRIG_FLUSH_Msk                  (_UINT8_(0x1) << ADC_SWTRIG_FLUSH_Pos)               /* (ADC_SWTRIG) ADC Conversion Flush Mask */
-#define ADC_SWTRIG_FLUSH(value)               (ADC_SWTRIG_FLUSH_Msk & (_UINT8_(value) << ADC_SWTRIG_FLUSH_Pos)) /* Assignment of value for FLUSH in the ADC_SWTRIG register */
+#define ADC_SWTRIG_FLUSH(value)               (ADC_SWTRIG_FLUSH_Msk & ((uint8_t)(value) << ADC_SWTRIG_FLUSH_Pos)) /* Assignment of value for FLUSH in the ADC_SWTRIG register */
 #define ADC_SWTRIG_START_Pos                  _UINT8_(1)                                           /* (ADC_SWTRIG) ADC Start Conversion Position */
 #define ADC_SWTRIG_START_Msk                  (_UINT8_(0x1) << ADC_SWTRIG_START_Pos)               /* (ADC_SWTRIG) ADC Start Conversion Mask */
-#define ADC_SWTRIG_START(value)               (ADC_SWTRIG_START_Msk & (_UINT8_(value) << ADC_SWTRIG_START_Pos)) /* Assignment of value for START in the ADC_SWTRIG register */
+#define ADC_SWTRIG_START(value)               (ADC_SWTRIG_START_Msk & ((uint8_t)(value) << ADC_SWTRIG_START_Pos)) /* Assignment of value for START in the ADC_SWTRIG register */
 #define ADC_SWTRIG_Msk                        _UINT8_(0x03)                                        /* (ADC_SWTRIG) Register Mask  */
 
 
@@ -193,7 +195,7 @@
 
 #define ADC_INPUTCTRL_MUXPOS_Pos              _UINT32_(0)                                          /* (ADC_INPUTCTRL) Positive Mux Input Selection Position */
 #define ADC_INPUTCTRL_MUXPOS_Msk              (_UINT32_(0x1F) << ADC_INPUTCTRL_MUXPOS_Pos)         /* (ADC_INPUTCTRL) Positive Mux Input Selection Mask */
-#define ADC_INPUTCTRL_MUXPOS(value)           (ADC_INPUTCTRL_MUXPOS_Msk & (_UINT32_(value) << ADC_INPUTCTRL_MUXPOS_Pos)) /* Assignment of value for MUXPOS in the ADC_INPUTCTRL register */
+#define ADC_INPUTCTRL_MUXPOS(value)           (ADC_INPUTCTRL_MUXPOS_Msk & ((uint32_t)(value) << ADC_INPUTCTRL_MUXPOS_Pos)) /* Assignment of value for MUXPOS in the ADC_INPUTCTRL register */
 #define   ADC_INPUTCTRL_MUXPOS_PIN0_Val       _UINT32_(0x0)                                        /* (ADC_INPUTCTRL) ADC AIN0 Pin  */
 #define   ADC_INPUTCTRL_MUXPOS_PIN1_Val       _UINT32_(0x1)                                        /* (ADC_INPUTCTRL) ADC AIN1 Pin  */
 #define   ADC_INPUTCTRL_MUXPOS_PIN2_Val       _UINT32_(0x2)                                        /* (ADC_INPUTCTRL) ADC AIN2 Pin  */
@@ -246,7 +248,7 @@
 #define ADC_INPUTCTRL_MUXPOS_DAC              (ADC_INPUTCTRL_MUXPOS_DAC_Val << ADC_INPUTCTRL_MUXPOS_Pos) /* (ADC_INPUTCTRL) DAC Output Position */
 #define ADC_INPUTCTRL_MUXNEG_Pos              _UINT32_(8)                                          /* (ADC_INPUTCTRL) Negative Mux Input Selection Position */
 #define ADC_INPUTCTRL_MUXNEG_Msk              (_UINT32_(0x1F) << ADC_INPUTCTRL_MUXNEG_Pos)         /* (ADC_INPUTCTRL) Negative Mux Input Selection Mask */
-#define ADC_INPUTCTRL_MUXNEG(value)           (ADC_INPUTCTRL_MUXNEG_Msk & (_UINT32_(value) << ADC_INPUTCTRL_MUXNEG_Pos)) /* Assignment of value for MUXNEG in the ADC_INPUTCTRL register */
+#define ADC_INPUTCTRL_MUXNEG(value)           (ADC_INPUTCTRL_MUXNEG_Msk & ((uint32_t)(value) << ADC_INPUTCTRL_MUXNEG_Pos)) /* Assignment of value for MUXNEG in the ADC_INPUTCTRL register */
 #define   ADC_INPUTCTRL_MUXNEG_PIN0_Val       _UINT32_(0x0)                                        /* (ADC_INPUTCTRL) ADC AIN0 Pin  */
 #define   ADC_INPUTCTRL_MUXNEG_PIN1_Val       _UINT32_(0x1)                                        /* (ADC_INPUTCTRL) ADC AIN1 Pin  */
 #define   ADC_INPUTCTRL_MUXNEG_PIN2_Val       _UINT32_(0x2)                                        /* (ADC_INPUTCTRL) ADC AIN2 Pin  */
@@ -269,13 +271,13 @@
 #define ADC_INPUTCTRL_MUXNEG_IOGND            (ADC_INPUTCTRL_MUXNEG_IOGND_Val << ADC_INPUTCTRL_MUXNEG_Pos) /* (ADC_INPUTCTRL) I/O Ground Position */
 #define ADC_INPUTCTRL_INPUTSCAN_Pos           _UINT32_(16)                                         /* (ADC_INPUTCTRL) Number of Input Channels Included in Scan Position */
 #define ADC_INPUTCTRL_INPUTSCAN_Msk           (_UINT32_(0xF) << ADC_INPUTCTRL_INPUTSCAN_Pos)       /* (ADC_INPUTCTRL) Number of Input Channels Included in Scan Mask */
-#define ADC_INPUTCTRL_INPUTSCAN(value)        (ADC_INPUTCTRL_INPUTSCAN_Msk & (_UINT32_(value) << ADC_INPUTCTRL_INPUTSCAN_Pos)) /* Assignment of value for INPUTSCAN in the ADC_INPUTCTRL register */
+#define ADC_INPUTCTRL_INPUTSCAN(value)        (ADC_INPUTCTRL_INPUTSCAN_Msk & ((uint32_t)(value) << ADC_INPUTCTRL_INPUTSCAN_Pos)) /* Assignment of value for INPUTSCAN in the ADC_INPUTCTRL register */
 #define ADC_INPUTCTRL_INPUTOFFSET_Pos         _UINT32_(20)                                         /* (ADC_INPUTCTRL) Positive Mux Setting Offset Position */
 #define ADC_INPUTCTRL_INPUTOFFSET_Msk         (_UINT32_(0xF) << ADC_INPUTCTRL_INPUTOFFSET_Pos)     /* (ADC_INPUTCTRL) Positive Mux Setting Offset Mask */
-#define ADC_INPUTCTRL_INPUTOFFSET(value)      (ADC_INPUTCTRL_INPUTOFFSET_Msk & (_UINT32_(value) << ADC_INPUTCTRL_INPUTOFFSET_Pos)) /* Assignment of value for INPUTOFFSET in the ADC_INPUTCTRL register */
+#define ADC_INPUTCTRL_INPUTOFFSET(value)      (ADC_INPUTCTRL_INPUTOFFSET_Msk & ((uint32_t)(value) << ADC_INPUTCTRL_INPUTOFFSET_Pos)) /* Assignment of value for INPUTOFFSET in the ADC_INPUTCTRL register */
 #define ADC_INPUTCTRL_GAIN_Pos                _UINT32_(24)                                         /* (ADC_INPUTCTRL) Gain Factor Selection Position */
 #define ADC_INPUTCTRL_GAIN_Msk                (_UINT32_(0xF) << ADC_INPUTCTRL_GAIN_Pos)            /* (ADC_INPUTCTRL) Gain Factor Selection Mask */
-#define ADC_INPUTCTRL_GAIN(value)             (ADC_INPUTCTRL_GAIN_Msk & (_UINT32_(value) << ADC_INPUTCTRL_GAIN_Pos)) /* Assignment of value for GAIN in the ADC_INPUTCTRL register */
+#define ADC_INPUTCTRL_GAIN(value)             (ADC_INPUTCTRL_GAIN_Msk & ((uint32_t)(value) << ADC_INPUTCTRL_GAIN_Pos)) /* Assignment of value for GAIN in the ADC_INPUTCTRL register */
 #define   ADC_INPUTCTRL_GAIN_1X_Val           _UINT32_(0x0)                                        /* (ADC_INPUTCTRL) 1x  */
 #define   ADC_INPUTCTRL_GAIN_2X_Val           _UINT32_(0x1)                                        /* (ADC_INPUTCTRL) 2x  */
 #define   ADC_INPUTCTRL_GAIN_4X_Val           _UINT32_(0x2)                                        /* (ADC_INPUTCTRL) 4x  */
@@ -296,16 +298,16 @@
 
 #define ADC_EVCTRL_STARTEI_Pos                _UINT8_(0)                                           /* (ADC_EVCTRL) Start Conversion Event In Position */
 #define ADC_EVCTRL_STARTEI_Msk                (_UINT8_(0x1) << ADC_EVCTRL_STARTEI_Pos)             /* (ADC_EVCTRL) Start Conversion Event In Mask */
-#define ADC_EVCTRL_STARTEI(value)             (ADC_EVCTRL_STARTEI_Msk & (_UINT8_(value) << ADC_EVCTRL_STARTEI_Pos)) /* Assignment of value for STARTEI in the ADC_EVCTRL register */
+#define ADC_EVCTRL_STARTEI(value)             (ADC_EVCTRL_STARTEI_Msk & ((uint8_t)(value) << ADC_EVCTRL_STARTEI_Pos)) /* Assignment of value for STARTEI in the ADC_EVCTRL register */
 #define ADC_EVCTRL_SYNCEI_Pos                 _UINT8_(1)                                           /* (ADC_EVCTRL) Synchronization Event In Position */
 #define ADC_EVCTRL_SYNCEI_Msk                 (_UINT8_(0x1) << ADC_EVCTRL_SYNCEI_Pos)              /* (ADC_EVCTRL) Synchronization Event In Mask */
-#define ADC_EVCTRL_SYNCEI(value)              (ADC_EVCTRL_SYNCEI_Msk & (_UINT8_(value) << ADC_EVCTRL_SYNCEI_Pos)) /* Assignment of value for SYNCEI in the ADC_EVCTRL register */
+#define ADC_EVCTRL_SYNCEI(value)              (ADC_EVCTRL_SYNCEI_Msk & ((uint8_t)(value) << ADC_EVCTRL_SYNCEI_Pos)) /* Assignment of value for SYNCEI in the ADC_EVCTRL register */
 #define ADC_EVCTRL_RESRDYEO_Pos               _UINT8_(4)                                           /* (ADC_EVCTRL) Result Ready Event Out Position */
 #define ADC_EVCTRL_RESRDYEO_Msk               (_UINT8_(0x1) << ADC_EVCTRL_RESRDYEO_Pos)            /* (ADC_EVCTRL) Result Ready Event Out Mask */
-#define ADC_EVCTRL_RESRDYEO(value)            (ADC_EVCTRL_RESRDYEO_Msk & (_UINT8_(value) << ADC_EVCTRL_RESRDYEO_Pos)) /* Assignment of value for RESRDYEO in the ADC_EVCTRL register */
+#define ADC_EVCTRL_RESRDYEO(value)            (ADC_EVCTRL_RESRDYEO_Msk & ((uint8_t)(value) << ADC_EVCTRL_RESRDYEO_Pos)) /* Assignment of value for RESRDYEO in the ADC_EVCTRL register */
 #define ADC_EVCTRL_WINMONEO_Pos               _UINT8_(5)                                           /* (ADC_EVCTRL) Window Monitor Event Out Position */
 #define ADC_EVCTRL_WINMONEO_Msk               (_UINT8_(0x1) << ADC_EVCTRL_WINMONEO_Pos)            /* (ADC_EVCTRL) Window Monitor Event Out Mask */
-#define ADC_EVCTRL_WINMONEO(value)            (ADC_EVCTRL_WINMONEO_Msk & (_UINT8_(value) << ADC_EVCTRL_WINMONEO_Pos)) /* Assignment of value for WINMONEO in the ADC_EVCTRL register */
+#define ADC_EVCTRL_WINMONEO(value)            (ADC_EVCTRL_WINMONEO_Msk & ((uint8_t)(value) << ADC_EVCTRL_WINMONEO_Pos)) /* Assignment of value for WINMONEO in the ADC_EVCTRL register */
 #define ADC_EVCTRL_Msk                        _UINT8_(0x33)                                        /* (ADC_EVCTRL) Register Mask  */
 
 
@@ -314,16 +316,16 @@
 
 #define ADC_INTENCLR_RESRDY_Pos               _UINT8_(0)                                           /* (ADC_INTENCLR) Result Ready Interrupt Enable Position */
 #define ADC_INTENCLR_RESRDY_Msk               (_UINT8_(0x1) << ADC_INTENCLR_RESRDY_Pos)            /* (ADC_INTENCLR) Result Ready Interrupt Enable Mask */
-#define ADC_INTENCLR_RESRDY(value)            (ADC_INTENCLR_RESRDY_Msk & (_UINT8_(value) << ADC_INTENCLR_RESRDY_Pos)) /* Assignment of value for RESRDY in the ADC_INTENCLR register */
+#define ADC_INTENCLR_RESRDY(value)            (ADC_INTENCLR_RESRDY_Msk & ((uint8_t)(value) << ADC_INTENCLR_RESRDY_Pos)) /* Assignment of value for RESRDY in the ADC_INTENCLR register */
 #define ADC_INTENCLR_OVERRUN_Pos              _UINT8_(1)                                           /* (ADC_INTENCLR) Overrun Interrupt Enable Position */
 #define ADC_INTENCLR_OVERRUN_Msk              (_UINT8_(0x1) << ADC_INTENCLR_OVERRUN_Pos)           /* (ADC_INTENCLR) Overrun Interrupt Enable Mask */
-#define ADC_INTENCLR_OVERRUN(value)           (ADC_INTENCLR_OVERRUN_Msk & (_UINT8_(value) << ADC_INTENCLR_OVERRUN_Pos)) /* Assignment of value for OVERRUN in the ADC_INTENCLR register */
+#define ADC_INTENCLR_OVERRUN(value)           (ADC_INTENCLR_OVERRUN_Msk & ((uint8_t)(value) << ADC_INTENCLR_OVERRUN_Pos)) /* Assignment of value for OVERRUN in the ADC_INTENCLR register */
 #define ADC_INTENCLR_WINMON_Pos               _UINT8_(2)                                           /* (ADC_INTENCLR) Window Monitor Interrupt Enable Position */
 #define ADC_INTENCLR_WINMON_Msk               (_UINT8_(0x1) << ADC_INTENCLR_WINMON_Pos)            /* (ADC_INTENCLR) Window Monitor Interrupt Enable Mask */
-#define ADC_INTENCLR_WINMON(value)            (ADC_INTENCLR_WINMON_Msk & (_UINT8_(value) << ADC_INTENCLR_WINMON_Pos)) /* Assignment of value for WINMON in the ADC_INTENCLR register */
+#define ADC_INTENCLR_WINMON(value)            (ADC_INTENCLR_WINMON_Msk & ((uint8_t)(value) << ADC_INTENCLR_WINMON_Pos)) /* Assignment of value for WINMON in the ADC_INTENCLR register */
 #define ADC_INTENCLR_SYNCRDY_Pos              _UINT8_(3)                                           /* (ADC_INTENCLR) Synchronization Ready Interrupt Enable Position */
 #define ADC_INTENCLR_SYNCRDY_Msk              (_UINT8_(0x1) << ADC_INTENCLR_SYNCRDY_Pos)           /* (ADC_INTENCLR) Synchronization Ready Interrupt Enable Mask */
-#define ADC_INTENCLR_SYNCRDY(value)           (ADC_INTENCLR_SYNCRDY_Msk & (_UINT8_(value) << ADC_INTENCLR_SYNCRDY_Pos)) /* Assignment of value for SYNCRDY in the ADC_INTENCLR register */
+#define ADC_INTENCLR_SYNCRDY(value)           (ADC_INTENCLR_SYNCRDY_Msk & ((uint8_t)(value) << ADC_INTENCLR_SYNCRDY_Pos)) /* Assignment of value for SYNCRDY in the ADC_INTENCLR register */
 #define ADC_INTENCLR_Msk                      _UINT8_(0x0F)                                        /* (ADC_INTENCLR) Register Mask  */
 
 
@@ -332,16 +334,16 @@
 
 #define ADC_INTENSET_RESRDY_Pos               _UINT8_(0)                                           /* (ADC_INTENSET) Result Ready Interrupt Enable Position */
 #define ADC_INTENSET_RESRDY_Msk               (_UINT8_(0x1) << ADC_INTENSET_RESRDY_Pos)            /* (ADC_INTENSET) Result Ready Interrupt Enable Mask */
-#define ADC_INTENSET_RESRDY(value)            (ADC_INTENSET_RESRDY_Msk & (_UINT8_(value) << ADC_INTENSET_RESRDY_Pos)) /* Assignment of value for RESRDY in the ADC_INTENSET register */
+#define ADC_INTENSET_RESRDY(value)            (ADC_INTENSET_RESRDY_Msk & ((uint8_t)(value) << ADC_INTENSET_RESRDY_Pos)) /* Assignment of value for RESRDY in the ADC_INTENSET register */
 #define ADC_INTENSET_OVERRUN_Pos              _UINT8_(1)                                           /* (ADC_INTENSET) Overrun Interrupt Enable Position */
 #define ADC_INTENSET_OVERRUN_Msk              (_UINT8_(0x1) << ADC_INTENSET_OVERRUN_Pos)           /* (ADC_INTENSET) Overrun Interrupt Enable Mask */
-#define ADC_INTENSET_OVERRUN(value)           (ADC_INTENSET_OVERRUN_Msk & (_UINT8_(value) << ADC_INTENSET_OVERRUN_Pos)) /* Assignment of value for OVERRUN in the ADC_INTENSET register */
+#define ADC_INTENSET_OVERRUN(value)           (ADC_INTENSET_OVERRUN_Msk & ((uint8_t)(value) << ADC_INTENSET_OVERRUN_Pos)) /* Assignment of value for OVERRUN in the ADC_INTENSET register */
 #define ADC_INTENSET_WINMON_Pos               _UINT8_(2)                                           /* (ADC_INTENSET) Window Monitor Interrupt Enable Position */
 #define ADC_INTENSET_WINMON_Msk               (_UINT8_(0x1) << ADC_INTENSET_WINMON_Pos)            /* (ADC_INTENSET) Window Monitor Interrupt Enable Mask */
-#define ADC_INTENSET_WINMON(value)            (ADC_INTENSET_WINMON_Msk & (_UINT8_(value) << ADC_INTENSET_WINMON_Pos)) /* Assignment of value for WINMON in the ADC_INTENSET register */
+#define ADC_INTENSET_WINMON(value)            (ADC_INTENSET_WINMON_Msk & ((uint8_t)(value) << ADC_INTENSET_WINMON_Pos)) /* Assignment of value for WINMON in the ADC_INTENSET register */
 #define ADC_INTENSET_SYNCRDY_Pos              _UINT8_(3)                                           /* (ADC_INTENSET) Synchronization Ready Interrupt Enable Position */
 #define ADC_INTENSET_SYNCRDY_Msk              (_UINT8_(0x1) << ADC_INTENSET_SYNCRDY_Pos)           /* (ADC_INTENSET) Synchronization Ready Interrupt Enable Mask */
-#define ADC_INTENSET_SYNCRDY(value)           (ADC_INTENSET_SYNCRDY_Msk & (_UINT8_(value) << ADC_INTENSET_SYNCRDY_Pos)) /* Assignment of value for SYNCRDY in the ADC_INTENSET register */
+#define ADC_INTENSET_SYNCRDY(value)           (ADC_INTENSET_SYNCRDY_Msk & ((uint8_t)(value) << ADC_INTENSET_SYNCRDY_Pos)) /* Assignment of value for SYNCRDY in the ADC_INTENSET register */
 #define ADC_INTENSET_Msk                      _UINT8_(0x0F)                                        /* (ADC_INTENSET) Register Mask  */
 
 
@@ -350,16 +352,16 @@
 
 #define ADC_INTFLAG_RESRDY_Pos                _UINT8_(0)                                           /* (ADC_INTFLAG) Result Ready Position */
 #define ADC_INTFLAG_RESRDY_Msk                (_UINT8_(0x1) << ADC_INTFLAG_RESRDY_Pos)             /* (ADC_INTFLAG) Result Ready Mask */
-#define ADC_INTFLAG_RESRDY(value)             (ADC_INTFLAG_RESRDY_Msk & (_UINT8_(value) << ADC_INTFLAG_RESRDY_Pos)) /* Assignment of value for RESRDY in the ADC_INTFLAG register */
+#define ADC_INTFLAG_RESRDY(value)             (ADC_INTFLAG_RESRDY_Msk & ((uint8_t)(value) << ADC_INTFLAG_RESRDY_Pos)) /* Assignment of value for RESRDY in the ADC_INTFLAG register */
 #define ADC_INTFLAG_OVERRUN_Pos               _UINT8_(1)                                           /* (ADC_INTFLAG) Overrun Position */
 #define ADC_INTFLAG_OVERRUN_Msk               (_UINT8_(0x1) << ADC_INTFLAG_OVERRUN_Pos)            /* (ADC_INTFLAG) Overrun Mask */
-#define ADC_INTFLAG_OVERRUN(value)            (ADC_INTFLAG_OVERRUN_Msk & (_UINT8_(value) << ADC_INTFLAG_OVERRUN_Pos)) /* Assignment of value for OVERRUN in the ADC_INTFLAG register */
+#define ADC_INTFLAG_OVERRUN(value)            (ADC_INTFLAG_OVERRUN_Msk & ((uint8_t)(value) << ADC_INTFLAG_OVERRUN_Pos)) /* Assignment of value for OVERRUN in the ADC_INTFLAG register */
 #define ADC_INTFLAG_WINMON_Pos                _UINT8_(2)                                           /* (ADC_INTFLAG) Window Monitor Position */
 #define ADC_INTFLAG_WINMON_Msk                (_UINT8_(0x1) << ADC_INTFLAG_WINMON_Pos)             /* (ADC_INTFLAG) Window Monitor Mask */
-#define ADC_INTFLAG_WINMON(value)             (ADC_INTFLAG_WINMON_Msk & (_UINT8_(value) << ADC_INTFLAG_WINMON_Pos)) /* Assignment of value for WINMON in the ADC_INTFLAG register */
+#define ADC_INTFLAG_WINMON(value)             (ADC_INTFLAG_WINMON_Msk & ((uint8_t)(value) << ADC_INTFLAG_WINMON_Pos)) /* Assignment of value for WINMON in the ADC_INTFLAG register */
 #define ADC_INTFLAG_SYNCRDY_Pos               _UINT8_(3)                                           /* (ADC_INTFLAG) Synchronization Ready Position */
 #define ADC_INTFLAG_SYNCRDY_Msk               (_UINT8_(0x1) << ADC_INTFLAG_SYNCRDY_Pos)            /* (ADC_INTFLAG) Synchronization Ready Mask */
-#define ADC_INTFLAG_SYNCRDY(value)            (ADC_INTFLAG_SYNCRDY_Msk & (_UINT8_(value) << ADC_INTFLAG_SYNCRDY_Pos)) /* Assignment of value for SYNCRDY in the ADC_INTFLAG register */
+#define ADC_INTFLAG_SYNCRDY(value)            (ADC_INTFLAG_SYNCRDY_Msk & ((uint8_t)(value) << ADC_INTFLAG_SYNCRDY_Pos)) /* Assignment of value for SYNCRDY in the ADC_INTFLAG register */
 #define ADC_INTFLAG_Msk                       _UINT8_(0x0F)                                        /* (ADC_INTFLAG) Register Mask  */
 
 
@@ -368,7 +370,7 @@
 
 #define ADC_STATUS_SYNCBUSY_Pos               _UINT8_(7)                                           /* (ADC_STATUS) Synchronization Busy Position */
 #define ADC_STATUS_SYNCBUSY_Msk               (_UINT8_(0x1) << ADC_STATUS_SYNCBUSY_Pos)            /* (ADC_STATUS) Synchronization Busy Mask */
-#define ADC_STATUS_SYNCBUSY(value)            (ADC_STATUS_SYNCBUSY_Msk & (_UINT8_(value) << ADC_STATUS_SYNCBUSY_Pos)) /* Assignment of value for SYNCBUSY in the ADC_STATUS register */
+#define ADC_STATUS_SYNCBUSY(value)            (ADC_STATUS_SYNCBUSY_Msk & ((uint8_t)(value) << ADC_STATUS_SYNCBUSY_Pos)) /* Assignment of value for SYNCBUSY in the ADC_STATUS register */
 #define ADC_STATUS_Msk                        _UINT8_(0x80)                                        /* (ADC_STATUS) Register Mask  */
 
 
@@ -377,7 +379,7 @@
 
 #define ADC_RESULT_RESULT_Pos                 _UINT16_(0)                                          /* (ADC_RESULT) Result Conversion Value Position */
 #define ADC_RESULT_RESULT_Msk                 (_UINT16_(0xFFFF) << ADC_RESULT_RESULT_Pos)          /* (ADC_RESULT) Result Conversion Value Mask */
-#define ADC_RESULT_RESULT(value)              (ADC_RESULT_RESULT_Msk & (_UINT16_(value) << ADC_RESULT_RESULT_Pos)) /* Assignment of value for RESULT in the ADC_RESULT register */
+#define ADC_RESULT_RESULT(value)              (ADC_RESULT_RESULT_Msk & ((uint16_t)(value) << ADC_RESULT_RESULT_Pos)) /* Assignment of value for RESULT in the ADC_RESULT register */
 #define ADC_RESULT_Msk                        _UINT16_(0xFFFF)                                     /* (ADC_RESULT) Register Mask  */
 
 
@@ -386,7 +388,7 @@
 
 #define ADC_WINLT_WINLT_Pos                   _UINT16_(0)                                          /* (ADC_WINLT) Window Lower Threshold Position */
 #define ADC_WINLT_WINLT_Msk                   (_UINT16_(0xFFFF) << ADC_WINLT_WINLT_Pos)            /* (ADC_WINLT) Window Lower Threshold Mask */
-#define ADC_WINLT_WINLT(value)                (ADC_WINLT_WINLT_Msk & (_UINT16_(value) << ADC_WINLT_WINLT_Pos)) /* Assignment of value for WINLT in the ADC_WINLT register */
+#define ADC_WINLT_WINLT(value)                (ADC_WINLT_WINLT_Msk & ((uint16_t)(value) << ADC_WINLT_WINLT_Pos)) /* Assignment of value for WINLT in the ADC_WINLT register */
 #define ADC_WINLT_Msk                         _UINT16_(0xFFFF)                                     /* (ADC_WINLT) Register Mask  */
 
 
@@ -395,7 +397,7 @@
 
 #define ADC_WINUT_WINUT_Pos                   _UINT16_(0)                                          /* (ADC_WINUT) Window Upper Threshold Position */
 #define ADC_WINUT_WINUT_Msk                   (_UINT16_(0xFFFF) << ADC_WINUT_WINUT_Pos)            /* (ADC_WINUT) Window Upper Threshold Mask */
-#define ADC_WINUT_WINUT(value)                (ADC_WINUT_WINUT_Msk & (_UINT16_(value) << ADC_WINUT_WINUT_Pos)) /* Assignment of value for WINUT in the ADC_WINUT register */
+#define ADC_WINUT_WINUT(value)                (ADC_WINUT_WINUT_Msk & ((uint16_t)(value) << ADC_WINUT_WINUT_Pos)) /* Assignment of value for WINUT in the ADC_WINUT register */
 #define ADC_WINUT_Msk                         _UINT16_(0xFFFF)                                     /* (ADC_WINUT) Register Mask  */
 
 
@@ -404,7 +406,7 @@
 
 #define ADC_GAINCORR_GAINCORR_Pos             _UINT16_(0)                                          /* (ADC_GAINCORR) Gain Correction Value Position */
 #define ADC_GAINCORR_GAINCORR_Msk             (_UINT16_(0xFFF) << ADC_GAINCORR_GAINCORR_Pos)       /* (ADC_GAINCORR) Gain Correction Value Mask */
-#define ADC_GAINCORR_GAINCORR(value)          (ADC_GAINCORR_GAINCORR_Msk & (_UINT16_(value) << ADC_GAINCORR_GAINCORR_Pos)) /* Assignment of value for GAINCORR in the ADC_GAINCORR register */
+#define ADC_GAINCORR_GAINCORR(value)          (ADC_GAINCORR_GAINCORR_Msk & ((uint16_t)(value) << ADC_GAINCORR_GAINCORR_Pos)) /* Assignment of value for GAINCORR in the ADC_GAINCORR register */
 #define ADC_GAINCORR_Msk                      _UINT16_(0x0FFF)                                     /* (ADC_GAINCORR) Register Mask  */
 
 
@@ -413,7 +415,7 @@
 
 #define ADC_OFFSETCORR_OFFSETCORR_Pos         _UINT16_(0)                                          /* (ADC_OFFSETCORR) Offset Correction Value Position */
 #define ADC_OFFSETCORR_OFFSETCORR_Msk         (_UINT16_(0xFFF) << ADC_OFFSETCORR_OFFSETCORR_Pos)   /* (ADC_OFFSETCORR) Offset Correction Value Mask */
-#define ADC_OFFSETCORR_OFFSETCORR(value)      (ADC_OFFSETCORR_OFFSETCORR_Msk & (_UINT16_(value) << ADC_OFFSETCORR_OFFSETCORR_Pos)) /* Assignment of value for OFFSETCORR in the ADC_OFFSETCORR register */
+#define ADC_OFFSETCORR_OFFSETCORR(value)      (ADC_OFFSETCORR_OFFSETCORR_Msk & ((uint16_t)(value) << ADC_OFFSETCORR_OFFSETCORR_Pos)) /* Assignment of value for OFFSETCORR in the ADC_OFFSETCORR register */
 #define ADC_OFFSETCORR_Msk                    _UINT16_(0x0FFF)                                     /* (ADC_OFFSETCORR) Register Mask  */
 
 
@@ -422,10 +424,10 @@
 
 #define ADC_CALIB_LINEARITY_CAL_Pos           _UINT16_(0)                                          /* (ADC_CALIB) Linearity Calibration Value Position */
 #define ADC_CALIB_LINEARITY_CAL_Msk           (_UINT16_(0xFF) << ADC_CALIB_LINEARITY_CAL_Pos)      /* (ADC_CALIB) Linearity Calibration Value Mask */
-#define ADC_CALIB_LINEARITY_CAL(value)        (ADC_CALIB_LINEARITY_CAL_Msk & (_UINT16_(value) << ADC_CALIB_LINEARITY_CAL_Pos)) /* Assignment of value for LINEARITY_CAL in the ADC_CALIB register */
+#define ADC_CALIB_LINEARITY_CAL(value)        (ADC_CALIB_LINEARITY_CAL_Msk & ((uint16_t)(value) << ADC_CALIB_LINEARITY_CAL_Pos)) /* Assignment of value for LINEARITY_CAL in the ADC_CALIB register */
 #define ADC_CALIB_BIAS_CAL_Pos                _UINT16_(8)                                          /* (ADC_CALIB) Bias Calibration Value Position */
 #define ADC_CALIB_BIAS_CAL_Msk                (_UINT16_(0x7) << ADC_CALIB_BIAS_CAL_Pos)            /* (ADC_CALIB) Bias Calibration Value Mask */
-#define ADC_CALIB_BIAS_CAL(value)             (ADC_CALIB_BIAS_CAL_Msk & (_UINT16_(value) << ADC_CALIB_BIAS_CAL_Pos)) /* Assignment of value for BIAS_CAL in the ADC_CALIB register */
+#define ADC_CALIB_BIAS_CAL(value)             (ADC_CALIB_BIAS_CAL_Msk & ((uint16_t)(value) << ADC_CALIB_BIAS_CAL_Pos)) /* Assignment of value for BIAS_CAL in the ADC_CALIB register */
 #define ADC_CALIB_Msk                         _UINT16_(0x07FF)                                     /* (ADC_CALIB) Register Mask  */
 
 
@@ -434,7 +436,7 @@
 
 #define ADC_DBGCTRL_DBGRUN_Pos                _UINT8_(0)                                           /* (ADC_DBGCTRL) Debug Run Position */
 #define ADC_DBGCTRL_DBGRUN_Msk                (_UINT8_(0x1) << ADC_DBGCTRL_DBGRUN_Pos)             /* (ADC_DBGCTRL) Debug Run Mask */
-#define ADC_DBGCTRL_DBGRUN(value)             (ADC_DBGCTRL_DBGRUN_Msk & (_UINT8_(value) << ADC_DBGCTRL_DBGRUN_Pos)) /* Assignment of value for DBGRUN in the ADC_DBGCTRL register */
+#define ADC_DBGCTRL_DBGRUN(value)             (ADC_DBGCTRL_DBGRUN_Msk & ((uint8_t)(value) << ADC_DBGCTRL_DBGRUN_Pos)) /* Assignment of value for DBGRUN in the ADC_DBGCTRL register */
 #define ADC_DBGCTRL_Msk                       _UINT8_(0x01)                                        /* (ADC_DBGCTRL) Register Mask  */
 
 

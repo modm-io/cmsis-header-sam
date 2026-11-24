@@ -23,7 +23,9 @@
 #ifndef _SAMD21_NVMCTRL_COMPONENT_H_
 #define _SAMD21_NVMCTRL_COMPONENT_H_
 
+#if !defined(DISABLE_CMSIS)
 #include "core_cm0plus.h"
+#endif /* !defined(DISABLE_CMSIS) */
 
 /* ************************************************************************** */
 /*                    SOFTWARE API DEFINITION FOR NVMCTRL                     */
@@ -34,7 +36,7 @@
 
 #define NVMCTRL_CTRLA_CMD_Pos                 _UINT16_(0)                                          /* (NVMCTRL_CTRLA) Command Position */
 #define NVMCTRL_CTRLA_CMD_Msk                 (_UINT16_(0x7F) << NVMCTRL_CTRLA_CMD_Pos)            /* (NVMCTRL_CTRLA) Command Mask */
-#define NVMCTRL_CTRLA_CMD(value)              (NVMCTRL_CTRLA_CMD_Msk & (_UINT16_(value) << NVMCTRL_CTRLA_CMD_Pos)) /* Assignment of value for CMD in the NVMCTRL_CTRLA register */
+#define NVMCTRL_CTRLA_CMD(value)              (NVMCTRL_CTRLA_CMD_Msk & ((uint16_t)(value) << NVMCTRL_CTRLA_CMD_Pos)) /* Assignment of value for CMD in the NVMCTRL_CTRLA register */
 #define   NVMCTRL_CTRLA_CMD_ER_Val            _UINT16_(0x2)                                        /* (NVMCTRL_CTRLA) Erase Row - Erases the row addressed by the ADDR register.  */
 #define   NVMCTRL_CTRLA_CMD_WP_Val            _UINT16_(0x4)                                        /* (NVMCTRL_CTRLA) Write Page - Writes the contents of the page buffer to the page addressed by the ADDR register.  */
 #define   NVMCTRL_CTRLA_CMD_EAR_Val           _UINT16_(0x5)                                        /* (NVMCTRL_CTRLA) Erase Auxiliary Row - Erases the auxiliary row addressed by the ADDR register. This command can be given only when the security bit is not set and only to the user configuration row.  */
@@ -63,7 +65,7 @@
 #define NVMCTRL_CTRLA_CMD_INVALL              (NVMCTRL_CTRLA_CMD_INVALL_Val << NVMCTRL_CTRLA_CMD_Pos) /* (NVMCTRL_CTRLA) Invalidates all cache lines. Position */
 #define NVMCTRL_CTRLA_CMDEX_Pos               _UINT16_(8)                                          /* (NVMCTRL_CTRLA) Command Execution Position */
 #define NVMCTRL_CTRLA_CMDEX_Msk               (_UINT16_(0xFF) << NVMCTRL_CTRLA_CMDEX_Pos)          /* (NVMCTRL_CTRLA) Command Execution Mask */
-#define NVMCTRL_CTRLA_CMDEX(value)            (NVMCTRL_CTRLA_CMDEX_Msk & (_UINT16_(value) << NVMCTRL_CTRLA_CMDEX_Pos)) /* Assignment of value for CMDEX in the NVMCTRL_CTRLA register */
+#define NVMCTRL_CTRLA_CMDEX(value)            (NVMCTRL_CTRLA_CMDEX_Msk & ((uint16_t)(value) << NVMCTRL_CTRLA_CMDEX_Pos)) /* Assignment of value for CMDEX in the NVMCTRL_CTRLA register */
 #define   NVMCTRL_CTRLA_CMDEX_KEY_Val         _UINT16_(0xA5)                                       /* (NVMCTRL_CTRLA) Execution Key  */
 #define NVMCTRL_CTRLA_CMDEX_KEY               (NVMCTRL_CTRLA_CMDEX_KEY_Val << NVMCTRL_CTRLA_CMDEX_Pos) /* (NVMCTRL_CTRLA) Execution Key Position */
 #define NVMCTRL_CTRLA_Msk                     _UINT16_(0xFF7F)                                     /* (NVMCTRL_CTRLA) Register Mask  */
@@ -74,7 +76,7 @@
 
 #define NVMCTRL_CTRLB_RWS_Pos                 _UINT32_(1)                                          /* (NVMCTRL_CTRLB) NVM Read Wait States Position */
 #define NVMCTRL_CTRLB_RWS_Msk                 (_UINT32_(0xF) << NVMCTRL_CTRLB_RWS_Pos)             /* (NVMCTRL_CTRLB) NVM Read Wait States Mask */
-#define NVMCTRL_CTRLB_RWS(value)              (NVMCTRL_CTRLB_RWS_Msk & (_UINT32_(value) << NVMCTRL_CTRLB_RWS_Pos)) /* Assignment of value for RWS in the NVMCTRL_CTRLB register */
+#define NVMCTRL_CTRLB_RWS(value)              (NVMCTRL_CTRLB_RWS_Msk & ((uint32_t)(value) << NVMCTRL_CTRLB_RWS_Pos)) /* Assignment of value for RWS in the NVMCTRL_CTRLB register */
 #define   NVMCTRL_CTRLB_RWS_SINGLE_Val        _UINT32_(0x0)                                        /* (NVMCTRL_CTRLB) Single Auto Wait State  */
 #define   NVMCTRL_CTRLB_RWS_HALF_Val          _UINT32_(0x1)                                        /* (NVMCTRL_CTRLB) Half Auto Wait State  */
 #define   NVMCTRL_CTRLB_RWS_DUAL_Val          _UINT32_(0x2)                                        /* (NVMCTRL_CTRLB) Dual Auto Wait State  */
@@ -83,10 +85,10 @@
 #define NVMCTRL_CTRLB_RWS_DUAL                (NVMCTRL_CTRLB_RWS_DUAL_Val << NVMCTRL_CTRLB_RWS_Pos) /* (NVMCTRL_CTRLB) Dual Auto Wait State Position */
 #define NVMCTRL_CTRLB_MANW_Pos                _UINT32_(7)                                          /* (NVMCTRL_CTRLB) Manual Write Position */
 #define NVMCTRL_CTRLB_MANW_Msk                (_UINT32_(0x1) << NVMCTRL_CTRLB_MANW_Pos)            /* (NVMCTRL_CTRLB) Manual Write Mask */
-#define NVMCTRL_CTRLB_MANW(value)             (NVMCTRL_CTRLB_MANW_Msk & (_UINT32_(value) << NVMCTRL_CTRLB_MANW_Pos)) /* Assignment of value for MANW in the NVMCTRL_CTRLB register */
+#define NVMCTRL_CTRLB_MANW(value)             (NVMCTRL_CTRLB_MANW_Msk & ((uint32_t)(value) << NVMCTRL_CTRLB_MANW_Pos)) /* Assignment of value for MANW in the NVMCTRL_CTRLB register */
 #define NVMCTRL_CTRLB_SLEEPPRM_Pos            _UINT32_(8)                                          /* (NVMCTRL_CTRLB) Power Reduction Mode during Sleep Position */
 #define NVMCTRL_CTRLB_SLEEPPRM_Msk            (_UINT32_(0x3) << NVMCTRL_CTRLB_SLEEPPRM_Pos)        /* (NVMCTRL_CTRLB) Power Reduction Mode during Sleep Mask */
-#define NVMCTRL_CTRLB_SLEEPPRM(value)         (NVMCTRL_CTRLB_SLEEPPRM_Msk & (_UINT32_(value) << NVMCTRL_CTRLB_SLEEPPRM_Pos)) /* Assignment of value for SLEEPPRM in the NVMCTRL_CTRLB register */
+#define NVMCTRL_CTRLB_SLEEPPRM(value)         (NVMCTRL_CTRLB_SLEEPPRM_Msk & ((uint32_t)(value) << NVMCTRL_CTRLB_SLEEPPRM_Pos)) /* Assignment of value for SLEEPPRM in the NVMCTRL_CTRLB register */
 #define   NVMCTRL_CTRLB_SLEEPPRM_WAKEONACCESS_Val _UINT32_(0x0)                                        /* (NVMCTRL_CTRLB) NVM block enters low-power mode when entering sleep.NVM block exits low-power mode upon first access.  */
 #define   NVMCTRL_CTRLB_SLEEPPRM_WAKEUPINSTANT_Val _UINT32_(0x1)                                        /* (NVMCTRL_CTRLB) NVM block enters low-power mode when entering sleep.NVM block exits low-power mode when exiting sleep.  */
 #define   NVMCTRL_CTRLB_SLEEPPRM_DISABLED_Val _UINT32_(0x3)                                        /* (NVMCTRL_CTRLB) Auto power reduction disabled.  */
@@ -95,7 +97,7 @@
 #define NVMCTRL_CTRLB_SLEEPPRM_DISABLED       (NVMCTRL_CTRLB_SLEEPPRM_DISABLED_Val << NVMCTRL_CTRLB_SLEEPPRM_Pos) /* (NVMCTRL_CTRLB) Auto power reduction disabled. Position */
 #define NVMCTRL_CTRLB_READMODE_Pos            _UINT32_(16)                                         /* (NVMCTRL_CTRLB) NVMCTRL Read Mode Position */
 #define NVMCTRL_CTRLB_READMODE_Msk            (_UINT32_(0x3) << NVMCTRL_CTRLB_READMODE_Pos)        /* (NVMCTRL_CTRLB) NVMCTRL Read Mode Mask */
-#define NVMCTRL_CTRLB_READMODE(value)         (NVMCTRL_CTRLB_READMODE_Msk & (_UINT32_(value) << NVMCTRL_CTRLB_READMODE_Pos)) /* Assignment of value for READMODE in the NVMCTRL_CTRLB register */
+#define NVMCTRL_CTRLB_READMODE(value)         (NVMCTRL_CTRLB_READMODE_Msk & ((uint32_t)(value) << NVMCTRL_CTRLB_READMODE_Pos)) /* Assignment of value for READMODE in the NVMCTRL_CTRLB register */
 #define   NVMCTRL_CTRLB_READMODE_NO_MISS_PENALTY_Val _UINT32_(0x0)                                        /* (NVMCTRL_CTRLB) The NVM Controller (cache system) does not insert wait states on a cache miss. Gives the best system performance.  */
 #define   NVMCTRL_CTRLB_READMODE_LOW_POWER_Val _UINT32_(0x1)                                        /* (NVMCTRL_CTRLB) Reduces power consumption of the cache system, but inserts a wait state each time there is a cache miss. This mode may not be relevant if CPU performance is required, as the application will be stalled and may lead to increase run time.  */
 #define   NVMCTRL_CTRLB_READMODE_DETERMINISTIC_Val _UINT32_(0x2)                                        /* (NVMCTRL_CTRLB) The cache system ensures that a cache hit or miss takes the same amount of time, determined by the number of programmed flash wait states. This mode can be used for real-time applications that require deterministic execution timings.  */
@@ -104,7 +106,7 @@
 #define NVMCTRL_CTRLB_READMODE_DETERMINISTIC  (NVMCTRL_CTRLB_READMODE_DETERMINISTIC_Val << NVMCTRL_CTRLB_READMODE_Pos) /* (NVMCTRL_CTRLB) The cache system ensures that a cache hit or miss takes the same amount of time, determined by the number of programmed flash wait states. This mode can be used for real-time applications that require deterministic execution timings. Position */
 #define NVMCTRL_CTRLB_CACHEDIS_Pos            _UINT32_(18)                                         /* (NVMCTRL_CTRLB) Cache Disable Position */
 #define NVMCTRL_CTRLB_CACHEDIS_Msk            (_UINT32_(0x1) << NVMCTRL_CTRLB_CACHEDIS_Pos)        /* (NVMCTRL_CTRLB) Cache Disable Mask */
-#define NVMCTRL_CTRLB_CACHEDIS(value)         (NVMCTRL_CTRLB_CACHEDIS_Msk & (_UINT32_(value) << NVMCTRL_CTRLB_CACHEDIS_Pos)) /* Assignment of value for CACHEDIS in the NVMCTRL_CTRLB register */
+#define NVMCTRL_CTRLB_CACHEDIS(value)         (NVMCTRL_CTRLB_CACHEDIS_Msk & ((uint32_t)(value) << NVMCTRL_CTRLB_CACHEDIS_Pos)) /* Assignment of value for CACHEDIS in the NVMCTRL_CTRLB register */
 #define NVMCTRL_CTRLB_Msk                     _UINT32_(0x0007039E)                                 /* (NVMCTRL_CTRLB) Register Mask  */
 
 
@@ -113,10 +115,10 @@
 
 #define NVMCTRL_PARAM_NVMP_Pos                _UINT32_(0)                                          /* (NVMCTRL_PARAM) NVM Pages Position */
 #define NVMCTRL_PARAM_NVMP_Msk                (_UINT32_(0xFFFF) << NVMCTRL_PARAM_NVMP_Pos)         /* (NVMCTRL_PARAM) NVM Pages Mask */
-#define NVMCTRL_PARAM_NVMP(value)             (NVMCTRL_PARAM_NVMP_Msk & (_UINT32_(value) << NVMCTRL_PARAM_NVMP_Pos)) /* Assignment of value for NVMP in the NVMCTRL_PARAM register */
+#define NVMCTRL_PARAM_NVMP(value)             (NVMCTRL_PARAM_NVMP_Msk & ((uint32_t)(value) << NVMCTRL_PARAM_NVMP_Pos)) /* Assignment of value for NVMP in the NVMCTRL_PARAM register */
 #define NVMCTRL_PARAM_PSZ_Pos                 _UINT32_(16)                                         /* (NVMCTRL_PARAM) Page Size Position */
 #define NVMCTRL_PARAM_PSZ_Msk                 (_UINT32_(0x7) << NVMCTRL_PARAM_PSZ_Pos)             /* (NVMCTRL_PARAM) Page Size Mask */
-#define NVMCTRL_PARAM_PSZ(value)              (NVMCTRL_PARAM_PSZ_Msk & (_UINT32_(value) << NVMCTRL_PARAM_PSZ_Pos)) /* Assignment of value for PSZ in the NVMCTRL_PARAM register */
+#define NVMCTRL_PARAM_PSZ(value)              (NVMCTRL_PARAM_PSZ_Msk & ((uint32_t)(value) << NVMCTRL_PARAM_PSZ_Pos)) /* Assignment of value for PSZ in the NVMCTRL_PARAM register */
 #define   NVMCTRL_PARAM_PSZ_8_Val             _UINT32_(0x0)                                        /* (NVMCTRL_PARAM) 8 bytes  */
 #define   NVMCTRL_PARAM_PSZ_16_Val            _UINT32_(0x1)                                        /* (NVMCTRL_PARAM) 16 bytes  */
 #define   NVMCTRL_PARAM_PSZ_32_Val            _UINT32_(0x2)                                        /* (NVMCTRL_PARAM) 32 bytes  */
@@ -141,10 +143,10 @@
 
 #define NVMCTRL_INTENCLR_READY_Pos            _UINT8_(0)                                           /* (NVMCTRL_INTENCLR) NVM Ready Interrupt Enable Position */
 #define NVMCTRL_INTENCLR_READY_Msk            (_UINT8_(0x1) << NVMCTRL_INTENCLR_READY_Pos)         /* (NVMCTRL_INTENCLR) NVM Ready Interrupt Enable Mask */
-#define NVMCTRL_INTENCLR_READY(value)         (NVMCTRL_INTENCLR_READY_Msk & (_UINT8_(value) << NVMCTRL_INTENCLR_READY_Pos)) /* Assignment of value for READY in the NVMCTRL_INTENCLR register */
+#define NVMCTRL_INTENCLR_READY(value)         (NVMCTRL_INTENCLR_READY_Msk & ((uint8_t)(value) << NVMCTRL_INTENCLR_READY_Pos)) /* Assignment of value for READY in the NVMCTRL_INTENCLR register */
 #define NVMCTRL_INTENCLR_ERROR_Pos            _UINT8_(1)                                           /* (NVMCTRL_INTENCLR) Error Interrupt Enable Position */
 #define NVMCTRL_INTENCLR_ERROR_Msk            (_UINT8_(0x1) << NVMCTRL_INTENCLR_ERROR_Pos)         /* (NVMCTRL_INTENCLR) Error Interrupt Enable Mask */
-#define NVMCTRL_INTENCLR_ERROR(value)         (NVMCTRL_INTENCLR_ERROR_Msk & (_UINT8_(value) << NVMCTRL_INTENCLR_ERROR_Pos)) /* Assignment of value for ERROR in the NVMCTRL_INTENCLR register */
+#define NVMCTRL_INTENCLR_ERROR(value)         (NVMCTRL_INTENCLR_ERROR_Msk & ((uint8_t)(value) << NVMCTRL_INTENCLR_ERROR_Pos)) /* Assignment of value for ERROR in the NVMCTRL_INTENCLR register */
 #define NVMCTRL_INTENCLR_Msk                  _UINT8_(0x03)                                        /* (NVMCTRL_INTENCLR) Register Mask  */
 
 
@@ -153,10 +155,10 @@
 
 #define NVMCTRL_INTENSET_READY_Pos            _UINT8_(0)                                           /* (NVMCTRL_INTENSET) NVM Ready Interrupt Enable Position */
 #define NVMCTRL_INTENSET_READY_Msk            (_UINT8_(0x1) << NVMCTRL_INTENSET_READY_Pos)         /* (NVMCTRL_INTENSET) NVM Ready Interrupt Enable Mask */
-#define NVMCTRL_INTENSET_READY(value)         (NVMCTRL_INTENSET_READY_Msk & (_UINT8_(value) << NVMCTRL_INTENSET_READY_Pos)) /* Assignment of value for READY in the NVMCTRL_INTENSET register */
+#define NVMCTRL_INTENSET_READY(value)         (NVMCTRL_INTENSET_READY_Msk & ((uint8_t)(value) << NVMCTRL_INTENSET_READY_Pos)) /* Assignment of value for READY in the NVMCTRL_INTENSET register */
 #define NVMCTRL_INTENSET_ERROR_Pos            _UINT8_(1)                                           /* (NVMCTRL_INTENSET) Error Interrupt Enable Position */
 #define NVMCTRL_INTENSET_ERROR_Msk            (_UINT8_(0x1) << NVMCTRL_INTENSET_ERROR_Pos)         /* (NVMCTRL_INTENSET) Error Interrupt Enable Mask */
-#define NVMCTRL_INTENSET_ERROR(value)         (NVMCTRL_INTENSET_ERROR_Msk & (_UINT8_(value) << NVMCTRL_INTENSET_ERROR_Pos)) /* Assignment of value for ERROR in the NVMCTRL_INTENSET register */
+#define NVMCTRL_INTENSET_ERROR(value)         (NVMCTRL_INTENSET_ERROR_Msk & ((uint8_t)(value) << NVMCTRL_INTENSET_ERROR_Pos)) /* Assignment of value for ERROR in the NVMCTRL_INTENSET register */
 #define NVMCTRL_INTENSET_Msk                  _UINT8_(0x03)                                        /* (NVMCTRL_INTENSET) Register Mask  */
 
 
@@ -165,10 +167,10 @@
 
 #define NVMCTRL_INTFLAG_READY_Pos             _UINT8_(0)                                           /* (NVMCTRL_INTFLAG) NVM Ready Position */
 #define NVMCTRL_INTFLAG_READY_Msk             (_UINT8_(0x1) << NVMCTRL_INTFLAG_READY_Pos)          /* (NVMCTRL_INTFLAG) NVM Ready Mask */
-#define NVMCTRL_INTFLAG_READY(value)          (NVMCTRL_INTFLAG_READY_Msk & (_UINT8_(value) << NVMCTRL_INTFLAG_READY_Pos)) /* Assignment of value for READY in the NVMCTRL_INTFLAG register */
+#define NVMCTRL_INTFLAG_READY(value)          (NVMCTRL_INTFLAG_READY_Msk & ((uint8_t)(value) << NVMCTRL_INTFLAG_READY_Pos)) /* Assignment of value for READY in the NVMCTRL_INTFLAG register */
 #define NVMCTRL_INTFLAG_ERROR_Pos             _UINT8_(1)                                           /* (NVMCTRL_INTFLAG) Error Position */
 #define NVMCTRL_INTFLAG_ERROR_Msk             (_UINT8_(0x1) << NVMCTRL_INTFLAG_ERROR_Pos)          /* (NVMCTRL_INTFLAG) Error Mask */
-#define NVMCTRL_INTFLAG_ERROR(value)          (NVMCTRL_INTFLAG_ERROR_Msk & (_UINT8_(value) << NVMCTRL_INTFLAG_ERROR_Pos)) /* Assignment of value for ERROR in the NVMCTRL_INTFLAG register */
+#define NVMCTRL_INTFLAG_ERROR(value)          (NVMCTRL_INTFLAG_ERROR_Msk & ((uint8_t)(value) << NVMCTRL_INTFLAG_ERROR_Pos)) /* Assignment of value for ERROR in the NVMCTRL_INTFLAG register */
 #define NVMCTRL_INTFLAG_Msk                   _UINT8_(0x03)                                        /* (NVMCTRL_INTFLAG) Register Mask  */
 
 
@@ -177,22 +179,22 @@
 
 #define NVMCTRL_STATUS_PRM_Pos                _UINT16_(0)                                          /* (NVMCTRL_STATUS) Power Reduction Mode Position */
 #define NVMCTRL_STATUS_PRM_Msk                (_UINT16_(0x1) << NVMCTRL_STATUS_PRM_Pos)            /* (NVMCTRL_STATUS) Power Reduction Mode Mask */
-#define NVMCTRL_STATUS_PRM(value)             (NVMCTRL_STATUS_PRM_Msk & (_UINT16_(value) << NVMCTRL_STATUS_PRM_Pos)) /* Assignment of value for PRM in the NVMCTRL_STATUS register */
+#define NVMCTRL_STATUS_PRM(value)             (NVMCTRL_STATUS_PRM_Msk & ((uint16_t)(value) << NVMCTRL_STATUS_PRM_Pos)) /* Assignment of value for PRM in the NVMCTRL_STATUS register */
 #define NVMCTRL_STATUS_LOAD_Pos               _UINT16_(1)                                          /* (NVMCTRL_STATUS) NVM Page Buffer Active Loading Position */
 #define NVMCTRL_STATUS_LOAD_Msk               (_UINT16_(0x1) << NVMCTRL_STATUS_LOAD_Pos)           /* (NVMCTRL_STATUS) NVM Page Buffer Active Loading Mask */
-#define NVMCTRL_STATUS_LOAD(value)            (NVMCTRL_STATUS_LOAD_Msk & (_UINT16_(value) << NVMCTRL_STATUS_LOAD_Pos)) /* Assignment of value for LOAD in the NVMCTRL_STATUS register */
+#define NVMCTRL_STATUS_LOAD(value)            (NVMCTRL_STATUS_LOAD_Msk & ((uint16_t)(value) << NVMCTRL_STATUS_LOAD_Pos)) /* Assignment of value for LOAD in the NVMCTRL_STATUS register */
 #define NVMCTRL_STATUS_PROGE_Pos              _UINT16_(2)                                          /* (NVMCTRL_STATUS) Programming Error Status Position */
 #define NVMCTRL_STATUS_PROGE_Msk              (_UINT16_(0x1) << NVMCTRL_STATUS_PROGE_Pos)          /* (NVMCTRL_STATUS) Programming Error Status Mask */
-#define NVMCTRL_STATUS_PROGE(value)           (NVMCTRL_STATUS_PROGE_Msk & (_UINT16_(value) << NVMCTRL_STATUS_PROGE_Pos)) /* Assignment of value for PROGE in the NVMCTRL_STATUS register */
+#define NVMCTRL_STATUS_PROGE(value)           (NVMCTRL_STATUS_PROGE_Msk & ((uint16_t)(value) << NVMCTRL_STATUS_PROGE_Pos)) /* Assignment of value for PROGE in the NVMCTRL_STATUS register */
 #define NVMCTRL_STATUS_LOCKE_Pos              _UINT16_(3)                                          /* (NVMCTRL_STATUS) Lock Error Status Position */
 #define NVMCTRL_STATUS_LOCKE_Msk              (_UINT16_(0x1) << NVMCTRL_STATUS_LOCKE_Pos)          /* (NVMCTRL_STATUS) Lock Error Status Mask */
-#define NVMCTRL_STATUS_LOCKE(value)           (NVMCTRL_STATUS_LOCKE_Msk & (_UINT16_(value) << NVMCTRL_STATUS_LOCKE_Pos)) /* Assignment of value for LOCKE in the NVMCTRL_STATUS register */
+#define NVMCTRL_STATUS_LOCKE(value)           (NVMCTRL_STATUS_LOCKE_Msk & ((uint16_t)(value) << NVMCTRL_STATUS_LOCKE_Pos)) /* Assignment of value for LOCKE in the NVMCTRL_STATUS register */
 #define NVMCTRL_STATUS_NVME_Pos               _UINT16_(4)                                          /* (NVMCTRL_STATUS) NVM Error Position */
 #define NVMCTRL_STATUS_NVME_Msk               (_UINT16_(0x1) << NVMCTRL_STATUS_NVME_Pos)           /* (NVMCTRL_STATUS) NVM Error Mask */
-#define NVMCTRL_STATUS_NVME(value)            (NVMCTRL_STATUS_NVME_Msk & (_UINT16_(value) << NVMCTRL_STATUS_NVME_Pos)) /* Assignment of value for NVME in the NVMCTRL_STATUS register */
+#define NVMCTRL_STATUS_NVME(value)            (NVMCTRL_STATUS_NVME_Msk & ((uint16_t)(value) << NVMCTRL_STATUS_NVME_Pos)) /* Assignment of value for NVME in the NVMCTRL_STATUS register */
 #define NVMCTRL_STATUS_SB_Pos                 _UINT16_(8)                                          /* (NVMCTRL_STATUS) Security Bit Status Position */
 #define NVMCTRL_STATUS_SB_Msk                 (_UINT16_(0x1) << NVMCTRL_STATUS_SB_Pos)             /* (NVMCTRL_STATUS) Security Bit Status Mask */
-#define NVMCTRL_STATUS_SB(value)              (NVMCTRL_STATUS_SB_Msk & (_UINT16_(value) << NVMCTRL_STATUS_SB_Pos)) /* Assignment of value for SB in the NVMCTRL_STATUS register */
+#define NVMCTRL_STATUS_SB(value)              (NVMCTRL_STATUS_SB_Msk & ((uint16_t)(value) << NVMCTRL_STATUS_SB_Pos)) /* Assignment of value for SB in the NVMCTRL_STATUS register */
 #define NVMCTRL_STATUS_Msk                    _UINT16_(0x011F)                                     /* (NVMCTRL_STATUS) Register Mask  */
 
 
@@ -201,14 +203,14 @@
 
 #define NVMCTRL_ADDR_ADDR_Pos                 _UINT32_(0)                                          /* (NVMCTRL_ADDR) NVM Address Position */
 #define NVMCTRL_ADDR_ADDR_Msk                 (_UINT32_(0x3FFFFF) << NVMCTRL_ADDR_ADDR_Pos)        /* (NVMCTRL_ADDR) NVM Address Mask */
-#define NVMCTRL_ADDR_ADDR(value)              (NVMCTRL_ADDR_ADDR_Msk & (_UINT32_(value) << NVMCTRL_ADDR_ADDR_Pos)) /* Assignment of value for ADDR in the NVMCTRL_ADDR register */
+#define NVMCTRL_ADDR_ADDR(value)              (NVMCTRL_ADDR_ADDR_Msk & ((uint32_t)(value) << NVMCTRL_ADDR_ADDR_Pos)) /* Assignment of value for ADDR in the NVMCTRL_ADDR register */
 #define NVMCTRL_ADDR_Msk                      _UINT32_(0x003FFFFF)                                 /* (NVMCTRL_ADDR) Register Mask  */
 
 
 /* -------- NVMCTRL_LOCK : (NVMCTRL Offset: 0x20) (R/W 16) Lock Section -------- */
 #define NVMCTRL_LOCK_LOCK_Pos                 _UINT16_(0)                                          /* (NVMCTRL_LOCK) Region Lock Bits Position */
 #define NVMCTRL_LOCK_LOCK_Msk                 (_UINT16_(0xFFFF) << NVMCTRL_LOCK_LOCK_Pos)          /* (NVMCTRL_LOCK) Region Lock Bits Mask */
-#define NVMCTRL_LOCK_LOCK(value)              (NVMCTRL_LOCK_LOCK_Msk & (_UINT16_(value) << NVMCTRL_LOCK_LOCK_Pos)) /* Assignment of value for LOCK in the NVMCTRL_LOCK register */
+#define NVMCTRL_LOCK_LOCK(value)              (NVMCTRL_LOCK_LOCK_Msk & ((uint16_t)(value) << NVMCTRL_LOCK_LOCK_Pos)) /* Assignment of value for LOCK in the NVMCTRL_LOCK register */
 #define NVMCTRL_LOCK_Msk                      _UINT16_(0xFFFF)                                     /* (NVMCTRL_LOCK) Register Mask  */
 
 

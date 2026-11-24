@@ -23,7 +23,9 @@
 #ifndef _SAMD21_DAC_COMPONENT_H_
 #define _SAMD21_DAC_COMPONENT_H_
 
+#if !defined(DISABLE_CMSIS)
 #include "core_cm0plus.h"
+#endif /* !defined(DISABLE_CMSIS) */
 
 /* ************************************************************************** */
 /*                      SOFTWARE API DEFINITION FOR DAC                       */
@@ -34,13 +36,13 @@
 
 #define DAC_CTRLA_SWRST_Pos                   _UINT8_(0)                                           /* (DAC_CTRLA) Software Reset Position */
 #define DAC_CTRLA_SWRST_Msk                   (_UINT8_(0x1) << DAC_CTRLA_SWRST_Pos)                /* (DAC_CTRLA) Software Reset Mask */
-#define DAC_CTRLA_SWRST(value)                (DAC_CTRLA_SWRST_Msk & (_UINT8_(value) << DAC_CTRLA_SWRST_Pos)) /* Assignment of value for SWRST in the DAC_CTRLA register */
+#define DAC_CTRLA_SWRST(value)                (DAC_CTRLA_SWRST_Msk & ((uint8_t)(value) << DAC_CTRLA_SWRST_Pos)) /* Assignment of value for SWRST in the DAC_CTRLA register */
 #define DAC_CTRLA_ENABLE_Pos                  _UINT8_(1)                                           /* (DAC_CTRLA) Enable Position */
 #define DAC_CTRLA_ENABLE_Msk                  (_UINT8_(0x1) << DAC_CTRLA_ENABLE_Pos)               /* (DAC_CTRLA) Enable Mask */
-#define DAC_CTRLA_ENABLE(value)               (DAC_CTRLA_ENABLE_Msk & (_UINT8_(value) << DAC_CTRLA_ENABLE_Pos)) /* Assignment of value for ENABLE in the DAC_CTRLA register */
+#define DAC_CTRLA_ENABLE(value)               (DAC_CTRLA_ENABLE_Msk & ((uint8_t)(value) << DAC_CTRLA_ENABLE_Pos)) /* Assignment of value for ENABLE in the DAC_CTRLA register */
 #define DAC_CTRLA_RUNSTDBY_Pos                _UINT8_(2)                                           /* (DAC_CTRLA) Run in Standby Position */
 #define DAC_CTRLA_RUNSTDBY_Msk                (_UINT8_(0x1) << DAC_CTRLA_RUNSTDBY_Pos)             /* (DAC_CTRLA) Run in Standby Mask */
-#define DAC_CTRLA_RUNSTDBY(value)             (DAC_CTRLA_RUNSTDBY_Msk & (_UINT8_(value) << DAC_CTRLA_RUNSTDBY_Pos)) /* Assignment of value for RUNSTDBY in the DAC_CTRLA register */
+#define DAC_CTRLA_RUNSTDBY(value)             (DAC_CTRLA_RUNSTDBY_Msk & ((uint8_t)(value) << DAC_CTRLA_RUNSTDBY_Pos)) /* Assignment of value for RUNSTDBY in the DAC_CTRLA register */
 #define DAC_CTRLA_Msk                         _UINT8_(0x07)                                        /* (DAC_CTRLA) Register Mask  */
 
 
@@ -49,22 +51,22 @@
 
 #define DAC_CTRLB_EOEN_Pos                    _UINT8_(0)                                           /* (DAC_CTRLB) External Output Enable Position */
 #define DAC_CTRLB_EOEN_Msk                    (_UINT8_(0x1) << DAC_CTRLB_EOEN_Pos)                 /* (DAC_CTRLB) External Output Enable Mask */
-#define DAC_CTRLB_EOEN(value)                 (DAC_CTRLB_EOEN_Msk & (_UINT8_(value) << DAC_CTRLB_EOEN_Pos)) /* Assignment of value for EOEN in the DAC_CTRLB register */
+#define DAC_CTRLB_EOEN(value)                 (DAC_CTRLB_EOEN_Msk & ((uint8_t)(value) << DAC_CTRLB_EOEN_Pos)) /* Assignment of value for EOEN in the DAC_CTRLB register */
 #define DAC_CTRLB_IOEN_Pos                    _UINT8_(1)                                           /* (DAC_CTRLB) Internal Output Enable Position */
 #define DAC_CTRLB_IOEN_Msk                    (_UINT8_(0x1) << DAC_CTRLB_IOEN_Pos)                 /* (DAC_CTRLB) Internal Output Enable Mask */
-#define DAC_CTRLB_IOEN(value)                 (DAC_CTRLB_IOEN_Msk & (_UINT8_(value) << DAC_CTRLB_IOEN_Pos)) /* Assignment of value for IOEN in the DAC_CTRLB register */
+#define DAC_CTRLB_IOEN(value)                 (DAC_CTRLB_IOEN_Msk & ((uint8_t)(value) << DAC_CTRLB_IOEN_Pos)) /* Assignment of value for IOEN in the DAC_CTRLB register */
 #define DAC_CTRLB_LEFTADJ_Pos                 _UINT8_(2)                                           /* (DAC_CTRLB) Left Adjusted Data Position */
 #define DAC_CTRLB_LEFTADJ_Msk                 (_UINT8_(0x1) << DAC_CTRLB_LEFTADJ_Pos)              /* (DAC_CTRLB) Left Adjusted Data Mask */
-#define DAC_CTRLB_LEFTADJ(value)              (DAC_CTRLB_LEFTADJ_Msk & (_UINT8_(value) << DAC_CTRLB_LEFTADJ_Pos)) /* Assignment of value for LEFTADJ in the DAC_CTRLB register */
+#define DAC_CTRLB_LEFTADJ(value)              (DAC_CTRLB_LEFTADJ_Msk & ((uint8_t)(value) << DAC_CTRLB_LEFTADJ_Pos)) /* Assignment of value for LEFTADJ in the DAC_CTRLB register */
 #define DAC_CTRLB_VPD_Pos                     _UINT8_(3)                                           /* (DAC_CTRLB) Voltage Pump Disable Position */
 #define DAC_CTRLB_VPD_Msk                     (_UINT8_(0x1) << DAC_CTRLB_VPD_Pos)                  /* (DAC_CTRLB) Voltage Pump Disable Mask */
-#define DAC_CTRLB_VPD(value)                  (DAC_CTRLB_VPD_Msk & (_UINT8_(value) << DAC_CTRLB_VPD_Pos)) /* Assignment of value for VPD in the DAC_CTRLB register */
+#define DAC_CTRLB_VPD(value)                  (DAC_CTRLB_VPD_Msk & ((uint8_t)(value) << DAC_CTRLB_VPD_Pos)) /* Assignment of value for VPD in the DAC_CTRLB register */
 #define DAC_CTRLB_BDWP_Pos                    _UINT8_(4)                                           /* (DAC_CTRLB) Bypass DATABUF Write Protection Position */
 #define DAC_CTRLB_BDWP_Msk                    (_UINT8_(0x1) << DAC_CTRLB_BDWP_Pos)                 /* (DAC_CTRLB) Bypass DATABUF Write Protection Mask */
-#define DAC_CTRLB_BDWP(value)                 (DAC_CTRLB_BDWP_Msk & (_UINT8_(value) << DAC_CTRLB_BDWP_Pos)) /* Assignment of value for BDWP in the DAC_CTRLB register */
+#define DAC_CTRLB_BDWP(value)                 (DAC_CTRLB_BDWP_Msk & ((uint8_t)(value) << DAC_CTRLB_BDWP_Pos)) /* Assignment of value for BDWP in the DAC_CTRLB register */
 #define DAC_CTRLB_REFSEL_Pos                  _UINT8_(6)                                           /* (DAC_CTRLB) Reference Selection Position */
 #define DAC_CTRLB_REFSEL_Msk                  (_UINT8_(0x3) << DAC_CTRLB_REFSEL_Pos)               /* (DAC_CTRLB) Reference Selection Mask */
-#define DAC_CTRLB_REFSEL(value)               (DAC_CTRLB_REFSEL_Msk & (_UINT8_(value) << DAC_CTRLB_REFSEL_Pos)) /* Assignment of value for REFSEL in the DAC_CTRLB register */
+#define DAC_CTRLB_REFSEL(value)               (DAC_CTRLB_REFSEL_Msk & ((uint8_t)(value) << DAC_CTRLB_REFSEL_Pos)) /* Assignment of value for REFSEL in the DAC_CTRLB register */
 #define   DAC_CTRLB_REFSEL_INT1V_Val          _UINT8_(0x0)                                         /* (DAC_CTRLB) Internal 1.0V reference  */
 #define   DAC_CTRLB_REFSEL_AVCC_Val           _UINT8_(0x1)                                         /* (DAC_CTRLB) AVCC  */
 #define   DAC_CTRLB_REFSEL_VREFP_Val          _UINT8_(0x2)                                         /* (DAC_CTRLB) External reference  */
@@ -79,10 +81,10 @@
 
 #define DAC_EVCTRL_STARTEI_Pos                _UINT8_(0)                                           /* (DAC_EVCTRL) Start Conversion Event Input Position */
 #define DAC_EVCTRL_STARTEI_Msk                (_UINT8_(0x1) << DAC_EVCTRL_STARTEI_Pos)             /* (DAC_EVCTRL) Start Conversion Event Input Mask */
-#define DAC_EVCTRL_STARTEI(value)             (DAC_EVCTRL_STARTEI_Msk & (_UINT8_(value) << DAC_EVCTRL_STARTEI_Pos)) /* Assignment of value for STARTEI in the DAC_EVCTRL register */
+#define DAC_EVCTRL_STARTEI(value)             (DAC_EVCTRL_STARTEI_Msk & ((uint8_t)(value) << DAC_EVCTRL_STARTEI_Pos)) /* Assignment of value for STARTEI in the DAC_EVCTRL register */
 #define DAC_EVCTRL_EMPTYEO_Pos                _UINT8_(1)                                           /* (DAC_EVCTRL) Data Buffer Empty Event Output Position */
 #define DAC_EVCTRL_EMPTYEO_Msk                (_UINT8_(0x1) << DAC_EVCTRL_EMPTYEO_Pos)             /* (DAC_EVCTRL) Data Buffer Empty Event Output Mask */
-#define DAC_EVCTRL_EMPTYEO(value)             (DAC_EVCTRL_EMPTYEO_Msk & (_UINT8_(value) << DAC_EVCTRL_EMPTYEO_Pos)) /* Assignment of value for EMPTYEO in the DAC_EVCTRL register */
+#define DAC_EVCTRL_EMPTYEO(value)             (DAC_EVCTRL_EMPTYEO_Msk & ((uint8_t)(value) << DAC_EVCTRL_EMPTYEO_Pos)) /* Assignment of value for EMPTYEO in the DAC_EVCTRL register */
 #define DAC_EVCTRL_Msk                        _UINT8_(0x03)                                        /* (DAC_EVCTRL) Register Mask  */
 
 
@@ -91,13 +93,13 @@
 
 #define DAC_INTENCLR_UNDERRUN_Pos             _UINT8_(0)                                           /* (DAC_INTENCLR) Underrun Interrupt Enable Position */
 #define DAC_INTENCLR_UNDERRUN_Msk             (_UINT8_(0x1) << DAC_INTENCLR_UNDERRUN_Pos)          /* (DAC_INTENCLR) Underrun Interrupt Enable Mask */
-#define DAC_INTENCLR_UNDERRUN(value)          (DAC_INTENCLR_UNDERRUN_Msk & (_UINT8_(value) << DAC_INTENCLR_UNDERRUN_Pos)) /* Assignment of value for UNDERRUN in the DAC_INTENCLR register */
+#define DAC_INTENCLR_UNDERRUN(value)          (DAC_INTENCLR_UNDERRUN_Msk & ((uint8_t)(value) << DAC_INTENCLR_UNDERRUN_Pos)) /* Assignment of value for UNDERRUN in the DAC_INTENCLR register */
 #define DAC_INTENCLR_EMPTY_Pos                _UINT8_(1)                                           /* (DAC_INTENCLR) Data Buffer Empty Interrupt Enable Position */
 #define DAC_INTENCLR_EMPTY_Msk                (_UINT8_(0x1) << DAC_INTENCLR_EMPTY_Pos)             /* (DAC_INTENCLR) Data Buffer Empty Interrupt Enable Mask */
-#define DAC_INTENCLR_EMPTY(value)             (DAC_INTENCLR_EMPTY_Msk & (_UINT8_(value) << DAC_INTENCLR_EMPTY_Pos)) /* Assignment of value for EMPTY in the DAC_INTENCLR register */
+#define DAC_INTENCLR_EMPTY(value)             (DAC_INTENCLR_EMPTY_Msk & ((uint8_t)(value) << DAC_INTENCLR_EMPTY_Pos)) /* Assignment of value for EMPTY in the DAC_INTENCLR register */
 #define DAC_INTENCLR_SYNCRDY_Pos              _UINT8_(2)                                           /* (DAC_INTENCLR) Synchronization Ready Interrupt Enable Position */
 #define DAC_INTENCLR_SYNCRDY_Msk              (_UINT8_(0x1) << DAC_INTENCLR_SYNCRDY_Pos)           /* (DAC_INTENCLR) Synchronization Ready Interrupt Enable Mask */
-#define DAC_INTENCLR_SYNCRDY(value)           (DAC_INTENCLR_SYNCRDY_Msk & (_UINT8_(value) << DAC_INTENCLR_SYNCRDY_Pos)) /* Assignment of value for SYNCRDY in the DAC_INTENCLR register */
+#define DAC_INTENCLR_SYNCRDY(value)           (DAC_INTENCLR_SYNCRDY_Msk & ((uint8_t)(value) << DAC_INTENCLR_SYNCRDY_Pos)) /* Assignment of value for SYNCRDY in the DAC_INTENCLR register */
 #define DAC_INTENCLR_Msk                      _UINT8_(0x07)                                        /* (DAC_INTENCLR) Register Mask  */
 
 
@@ -106,13 +108,13 @@
 
 #define DAC_INTENSET_UNDERRUN_Pos             _UINT8_(0)                                           /* (DAC_INTENSET) Underrun Interrupt Enable Position */
 #define DAC_INTENSET_UNDERRUN_Msk             (_UINT8_(0x1) << DAC_INTENSET_UNDERRUN_Pos)          /* (DAC_INTENSET) Underrun Interrupt Enable Mask */
-#define DAC_INTENSET_UNDERRUN(value)          (DAC_INTENSET_UNDERRUN_Msk & (_UINT8_(value) << DAC_INTENSET_UNDERRUN_Pos)) /* Assignment of value for UNDERRUN in the DAC_INTENSET register */
+#define DAC_INTENSET_UNDERRUN(value)          (DAC_INTENSET_UNDERRUN_Msk & ((uint8_t)(value) << DAC_INTENSET_UNDERRUN_Pos)) /* Assignment of value for UNDERRUN in the DAC_INTENSET register */
 #define DAC_INTENSET_EMPTY_Pos                _UINT8_(1)                                           /* (DAC_INTENSET) Data Buffer Empty Interrupt Enable Position */
 #define DAC_INTENSET_EMPTY_Msk                (_UINT8_(0x1) << DAC_INTENSET_EMPTY_Pos)             /* (DAC_INTENSET) Data Buffer Empty Interrupt Enable Mask */
-#define DAC_INTENSET_EMPTY(value)             (DAC_INTENSET_EMPTY_Msk & (_UINT8_(value) << DAC_INTENSET_EMPTY_Pos)) /* Assignment of value for EMPTY in the DAC_INTENSET register */
+#define DAC_INTENSET_EMPTY(value)             (DAC_INTENSET_EMPTY_Msk & ((uint8_t)(value) << DAC_INTENSET_EMPTY_Pos)) /* Assignment of value for EMPTY in the DAC_INTENSET register */
 #define DAC_INTENSET_SYNCRDY_Pos              _UINT8_(2)                                           /* (DAC_INTENSET) Synchronization Ready Interrupt Enable Position */
 #define DAC_INTENSET_SYNCRDY_Msk              (_UINT8_(0x1) << DAC_INTENSET_SYNCRDY_Pos)           /* (DAC_INTENSET) Synchronization Ready Interrupt Enable Mask */
-#define DAC_INTENSET_SYNCRDY(value)           (DAC_INTENSET_SYNCRDY_Msk & (_UINT8_(value) << DAC_INTENSET_SYNCRDY_Pos)) /* Assignment of value for SYNCRDY in the DAC_INTENSET register */
+#define DAC_INTENSET_SYNCRDY(value)           (DAC_INTENSET_SYNCRDY_Msk & ((uint8_t)(value) << DAC_INTENSET_SYNCRDY_Pos)) /* Assignment of value for SYNCRDY in the DAC_INTENSET register */
 #define DAC_INTENSET_Msk                      _UINT8_(0x07)                                        /* (DAC_INTENSET) Register Mask  */
 
 
@@ -121,13 +123,13 @@
 
 #define DAC_INTFLAG_UNDERRUN_Pos              _UINT8_(0)                                           /* (DAC_INTFLAG) Underrun Position */
 #define DAC_INTFLAG_UNDERRUN_Msk              (_UINT8_(0x1) << DAC_INTFLAG_UNDERRUN_Pos)           /* (DAC_INTFLAG) Underrun Mask */
-#define DAC_INTFLAG_UNDERRUN(value)           (DAC_INTFLAG_UNDERRUN_Msk & (_UINT8_(value) << DAC_INTFLAG_UNDERRUN_Pos)) /* Assignment of value for UNDERRUN in the DAC_INTFLAG register */
+#define DAC_INTFLAG_UNDERRUN(value)           (DAC_INTFLAG_UNDERRUN_Msk & ((uint8_t)(value) << DAC_INTFLAG_UNDERRUN_Pos)) /* Assignment of value for UNDERRUN in the DAC_INTFLAG register */
 #define DAC_INTFLAG_EMPTY_Pos                 _UINT8_(1)                                           /* (DAC_INTFLAG) Data Buffer Empty Position */
 #define DAC_INTFLAG_EMPTY_Msk                 (_UINT8_(0x1) << DAC_INTFLAG_EMPTY_Pos)              /* (DAC_INTFLAG) Data Buffer Empty Mask */
-#define DAC_INTFLAG_EMPTY(value)              (DAC_INTFLAG_EMPTY_Msk & (_UINT8_(value) << DAC_INTFLAG_EMPTY_Pos)) /* Assignment of value for EMPTY in the DAC_INTFLAG register */
+#define DAC_INTFLAG_EMPTY(value)              (DAC_INTFLAG_EMPTY_Msk & ((uint8_t)(value) << DAC_INTFLAG_EMPTY_Pos)) /* Assignment of value for EMPTY in the DAC_INTFLAG register */
 #define DAC_INTFLAG_SYNCRDY_Pos               _UINT8_(2)                                           /* (DAC_INTFLAG) Synchronization Ready Position */
 #define DAC_INTFLAG_SYNCRDY_Msk               (_UINT8_(0x1) << DAC_INTFLAG_SYNCRDY_Pos)            /* (DAC_INTFLAG) Synchronization Ready Mask */
-#define DAC_INTFLAG_SYNCRDY(value)            (DAC_INTFLAG_SYNCRDY_Msk & (_UINT8_(value) << DAC_INTFLAG_SYNCRDY_Pos)) /* Assignment of value for SYNCRDY in the DAC_INTFLAG register */
+#define DAC_INTFLAG_SYNCRDY(value)            (DAC_INTFLAG_SYNCRDY_Msk & ((uint8_t)(value) << DAC_INTFLAG_SYNCRDY_Pos)) /* Assignment of value for SYNCRDY in the DAC_INTFLAG register */
 #define DAC_INTFLAG_Msk                       _UINT8_(0x07)                                        /* (DAC_INTFLAG) Register Mask  */
 
 
@@ -136,7 +138,7 @@
 
 #define DAC_STATUS_SYNCBUSY_Pos               _UINT8_(7)                                           /* (DAC_STATUS) Synchronization Busy Status Position */
 #define DAC_STATUS_SYNCBUSY_Msk               (_UINT8_(0x1) << DAC_STATUS_SYNCBUSY_Pos)            /* (DAC_STATUS) Synchronization Busy Status Mask */
-#define DAC_STATUS_SYNCBUSY(value)            (DAC_STATUS_SYNCBUSY_Msk & (_UINT8_(value) << DAC_STATUS_SYNCBUSY_Pos)) /* Assignment of value for SYNCBUSY in the DAC_STATUS register */
+#define DAC_STATUS_SYNCBUSY(value)            (DAC_STATUS_SYNCBUSY_Msk & ((uint8_t)(value) << DAC_STATUS_SYNCBUSY_Pos)) /* Assignment of value for SYNCBUSY in the DAC_STATUS register */
 #define DAC_STATUS_Msk                        _UINT8_(0x80)                                        /* (DAC_STATUS) Register Mask  */
 
 
@@ -145,7 +147,7 @@
 
 #define DAC_DATA_DATA_Pos                     _UINT16_(0)                                          /* (DAC_DATA) Data value to be converted Position */
 #define DAC_DATA_DATA_Msk                     (_UINT16_(0xFFFF) << DAC_DATA_DATA_Pos)              /* (DAC_DATA) Data value to be converted Mask */
-#define DAC_DATA_DATA(value)                  (DAC_DATA_DATA_Msk & (_UINT16_(value) << DAC_DATA_DATA_Pos)) /* Assignment of value for DATA in the DAC_DATA register */
+#define DAC_DATA_DATA(value)                  (DAC_DATA_DATA_Msk & ((uint16_t)(value) << DAC_DATA_DATA_Pos)) /* Assignment of value for DATA in the DAC_DATA register */
 #define DAC_DATA_Msk                          _UINT16_(0xFFFF)                                     /* (DAC_DATA) Register Mask  */
 
 
@@ -154,7 +156,7 @@
 
 #define DAC_DATABUF_DATABUF_Pos               _UINT16_(0)                                          /* (DAC_DATABUF) Data Buffer Position */
 #define DAC_DATABUF_DATABUF_Msk               (_UINT16_(0xFFFF) << DAC_DATABUF_DATABUF_Pos)        /* (DAC_DATABUF) Data Buffer Mask */
-#define DAC_DATABUF_DATABUF(value)            (DAC_DATABUF_DATABUF_Msk & (_UINT16_(value) << DAC_DATABUF_DATABUF_Pos)) /* Assignment of value for DATABUF in the DAC_DATABUF register */
+#define DAC_DATABUF_DATABUF(value)            (DAC_DATABUF_DATABUF_Msk & ((uint16_t)(value) << DAC_DATABUF_DATABUF_Pos)) /* Assignment of value for DATABUF in the DAC_DATABUF register */
 #define DAC_DATABUF_Msk                       _UINT16_(0xFFFF)                                     /* (DAC_DATABUF) Register Mask  */
 
 

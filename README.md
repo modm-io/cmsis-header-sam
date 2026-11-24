@@ -10,7 +10,7 @@ to Unix style and removing all trailing whitespace.
 
 Here is the list of the current device header version and release date:
 
-- [SAMD21: v3.8.270 created 11-February-2026](https://packs.download.microchip.com/Microchip.SAMD21_DFP.3.8.270.atpack)
+- [SAMD21: v3.9.287 created 07-November-2026](https://packs.download.microchip.com/Microchip.SAMD21_DFP.3.9.287.atpack)
 - [SAMD51: v3.10.283 created 02-November-2026](https://packs.download.microchip.com/Microchip.SAMD51_DFP.3.10.283.atpack)
 - [SAME51: v3.10.289 created 02-November-2026](https://packs.download.microchip.com/Microchip.SAME51_DFP.3.10.289.atpack)
 - [SAME53: v3.10.248 created 04-November-2025](https://packs.download.microchip.com/Microchip.SAME53_DFP.3.10.248.atpack)

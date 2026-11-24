@@ -23,7 +23,9 @@
 #ifndef _SAMD21_MTB_COMPONENT_H_
 #define _SAMD21_MTB_COMPONENT_H_
 
+#if !defined(DISABLE_CMSIS)
 #include "core_cm0plus.h"
+#endif /* !defined(DISABLE_CMSIS) */
 
 /* ************************************************************************** */
 /*                      SOFTWARE API DEFINITION FOR MTB                       */
@@ -32,10 +34,10 @@
 /* -------- MTB_POSITION : (MTB Offset: 0x00) (R/W 32) MTB Position -------- */
 #define MTB_POSITION_WRAP_Pos                 _UINT32_(2)                                          /* (MTB_POSITION) Pointer Value Wraps Position */
 #define MTB_POSITION_WRAP_Msk                 (_UINT32_(0x1) << MTB_POSITION_WRAP_Pos)             /* (MTB_POSITION) Pointer Value Wraps Mask */
-#define MTB_POSITION_WRAP(value)              (MTB_POSITION_WRAP_Msk & (_UINT32_(value) << MTB_POSITION_WRAP_Pos)) /* Assignment of value for WRAP in the MTB_POSITION register */
+#define MTB_POSITION_WRAP(value)              (MTB_POSITION_WRAP_Msk & ((uint32_t)(value) << MTB_POSITION_WRAP_Pos)) /* Assignment of value for WRAP in the MTB_POSITION register */
 #define MTB_POSITION_POINTER_Pos              _UINT32_(3)                                          /* (MTB_POSITION) Trace Packet Location Pointer Position */
 #define MTB_POSITION_POINTER_Msk              (_UINT32_(0x1FFFFFFF) << MTB_POSITION_POINTER_Pos)   /* (MTB_POSITION) Trace Packet Location Pointer Mask */
-#define MTB_POSITION_POINTER(value)           (MTB_POSITION_POINTER_Msk & (_UINT32_(value) << MTB_POSITION_POINTER_Pos)) /* Assignment of value for POINTER in the MTB_POSITION register */
+#define MTB_POSITION_POINTER(value)           (MTB_POSITION_POINTER_Msk & ((uint32_t)(value) << MTB_POSITION_POINTER_Pos)) /* Assignment of value for POINTER in the MTB_POSITION register */
 #define MTB_POSITION_Msk                      _UINT32_(0xFFFFFFFC)                                 /* (MTB_POSITION) Register Mask  */
 
 
@@ -44,25 +46,25 @@
 
 #define MTB_MASTER_MASK_Pos                   _UINT32_(0)                                          /* (MTB_MASTER) Maximum Value of the Trace Buffer in SRAM Position */
 #define MTB_MASTER_MASK_Msk                   (_UINT32_(0x1F) << MTB_MASTER_MASK_Pos)              /* (MTB_MASTER) Maximum Value of the Trace Buffer in SRAM Mask */
-#define MTB_MASTER_MASK(value)                (MTB_MASTER_MASK_Msk & (_UINT32_(value) << MTB_MASTER_MASK_Pos)) /* Assignment of value for MASK in the MTB_MASTER register */
+#define MTB_MASTER_MASK(value)                (MTB_MASTER_MASK_Msk & ((uint32_t)(value) << MTB_MASTER_MASK_Pos)) /* Assignment of value for MASK in the MTB_MASTER register */
 #define MTB_MASTER_TSTARTEN_Pos               _UINT32_(5)                                          /* (MTB_MASTER) Trace Start Input Enable Position */
 #define MTB_MASTER_TSTARTEN_Msk               (_UINT32_(0x1) << MTB_MASTER_TSTARTEN_Pos)           /* (MTB_MASTER) Trace Start Input Enable Mask */
-#define MTB_MASTER_TSTARTEN(value)            (MTB_MASTER_TSTARTEN_Msk & (_UINT32_(value) << MTB_MASTER_TSTARTEN_Pos)) /* Assignment of value for TSTARTEN in the MTB_MASTER register */
+#define MTB_MASTER_TSTARTEN(value)            (MTB_MASTER_TSTARTEN_Msk & ((uint32_t)(value) << MTB_MASTER_TSTARTEN_Pos)) /* Assignment of value for TSTARTEN in the MTB_MASTER register */
 #define MTB_MASTER_TSTOPEN_Pos                _UINT32_(6)                                          /* (MTB_MASTER) Trace Stop Input Enable Position */
 #define MTB_MASTER_TSTOPEN_Msk                (_UINT32_(0x1) << MTB_MASTER_TSTOPEN_Pos)            /* (MTB_MASTER) Trace Stop Input Enable Mask */
-#define MTB_MASTER_TSTOPEN(value)             (MTB_MASTER_TSTOPEN_Msk & (_UINT32_(value) << MTB_MASTER_TSTOPEN_Pos)) /* Assignment of value for TSTOPEN in the MTB_MASTER register */
+#define MTB_MASTER_TSTOPEN(value)             (MTB_MASTER_TSTOPEN_Msk & ((uint32_t)(value) << MTB_MASTER_TSTOPEN_Pos)) /* Assignment of value for TSTOPEN in the MTB_MASTER register */
 #define MTB_MASTER_SFRWPRIV_Pos               _UINT32_(7)                                          /* (MTB_MASTER) Special Function Register Write Privilege Position */
 #define MTB_MASTER_SFRWPRIV_Msk               (_UINT32_(0x1) << MTB_MASTER_SFRWPRIV_Pos)           /* (MTB_MASTER) Special Function Register Write Privilege Mask */
-#define MTB_MASTER_SFRWPRIV(value)            (MTB_MASTER_SFRWPRIV_Msk & (_UINT32_(value) << MTB_MASTER_SFRWPRIV_Pos)) /* Assignment of value for SFRWPRIV in the MTB_MASTER register */
+#define MTB_MASTER_SFRWPRIV(value)            (MTB_MASTER_SFRWPRIV_Msk & ((uint32_t)(value) << MTB_MASTER_SFRWPRIV_Pos)) /* Assignment of value for SFRWPRIV in the MTB_MASTER register */
 #define MTB_MASTER_RAMPRIV_Pos                _UINT32_(8)                                          /* (MTB_MASTER) SRAM Privilege Position */
 #define MTB_MASTER_RAMPRIV_Msk                (_UINT32_(0x1) << MTB_MASTER_RAMPRIV_Pos)            /* (MTB_MASTER) SRAM Privilege Mask */
-#define MTB_MASTER_RAMPRIV(value)             (MTB_MASTER_RAMPRIV_Msk & (_UINT32_(value) << MTB_MASTER_RAMPRIV_Pos)) /* Assignment of value for RAMPRIV in the MTB_MASTER register */
+#define MTB_MASTER_RAMPRIV(value)             (MTB_MASTER_RAMPRIV_Msk & ((uint32_t)(value) << MTB_MASTER_RAMPRIV_Pos)) /* Assignment of value for RAMPRIV in the MTB_MASTER register */
 #define MTB_MASTER_HALTREQ_Pos                _UINT32_(9)                                          /* (MTB_MASTER) Halt Request Position */
 #define MTB_MASTER_HALTREQ_Msk                (_UINT32_(0x1) << MTB_MASTER_HALTREQ_Pos)            /* (MTB_MASTER) Halt Request Mask */
-#define MTB_MASTER_HALTREQ(value)             (MTB_MASTER_HALTREQ_Msk & (_UINT32_(value) << MTB_MASTER_HALTREQ_Pos)) /* Assignment of value for HALTREQ in the MTB_MASTER register */
+#define MTB_MASTER_HALTREQ(value)             (MTB_MASTER_HALTREQ_Msk & ((uint32_t)(value) << MTB_MASTER_HALTREQ_Pos)) /* Assignment of value for HALTREQ in the MTB_MASTER register */
 #define MTB_MASTER_EN_Pos                     _UINT32_(31)                                         /* (MTB_MASTER) Main Trace Enable Position */
 #define MTB_MASTER_EN_Msk                     (_UINT32_(0x1) << MTB_MASTER_EN_Pos)                 /* (MTB_MASTER) Main Trace Enable Mask */
-#define MTB_MASTER_EN(value)                  (MTB_MASTER_EN_Msk & (_UINT32_(value) << MTB_MASTER_EN_Pos)) /* Assignment of value for EN in the MTB_MASTER register */
+#define MTB_MASTER_EN(value)                  (MTB_MASTER_EN_Msk & ((uint32_t)(value) << MTB_MASTER_EN_Pos)) /* Assignment of value for EN in the MTB_MASTER register */
 #define MTB_MASTER_Msk                        _UINT32_(0x800003FF)                                 /* (MTB_MASTER) Register Mask  */
 
 
@@ -71,13 +73,13 @@
 
 #define MTB_FLOW_AUTOSTOP_Pos                 _UINT32_(0)                                          /* (MTB_FLOW) Auto Stop Tracing Position */
 #define MTB_FLOW_AUTOSTOP_Msk                 (_UINT32_(0x1) << MTB_FLOW_AUTOSTOP_Pos)             /* (MTB_FLOW) Auto Stop Tracing Mask */
-#define MTB_FLOW_AUTOSTOP(value)              (MTB_FLOW_AUTOSTOP_Msk & (_UINT32_(value) << MTB_FLOW_AUTOSTOP_Pos)) /* Assignment of value for AUTOSTOP in the MTB_FLOW register */
+#define MTB_FLOW_AUTOSTOP(value)              (MTB_FLOW_AUTOSTOP_Msk & ((uint32_t)(value) << MTB_FLOW_AUTOSTOP_Pos)) /* Assignment of value for AUTOSTOP in the MTB_FLOW register */
 #define MTB_FLOW_AUTOHALT_Pos                 _UINT32_(1)                                          /* (MTB_FLOW) Auto Halt Request Position */
 #define MTB_FLOW_AUTOHALT_Msk                 (_UINT32_(0x1) << MTB_FLOW_AUTOHALT_Pos)             /* (MTB_FLOW) Auto Halt Request Mask */
-#define MTB_FLOW_AUTOHALT(value)              (MTB_FLOW_AUTOHALT_Msk & (_UINT32_(value) << MTB_FLOW_AUTOHALT_Pos)) /* Assignment of value for AUTOHALT in the MTB_FLOW register */
+#define MTB_FLOW_AUTOHALT(value)              (MTB_FLOW_AUTOHALT_Msk & ((uint32_t)(value) << MTB_FLOW_AUTOHALT_Pos)) /* Assignment of value for AUTOHALT in the MTB_FLOW register */
 #define MTB_FLOW_WATERMARK_Pos                _UINT32_(3)                                          /* (MTB_FLOW) Watermark value Position */
 #define MTB_FLOW_WATERMARK_Msk                (_UINT32_(0x1FFFFFFF) << MTB_FLOW_WATERMARK_Pos)     /* (MTB_FLOW) Watermark value Mask */
-#define MTB_FLOW_WATERMARK(value)             (MTB_FLOW_WATERMARK_Msk & (_UINT32_(value) << MTB_FLOW_WATERMARK_Pos)) /* Assignment of value for WATERMARK in the MTB_FLOW register */
+#define MTB_FLOW_WATERMARK(value)             (MTB_FLOW_WATERMARK_Msk & ((uint32_t)(value) << MTB_FLOW_WATERMARK_Pos)) /* Assignment of value for WATERMARK in the MTB_FLOW register */
 #define MTB_FLOW_Msk                          _UINT32_(0xFFFFFFFB)                                 /* (MTB_FLOW) Register Mask  */
 
 

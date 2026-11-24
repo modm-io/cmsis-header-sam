@@ -24,11 +24,11 @@
 #define _SAMD21G17L_H_
 
 /* Header version uses Semantic Versioning 2.0.0 (https://semver.org/) */
-#define HEADER_FORMAT_VERSION "3.0.0"
+#define HEADER_FORMAT_VERSION "3.0.1"
 
 #define HEADER_FORMAT_VERSION_MAJOR (3)
 #define HEADER_FORMAT_VERSION_MINOR (0)
-#define HEADER_FORMAT_VERSION_PATCH (0)
+#define HEADER_FORMAT_VERSION_PATCH (1)
 
 /* SAMD21G17L definitions
   This file defines all structures and symbols for SAMD21G17L:
@@ -47,21 +47,23 @@
 #endif /* !(defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__)) */
 
 #if !defined(SKIP_INTEGER_LITERALS)
-#  if defined(_UINT8_) || defined(_UINT16_) || defined(_UINT32_)
+#  if defined(_UINT8_) || defined(_UINT16_) || defined(_UINT32_) || defined(_UINT64_)
 #    error "Integer constant value macros already defined elsewhere"
 #  endif
 
 #if !(defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__))
 /* Macros that deal with sizes of integer constants for C/C++ */
-#  define _UINT8_(x)   ((uint8_t)(x))    /* C code: 8-bits unsigned integer constant value */
-#  define _UINT16_(x)  ((uint16_t)(x))   /* C code: 16-bits unsigned integer constant value */
-#  define _UINT32_(x)  ((uint32_t)(x))   /* C code: 32-bits unsigned integer constant value */
+#  define _UINT8_(x)   (UINT8_C(x))    /* C code: 8-bits unsigned integer constant value */
+#  define _UINT16_(x)  (UINT16_C(x))   /* C code: 16-bits unsigned integer constant value */
+#  define _UINT32_(x)  (UINT32_C(x))   /* C code: 32-bits unsigned integer constant value */
+#  define _UINT64_(x)  (UINT64_C(x))   /* C code: 64-bits unsigned integer constant value */
 
 #else /* Assembler */
 
-#  define _UINT8_(x) x    /* Assembler: 8-bits unsigned integer constant value */
-#  define _UINT16_(x) x   /* Assembler: 16-bits unsigned integer constant value */
-#  define _UINT32_(x) x   /* Assembler: 32-bits unsigned integer constant value */
+#  define _UINT8_(x) (x)    /* Assembler: 8-bits unsigned integer constant value */
+#  define _UINT16_(x) (x)   /* Assembler: 16-bits unsigned integer constant value */
+#  define _UINT32_(x) (x)   /* Assembler: 32-bits unsigned integer constant value */
+#  define _UINT64_(x) (x)   /* Assembler: 64-bits unsigned integer constant value */
 #endif /* !(defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__)) */
 #endif /* SKIP_INTEGER_LITERALS */
 
@@ -175,10 +177,18 @@ typedef struct _DeviceVectors
 /* CORTEX-M0PLUS exception handlers */
 void Reset_Handler                 ( void );
 void NMI_Handler                   ( void );
+#ifndef __IAR_SYSTEMS_ICC__
 void NonMaskableInt_Handler        ( void ) __attribute__((deprecated("Use NMI_Handler instead"))); /* The legacy name - kept for backward compatibility */
+#else
+void NonMaskableInt_Handler        ( void ); /* The legacy name - kept for backward compatibility */
+#endif
 void HardFault_Handler             ( void );
 void SVC_Handler                   ( void );
+#ifndef __IAR_SYSTEMS_ICC__
 void SVCall_Handler                ( void ) __attribute__((deprecated("Use SVC_Handler instead"))); /* The legacy name - kept for backward compatibility */
+#else
+void SVCall_Handler                ( void ); /* The legacy name - kept for backward compatibility */
+#endif
 void PendSV_Handler                ( void );
 void SysTick_Handler               ( void );
 #endif /* DONT_USE_PREDEFINED_CORE_HANDLERS */
@@ -225,10 +235,12 @@ void TCC3_Handler                  ( void );
 #define __ARCH_ARM_CORTEX_M                1
 
 /* CMSIS includes */
+#if !defined(DISABLE_CMSIS)
 #include "core_cm0plus.h"
 #if !defined(DISABLE_CMSIS_INIT)
 #include "system_samd21g17l.h"
 #endif /* DISABLE_CMSIS_INIT */
+#endif /* DISABLE_CMSIS */
 
 /* ************************************************************************** */
 /*             SOFTWARE PERIPHERAL API DEFINITIONS FOR SAMD21G17L             */
@@ -438,20 +450,20 @@ void TCC3_Handler                  ( void );
 #define FLASH_PAGE_SIZE                _UINT32_(        64)
 #define FLASH_NB_OF_PAGES              _UINT32_(      2048)
 
-#define AUX3_SIZE                      _UINT32_(0x00000100)    /*    0kB Memory segment type: fuses */
+#define AUX3_SIZE                      _UINT32_(0x00000100)    /*  256B Memory segment type: fuses */
 #define AUX3_PAGE_SIZE                 _UINT32_(        64)
 #define AUX3_NB_OF_PAGES               _UINT32_(         4)
 
-#define CAL_SIZE                       _UINT32_(0x00000008)    /*    0kB Memory segment type: fuses */
-#define LOCKBIT_SIZE                   _UINT32_(0x00000004)    /*    0kB Memory segment type: fuses */
-#define OTP1_SIZE                      _UINT32_(0x00000008)    /*    0kB Memory segment type: fuses */
-#define OTP2_SIZE                      _UINT32_(0x00000008)    /*    0kB Memory segment type: fuses */
-#define OTP4_SIZE                      _UINT32_(0x000000e0)    /*    0kB Memory segment type: fuses */
+#define CAL_SIZE                       _UINT32_(0x00000008)    /*    8B Memory segment type: fuses */
+#define LOCKBIT_SIZE                   _UINT32_(0x00000004)    /*    4B Memory segment type: fuses */
+#define OTP1_SIZE                      _UINT32_(0x00000008)    /*    8B Memory segment type: fuses */
+#define OTP2_SIZE                      _UINT32_(0x00000008)    /*    8B Memory segment type: fuses */
+#define OTP4_SIZE                      _UINT32_(0x000000e0)    /*  224B Memory segment type: fuses */
 #define OTP4_PAGE_SIZE                 _UINT32_(        64)
 #define OTP4_NB_OF_PAGES               _UINT32_(         3)
 
-#define TEMP_LOG_SIZE                  _UINT32_(0x00000008)    /*    0kB Memory segment type: fuses */
-#define USER_PAGE_SIZE                 _UINT32_(0x00000100)    /*    0kB Memory segment type: user_page */
+#define TEMP_LOG_SIZE                  _UINT32_(0x00000008)    /*    8B Memory segment type: fuses */
+#define USER_PAGE_SIZE                 _UINT32_(0x00000100)    /*  256B Memory segment type: user_page */
 #define USER_PAGE_PAGE_SIZE            _UINT32_(        64)
 #define USER_PAGE_NB_OF_PAGES          _UINT32_(         4)
 
