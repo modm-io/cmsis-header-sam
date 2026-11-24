@@ -19,7 +19,7 @@
  *
  */
 
-/* file generated from device description file (ATDF) version 2025-07-21T07:57:33Z */
+/* file generated from device description file (ATDF) version 2026-06-26T08:37:48Z */
 #ifndef _SAMV71_GMAC_INSTANCE_
 #define _SAMV71_GMAC_INSTANCE_
 

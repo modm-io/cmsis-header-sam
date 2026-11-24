@@ -19,11 +19,13 @@
  *
  */
 
-/*  file generated from device description file (ATDF) version 2025-07-21T07:57:33Z  */
+/*  file generated from device description file (ATDF) version 2026-06-26T08:37:48Z  */
 #ifndef _SAMV71_UTMI_COMPONENT_H_
 #define _SAMV71_UTMI_COMPONENT_H_
 
+#if !defined(DISABLE_CMSIS)
 #include "core_cm7.h"
+#endif /* !defined(DISABLE_CMSIS) */
 
 /* ************************************************************************** */
 /*                      SOFTWARE API DEFINITION FOR UTMI                      */
@@ -32,26 +34,26 @@
 /* -------- UTMI_OHCIICR : (UTMI Offset: 0x10) (R/W 32) OHCI Interrupt Configuration Register -------- */
 #define UTMI_OHCIICR_RES0_Pos                 _UINT32_(0)                                          /* (UTMI_OHCIICR) USB PORTx Reset Position */
 #define UTMI_OHCIICR_RES0_Msk                 (_UINT32_(0x1) << UTMI_OHCIICR_RES0_Pos)             /* (UTMI_OHCIICR) USB PORTx Reset Mask */
-#define UTMI_OHCIICR_RES0(value)              (UTMI_OHCIICR_RES0_Msk & (_UINT32_(value) << UTMI_OHCIICR_RES0_Pos)) /* Assignment of value for RES0 in the UTMI_OHCIICR register */
+#define UTMI_OHCIICR_RES0(value)              (UTMI_OHCIICR_RES0_Msk & ((uint32_t)(value) << UTMI_OHCIICR_RES0_Pos)) /* Assignment of value for RES0 in the UTMI_OHCIICR register */
 #define UTMI_OHCIICR_ARIE_Pos                 _UINT32_(4)                                          /* (UTMI_OHCIICR) OHCI Asynchronous Resume Interrupt Enable Position */
 #define UTMI_OHCIICR_ARIE_Msk                 (_UINT32_(0x1) << UTMI_OHCIICR_ARIE_Pos)             /* (UTMI_OHCIICR) OHCI Asynchronous Resume Interrupt Enable Mask */
-#define UTMI_OHCIICR_ARIE(value)              (UTMI_OHCIICR_ARIE_Msk & (_UINT32_(value) << UTMI_OHCIICR_ARIE_Pos)) /* Assignment of value for ARIE in the UTMI_OHCIICR register */
+#define UTMI_OHCIICR_ARIE(value)              (UTMI_OHCIICR_ARIE_Msk & ((uint32_t)(value) << UTMI_OHCIICR_ARIE_Pos)) /* Assignment of value for ARIE in the UTMI_OHCIICR register */
 #define UTMI_OHCIICR_APPSTART_Pos             _UINT32_(5)                                          /* (UTMI_OHCIICR) Reserved Position */
 #define UTMI_OHCIICR_APPSTART_Msk             (_UINT32_(0x1) << UTMI_OHCIICR_APPSTART_Pos)         /* (UTMI_OHCIICR) Reserved Mask */
-#define UTMI_OHCIICR_APPSTART(value)          (UTMI_OHCIICR_APPSTART_Msk & (_UINT32_(value) << UTMI_OHCIICR_APPSTART_Pos)) /* Assignment of value for APPSTART in the UTMI_OHCIICR register */
+#define UTMI_OHCIICR_APPSTART(value)          (UTMI_OHCIICR_APPSTART_Msk & ((uint32_t)(value) << UTMI_OHCIICR_APPSTART_Pos)) /* Assignment of value for APPSTART in the UTMI_OHCIICR register */
 #define UTMI_OHCIICR_UDPPUDIS_Pos             _UINT32_(23)                                         /* (UTMI_OHCIICR) USB Device Pull-up Disable Position */
 #define UTMI_OHCIICR_UDPPUDIS_Msk             (_UINT32_(0x1) << UTMI_OHCIICR_UDPPUDIS_Pos)         /* (UTMI_OHCIICR) USB Device Pull-up Disable Mask */
-#define UTMI_OHCIICR_UDPPUDIS(value)          (UTMI_OHCIICR_UDPPUDIS_Msk & (_UINT32_(value) << UTMI_OHCIICR_UDPPUDIS_Pos)) /* Assignment of value for UDPPUDIS in the UTMI_OHCIICR register */
+#define UTMI_OHCIICR_UDPPUDIS(value)          (UTMI_OHCIICR_UDPPUDIS_Msk & ((uint32_t)(value) << UTMI_OHCIICR_UDPPUDIS_Pos)) /* Assignment of value for UDPPUDIS in the UTMI_OHCIICR register */
 #define UTMI_OHCIICR_Msk                      _UINT32_(0x00800031)                                 /* (UTMI_OHCIICR) Register Mask  */
 
 #define UTMI_OHCIICR_RES_Pos                  _UINT32_(0)                                          /* (UTMI_OHCIICR Position) USB PORTx Reset */
 #define UTMI_OHCIICR_RES_Msk                  (_UINT32_(0x1) << UTMI_OHCIICR_RES_Pos)              /* (UTMI_OHCIICR Mask) RES */
-#define UTMI_OHCIICR_RES(value)               (UTMI_OHCIICR_RES_Msk & (_UINT32_(value) << UTMI_OHCIICR_RES_Pos))
+#define UTMI_OHCIICR_RES(value)               (UTMI_OHCIICR_RES_Msk & ((uint32_t)(value) << UTMI_OHCIICR_RES_Pos))
 
 /* -------- UTMI_CKTRIM : (UTMI Offset: 0x30) (R/W 32) UTMI Clock Trimming Register -------- */
 #define UTMI_CKTRIM_FREQ_Pos                  _UINT32_(0)                                          /* (UTMI_CKTRIM) UTMI Reference Clock Frequency Position */
 #define UTMI_CKTRIM_FREQ_Msk                  (_UINT32_(0x3) << UTMI_CKTRIM_FREQ_Pos)              /* (UTMI_CKTRIM) UTMI Reference Clock Frequency Mask */
-#define UTMI_CKTRIM_FREQ(value)               (UTMI_CKTRIM_FREQ_Msk & (_UINT32_(value) << UTMI_CKTRIM_FREQ_Pos)) /* Assignment of value for FREQ in the UTMI_CKTRIM register */
+#define UTMI_CKTRIM_FREQ(value)               (UTMI_CKTRIM_FREQ_Msk & ((uint32_t)(value) << UTMI_CKTRIM_FREQ_Pos)) /* Assignment of value for FREQ in the UTMI_CKTRIM register */
 #define   UTMI_CKTRIM_FREQ_XTAL12_Val         _UINT32_(0x0)                                        /* (UTMI_CKTRIM) 12 MHz reference clock  */
 #define   UTMI_CKTRIM_FREQ_XTAL16_Val         _UINT32_(0x1)                                        /* (UTMI_CKTRIM) 16 MHz reference clock  */
 #define UTMI_CKTRIM_FREQ_XTAL12               (UTMI_CKTRIM_FREQ_XTAL12_Val << UTMI_CKTRIM_FREQ_Pos) /* (UTMI_CKTRIM) 12 MHz reference clock Position */

@@ -19,11 +19,13 @@
  *
  */
 
-/*  file generated from device description file (ATDF) version 2025-07-21T07:57:33Z  */
+/*  file generated from device description file (ATDF) version 2026-06-26T08:37:48Z  */
 #ifndef _SAMV71_CHIPID_COMPONENT_H_
 #define _SAMV71_CHIPID_COMPONENT_H_
 
+#if !defined(DISABLE_CMSIS)
 #include "core_cm7.h"
+#endif /* !defined(DISABLE_CMSIS) */
 
 /* ************************************************************************** */
 /*                     SOFTWARE API DEFINITION FOR CHIPID                     */
@@ -32,10 +34,10 @@
 /* -------- CHIPID_CIDR : (CHIPID Offset: 0x00) ( R/ 32) Chip ID Register -------- */
 #define CHIPID_CIDR_VERSION_Pos               _UINT32_(0)                                          /* (CHIPID_CIDR) Version of the Device Position */
 #define CHIPID_CIDR_VERSION_Msk               (_UINT32_(0x1F) << CHIPID_CIDR_VERSION_Pos)          /* (CHIPID_CIDR) Version of the Device Mask */
-#define CHIPID_CIDR_VERSION(value)            (CHIPID_CIDR_VERSION_Msk & (_UINT32_(value) << CHIPID_CIDR_VERSION_Pos)) /* Assignment of value for VERSION in the CHIPID_CIDR register */
+#define CHIPID_CIDR_VERSION(value)            (CHIPID_CIDR_VERSION_Msk & ((uint32_t)(value) << CHIPID_CIDR_VERSION_Pos)) /* Assignment of value for VERSION in the CHIPID_CIDR register */
 #define CHIPID_CIDR_EPROC_Pos                 _UINT32_(5)                                          /* (CHIPID_CIDR) Embedded Processor Position */
 #define CHIPID_CIDR_EPROC_Msk                 (_UINT32_(0x7) << CHIPID_CIDR_EPROC_Pos)             /* (CHIPID_CIDR) Embedded Processor Mask */
-#define CHIPID_CIDR_EPROC(value)              (CHIPID_CIDR_EPROC_Msk & (_UINT32_(value) << CHIPID_CIDR_EPROC_Pos)) /* Assignment of value for EPROC in the CHIPID_CIDR register */
+#define CHIPID_CIDR_EPROC(value)              (CHIPID_CIDR_EPROC_Msk & ((uint32_t)(value) << CHIPID_CIDR_EPROC_Pos)) /* Assignment of value for EPROC in the CHIPID_CIDR register */
 #define   CHIPID_CIDR_EPROC_SAMx7_Val         _UINT32_(0x0)                                        /* (CHIPID_CIDR) Cortex-M7  */
 #define   CHIPID_CIDR_EPROC_ARM946ES_Val      _UINT32_(0x1)                                        /* (CHIPID_CIDR) ARM946ES  */
 #define   CHIPID_CIDR_EPROC_ARM7TDMI_Val      _UINT32_(0x2)                                        /* (CHIPID_CIDR) ARM7TDMI  */
@@ -54,7 +56,7 @@
 #define CHIPID_CIDR_EPROC_CM4                 (CHIPID_CIDR_EPROC_CM4_Val << CHIPID_CIDR_EPROC_Pos) /* (CHIPID_CIDR) Cortex-M4 Position */
 #define CHIPID_CIDR_NVPSIZ_Pos                _UINT32_(8)                                          /* (CHIPID_CIDR) Nonvolatile Program Memory Size Position */
 #define CHIPID_CIDR_NVPSIZ_Msk                (_UINT32_(0xF) << CHIPID_CIDR_NVPSIZ_Pos)            /* (CHIPID_CIDR) Nonvolatile Program Memory Size Mask */
-#define CHIPID_CIDR_NVPSIZ(value)             (CHIPID_CIDR_NVPSIZ_Msk & (_UINT32_(value) << CHIPID_CIDR_NVPSIZ_Pos)) /* Assignment of value for NVPSIZ in the CHIPID_CIDR register */
+#define CHIPID_CIDR_NVPSIZ(value)             (CHIPID_CIDR_NVPSIZ_Msk & ((uint32_t)(value) << CHIPID_CIDR_NVPSIZ_Pos)) /* Assignment of value for NVPSIZ in the CHIPID_CIDR register */
 #define   CHIPID_CIDR_NVPSIZ_NONE_Val         _UINT32_(0x0)                                        /* (CHIPID_CIDR) None  */
 #define   CHIPID_CIDR_NVPSIZ_8K_Val           _UINT32_(0x1)                                        /* (CHIPID_CIDR) 8 Kbytes  */
 #define   CHIPID_CIDR_NVPSIZ_16K_Val          _UINT32_(0x2)                                        /* (CHIPID_CIDR) 16 Kbytes  */
@@ -79,7 +81,7 @@
 #define CHIPID_CIDR_NVPSIZ_2048K              (CHIPID_CIDR_NVPSIZ_2048K_Val << CHIPID_CIDR_NVPSIZ_Pos) /* (CHIPID_CIDR) 2048 Kbytes Position */
 #define CHIPID_CIDR_NVPSIZ2_Pos               _UINT32_(12)                                         /* (CHIPID_CIDR) Second Nonvolatile Program Memory Size Position */
 #define CHIPID_CIDR_NVPSIZ2_Msk               (_UINT32_(0xF) << CHIPID_CIDR_NVPSIZ2_Pos)           /* (CHIPID_CIDR) Second Nonvolatile Program Memory Size Mask */
-#define CHIPID_CIDR_NVPSIZ2(value)            (CHIPID_CIDR_NVPSIZ2_Msk & (_UINT32_(value) << CHIPID_CIDR_NVPSIZ2_Pos)) /* Assignment of value for NVPSIZ2 in the CHIPID_CIDR register */
+#define CHIPID_CIDR_NVPSIZ2(value)            (CHIPID_CIDR_NVPSIZ2_Msk & ((uint32_t)(value) << CHIPID_CIDR_NVPSIZ2_Pos)) /* Assignment of value for NVPSIZ2 in the CHIPID_CIDR register */
 #define   CHIPID_CIDR_NVPSIZ2_NONE_Val        _UINT32_(0x0)                                        /* (CHIPID_CIDR) None  */
 #define   CHIPID_CIDR_NVPSIZ2_8K_Val          _UINT32_(0x1)                                        /* (CHIPID_CIDR) 8 Kbytes  */
 #define   CHIPID_CIDR_NVPSIZ2_16K_Val         _UINT32_(0x2)                                        /* (CHIPID_CIDR) 16 Kbytes  */
@@ -102,7 +104,7 @@
 #define CHIPID_CIDR_NVPSIZ2_2048K             (CHIPID_CIDR_NVPSIZ2_2048K_Val << CHIPID_CIDR_NVPSIZ2_Pos) /* (CHIPID_CIDR) 2048 Kbytes Position */
 #define CHIPID_CIDR_SRAMSIZ_Pos               _UINT32_(16)                                         /* (CHIPID_CIDR) Internal SRAM Size Position */
 #define CHIPID_CIDR_SRAMSIZ_Msk               (_UINT32_(0xF) << CHIPID_CIDR_SRAMSIZ_Pos)           /* (CHIPID_CIDR) Internal SRAM Size Mask */
-#define CHIPID_CIDR_SRAMSIZ(value)            (CHIPID_CIDR_SRAMSIZ_Msk & (_UINT32_(value) << CHIPID_CIDR_SRAMSIZ_Pos)) /* Assignment of value for SRAMSIZ in the CHIPID_CIDR register */
+#define CHIPID_CIDR_SRAMSIZ(value)            (CHIPID_CIDR_SRAMSIZ_Msk & ((uint32_t)(value) << CHIPID_CIDR_SRAMSIZ_Pos)) /* Assignment of value for SRAMSIZ in the CHIPID_CIDR register */
 #define   CHIPID_CIDR_SRAMSIZ_48K_Val         _UINT32_(0x0)                                        /* (CHIPID_CIDR) 48 Kbytes  */
 #define   CHIPID_CIDR_SRAMSIZ_192K_Val        _UINT32_(0x1)                                        /* (CHIPID_CIDR) 192 Kbytes  */
 #define   CHIPID_CIDR_SRAMSIZ_384K_Val        _UINT32_(0x2)                                        /* (CHIPID_CIDR) 384 Kbytes  */
@@ -137,7 +139,7 @@
 #define CHIPID_CIDR_SRAMSIZ_512K              (CHIPID_CIDR_SRAMSIZ_512K_Val << CHIPID_CIDR_SRAMSIZ_Pos) /* (CHIPID_CIDR) 512 Kbytes Position */
 #define CHIPID_CIDR_ARCH_Pos                  _UINT32_(20)                                         /* (CHIPID_CIDR) Architecture Identifier Position */
 #define CHIPID_CIDR_ARCH_Msk                  (_UINT32_(0xFF) << CHIPID_CIDR_ARCH_Pos)             /* (CHIPID_CIDR) Architecture Identifier Mask */
-#define CHIPID_CIDR_ARCH(value)               (CHIPID_CIDR_ARCH_Msk & (_UINT32_(value) << CHIPID_CIDR_ARCH_Pos)) /* Assignment of value for ARCH in the CHIPID_CIDR register */
+#define CHIPID_CIDR_ARCH(value)               (CHIPID_CIDR_ARCH_Msk & ((uint32_t)(value) << CHIPID_CIDR_ARCH_Pos)) /* Assignment of value for ARCH in the CHIPID_CIDR register */
 #define   CHIPID_CIDR_ARCH_SAME70_Val         _UINT32_(0x10)                                       /* (CHIPID_CIDR) SAM E70  */
 #define   CHIPID_CIDR_ARCH_SAMS70_Val         _UINT32_(0x11)                                       /* (CHIPID_CIDR) SAM S70  */
 #define   CHIPID_CIDR_ARCH_SAMV71_Val         _UINT32_(0x12)                                       /* (CHIPID_CIDR) SAM V71  */
@@ -148,7 +150,7 @@
 #define CHIPID_CIDR_ARCH_SAMV70               (CHIPID_CIDR_ARCH_SAMV70_Val << CHIPID_CIDR_ARCH_Pos) /* (CHIPID_CIDR) SAM V70 Position */
 #define CHIPID_CIDR_NVPTYP_Pos                _UINT32_(28)                                         /* (CHIPID_CIDR) Nonvolatile Program Memory Type Position */
 #define CHIPID_CIDR_NVPTYP_Msk                (_UINT32_(0x7) << CHIPID_CIDR_NVPTYP_Pos)            /* (CHIPID_CIDR) Nonvolatile Program Memory Type Mask */
-#define CHIPID_CIDR_NVPTYP(value)             (CHIPID_CIDR_NVPTYP_Msk & (_UINT32_(value) << CHIPID_CIDR_NVPTYP_Pos)) /* Assignment of value for NVPTYP in the CHIPID_CIDR register */
+#define CHIPID_CIDR_NVPTYP(value)             (CHIPID_CIDR_NVPTYP_Msk & ((uint32_t)(value) << CHIPID_CIDR_NVPTYP_Pos)) /* Assignment of value for NVPTYP in the CHIPID_CIDR register */
 #define   CHIPID_CIDR_NVPTYP_ROM_Val          _UINT32_(0x0)                                        /* (CHIPID_CIDR) ROM  */
 #define   CHIPID_CIDR_NVPTYP_ROMLESS_Val      _UINT32_(0x1)                                        /* (CHIPID_CIDR) ROMless or on-chip Flash  */
 #define   CHIPID_CIDR_NVPTYP_FLASH_Val        _UINT32_(0x2)                                        /* (CHIPID_CIDR) Embedded Flash Memory  */
@@ -161,14 +163,14 @@
 #define CHIPID_CIDR_NVPTYP_SRAM               (CHIPID_CIDR_NVPTYP_SRAM_Val << CHIPID_CIDR_NVPTYP_Pos) /* (CHIPID_CIDR) SRAM emulating ROM Position */
 #define CHIPID_CIDR_EXT_Pos                   _UINT32_(31)                                         /* (CHIPID_CIDR) Extension Flag Position */
 #define CHIPID_CIDR_EXT_Msk                   (_UINT32_(0x1) << CHIPID_CIDR_EXT_Pos)               /* (CHIPID_CIDR) Extension Flag Mask */
-#define CHIPID_CIDR_EXT(value)                (CHIPID_CIDR_EXT_Msk & (_UINT32_(value) << CHIPID_CIDR_EXT_Pos)) /* Assignment of value for EXT in the CHIPID_CIDR register */
+#define CHIPID_CIDR_EXT(value)                (CHIPID_CIDR_EXT_Msk & ((uint32_t)(value) << CHIPID_CIDR_EXT_Pos)) /* Assignment of value for EXT in the CHIPID_CIDR register */
 #define CHIPID_CIDR_Msk                       _UINT32_(0xFFFFFFFF)                                 /* (CHIPID_CIDR) Register Mask  */
 
 
 /* -------- CHIPID_EXID : (CHIPID Offset: 0x04) ( R/ 32) Chip ID Extension Register -------- */
 #define CHIPID_EXID_EXID_Pos                  _UINT32_(0)                                          /* (CHIPID_EXID) Chip ID Extension Position */
 #define CHIPID_EXID_EXID_Msk                  (_UINT32_(0xFFFFFFFF) << CHIPID_EXID_EXID_Pos)       /* (CHIPID_EXID) Chip ID Extension Mask */
-#define CHIPID_EXID_EXID(value)               (CHIPID_EXID_EXID_Msk & (_UINT32_(value) << CHIPID_EXID_EXID_Pos)) /* Assignment of value for EXID in the CHIPID_EXID register */
+#define CHIPID_EXID_EXID(value)               (CHIPID_EXID_EXID_Msk & ((uint32_t)(value) << CHIPID_EXID_EXID_Pos)) /* Assignment of value for EXID in the CHIPID_EXID register */
 #define CHIPID_EXID_Msk                       _UINT32_(0xFFFFFFFF)                                 /* (CHIPID_EXID) Register Mask  */
 
 

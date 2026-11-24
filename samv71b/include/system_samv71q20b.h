@@ -30,8 +30,8 @@ extern "C" {
 
 extern uint32_t SystemCoreClock;   /*!< System Clock Frequency (Core Clock)  */
 
-void SystemInit(void);
-void SystemCoreClockUpdate(void);
+extern void SystemInit (void);   /*!< Initialize the System and update the SystemCoreClock variable. */
+extern void SystemCoreClockUpdate (void);   /*!< Update the SystemCoreClock variable. */
 
 #ifdef __cplusplus
 }

@@ -19,11 +19,13 @@
  *
  */
 
-/*  file generated from device description file (ATDF) version 2025-07-21T07:57:33Z  */
+/*  file generated from device description file (ATDF) version 2026-06-26T08:37:48Z  */
 #ifndef _SAMV71_EFC_COMPONENT_H_
 #define _SAMV71_EFC_COMPONENT_H_
 
+#if !defined(DISABLE_CMSIS)
 #include "core_cm7.h"
+#endif /* !defined(DISABLE_CMSIS) */
 
 /* ************************************************************************** */
 /*                      SOFTWARE API DEFINITION FOR EFC                       */
@@ -32,23 +34,23 @@
 /* -------- EEFC_FMR : (EFC Offset: 0x00) (R/W 32) EEFC Flash Mode Register -------- */
 #define EEFC_FMR_FRDY_Pos                     _UINT32_(0)                                          /* (EEFC_FMR) Flash Ready Interrupt Enable Position */
 #define EEFC_FMR_FRDY_Msk                     (_UINT32_(0x1) << EEFC_FMR_FRDY_Pos)                 /* (EEFC_FMR) Flash Ready Interrupt Enable Mask */
-#define EEFC_FMR_FRDY(value)                  (EEFC_FMR_FRDY_Msk & (_UINT32_(value) << EEFC_FMR_FRDY_Pos)) /* Assignment of value for FRDY in the EEFC_FMR register */
+#define EEFC_FMR_FRDY(value)                  (EEFC_FMR_FRDY_Msk & ((uint32_t)(value) << EEFC_FMR_FRDY_Pos)) /* Assignment of value for FRDY in the EEFC_FMR register */
 #define EEFC_FMR_FWS_Pos                      _UINT32_(8)                                          /* (EEFC_FMR) Flash Wait State Position */
 #define EEFC_FMR_FWS_Msk                      (_UINT32_(0xF) << EEFC_FMR_FWS_Pos)                  /* (EEFC_FMR) Flash Wait State Mask */
-#define EEFC_FMR_FWS(value)                   (EEFC_FMR_FWS_Msk & (_UINT32_(value) << EEFC_FMR_FWS_Pos)) /* Assignment of value for FWS in the EEFC_FMR register */
+#define EEFC_FMR_FWS(value)                   (EEFC_FMR_FWS_Msk & ((uint32_t)(value) << EEFC_FMR_FWS_Pos)) /* Assignment of value for FWS in the EEFC_FMR register */
 #define EEFC_FMR_SCOD_Pos                     _UINT32_(16)                                         /* (EEFC_FMR) Sequential Code Optimization Disable Position */
 #define EEFC_FMR_SCOD_Msk                     (_UINT32_(0x1) << EEFC_FMR_SCOD_Pos)                 /* (EEFC_FMR) Sequential Code Optimization Disable Mask */
-#define EEFC_FMR_SCOD(value)                  (EEFC_FMR_SCOD_Msk & (_UINT32_(value) << EEFC_FMR_SCOD_Pos)) /* Assignment of value for SCOD in the EEFC_FMR register */
+#define EEFC_FMR_SCOD(value)                  (EEFC_FMR_SCOD_Msk & ((uint32_t)(value) << EEFC_FMR_SCOD_Pos)) /* Assignment of value for SCOD in the EEFC_FMR register */
 #define EEFC_FMR_CLOE_Pos                     _UINT32_(26)                                         /* (EEFC_FMR) Code Loop Optimization Enable Position */
 #define EEFC_FMR_CLOE_Msk                     (_UINT32_(0x1) << EEFC_FMR_CLOE_Pos)                 /* (EEFC_FMR) Code Loop Optimization Enable Mask */
-#define EEFC_FMR_CLOE(value)                  (EEFC_FMR_CLOE_Msk & (_UINT32_(value) << EEFC_FMR_CLOE_Pos)) /* Assignment of value for CLOE in the EEFC_FMR register */
+#define EEFC_FMR_CLOE(value)                  (EEFC_FMR_CLOE_Msk & ((uint32_t)(value) << EEFC_FMR_CLOE_Pos)) /* Assignment of value for CLOE in the EEFC_FMR register */
 #define EEFC_FMR_Msk                          _UINT32_(0x04010F01)                                 /* (EEFC_FMR) Register Mask  */
 
 
 /* -------- EEFC_FCR : (EFC Offset: 0x04) ( /W 32) EEFC Flash Command Register -------- */
 #define EEFC_FCR_FCMD_Pos                     _UINT32_(0)                                          /* (EEFC_FCR) Flash Command Position */
 #define EEFC_FCR_FCMD_Msk                     (_UINT32_(0xFF) << EEFC_FCR_FCMD_Pos)                /* (EEFC_FCR) Flash Command Mask */
-#define EEFC_FCR_FCMD(value)                  (EEFC_FCR_FCMD_Msk & (_UINT32_(value) << EEFC_FCR_FCMD_Pos)) /* Assignment of value for FCMD in the EEFC_FCR register */
+#define EEFC_FCR_FCMD(value)                  (EEFC_FCR_FCMD_Msk & ((uint32_t)(value) << EEFC_FCR_FCMD_Pos)) /* Assignment of value for FCMD in the EEFC_FCR register */
 #define   EEFC_FCR_FCMD_GETD_Val              _UINT32_(0x0)                                        /* (EEFC_FCR) Get Flash descriptor  */
 #define   EEFC_FCR_FCMD_WP_Val                _UINT32_(0x1)                                        /* (EEFC_FCR) Write page  */
 #define   EEFC_FCR_FCMD_WPL_Val               _UINT32_(0x2)                                        /* (EEFC_FCR) Write page and lock  */
@@ -93,10 +95,10 @@
 #define EEFC_FCR_FCMD_SPUS                    (EEFC_FCR_FCMD_SPUS_Val << EEFC_FCR_FCMD_Pos)        /* (EEFC_FCR) Stop read user signature Position */
 #define EEFC_FCR_FARG_Pos                     _UINT32_(8)                                          /* (EEFC_FCR) Flash Command Argument Position */
 #define EEFC_FCR_FARG_Msk                     (_UINT32_(0xFFFF) << EEFC_FCR_FARG_Pos)              /* (EEFC_FCR) Flash Command Argument Mask */
-#define EEFC_FCR_FARG(value)                  (EEFC_FCR_FARG_Msk & (_UINT32_(value) << EEFC_FCR_FARG_Pos)) /* Assignment of value for FARG in the EEFC_FCR register */
+#define EEFC_FCR_FARG(value)                  (EEFC_FCR_FARG_Msk & ((uint32_t)(value) << EEFC_FCR_FARG_Pos)) /* Assignment of value for FARG in the EEFC_FCR register */
 #define EEFC_FCR_FKEY_Pos                     _UINT32_(24)                                         /* (EEFC_FCR) Flash Writing Protection Key Position */
 #define EEFC_FCR_FKEY_Msk                     (_UINT32_(0xFF) << EEFC_FCR_FKEY_Pos)                /* (EEFC_FCR) Flash Writing Protection Key Mask */
-#define EEFC_FCR_FKEY(value)                  (EEFC_FCR_FKEY_Msk & (_UINT32_(value) << EEFC_FCR_FKEY_Pos)) /* Assignment of value for FKEY in the EEFC_FCR register */
+#define EEFC_FCR_FKEY(value)                  (EEFC_FCR_FKEY_Msk & ((uint32_t)(value) << EEFC_FCR_FKEY_Pos)) /* Assignment of value for FKEY in the EEFC_FCR register */
 #define   EEFC_FCR_FKEY_PASSWD_Val            _UINT32_(0x5A)                                       /* (EEFC_FCR) The 0x5A value enables the command defined by the bits of the register. If the field is written with a different value, the write is not performed and no action is started.  */
 #define EEFC_FCR_FKEY_PASSWD                  (EEFC_FCR_FKEY_PASSWD_Val << EEFC_FCR_FKEY_Pos)      /* (EEFC_FCR) The 0x5A value enables the command defined by the bits of the register. If the field is written with a different value, the write is not performed and no action is started. Position */
 #define EEFC_FCR_Msk                          _UINT32_(0xFFFFFFFF)                                 /* (EEFC_FCR) Register Mask  */
@@ -105,45 +107,45 @@
 /* -------- EEFC_FSR : (EFC Offset: 0x08) ( R/ 32) EEFC Flash Status Register -------- */
 #define EEFC_FSR_FRDY_Pos                     _UINT32_(0)                                          /* (EEFC_FSR) Flash Ready Status (cleared when Flash is busy) Position */
 #define EEFC_FSR_FRDY_Msk                     (_UINT32_(0x1) << EEFC_FSR_FRDY_Pos)                 /* (EEFC_FSR) Flash Ready Status (cleared when Flash is busy) Mask */
-#define EEFC_FSR_FRDY(value)                  (EEFC_FSR_FRDY_Msk & (_UINT32_(value) << EEFC_FSR_FRDY_Pos)) /* Assignment of value for FRDY in the EEFC_FSR register */
+#define EEFC_FSR_FRDY(value)                  (EEFC_FSR_FRDY_Msk & ((uint32_t)(value) << EEFC_FSR_FRDY_Pos)) /* Assignment of value for FRDY in the EEFC_FSR register */
 #define EEFC_FSR_FCMDE_Pos                    _UINT32_(1)                                          /* (EEFC_FSR) Flash Command Error Status (cleared on read or by writing EEFC_FCR) Position */
 #define EEFC_FSR_FCMDE_Msk                    (_UINT32_(0x1) << EEFC_FSR_FCMDE_Pos)                /* (EEFC_FSR) Flash Command Error Status (cleared on read or by writing EEFC_FCR) Mask */
-#define EEFC_FSR_FCMDE(value)                 (EEFC_FSR_FCMDE_Msk & (_UINT32_(value) << EEFC_FSR_FCMDE_Pos)) /* Assignment of value for FCMDE in the EEFC_FSR register */
+#define EEFC_FSR_FCMDE(value)                 (EEFC_FSR_FCMDE_Msk & ((uint32_t)(value) << EEFC_FSR_FCMDE_Pos)) /* Assignment of value for FCMDE in the EEFC_FSR register */
 #define EEFC_FSR_FLOCKE_Pos                   _UINT32_(2)                                          /* (EEFC_FSR) Flash Lock Error Status (cleared on read) Position */
 #define EEFC_FSR_FLOCKE_Msk                   (_UINT32_(0x1) << EEFC_FSR_FLOCKE_Pos)               /* (EEFC_FSR) Flash Lock Error Status (cleared on read) Mask */
-#define EEFC_FSR_FLOCKE(value)                (EEFC_FSR_FLOCKE_Msk & (_UINT32_(value) << EEFC_FSR_FLOCKE_Pos)) /* Assignment of value for FLOCKE in the EEFC_FSR register */
+#define EEFC_FSR_FLOCKE(value)                (EEFC_FSR_FLOCKE_Msk & ((uint32_t)(value) << EEFC_FSR_FLOCKE_Pos)) /* Assignment of value for FLOCKE in the EEFC_FSR register */
 #define EEFC_FSR_FLERR_Pos                    _UINT32_(3)                                          /* (EEFC_FSR) Flash Error Status (cleared when a programming operation starts) Position */
 #define EEFC_FSR_FLERR_Msk                    (_UINT32_(0x1) << EEFC_FSR_FLERR_Pos)                /* (EEFC_FSR) Flash Error Status (cleared when a programming operation starts) Mask */
-#define EEFC_FSR_FLERR(value)                 (EEFC_FSR_FLERR_Msk & (_UINT32_(value) << EEFC_FSR_FLERR_Pos)) /* Assignment of value for FLERR in the EEFC_FSR register */
+#define EEFC_FSR_FLERR(value)                 (EEFC_FSR_FLERR_Msk & ((uint32_t)(value) << EEFC_FSR_FLERR_Pos)) /* Assignment of value for FLERR in the EEFC_FSR register */
 #define EEFC_FSR_UECCELSB_Pos                 _UINT32_(16)                                         /* (EEFC_FSR) Unique ECC Error on LSB Part of the Memory Flash Data Bus (cleared on read) Position */
 #define EEFC_FSR_UECCELSB_Msk                 (_UINT32_(0x1) << EEFC_FSR_UECCELSB_Pos)             /* (EEFC_FSR) Unique ECC Error on LSB Part of the Memory Flash Data Bus (cleared on read) Mask */
-#define EEFC_FSR_UECCELSB(value)              (EEFC_FSR_UECCELSB_Msk & (_UINT32_(value) << EEFC_FSR_UECCELSB_Pos)) /* Assignment of value for UECCELSB in the EEFC_FSR register */
+#define EEFC_FSR_UECCELSB(value)              (EEFC_FSR_UECCELSB_Msk & ((uint32_t)(value) << EEFC_FSR_UECCELSB_Pos)) /* Assignment of value for UECCELSB in the EEFC_FSR register */
 #define EEFC_FSR_MECCELSB_Pos                 _UINT32_(17)                                         /* (EEFC_FSR) Multiple ECC Error on LSB Part of the Memory Flash Data Bus (cleared on read) Position */
 #define EEFC_FSR_MECCELSB_Msk                 (_UINT32_(0x1) << EEFC_FSR_MECCELSB_Pos)             /* (EEFC_FSR) Multiple ECC Error on LSB Part of the Memory Flash Data Bus (cleared on read) Mask */
-#define EEFC_FSR_MECCELSB(value)              (EEFC_FSR_MECCELSB_Msk & (_UINT32_(value) << EEFC_FSR_MECCELSB_Pos)) /* Assignment of value for MECCELSB in the EEFC_FSR register */
+#define EEFC_FSR_MECCELSB(value)              (EEFC_FSR_MECCELSB_Msk & ((uint32_t)(value) << EEFC_FSR_MECCELSB_Pos)) /* Assignment of value for MECCELSB in the EEFC_FSR register */
 #define EEFC_FSR_UECCEMSB_Pos                 _UINT32_(18)                                         /* (EEFC_FSR) Unique ECC Error on MSB Part of the Memory Flash Data Bus (cleared on read) Position */
 #define EEFC_FSR_UECCEMSB_Msk                 (_UINT32_(0x1) << EEFC_FSR_UECCEMSB_Pos)             /* (EEFC_FSR) Unique ECC Error on MSB Part of the Memory Flash Data Bus (cleared on read) Mask */
-#define EEFC_FSR_UECCEMSB(value)              (EEFC_FSR_UECCEMSB_Msk & (_UINT32_(value) << EEFC_FSR_UECCEMSB_Pos)) /* Assignment of value for UECCEMSB in the EEFC_FSR register */
+#define EEFC_FSR_UECCEMSB(value)              (EEFC_FSR_UECCEMSB_Msk & ((uint32_t)(value) << EEFC_FSR_UECCEMSB_Pos)) /* Assignment of value for UECCEMSB in the EEFC_FSR register */
 #define EEFC_FSR_MECCEMSB_Pos                 _UINT32_(19)                                         /* (EEFC_FSR) Multiple ECC Error on MSB Part of the Memory Flash Data Bus (cleared on read) Position */
 #define EEFC_FSR_MECCEMSB_Msk                 (_UINT32_(0x1) << EEFC_FSR_MECCEMSB_Pos)             /* (EEFC_FSR) Multiple ECC Error on MSB Part of the Memory Flash Data Bus (cleared on read) Mask */
-#define EEFC_FSR_MECCEMSB(value)              (EEFC_FSR_MECCEMSB_Msk & (_UINT32_(value) << EEFC_FSR_MECCEMSB_Pos)) /* Assignment of value for MECCEMSB in the EEFC_FSR register */
+#define EEFC_FSR_MECCEMSB(value)              (EEFC_FSR_MECCEMSB_Msk & ((uint32_t)(value) << EEFC_FSR_MECCEMSB_Pos)) /* Assignment of value for MECCEMSB in the EEFC_FSR register */
 #define EEFC_FSR_Msk                          _UINT32_(0x000F000F)                                 /* (EEFC_FSR) Register Mask  */
 
 
 /* -------- EEFC_FRR : (EFC Offset: 0x0C) ( R/ 32) EEFC Flash Result Register -------- */
 #define EEFC_FRR_FVALUE_Pos                   _UINT32_(0)                                          /* (EEFC_FRR) Flash Result Value Position */
 #define EEFC_FRR_FVALUE_Msk                   (_UINT32_(0xFFFFFFFF) << EEFC_FRR_FVALUE_Pos)        /* (EEFC_FRR) Flash Result Value Mask */
-#define EEFC_FRR_FVALUE(value)                (EEFC_FRR_FVALUE_Msk & (_UINT32_(value) << EEFC_FRR_FVALUE_Pos)) /* Assignment of value for FVALUE in the EEFC_FRR register */
+#define EEFC_FRR_FVALUE(value)                (EEFC_FRR_FVALUE_Msk & ((uint32_t)(value) << EEFC_FRR_FVALUE_Pos)) /* Assignment of value for FVALUE in the EEFC_FRR register */
 #define EEFC_FRR_Msk                          _UINT32_(0xFFFFFFFF)                                 /* (EEFC_FRR) Register Mask  */
 
 
 /* -------- EEFC_WPMR : (EFC Offset: 0xE4) (R/W 32) Write Protection Mode Register -------- */
 #define EEFC_WPMR_WPEN_Pos                    _UINT32_(0)                                          /* (EEFC_WPMR) Write Protection Enable Position */
 #define EEFC_WPMR_WPEN_Msk                    (_UINT32_(0x1) << EEFC_WPMR_WPEN_Pos)                /* (EEFC_WPMR) Write Protection Enable Mask */
-#define EEFC_WPMR_WPEN(value)                 (EEFC_WPMR_WPEN_Msk & (_UINT32_(value) << EEFC_WPMR_WPEN_Pos)) /* Assignment of value for WPEN in the EEFC_WPMR register */
+#define EEFC_WPMR_WPEN(value)                 (EEFC_WPMR_WPEN_Msk & ((uint32_t)(value) << EEFC_WPMR_WPEN_Pos)) /* Assignment of value for WPEN in the EEFC_WPMR register */
 #define EEFC_WPMR_WPKEY_Pos                   _UINT32_(8)                                          /* (EEFC_WPMR) Write Protection Key Position */
 #define EEFC_WPMR_WPKEY_Msk                   (_UINT32_(0xFFFFFF) << EEFC_WPMR_WPKEY_Pos)          /* (EEFC_WPMR) Write Protection Key Mask */
-#define EEFC_WPMR_WPKEY(value)                (EEFC_WPMR_WPKEY_Msk & (_UINT32_(value) << EEFC_WPMR_WPKEY_Pos)) /* Assignment of value for WPKEY in the EEFC_WPMR register */
+#define EEFC_WPMR_WPKEY(value)                (EEFC_WPMR_WPKEY_Msk & ((uint32_t)(value) << EEFC_WPMR_WPKEY_Pos)) /* Assignment of value for WPKEY in the EEFC_WPMR register */
 #define   EEFC_WPMR_WPKEY_PASSWD_Val          _UINT32_(0x454643)                                   /* (EEFC_WPMR) Writing any other value in this field aborts the write operation.Always reads as 0.  */
 #define EEFC_WPMR_WPKEY_PASSWD                (EEFC_WPMR_WPKEY_PASSWD_Val << EEFC_WPMR_WPKEY_Pos)  /* (EEFC_WPMR) Writing any other value in this field aborts the write operation.Always reads as 0. Position */
 #define EEFC_WPMR_Msk                         _UINT32_(0xFFFFFF01)                                 /* (EEFC_WPMR) Register Mask  */

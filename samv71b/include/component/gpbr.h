@@ -19,11 +19,13 @@
  *
  */
 
-/*  file generated from device description file (ATDF) version 2025-07-21T07:57:33Z  */
+/*  file generated from device description file (ATDF) version 2026-06-26T08:37:48Z  */
 #ifndef _SAMV71_GPBR_COMPONENT_H_
 #define _SAMV71_GPBR_COMPONENT_H_
 
+#if !defined(DISABLE_CMSIS)
 #include "core_cm7.h"
+#endif /* !defined(DISABLE_CMSIS) */
 
 /* ************************************************************************** */
 /*                      SOFTWARE API DEFINITION FOR GPBR                      */
@@ -32,7 +34,7 @@
 /* -------- SYS_GPBR : (GPBR Offset: 0x00) (R/W 32) General Purpose Backup Register 0 -------- */
 #define SYS_GPBR_GPBR_VALUE_Pos               _UINT32_(0)                                          /* (SYS_GPBR) Value of GPBR x Position */
 #define SYS_GPBR_GPBR_VALUE_Msk               (_UINT32_(0xFFFFFFFF) << SYS_GPBR_GPBR_VALUE_Pos)    /* (SYS_GPBR) Value of GPBR x Mask */
-#define SYS_GPBR_GPBR_VALUE(value)            (SYS_GPBR_GPBR_VALUE_Msk & (_UINT32_(value) << SYS_GPBR_GPBR_VALUE_Pos)) /* Assignment of value for GPBR_VALUE in the SYS_GPBR register */
+#define SYS_GPBR_GPBR_VALUE(value)            (SYS_GPBR_GPBR_VALUE_Msk & ((uint32_t)(value) << SYS_GPBR_GPBR_VALUE_Pos)) /* Assignment of value for GPBR_VALUE in the SYS_GPBR register */
 #define SYS_GPBR_Msk                          _UINT32_(0xFFFFFFFF)                                 /* (SYS_GPBR) Register Mask  */
 
 

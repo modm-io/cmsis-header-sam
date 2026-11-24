@@ -19,11 +19,13 @@
  *
  */
 
-/*  file generated from device description file (ATDF) version 2025-07-21T07:57:33Z  */
+/*  file generated from device description file (ATDF) version 2026-06-26T08:37:48Z  */
 #ifndef _SAMV71_FUSES_COMPONENT_H_
 #define _SAMV71_FUSES_COMPONENT_H_
 
+#if !defined(DISABLE_CMSIS)
 #include "core_cm7.h"
+#endif /* !defined(DISABLE_CMSIS) */
 
 /* ************************************************************************** */
 /*                     SOFTWARE API DEFINITION FOR FUSES                      */
@@ -32,13 +34,13 @@
 /* -------- FUSES_GPNVMBITS : (FUSES Offset: 0x00) (R/W 16) GPNVM Bits -------- */
 #define FUSES_GPNVMBITS_SECURITY_BIT_Pos      _UINT16_(0)                                          /* (FUSES_GPNVMBITS) Security Bit Position */
 #define FUSES_GPNVMBITS_SECURITY_BIT_Msk      (_UINT16_(0x1) << FUSES_GPNVMBITS_SECURITY_BIT_Pos)  /* (FUSES_GPNVMBITS) Security Bit Mask */
-#define FUSES_GPNVMBITS_SECURITY_BIT(value)   (FUSES_GPNVMBITS_SECURITY_BIT_Msk & (_UINT16_(value) << FUSES_GPNVMBITS_SECURITY_BIT_Pos)) /* Assignment of value for SECURITY_BIT in the FUSES_GPNVMBITS register */
+#define FUSES_GPNVMBITS_SECURITY_BIT(value)   (FUSES_GPNVMBITS_SECURITY_BIT_Msk & ((uint16_t)(value) << FUSES_GPNVMBITS_SECURITY_BIT_Pos)) /* Assignment of value for SECURITY_BIT in the FUSES_GPNVMBITS register */
 #define FUSES_GPNVMBITS_BOOT_MODE_Pos         _UINT16_(1)                                          /* (FUSES_GPNVMBITS) Boot Mode Selection Position */
 #define FUSES_GPNVMBITS_BOOT_MODE_Msk         (_UINT16_(0x1) << FUSES_GPNVMBITS_BOOT_MODE_Pos)     /* (FUSES_GPNVMBITS) Boot Mode Selection Mask */
-#define FUSES_GPNVMBITS_BOOT_MODE(value)      (FUSES_GPNVMBITS_BOOT_MODE_Msk & (_UINT16_(value) << FUSES_GPNVMBITS_BOOT_MODE_Pos)) /* Assignment of value for BOOT_MODE in the FUSES_GPNVMBITS register */
+#define FUSES_GPNVMBITS_BOOT_MODE(value)      (FUSES_GPNVMBITS_BOOT_MODE_Msk & ((uint16_t)(value) << FUSES_GPNVMBITS_BOOT_MODE_Pos)) /* Assignment of value for BOOT_MODE in the FUSES_GPNVMBITS register */
 #define FUSES_GPNVMBITS_TCM_CONFIGURATION_Pos _UINT16_(7)                                          /* (FUSES_GPNVMBITS) TCM Configuration Position */
 #define FUSES_GPNVMBITS_TCM_CONFIGURATION_Msk (_UINT16_(0x3) << FUSES_GPNVMBITS_TCM_CONFIGURATION_Pos) /* (FUSES_GPNVMBITS) TCM Configuration Mask */
-#define FUSES_GPNVMBITS_TCM_CONFIGURATION(value) (FUSES_GPNVMBITS_TCM_CONFIGURATION_Msk & (_UINT16_(value) << FUSES_GPNVMBITS_TCM_CONFIGURATION_Pos)) /* Assignment of value for TCM_CONFIGURATION in the FUSES_GPNVMBITS register */
+#define FUSES_GPNVMBITS_TCM_CONFIGURATION(value) (FUSES_GPNVMBITS_TCM_CONFIGURATION_Msk & ((uint16_t)(value) << FUSES_GPNVMBITS_TCM_CONFIGURATION_Pos)) /* Assignment of value for TCM_CONFIGURATION in the FUSES_GPNVMBITS register */
 #define FUSES_GPNVMBITS_Msk                   _UINT16_(0x0183)                                     /* (FUSES_GPNVMBITS) Register Mask  */
 
 

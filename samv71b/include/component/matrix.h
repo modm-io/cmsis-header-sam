@@ -19,11 +19,13 @@
  *
  */
 
-/*  file generated from device description file (ATDF) version 2025-07-21T07:57:33Z  */
+/*  file generated from device description file (ATDF) version 2026-06-26T08:37:48Z  */
 #ifndef _SAMV71_MATRIX_COMPONENT_H_
 #define _SAMV71_MATRIX_COMPONENT_H_
 
+#if !defined(DISABLE_CMSIS)
 #include "core_cm7.h"
+#endif /* !defined(DISABLE_CMSIS) */
 
 /* ************************************************************************** */
 /*                     SOFTWARE API DEFINITION FOR MATRIX                     */
@@ -32,54 +34,54 @@
 /* -------- MATRIX_PRAS : (MATRIX Offset: 0x00) (R/W 32) Priority Register A for Slave 0 -------- */
 #define MATRIX_PRAS_M0PR_Pos                  _UINT32_(0)                                          /* (MATRIX_PRAS) Master 0 Priority Position */
 #define MATRIX_PRAS_M0PR_Msk                  (_UINT32_(0x3) << MATRIX_PRAS_M0PR_Pos)              /* (MATRIX_PRAS) Master 0 Priority Mask */
-#define MATRIX_PRAS_M0PR(value)               (MATRIX_PRAS_M0PR_Msk & (_UINT32_(value) << MATRIX_PRAS_M0PR_Pos)) /* Assignment of value for M0PR in the MATRIX_PRAS register */
+#define MATRIX_PRAS_M0PR(value)               (MATRIX_PRAS_M0PR_Msk & ((uint32_t)(value) << MATRIX_PRAS_M0PR_Pos)) /* Assignment of value for M0PR in the MATRIX_PRAS register */
 #define MATRIX_PRAS_M1PR_Pos                  _UINT32_(4)                                          /* (MATRIX_PRAS) Master 1 Priority Position */
 #define MATRIX_PRAS_M1PR_Msk                  (_UINT32_(0x3) << MATRIX_PRAS_M1PR_Pos)              /* (MATRIX_PRAS) Master 1 Priority Mask */
-#define MATRIX_PRAS_M1PR(value)               (MATRIX_PRAS_M1PR_Msk & (_UINT32_(value) << MATRIX_PRAS_M1PR_Pos)) /* Assignment of value for M1PR in the MATRIX_PRAS register */
+#define MATRIX_PRAS_M1PR(value)               (MATRIX_PRAS_M1PR_Msk & ((uint32_t)(value) << MATRIX_PRAS_M1PR_Pos)) /* Assignment of value for M1PR in the MATRIX_PRAS register */
 #define MATRIX_PRAS_M2PR_Pos                  _UINT32_(8)                                          /* (MATRIX_PRAS) Master 2 Priority Position */
 #define MATRIX_PRAS_M2PR_Msk                  (_UINT32_(0x3) << MATRIX_PRAS_M2PR_Pos)              /* (MATRIX_PRAS) Master 2 Priority Mask */
-#define MATRIX_PRAS_M2PR(value)               (MATRIX_PRAS_M2PR_Msk & (_UINT32_(value) << MATRIX_PRAS_M2PR_Pos)) /* Assignment of value for M2PR in the MATRIX_PRAS register */
+#define MATRIX_PRAS_M2PR(value)               (MATRIX_PRAS_M2PR_Msk & ((uint32_t)(value) << MATRIX_PRAS_M2PR_Pos)) /* Assignment of value for M2PR in the MATRIX_PRAS register */
 #define MATRIX_PRAS_M3PR_Pos                  _UINT32_(12)                                         /* (MATRIX_PRAS) Master 3 Priority Position */
 #define MATRIX_PRAS_M3PR_Msk                  (_UINT32_(0x3) << MATRIX_PRAS_M3PR_Pos)              /* (MATRIX_PRAS) Master 3 Priority Mask */
-#define MATRIX_PRAS_M3PR(value)               (MATRIX_PRAS_M3PR_Msk & (_UINT32_(value) << MATRIX_PRAS_M3PR_Pos)) /* Assignment of value for M3PR in the MATRIX_PRAS register */
+#define MATRIX_PRAS_M3PR(value)               (MATRIX_PRAS_M3PR_Msk & ((uint32_t)(value) << MATRIX_PRAS_M3PR_Pos)) /* Assignment of value for M3PR in the MATRIX_PRAS register */
 #define MATRIX_PRAS_M4PR_Pos                  _UINT32_(16)                                         /* (MATRIX_PRAS) Master 4 Priority Position */
 #define MATRIX_PRAS_M4PR_Msk                  (_UINT32_(0x3) << MATRIX_PRAS_M4PR_Pos)              /* (MATRIX_PRAS) Master 4 Priority Mask */
-#define MATRIX_PRAS_M4PR(value)               (MATRIX_PRAS_M4PR_Msk & (_UINT32_(value) << MATRIX_PRAS_M4PR_Pos)) /* Assignment of value for M4PR in the MATRIX_PRAS register */
+#define MATRIX_PRAS_M4PR(value)               (MATRIX_PRAS_M4PR_Msk & ((uint32_t)(value) << MATRIX_PRAS_M4PR_Pos)) /* Assignment of value for M4PR in the MATRIX_PRAS register */
 #define MATRIX_PRAS_M5PR_Pos                  _UINT32_(20)                                         /* (MATRIX_PRAS) Master 5 Priority Position */
 #define MATRIX_PRAS_M5PR_Msk                  (_UINT32_(0x3) << MATRIX_PRAS_M5PR_Pos)              /* (MATRIX_PRAS) Master 5 Priority Mask */
-#define MATRIX_PRAS_M5PR(value)               (MATRIX_PRAS_M5PR_Msk & (_UINT32_(value) << MATRIX_PRAS_M5PR_Pos)) /* Assignment of value for M5PR in the MATRIX_PRAS register */
+#define MATRIX_PRAS_M5PR(value)               (MATRIX_PRAS_M5PR_Msk & ((uint32_t)(value) << MATRIX_PRAS_M5PR_Pos)) /* Assignment of value for M5PR in the MATRIX_PRAS register */
 #define MATRIX_PRAS_M6PR_Pos                  _UINT32_(24)                                         /* (MATRIX_PRAS) Master 6 Priority Position */
 #define MATRIX_PRAS_M6PR_Msk                  (_UINT32_(0x3) << MATRIX_PRAS_M6PR_Pos)              /* (MATRIX_PRAS) Master 6 Priority Mask */
-#define MATRIX_PRAS_M6PR(value)               (MATRIX_PRAS_M6PR_Msk & (_UINT32_(value) << MATRIX_PRAS_M6PR_Pos)) /* Assignment of value for M6PR in the MATRIX_PRAS register */
+#define MATRIX_PRAS_M6PR(value)               (MATRIX_PRAS_M6PR_Msk & ((uint32_t)(value) << MATRIX_PRAS_M6PR_Pos)) /* Assignment of value for M6PR in the MATRIX_PRAS register */
 #define MATRIX_PRAS_M7PR_Pos                  _UINT32_(28)                                         /* (MATRIX_PRAS) Master 7 Priority Position */
 #define MATRIX_PRAS_M7PR_Msk                  (_UINT32_(0x3) << MATRIX_PRAS_M7PR_Pos)              /* (MATRIX_PRAS) Master 7 Priority Mask */
-#define MATRIX_PRAS_M7PR(value)               (MATRIX_PRAS_M7PR_Msk & (_UINT32_(value) << MATRIX_PRAS_M7PR_Pos)) /* Assignment of value for M7PR in the MATRIX_PRAS register */
+#define MATRIX_PRAS_M7PR(value)               (MATRIX_PRAS_M7PR_Msk & ((uint32_t)(value) << MATRIX_PRAS_M7PR_Pos)) /* Assignment of value for M7PR in the MATRIX_PRAS register */
 #define MATRIX_PRAS_Msk                       _UINT32_(0x33333333)                                 /* (MATRIX_PRAS) Register Mask  */
 
 
 /* -------- MATRIX_PRBS : (MATRIX Offset: 0x04) (R/W 32) Priority Register B for Slave 0 -------- */
 #define MATRIX_PRBS_M8PR_Pos                  _UINT32_(0)                                          /* (MATRIX_PRBS) Master 8 Priority Position */
 #define MATRIX_PRBS_M8PR_Msk                  (_UINT32_(0x3) << MATRIX_PRBS_M8PR_Pos)              /* (MATRIX_PRBS) Master 8 Priority Mask */
-#define MATRIX_PRBS_M8PR(value)               (MATRIX_PRBS_M8PR_Msk & (_UINT32_(value) << MATRIX_PRBS_M8PR_Pos)) /* Assignment of value for M8PR in the MATRIX_PRBS register */
+#define MATRIX_PRBS_M8PR(value)               (MATRIX_PRBS_M8PR_Msk & ((uint32_t)(value) << MATRIX_PRBS_M8PR_Pos)) /* Assignment of value for M8PR in the MATRIX_PRBS register */
 #define MATRIX_PRBS_M9PR_Pos                  _UINT32_(4)                                          /* (MATRIX_PRBS) Master 9 Priority Position */
 #define MATRIX_PRBS_M9PR_Msk                  (_UINT32_(0x3) << MATRIX_PRBS_M9PR_Pos)              /* (MATRIX_PRBS) Master 9 Priority Mask */
-#define MATRIX_PRBS_M9PR(value)               (MATRIX_PRBS_M9PR_Msk & (_UINT32_(value) << MATRIX_PRBS_M9PR_Pos)) /* Assignment of value for M9PR in the MATRIX_PRBS register */
+#define MATRIX_PRBS_M9PR(value)               (MATRIX_PRBS_M9PR_Msk & ((uint32_t)(value) << MATRIX_PRBS_M9PR_Pos)) /* Assignment of value for M9PR in the MATRIX_PRBS register */
 #define MATRIX_PRBS_M10PR_Pos                 _UINT32_(8)                                          /* (MATRIX_PRBS) Master 10 Priority Position */
 #define MATRIX_PRBS_M10PR_Msk                 (_UINT32_(0x3) << MATRIX_PRBS_M10PR_Pos)             /* (MATRIX_PRBS) Master 10 Priority Mask */
-#define MATRIX_PRBS_M10PR(value)              (MATRIX_PRBS_M10PR_Msk & (_UINT32_(value) << MATRIX_PRBS_M10PR_Pos)) /* Assignment of value for M10PR in the MATRIX_PRBS register */
+#define MATRIX_PRBS_M10PR(value)              (MATRIX_PRBS_M10PR_Msk & ((uint32_t)(value) << MATRIX_PRBS_M10PR_Pos)) /* Assignment of value for M10PR in the MATRIX_PRBS register */
 #define MATRIX_PRBS_M11PR_Pos                 _UINT32_(12)                                         /* (MATRIX_PRBS) Master 11 Priority Position */
 #define MATRIX_PRBS_M11PR_Msk                 (_UINT32_(0x3) << MATRIX_PRBS_M11PR_Pos)             /* (MATRIX_PRBS) Master 11 Priority Mask */
-#define MATRIX_PRBS_M11PR(value)              (MATRIX_PRBS_M11PR_Msk & (_UINT32_(value) << MATRIX_PRBS_M11PR_Pos)) /* Assignment of value for M11PR in the MATRIX_PRBS register */
+#define MATRIX_PRBS_M11PR(value)              (MATRIX_PRBS_M11PR_Msk & ((uint32_t)(value) << MATRIX_PRBS_M11PR_Pos)) /* Assignment of value for M11PR in the MATRIX_PRBS register */
 #define MATRIX_PRBS_M12PR_Pos                 _UINT32_(16)                                         /* (MATRIX_PRBS) Master 12 Priority Position */
 #define MATRIX_PRBS_M12PR_Msk                 (_UINT32_(0x3) << MATRIX_PRBS_M12PR_Pos)             /* (MATRIX_PRBS) Master 12 Priority Mask */
-#define MATRIX_PRBS_M12PR(value)              (MATRIX_PRBS_M12PR_Msk & (_UINT32_(value) << MATRIX_PRBS_M12PR_Pos)) /* Assignment of value for M12PR in the MATRIX_PRBS register */
+#define MATRIX_PRBS_M12PR(value)              (MATRIX_PRBS_M12PR_Msk & ((uint32_t)(value) << MATRIX_PRBS_M12PR_Pos)) /* Assignment of value for M12PR in the MATRIX_PRBS register */
 #define MATRIX_PRBS_Msk                       _UINT32_(0x00033333)                                 /* (MATRIX_PRBS) Register Mask  */
 
 
 /* -------- MATRIX_MCFG : (MATRIX Offset: 0x00) (R/W 32) Master Configuration Register 0 -------- */
 #define MATRIX_MCFG_ULBT_Pos                  _UINT32_(0)                                          /* (MATRIX_MCFG) Undefined Length Burst Type Position */
 #define MATRIX_MCFG_ULBT_Msk                  (_UINT32_(0x7) << MATRIX_MCFG_ULBT_Pos)              /* (MATRIX_MCFG) Undefined Length Burst Type Mask */
-#define MATRIX_MCFG_ULBT(value)               (MATRIX_MCFG_ULBT_Msk & (_UINT32_(value) << MATRIX_MCFG_ULBT_Pos)) /* Assignment of value for ULBT in the MATRIX_MCFG register */
+#define MATRIX_MCFG_ULBT(value)               (MATRIX_MCFG_ULBT_Msk & ((uint32_t)(value) << MATRIX_MCFG_ULBT_Pos)) /* Assignment of value for ULBT in the MATRIX_MCFG register */
 #define   MATRIX_MCFG_ULBT_UNLTD_LENGTH_Val   _UINT32_(0x0)                                        /* (MATRIX_MCFG) Unlimited Length Burst-No predicted end of burst is generated, therefore INCR bursts coming from this master can only be broken if the Slave Slot Cycle Limit is reached. If the Slot Cycle Limit is not reached, the burst is normally completed by the master, at the latest, on the next AHB 1-Kbyte address boundary, allowing up to 256-beat word bursts or 128-beat double-word bursts.This value should not be used in the very particular case of a master capable of performing back-to-back undefined length bursts on a single slave, since this could indefinitely freeze the slave arbitration and thus prevent another master from accessing this slave.  */
 #define   MATRIX_MCFG_ULBT_SINGLE_ACCESS_Val  _UINT32_(0x1)                                        /* (MATRIX_MCFG) Single Access-The undefined length burst is treated as a succession of single accesses, allowing re-arbitration at each beat of the INCR burst or bursts sequence.  */
 #define   MATRIX_MCFG_ULBT_4BEAT_BURST_Val    _UINT32_(0x2)                                        /* (MATRIX_MCFG) 4-beat Burst-The undefined length burst or bursts sequence is split into 4-beat bursts or less, allowing re-arbitration every 4 beats.  */
@@ -102,10 +104,10 @@
 /* -------- MATRIX_SCFG : (MATRIX Offset: 0x40) (R/W 32) Slave Configuration Register 0 -------- */
 #define MATRIX_SCFG_SLOT_CYCLE_Pos            _UINT32_(0)                                          /* (MATRIX_SCFG) Maximum Bus Grant Duration for Masters Position */
 #define MATRIX_SCFG_SLOT_CYCLE_Msk            (_UINT32_(0x1FF) << MATRIX_SCFG_SLOT_CYCLE_Pos)      /* (MATRIX_SCFG) Maximum Bus Grant Duration for Masters Mask */
-#define MATRIX_SCFG_SLOT_CYCLE(value)         (MATRIX_SCFG_SLOT_CYCLE_Msk & (_UINT32_(value) << MATRIX_SCFG_SLOT_CYCLE_Pos)) /* Assignment of value for SLOT_CYCLE in the MATRIX_SCFG register */
+#define MATRIX_SCFG_SLOT_CYCLE(value)         (MATRIX_SCFG_SLOT_CYCLE_Msk & ((uint32_t)(value) << MATRIX_SCFG_SLOT_CYCLE_Pos)) /* Assignment of value for SLOT_CYCLE in the MATRIX_SCFG register */
 #define MATRIX_SCFG_DEFMSTR_TYPE_Pos          _UINT32_(16)                                         /* (MATRIX_SCFG) Default Master Type Position */
 #define MATRIX_SCFG_DEFMSTR_TYPE_Msk          (_UINT32_(0x3) << MATRIX_SCFG_DEFMSTR_TYPE_Pos)      /* (MATRIX_SCFG) Default Master Type Mask */
-#define MATRIX_SCFG_DEFMSTR_TYPE(value)       (MATRIX_SCFG_DEFMSTR_TYPE_Msk & (_UINT32_(value) << MATRIX_SCFG_DEFMSTR_TYPE_Pos)) /* Assignment of value for DEFMSTR_TYPE in the MATRIX_SCFG register */
+#define MATRIX_SCFG_DEFMSTR_TYPE(value)       (MATRIX_SCFG_DEFMSTR_TYPE_Msk & ((uint32_t)(value) << MATRIX_SCFG_DEFMSTR_TYPE_Pos)) /* Assignment of value for DEFMSTR_TYPE in the MATRIX_SCFG register */
 #define   MATRIX_SCFG_DEFMSTR_TYPE_NONE_Val   _UINT32_(0x0)                                        /* (MATRIX_SCFG) No Default Master-At the end of the current slave access, if no other master request is pending, the slave is disconnected from all masters.This results in a one clock cycle latency for the first access of a burst transfer or for a single access.  */
 #define   MATRIX_SCFG_DEFMSTR_TYPE_LAST_Val   _UINT32_(0x1)                                        /* (MATRIX_SCFG) Last Default Master-At the end of the current slave access, if no other master request is pending, the slave stays connected to the last master having accessed it.This results in not having one clock cycle latency when the last master tries to access the slave again.  */
 #define   MATRIX_SCFG_DEFMSTR_TYPE_FIXED_Val  _UINT32_(0x2)                                        /* (MATRIX_SCFG) Fixed Default Master-At the end of the current slave access, if no other master request is pending, the slave connects to the fixed master the number that has been written in the FIXED_DEFMSTR field.This results in not having one clock cycle latency when the fixed master tries to access the slave again.  */
@@ -114,140 +116,140 @@
 #define MATRIX_SCFG_DEFMSTR_TYPE_FIXED        (MATRIX_SCFG_DEFMSTR_TYPE_FIXED_Val << MATRIX_SCFG_DEFMSTR_TYPE_Pos) /* (MATRIX_SCFG) Fixed Default Master-At the end of the current slave access, if no other master request is pending, the slave connects to the fixed master the number that has been written in the FIXED_DEFMSTR field.This results in not having one clock cycle latency when the fixed master tries to access the slave again. Position */
 #define MATRIX_SCFG_FIXED_DEFMSTR_Pos         _UINT32_(18)                                         /* (MATRIX_SCFG) Fixed Default Master Position */
 #define MATRIX_SCFG_FIXED_DEFMSTR_Msk         (_UINT32_(0xF) << MATRIX_SCFG_FIXED_DEFMSTR_Pos)     /* (MATRIX_SCFG) Fixed Default Master Mask */
-#define MATRIX_SCFG_FIXED_DEFMSTR(value)      (MATRIX_SCFG_FIXED_DEFMSTR_Msk & (_UINT32_(value) << MATRIX_SCFG_FIXED_DEFMSTR_Pos)) /* Assignment of value for FIXED_DEFMSTR in the MATRIX_SCFG register */
+#define MATRIX_SCFG_FIXED_DEFMSTR(value)      (MATRIX_SCFG_FIXED_DEFMSTR_Msk & ((uint32_t)(value) << MATRIX_SCFG_FIXED_DEFMSTR_Pos)) /* Assignment of value for FIXED_DEFMSTR in the MATRIX_SCFG register */
 #define MATRIX_SCFG_Msk                       _UINT32_(0x003F01FF)                                 /* (MATRIX_SCFG) Register Mask  */
 
 
 /* -------- MATRIX_MRCR : (MATRIX Offset: 0x100) (R/W 32) Master Remap Control Register -------- */
 #define MATRIX_MRCR_RCB0_Pos                  _UINT32_(0)                                          /* (MATRIX_MRCR) Remap Command Bit for Master 0 Position */
 #define MATRIX_MRCR_RCB0_Msk                  (_UINT32_(0x1) << MATRIX_MRCR_RCB0_Pos)              /* (MATRIX_MRCR) Remap Command Bit for Master 0 Mask */
-#define MATRIX_MRCR_RCB0(value)               (MATRIX_MRCR_RCB0_Msk & (_UINT32_(value) << MATRIX_MRCR_RCB0_Pos)) /* Assignment of value for RCB0 in the MATRIX_MRCR register */
+#define MATRIX_MRCR_RCB0(value)               (MATRIX_MRCR_RCB0_Msk & ((uint32_t)(value) << MATRIX_MRCR_RCB0_Pos)) /* Assignment of value for RCB0 in the MATRIX_MRCR register */
 #define MATRIX_MRCR_RCB1_Pos                  _UINT32_(1)                                          /* (MATRIX_MRCR) Remap Command Bit for Master 1 Position */
 #define MATRIX_MRCR_RCB1_Msk                  (_UINT32_(0x1) << MATRIX_MRCR_RCB1_Pos)              /* (MATRIX_MRCR) Remap Command Bit for Master 1 Mask */
-#define MATRIX_MRCR_RCB1(value)               (MATRIX_MRCR_RCB1_Msk & (_UINT32_(value) << MATRIX_MRCR_RCB1_Pos)) /* Assignment of value for RCB1 in the MATRIX_MRCR register */
+#define MATRIX_MRCR_RCB1(value)               (MATRIX_MRCR_RCB1_Msk & ((uint32_t)(value) << MATRIX_MRCR_RCB1_Pos)) /* Assignment of value for RCB1 in the MATRIX_MRCR register */
 #define MATRIX_MRCR_RCB2_Pos                  _UINT32_(2)                                          /* (MATRIX_MRCR) Remap Command Bit for Master 2 Position */
 #define MATRIX_MRCR_RCB2_Msk                  (_UINT32_(0x1) << MATRIX_MRCR_RCB2_Pos)              /* (MATRIX_MRCR) Remap Command Bit for Master 2 Mask */
-#define MATRIX_MRCR_RCB2(value)               (MATRIX_MRCR_RCB2_Msk & (_UINT32_(value) << MATRIX_MRCR_RCB2_Pos)) /* Assignment of value for RCB2 in the MATRIX_MRCR register */
+#define MATRIX_MRCR_RCB2(value)               (MATRIX_MRCR_RCB2_Msk & ((uint32_t)(value) << MATRIX_MRCR_RCB2_Pos)) /* Assignment of value for RCB2 in the MATRIX_MRCR register */
 #define MATRIX_MRCR_RCB3_Pos                  _UINT32_(3)                                          /* (MATRIX_MRCR) Remap Command Bit for Master 3 Position */
 #define MATRIX_MRCR_RCB3_Msk                  (_UINT32_(0x1) << MATRIX_MRCR_RCB3_Pos)              /* (MATRIX_MRCR) Remap Command Bit for Master 3 Mask */
-#define MATRIX_MRCR_RCB3(value)               (MATRIX_MRCR_RCB3_Msk & (_UINT32_(value) << MATRIX_MRCR_RCB3_Pos)) /* Assignment of value for RCB3 in the MATRIX_MRCR register */
+#define MATRIX_MRCR_RCB3(value)               (MATRIX_MRCR_RCB3_Msk & ((uint32_t)(value) << MATRIX_MRCR_RCB3_Pos)) /* Assignment of value for RCB3 in the MATRIX_MRCR register */
 #define MATRIX_MRCR_RCB4_Pos                  _UINT32_(4)                                          /* (MATRIX_MRCR) Remap Command Bit for Master 4 Position */
 #define MATRIX_MRCR_RCB4_Msk                  (_UINT32_(0x1) << MATRIX_MRCR_RCB4_Pos)              /* (MATRIX_MRCR) Remap Command Bit for Master 4 Mask */
-#define MATRIX_MRCR_RCB4(value)               (MATRIX_MRCR_RCB4_Msk & (_UINT32_(value) << MATRIX_MRCR_RCB4_Pos)) /* Assignment of value for RCB4 in the MATRIX_MRCR register */
+#define MATRIX_MRCR_RCB4(value)               (MATRIX_MRCR_RCB4_Msk & ((uint32_t)(value) << MATRIX_MRCR_RCB4_Pos)) /* Assignment of value for RCB4 in the MATRIX_MRCR register */
 #define MATRIX_MRCR_RCB5_Pos                  _UINT32_(5)                                          /* (MATRIX_MRCR) Remap Command Bit for Master 5 Position */
 #define MATRIX_MRCR_RCB5_Msk                  (_UINT32_(0x1) << MATRIX_MRCR_RCB5_Pos)              /* (MATRIX_MRCR) Remap Command Bit for Master 5 Mask */
-#define MATRIX_MRCR_RCB5(value)               (MATRIX_MRCR_RCB5_Msk & (_UINT32_(value) << MATRIX_MRCR_RCB5_Pos)) /* Assignment of value for RCB5 in the MATRIX_MRCR register */
+#define MATRIX_MRCR_RCB5(value)               (MATRIX_MRCR_RCB5_Msk & ((uint32_t)(value) << MATRIX_MRCR_RCB5_Pos)) /* Assignment of value for RCB5 in the MATRIX_MRCR register */
 #define MATRIX_MRCR_RCB6_Pos                  _UINT32_(6)                                          /* (MATRIX_MRCR) Remap Command Bit for Master 6 Position */
 #define MATRIX_MRCR_RCB6_Msk                  (_UINT32_(0x1) << MATRIX_MRCR_RCB6_Pos)              /* (MATRIX_MRCR) Remap Command Bit for Master 6 Mask */
-#define MATRIX_MRCR_RCB6(value)               (MATRIX_MRCR_RCB6_Msk & (_UINT32_(value) << MATRIX_MRCR_RCB6_Pos)) /* Assignment of value for RCB6 in the MATRIX_MRCR register */
+#define MATRIX_MRCR_RCB6(value)               (MATRIX_MRCR_RCB6_Msk & ((uint32_t)(value) << MATRIX_MRCR_RCB6_Pos)) /* Assignment of value for RCB6 in the MATRIX_MRCR register */
 #define MATRIX_MRCR_RCB7_Pos                  _UINT32_(7)                                          /* (MATRIX_MRCR) Remap Command Bit for Master 7 Position */
 #define MATRIX_MRCR_RCB7_Msk                  (_UINT32_(0x1) << MATRIX_MRCR_RCB7_Pos)              /* (MATRIX_MRCR) Remap Command Bit for Master 7 Mask */
-#define MATRIX_MRCR_RCB7(value)               (MATRIX_MRCR_RCB7_Msk & (_UINT32_(value) << MATRIX_MRCR_RCB7_Pos)) /* Assignment of value for RCB7 in the MATRIX_MRCR register */
+#define MATRIX_MRCR_RCB7(value)               (MATRIX_MRCR_RCB7_Msk & ((uint32_t)(value) << MATRIX_MRCR_RCB7_Pos)) /* Assignment of value for RCB7 in the MATRIX_MRCR register */
 #define MATRIX_MRCR_RCB8_Pos                  _UINT32_(8)                                          /* (MATRIX_MRCR) Remap Command Bit for Master 8 Position */
 #define MATRIX_MRCR_RCB8_Msk                  (_UINT32_(0x1) << MATRIX_MRCR_RCB8_Pos)              /* (MATRIX_MRCR) Remap Command Bit for Master 8 Mask */
-#define MATRIX_MRCR_RCB8(value)               (MATRIX_MRCR_RCB8_Msk & (_UINT32_(value) << MATRIX_MRCR_RCB8_Pos)) /* Assignment of value for RCB8 in the MATRIX_MRCR register */
+#define MATRIX_MRCR_RCB8(value)               (MATRIX_MRCR_RCB8_Msk & ((uint32_t)(value) << MATRIX_MRCR_RCB8_Pos)) /* Assignment of value for RCB8 in the MATRIX_MRCR register */
 #define MATRIX_MRCR_RCB9_Pos                  _UINT32_(9)                                          /* (MATRIX_MRCR) Remap Command Bit for Master 9 Position */
 #define MATRIX_MRCR_RCB9_Msk                  (_UINT32_(0x1) << MATRIX_MRCR_RCB9_Pos)              /* (MATRIX_MRCR) Remap Command Bit for Master 9 Mask */
-#define MATRIX_MRCR_RCB9(value)               (MATRIX_MRCR_RCB9_Msk & (_UINT32_(value) << MATRIX_MRCR_RCB9_Pos)) /* Assignment of value for RCB9 in the MATRIX_MRCR register */
+#define MATRIX_MRCR_RCB9(value)               (MATRIX_MRCR_RCB9_Msk & ((uint32_t)(value) << MATRIX_MRCR_RCB9_Pos)) /* Assignment of value for RCB9 in the MATRIX_MRCR register */
 #define MATRIX_MRCR_RCB10_Pos                 _UINT32_(10)                                         /* (MATRIX_MRCR) Remap Command Bit for Master 10 Position */
 #define MATRIX_MRCR_RCB10_Msk                 (_UINT32_(0x1) << MATRIX_MRCR_RCB10_Pos)             /* (MATRIX_MRCR) Remap Command Bit for Master 10 Mask */
-#define MATRIX_MRCR_RCB10(value)              (MATRIX_MRCR_RCB10_Msk & (_UINT32_(value) << MATRIX_MRCR_RCB10_Pos)) /* Assignment of value for RCB10 in the MATRIX_MRCR register */
+#define MATRIX_MRCR_RCB10(value)              (MATRIX_MRCR_RCB10_Msk & ((uint32_t)(value) << MATRIX_MRCR_RCB10_Pos)) /* Assignment of value for RCB10 in the MATRIX_MRCR register */
 #define MATRIX_MRCR_RCB11_Pos                 _UINT32_(11)                                         /* (MATRIX_MRCR) Remap Command Bit for Master 11 Position */
 #define MATRIX_MRCR_RCB11_Msk                 (_UINT32_(0x1) << MATRIX_MRCR_RCB11_Pos)             /* (MATRIX_MRCR) Remap Command Bit for Master 11 Mask */
-#define MATRIX_MRCR_RCB11(value)              (MATRIX_MRCR_RCB11_Msk & (_UINT32_(value) << MATRIX_MRCR_RCB11_Pos)) /* Assignment of value for RCB11 in the MATRIX_MRCR register */
+#define MATRIX_MRCR_RCB11(value)              (MATRIX_MRCR_RCB11_Msk & ((uint32_t)(value) << MATRIX_MRCR_RCB11_Pos)) /* Assignment of value for RCB11 in the MATRIX_MRCR register */
 #define MATRIX_MRCR_RCB12_Pos                 _UINT32_(12)                                         /* (MATRIX_MRCR) Remap Command Bit for Master 12 Position */
 #define MATRIX_MRCR_RCB12_Msk                 (_UINT32_(0x1) << MATRIX_MRCR_RCB12_Pos)             /* (MATRIX_MRCR) Remap Command Bit for Master 12 Mask */
-#define MATRIX_MRCR_RCB12(value)              (MATRIX_MRCR_RCB12_Msk & (_UINT32_(value) << MATRIX_MRCR_RCB12_Pos)) /* Assignment of value for RCB12 in the MATRIX_MRCR register */
+#define MATRIX_MRCR_RCB12(value)              (MATRIX_MRCR_RCB12_Msk & ((uint32_t)(value) << MATRIX_MRCR_RCB12_Pos)) /* Assignment of value for RCB12 in the MATRIX_MRCR register */
 #define MATRIX_MRCR_Msk                       _UINT32_(0x00001FFF)                                 /* (MATRIX_MRCR) Register Mask  */
 
 #define MATRIX_MRCR_RCB_Pos                   _UINT32_(0)                                          /* (MATRIX_MRCR Position) Remap Command Bit for Master x2 */
 #define MATRIX_MRCR_RCB_Msk                   (_UINT32_(0x1FFF) << MATRIX_MRCR_RCB_Pos)            /* (MATRIX_MRCR Mask) RCB */
-#define MATRIX_MRCR_RCB(value)                (MATRIX_MRCR_RCB_Msk & (_UINT32_(value) << MATRIX_MRCR_RCB_Pos))
+#define MATRIX_MRCR_RCB(value)                (MATRIX_MRCR_RCB_Msk & ((uint32_t)(value) << MATRIX_MRCR_RCB_Pos))
 
 /* -------- CCFG_CAN0 : (MATRIX Offset: 0x110) (R/W 32) CAN0 Configuration Register -------- */
 #define CCFG_CAN0_CAN0DMABA_Pos               _UINT32_(16)                                         /* (CCFG_CAN0) CAN0 DMA Base Address Position */
 #define CCFG_CAN0_CAN0DMABA_Msk               (_UINT32_(0xFFFF) << CCFG_CAN0_CAN0DMABA_Pos)        /* (CCFG_CAN0) CAN0 DMA Base Address Mask */
-#define CCFG_CAN0_CAN0DMABA(value)            (CCFG_CAN0_CAN0DMABA_Msk & (_UINT32_(value) << CCFG_CAN0_CAN0DMABA_Pos)) /* Assignment of value for CAN0DMABA in the CCFG_CAN0 register */
+#define CCFG_CAN0_CAN0DMABA(value)            (CCFG_CAN0_CAN0DMABA_Msk & ((uint32_t)(value) << CCFG_CAN0_CAN0DMABA_Pos)) /* Assignment of value for CAN0DMABA in the CCFG_CAN0 register */
 #define CCFG_CAN0_Msk                         _UINT32_(0xFFFF0000)                                 /* (CCFG_CAN0) Register Mask  */
 
 
 /* -------- CCFG_SYSIO : (MATRIX Offset: 0x114) (R/W 32) System I/O and CAN1 Configuration Register -------- */
 #define CCFG_SYSIO_SYSIO4_Pos                 _UINT32_(4)                                          /* (CCFG_SYSIO) PB4 or TDI Assignment Position */
 #define CCFG_SYSIO_SYSIO4_Msk                 (_UINT32_(0x1) << CCFG_SYSIO_SYSIO4_Pos)             /* (CCFG_SYSIO) PB4 or TDI Assignment Mask */
-#define CCFG_SYSIO_SYSIO4(value)              (CCFG_SYSIO_SYSIO4_Msk & (_UINT32_(value) << CCFG_SYSIO_SYSIO4_Pos)) /* Assignment of value for SYSIO4 in the CCFG_SYSIO register */
+#define CCFG_SYSIO_SYSIO4(value)              (CCFG_SYSIO_SYSIO4_Msk & ((uint32_t)(value) << CCFG_SYSIO_SYSIO4_Pos)) /* Assignment of value for SYSIO4 in the CCFG_SYSIO register */
 #define CCFG_SYSIO_SYSIO5_Pos                 _UINT32_(5)                                          /* (CCFG_SYSIO) PB5 or TDO/TRACESWO Assignment Position */
 #define CCFG_SYSIO_SYSIO5_Msk                 (_UINT32_(0x1) << CCFG_SYSIO_SYSIO5_Pos)             /* (CCFG_SYSIO) PB5 or TDO/TRACESWO Assignment Mask */
-#define CCFG_SYSIO_SYSIO5(value)              (CCFG_SYSIO_SYSIO5_Msk & (_UINT32_(value) << CCFG_SYSIO_SYSIO5_Pos)) /* Assignment of value for SYSIO5 in the CCFG_SYSIO register */
+#define CCFG_SYSIO_SYSIO5(value)              (CCFG_SYSIO_SYSIO5_Msk & ((uint32_t)(value) << CCFG_SYSIO_SYSIO5_Pos)) /* Assignment of value for SYSIO5 in the CCFG_SYSIO register */
 #define CCFG_SYSIO_SYSIO6_Pos                 _UINT32_(6)                                          /* (CCFG_SYSIO) PB6 or TMS/SWDIO Assignment Position */
 #define CCFG_SYSIO_SYSIO6_Msk                 (_UINT32_(0x1) << CCFG_SYSIO_SYSIO6_Pos)             /* (CCFG_SYSIO) PB6 or TMS/SWDIO Assignment Mask */
-#define CCFG_SYSIO_SYSIO6(value)              (CCFG_SYSIO_SYSIO6_Msk & (_UINT32_(value) << CCFG_SYSIO_SYSIO6_Pos)) /* Assignment of value for SYSIO6 in the CCFG_SYSIO register */
+#define CCFG_SYSIO_SYSIO6(value)              (CCFG_SYSIO_SYSIO6_Msk & ((uint32_t)(value) << CCFG_SYSIO_SYSIO6_Pos)) /* Assignment of value for SYSIO6 in the CCFG_SYSIO register */
 #define CCFG_SYSIO_SYSIO7_Pos                 _UINT32_(7)                                          /* (CCFG_SYSIO) PB7 or TCK/SWCLK Assignment Position */
 #define CCFG_SYSIO_SYSIO7_Msk                 (_UINT32_(0x1) << CCFG_SYSIO_SYSIO7_Pos)             /* (CCFG_SYSIO) PB7 or TCK/SWCLK Assignment Mask */
-#define CCFG_SYSIO_SYSIO7(value)              (CCFG_SYSIO_SYSIO7_Msk & (_UINT32_(value) << CCFG_SYSIO_SYSIO7_Pos)) /* Assignment of value for SYSIO7 in the CCFG_SYSIO register */
+#define CCFG_SYSIO_SYSIO7(value)              (CCFG_SYSIO_SYSIO7_Msk & ((uint32_t)(value) << CCFG_SYSIO_SYSIO7_Pos)) /* Assignment of value for SYSIO7 in the CCFG_SYSIO register */
 #define CCFG_SYSIO_SYSIO12_Pos                _UINT32_(12)                                         /* (CCFG_SYSIO) PB12 or ERASE Assignment Position */
 #define CCFG_SYSIO_SYSIO12_Msk                (_UINT32_(0x1) << CCFG_SYSIO_SYSIO12_Pos)            /* (CCFG_SYSIO) PB12 or ERASE Assignment Mask */
-#define CCFG_SYSIO_SYSIO12(value)             (CCFG_SYSIO_SYSIO12_Msk & (_UINT32_(value) << CCFG_SYSIO_SYSIO12_Pos)) /* Assignment of value for SYSIO12 in the CCFG_SYSIO register */
+#define CCFG_SYSIO_SYSIO12(value)             (CCFG_SYSIO_SYSIO12_Msk & ((uint32_t)(value) << CCFG_SYSIO_SYSIO12_Pos)) /* Assignment of value for SYSIO12 in the CCFG_SYSIO register */
 #define CCFG_SYSIO_CAN1DMABA_Pos              _UINT32_(16)                                         /* (CCFG_SYSIO) CAN1 DMA Base Address Position */
 #define CCFG_SYSIO_CAN1DMABA_Msk              (_UINT32_(0xFFFF) << CCFG_SYSIO_CAN1DMABA_Pos)       /* (CCFG_SYSIO) CAN1 DMA Base Address Mask */
-#define CCFG_SYSIO_CAN1DMABA(value)           (CCFG_SYSIO_CAN1DMABA_Msk & (_UINT32_(value) << CCFG_SYSIO_CAN1DMABA_Pos)) /* Assignment of value for CAN1DMABA in the CCFG_SYSIO register */
+#define CCFG_SYSIO_CAN1DMABA(value)           (CCFG_SYSIO_CAN1DMABA_Msk & ((uint32_t)(value) << CCFG_SYSIO_CAN1DMABA_Pos)) /* Assignment of value for CAN1DMABA in the CCFG_SYSIO register */
 #define CCFG_SYSIO_Msk                        _UINT32_(0xFFFF10F0)                                 /* (CCFG_SYSIO) Register Mask  */
 
 #define CCFG_SYSIO_SYSIO_Pos                  _UINT32_(4)                                          /* (CCFG_SYSIO Position) PB4 or TDI Assignment */
 #define CCFG_SYSIO_SYSIO_Msk                  (_UINT32_(0x1F) << CCFG_SYSIO_SYSIO_Pos)             /* (CCFG_SYSIO Mask) SYSIO */
-#define CCFG_SYSIO_SYSIO(value)               (CCFG_SYSIO_SYSIO_Msk & (_UINT32_(value) << CCFG_SYSIO_SYSIO_Pos))
+#define CCFG_SYSIO_SYSIO(value)               (CCFG_SYSIO_SYSIO_Msk & ((uint32_t)(value) << CCFG_SYSIO_SYSIO_Pos))
 
 /* -------- CCFG_PCCR : (MATRIX Offset: 0x118) (R/W 32) Peripheral Clock Configuration Register -------- */
 #define CCFG_PCCR_TC0CC_Pos                   _UINT32_(20)                                         /* (CCFG_PCCR) TC0 Clock Configuration Position */
 #define CCFG_PCCR_TC0CC_Msk                   (_UINT32_(0x1) << CCFG_PCCR_TC0CC_Pos)               /* (CCFG_PCCR) TC0 Clock Configuration Mask */
-#define CCFG_PCCR_TC0CC(value)                (CCFG_PCCR_TC0CC_Msk & (_UINT32_(value) << CCFG_PCCR_TC0CC_Pos)) /* Assignment of value for TC0CC in the CCFG_PCCR register */
+#define CCFG_PCCR_TC0CC(value)                (CCFG_PCCR_TC0CC_Msk & ((uint32_t)(value) << CCFG_PCCR_TC0CC_Pos)) /* Assignment of value for TC0CC in the CCFG_PCCR register */
 #define CCFG_PCCR_I2SC0CC_Pos                 _UINT32_(21)                                         /* (CCFG_PCCR) I2SC0 Clock Configuration Position */
 #define CCFG_PCCR_I2SC0CC_Msk                 (_UINT32_(0x1) << CCFG_PCCR_I2SC0CC_Pos)             /* (CCFG_PCCR) I2SC0 Clock Configuration Mask */
-#define CCFG_PCCR_I2SC0CC(value)              (CCFG_PCCR_I2SC0CC_Msk & (_UINT32_(value) << CCFG_PCCR_I2SC0CC_Pos)) /* Assignment of value for I2SC0CC in the CCFG_PCCR register */
+#define CCFG_PCCR_I2SC0CC(value)              (CCFG_PCCR_I2SC0CC_Msk & ((uint32_t)(value) << CCFG_PCCR_I2SC0CC_Pos)) /* Assignment of value for I2SC0CC in the CCFG_PCCR register */
 #define CCFG_PCCR_I2SC1CC_Pos                 _UINT32_(22)                                         /* (CCFG_PCCR) I2SC1 Clock Configuration Position */
 #define CCFG_PCCR_I2SC1CC_Msk                 (_UINT32_(0x1) << CCFG_PCCR_I2SC1CC_Pos)             /* (CCFG_PCCR) I2SC1 Clock Configuration Mask */
-#define CCFG_PCCR_I2SC1CC(value)              (CCFG_PCCR_I2SC1CC_Msk & (_UINT32_(value) << CCFG_PCCR_I2SC1CC_Pos)) /* Assignment of value for I2SC1CC in the CCFG_PCCR register */
+#define CCFG_PCCR_I2SC1CC(value)              (CCFG_PCCR_I2SC1CC_Msk & ((uint32_t)(value) << CCFG_PCCR_I2SC1CC_Pos)) /* Assignment of value for I2SC1CC in the CCFG_PCCR register */
 #define CCFG_PCCR_Msk                         _UINT32_(0x00700000)                                 /* (CCFG_PCCR) Register Mask  */
 
 
 /* -------- CCFG_DYNCKG : (MATRIX Offset: 0x11C) (R/W 32) Dynamic Clock Gating Register -------- */
 #define CCFG_DYNCKG_MATCKG_Pos                _UINT32_(0)                                          /* (CCFG_DYNCKG) MATRIX Dynamic Clock Gating Position */
 #define CCFG_DYNCKG_MATCKG_Msk                (_UINT32_(0x1) << CCFG_DYNCKG_MATCKG_Pos)            /* (CCFG_DYNCKG) MATRIX Dynamic Clock Gating Mask */
-#define CCFG_DYNCKG_MATCKG(value)             (CCFG_DYNCKG_MATCKG_Msk & (_UINT32_(value) << CCFG_DYNCKG_MATCKG_Pos)) /* Assignment of value for MATCKG in the CCFG_DYNCKG register */
+#define CCFG_DYNCKG_MATCKG(value)             (CCFG_DYNCKG_MATCKG_Msk & ((uint32_t)(value) << CCFG_DYNCKG_MATCKG_Pos)) /* Assignment of value for MATCKG in the CCFG_DYNCKG register */
 #define CCFG_DYNCKG_BRIDCKG_Pos               _UINT32_(1)                                          /* (CCFG_DYNCKG) Bridge Dynamic Clock Gating Enable Position */
 #define CCFG_DYNCKG_BRIDCKG_Msk               (_UINT32_(0x1) << CCFG_DYNCKG_BRIDCKG_Pos)           /* (CCFG_DYNCKG) Bridge Dynamic Clock Gating Enable Mask */
-#define CCFG_DYNCKG_BRIDCKG(value)            (CCFG_DYNCKG_BRIDCKG_Msk & (_UINT32_(value) << CCFG_DYNCKG_BRIDCKG_Pos)) /* Assignment of value for BRIDCKG in the CCFG_DYNCKG register */
+#define CCFG_DYNCKG_BRIDCKG(value)            (CCFG_DYNCKG_BRIDCKG_Msk & ((uint32_t)(value) << CCFG_DYNCKG_BRIDCKG_Pos)) /* Assignment of value for BRIDCKG in the CCFG_DYNCKG register */
 #define CCFG_DYNCKG_EFCCKG_Pos                _UINT32_(2)                                          /* (CCFG_DYNCKG) EFC Dynamic Clock Gating Enable Position */
 #define CCFG_DYNCKG_EFCCKG_Msk                (_UINT32_(0x1) << CCFG_DYNCKG_EFCCKG_Pos)            /* (CCFG_DYNCKG) EFC Dynamic Clock Gating Enable Mask */
-#define CCFG_DYNCKG_EFCCKG(value)             (CCFG_DYNCKG_EFCCKG_Msk & (_UINT32_(value) << CCFG_DYNCKG_EFCCKG_Pos)) /* Assignment of value for EFCCKG in the CCFG_DYNCKG register */
+#define CCFG_DYNCKG_EFCCKG(value)             (CCFG_DYNCKG_EFCCKG_Msk & ((uint32_t)(value) << CCFG_DYNCKG_EFCCKG_Pos)) /* Assignment of value for EFCCKG in the CCFG_DYNCKG register */
 #define CCFG_DYNCKG_Msk                       _UINT32_(0x00000007)                                 /* (CCFG_DYNCKG) Register Mask  */
 
 
 /* -------- CCFG_SMCNFCS : (MATRIX Offset: 0x124) (R/W 32) SMC NAND Flash Chip Select Configuration Register -------- */
 #define CCFG_SMCNFCS_SMC_NFCS0_Pos            _UINT32_(0)                                          /* (CCFG_SMCNFCS) SMC NAND Flash Chip Select 0 Assignment Position */
 #define CCFG_SMCNFCS_SMC_NFCS0_Msk            (_UINT32_(0x1) << CCFG_SMCNFCS_SMC_NFCS0_Pos)        /* (CCFG_SMCNFCS) SMC NAND Flash Chip Select 0 Assignment Mask */
-#define CCFG_SMCNFCS_SMC_NFCS0(value)         (CCFG_SMCNFCS_SMC_NFCS0_Msk & (_UINT32_(value) << CCFG_SMCNFCS_SMC_NFCS0_Pos)) /* Assignment of value for SMC_NFCS0 in the CCFG_SMCNFCS register */
+#define CCFG_SMCNFCS_SMC_NFCS0(value)         (CCFG_SMCNFCS_SMC_NFCS0_Msk & ((uint32_t)(value) << CCFG_SMCNFCS_SMC_NFCS0_Pos)) /* Assignment of value for SMC_NFCS0 in the CCFG_SMCNFCS register */
 #define CCFG_SMCNFCS_SMC_NFCS1_Pos            _UINT32_(1)                                          /* (CCFG_SMCNFCS) SMC NAND Flash Chip Select 1 Assignment Position */
 #define CCFG_SMCNFCS_SMC_NFCS1_Msk            (_UINT32_(0x1) << CCFG_SMCNFCS_SMC_NFCS1_Pos)        /* (CCFG_SMCNFCS) SMC NAND Flash Chip Select 1 Assignment Mask */
-#define CCFG_SMCNFCS_SMC_NFCS1(value)         (CCFG_SMCNFCS_SMC_NFCS1_Msk & (_UINT32_(value) << CCFG_SMCNFCS_SMC_NFCS1_Pos)) /* Assignment of value for SMC_NFCS1 in the CCFG_SMCNFCS register */
+#define CCFG_SMCNFCS_SMC_NFCS1(value)         (CCFG_SMCNFCS_SMC_NFCS1_Msk & ((uint32_t)(value) << CCFG_SMCNFCS_SMC_NFCS1_Pos)) /* Assignment of value for SMC_NFCS1 in the CCFG_SMCNFCS register */
 #define CCFG_SMCNFCS_SMC_NFCS2_Pos            _UINT32_(2)                                          /* (CCFG_SMCNFCS) SMC NAND Flash Chip Select 2 Assignment Position */
 #define CCFG_SMCNFCS_SMC_NFCS2_Msk            (_UINT32_(0x1) << CCFG_SMCNFCS_SMC_NFCS2_Pos)        /* (CCFG_SMCNFCS) SMC NAND Flash Chip Select 2 Assignment Mask */
-#define CCFG_SMCNFCS_SMC_NFCS2(value)         (CCFG_SMCNFCS_SMC_NFCS2_Msk & (_UINT32_(value) << CCFG_SMCNFCS_SMC_NFCS2_Pos)) /* Assignment of value for SMC_NFCS2 in the CCFG_SMCNFCS register */
+#define CCFG_SMCNFCS_SMC_NFCS2(value)         (CCFG_SMCNFCS_SMC_NFCS2_Msk & ((uint32_t)(value) << CCFG_SMCNFCS_SMC_NFCS2_Pos)) /* Assignment of value for SMC_NFCS2 in the CCFG_SMCNFCS register */
 #define CCFG_SMCNFCS_SMC_NFCS3_Pos            _UINT32_(3)                                          /* (CCFG_SMCNFCS) SMC NAND Flash Chip Select 3 Assignment Position */
 #define CCFG_SMCNFCS_SMC_NFCS3_Msk            (_UINT32_(0x1) << CCFG_SMCNFCS_SMC_NFCS3_Pos)        /* (CCFG_SMCNFCS) SMC NAND Flash Chip Select 3 Assignment Mask */
-#define CCFG_SMCNFCS_SMC_NFCS3(value)         (CCFG_SMCNFCS_SMC_NFCS3_Msk & (_UINT32_(value) << CCFG_SMCNFCS_SMC_NFCS3_Pos)) /* Assignment of value for SMC_NFCS3 in the CCFG_SMCNFCS register */
+#define CCFG_SMCNFCS_SMC_NFCS3(value)         (CCFG_SMCNFCS_SMC_NFCS3_Msk & ((uint32_t)(value) << CCFG_SMCNFCS_SMC_NFCS3_Pos)) /* Assignment of value for SMC_NFCS3 in the CCFG_SMCNFCS register */
 #define CCFG_SMCNFCS_Msk                      _UINT32_(0x0000000F)                                 /* (CCFG_SMCNFCS) Register Mask  */
 
 #define CCFG_SMCNFCS_SMC_NFCS_Pos             _UINT32_(0)                                          /* (CCFG_SMCNFCS Position) SMC NAND Flash Chip Select 3 Assignment */
 #define CCFG_SMCNFCS_SMC_NFCS_Msk             (_UINT32_(0xF) << CCFG_SMCNFCS_SMC_NFCS_Pos)         /* (CCFG_SMCNFCS Mask) SMC_NFCS */
-#define CCFG_SMCNFCS_SMC_NFCS(value)          (CCFG_SMCNFCS_SMC_NFCS_Msk & (_UINT32_(value) << CCFG_SMCNFCS_SMC_NFCS_Pos))
+#define CCFG_SMCNFCS_SMC_NFCS(value)          (CCFG_SMCNFCS_SMC_NFCS_Msk & ((uint32_t)(value) << CCFG_SMCNFCS_SMC_NFCS_Pos))
 
 /* -------- MATRIX_WPMR : (MATRIX Offset: 0x1E4) (R/W 32) Write Protection Mode Register -------- */
 #define MATRIX_WPMR_WPEN_Pos                  _UINT32_(0)                                          /* (MATRIX_WPMR) Write Protection Enable Position */
 #define MATRIX_WPMR_WPEN_Msk                  (_UINT32_(0x1) << MATRIX_WPMR_WPEN_Pos)              /* (MATRIX_WPMR) Write Protection Enable Mask */
-#define MATRIX_WPMR_WPEN(value)               (MATRIX_WPMR_WPEN_Msk & (_UINT32_(value) << MATRIX_WPMR_WPEN_Pos)) /* Assignment of value for WPEN in the MATRIX_WPMR register */
+#define MATRIX_WPMR_WPEN(value)               (MATRIX_WPMR_WPEN_Msk & ((uint32_t)(value) << MATRIX_WPMR_WPEN_Pos)) /* Assignment of value for WPEN in the MATRIX_WPMR register */
 #define MATRIX_WPMR_WPKEY_Pos                 _UINT32_(8)                                          /* (MATRIX_WPMR) Write Protection Key Position */
 #define MATRIX_WPMR_WPKEY_Msk                 (_UINT32_(0xFFFFFF) << MATRIX_WPMR_WPKEY_Pos)        /* (MATRIX_WPMR) Write Protection Key Mask */
-#define MATRIX_WPMR_WPKEY(value)              (MATRIX_WPMR_WPKEY_Msk & (_UINT32_(value) << MATRIX_WPMR_WPKEY_Pos)) /* Assignment of value for WPKEY in the MATRIX_WPMR register */
+#define MATRIX_WPMR_WPKEY(value)              (MATRIX_WPMR_WPKEY_Msk & ((uint32_t)(value) << MATRIX_WPMR_WPKEY_Pos)) /* Assignment of value for WPKEY in the MATRIX_WPMR register */
 #define   MATRIX_WPMR_WPKEY_PASSWD_Val        _UINT32_(0x4D4154)                                   /* (MATRIX_WPMR) Writing any other value in this field aborts the write operation of the WPEN bit.Always reads as 0.  */
 #define MATRIX_WPMR_WPKEY_PASSWD              (MATRIX_WPMR_WPKEY_PASSWD_Val << MATRIX_WPMR_WPKEY_Pos) /* (MATRIX_WPMR) Writing any other value in this field aborts the write operation of the WPEN bit.Always reads as 0. Position */
 #define MATRIX_WPMR_Msk                       _UINT32_(0xFFFFFF01)                                 /* (MATRIX_WPMR) Register Mask  */
@@ -256,10 +258,10 @@
 /* -------- MATRIX_WPSR : (MATRIX Offset: 0x1E8) ( R/ 32) Write Protection Status Register -------- */
 #define MATRIX_WPSR_WPVS_Pos                  _UINT32_(0)                                          /* (MATRIX_WPSR) Write Protection Violation Status Position */
 #define MATRIX_WPSR_WPVS_Msk                  (_UINT32_(0x1) << MATRIX_WPSR_WPVS_Pos)              /* (MATRIX_WPSR) Write Protection Violation Status Mask */
-#define MATRIX_WPSR_WPVS(value)               (MATRIX_WPSR_WPVS_Msk & (_UINT32_(value) << MATRIX_WPSR_WPVS_Pos)) /* Assignment of value for WPVS in the MATRIX_WPSR register */
+#define MATRIX_WPSR_WPVS(value)               (MATRIX_WPSR_WPVS_Msk & ((uint32_t)(value) << MATRIX_WPSR_WPVS_Pos)) /* Assignment of value for WPVS in the MATRIX_WPSR register */
 #define MATRIX_WPSR_WPVSRC_Pos                _UINT32_(8)                                          /* (MATRIX_WPSR) Write Protection Violation Source Position */
 #define MATRIX_WPSR_WPVSRC_Msk                (_UINT32_(0xFFFF) << MATRIX_WPSR_WPVSRC_Pos)         /* (MATRIX_WPSR) Write Protection Violation Source Mask */
-#define MATRIX_WPSR_WPVSRC(value)             (MATRIX_WPSR_WPVSRC_Msk & (_UINT32_(value) << MATRIX_WPSR_WPVSRC_Pos)) /* Assignment of value for WPVSRC in the MATRIX_WPSR register */
+#define MATRIX_WPSR_WPVSRC(value)             (MATRIX_WPSR_WPVSRC_Msk & ((uint32_t)(value) << MATRIX_WPSR_WPVSRC_Pos)) /* Assignment of value for WPVSRC in the MATRIX_WPSR register */
 #define MATRIX_WPSR_Msk                       _UINT32_(0x00FFFF01)                                 /* (MATRIX_WPSR) Register Mask  */
 
 

@@ -20,7 +20,7 @@ Here is the list of the current device header version and release date:
 - [SAME70: v4.13.292 created 31-January-2026](https://packs.download.microchip.com/Microchip.SAME70_DFP.4.13.292.atpack)
 - [SAMS70: v4.12.234 created 31-January-2026](https://packs.download.microchip.com/Microchip.SAMS70_DFP.4.12.234.atpack)
 - [SAMV70: v4.12.233 created 31-January-2026](https://packs.download.microchip.com/Microchip.SAMV70_DFP.4.12.233.atpack)
-- [SAMV71: v4.13.257 created 29-January-2026](https://packs.download.microchip.com/Microchip.SAMV71_DFP.4.13.257.atpack)
+- [SAMV71: v4.14.274 created 11-November-2026](https://packs.download.microchip.com/Microchip.SAMV71_DFP.4.14.274.atpack)
 
 ## License
 

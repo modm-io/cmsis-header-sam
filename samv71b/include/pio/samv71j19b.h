@@ -19,7 +19,7 @@
  *
  */
 
-/*  file generated from device description file (ATDF) version 2025-07-21T07:57:09Z  */
+/*  file generated from device description file (ATDF) version 2026-06-26T08:37:07Z  */
 #ifndef _samv71j19b_GPIO_H_
 #define _samv71j19b_GPIO_H_
 

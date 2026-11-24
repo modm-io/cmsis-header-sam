@@ -19,15 +19,15 @@
  *
  */
 
-/* File generated from device description file (ATDF) version 2025-07-21T07:57:28Z */
+/* File generated from device description file (ATDF) version 2026-06-26T08:37:39Z */
 #ifndef _SAMV71N21B_H_
 #define _SAMV71N21B_H_
 
 /* Header version uses Semantic Versioning 2.0.0 (https://semver.org/) */
-#define HEADER_FORMAT_VERSION "2.1.1"
+#define HEADER_FORMAT_VERSION "3.0.1"
 
-#define HEADER_FORMAT_VERSION_MAJOR (2)
-#define HEADER_FORMAT_VERSION_MINOR (1)
+#define HEADER_FORMAT_VERSION_MAJOR (3)
+#define HEADER_FORMAT_VERSION_MINOR (0)
 #define HEADER_FORMAT_VERSION_PATCH (1)
 
 /* SAMV71N21B definitions
@@ -47,21 +47,23 @@
 #endif /* !(defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__)) */
 
 #if !defined(SKIP_INTEGER_LITERALS)
-#  if defined(_UINT8_) || defined(_UINT16_) || defined(_UINT32_)
+#  if defined(_UINT8_) || defined(_UINT16_) || defined(_UINT32_) || defined(_UINT64_)
 #    error "Integer constant value macros already defined elsewhere"
 #  endif
 
 #if !(defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__))
 /* Macros that deal with sizes of integer constants for C/C++ */
-#  define _UINT8_(x)   ((uint8_t)(x))    /* C code: 8-bits unsigned integer constant value */
-#  define _UINT16_(x)  ((uint16_t)(x))   /* C code: 16-bits unsigned integer constant value */
-#  define _UINT32_(x)  ((uint32_t)(x))   /* C code: 32-bits unsigned integer constant value */
+#  define _UINT8_(x)   (UINT8_C(x))    /* C code: 8-bits unsigned integer constant value */
+#  define _UINT16_(x)  (UINT16_C(x))   /* C code: 16-bits unsigned integer constant value */
+#  define _UINT32_(x)  (UINT32_C(x))   /* C code: 32-bits unsigned integer constant value */
+#  define _UINT64_(x)  (UINT64_C(x))   /* C code: 64-bits unsigned integer constant value */
 
 #else /* Assembler */
 
-#  define _UINT8_(x) x    /* Assembler: 8-bits unsigned integer constant value */
-#  define _UINT16_(x) x   /* Assembler: 16-bits unsigned integer constant value */
-#  define _UINT32_(x) x   /* Assembler: 32-bits unsigned integer constant value */
+#  define _UINT8_(x) (x)    /* Assembler: 8-bits unsigned integer constant value */
+#  define _UINT16_(x) (x)   /* Assembler: 16-bits unsigned integer constant value */
+#  define _UINT32_(x) (x)   /* Assembler: 32-bits unsigned integer constant value */
+#  define _UINT64_(x) (x)   /* Assembler: 64-bits unsigned integer constant value */
 #endif /* !(defined(__ASSEMBLER__) || defined(__IAR_SYSTEMS_ASM__)) */
 #endif /* SKIP_INTEGER_LITERALS */
 
@@ -163,17 +165,17 @@ typedef struct _DeviceVectors
   void* pvStack;
   /* CORTEX-M7 handlers */
   void* pfnReset_Handler;                        /* -15 Reset Vector, invoked on Power up and warm reset */
-  void* pfnNonMaskableInt_Handler;               /* -14 Non maskable Interrupt, cannot be stopped or preempted */
+  void* pfnNMI_Handler;                          /* -14 Non maskable Interrupt, cannot be stopped or preempted */
   void* pfnHardFault_Handler;                    /* -13 Hard Fault, all classes of Fault */
-  void* pfnMemoryManagement_Handler;             /* -12 Memory Management, MPU mismatch, including Access Violation and No Match */
+  void* pfnMemManage_Handler;                    /* -12 Memory Management, MPU mismatch, including Access Violation and No Match */
   void* pfnBusFault_Handler;                     /* -11 Bus Fault, Pre-Fetch-, Memory Access Fault, other address/memory related Fault */
   void* pfnUsageFault_Handler;                   /* -10 Usage Fault, i.e. Undef Instruction, Illegal State Transition */
   void* pvReservedC9;
   void* pvReservedC8;
   void* pvReservedC7;
   void* pvReservedC6;
-  void* pfnSVCall_Handler;                       /*  -5 System Service Call via SVC instruction */
-  void* pfnDebugMonitor_Handler;                 /*  -4 Debug Monitor */
+  void* pfnSVC_Handler;                          /*  -5 System Service Call via SVC instruction */
+  void* pfnDebugMon_Handler;                     /*  -4 Debug Monitor */
   void* pvReservedC3;
   void* pfnPendSV_Handler;                       /*  -2 Pendable request for system service */
   void* pfnSysTick_Handler;                      /*  -1 System Tick Timer */
@@ -261,13 +263,33 @@ typedef struct _DeviceVectors
 #if !defined DONT_USE_PREDEFINED_CORE_HANDLERS
 /* CORTEX-M7 exception handlers */
 void Reset_Handler                 ( void );
-void NonMaskableInt_Handler        ( void );
+void NMI_Handler                   ( void );
+#ifndef __IAR_SYSTEMS_ICC__
+void NonMaskableInt_Handler        ( void ) __attribute__((deprecated("Use NMI_Handler instead"))); /* The legacy name - kept for backward compatibility */
+#else
+void NonMaskableInt_Handler        ( void ); /* The legacy name - kept for backward compatibility */
+#endif
 void HardFault_Handler             ( void );
-void MemoryManagement_Handler      ( void );
+void MemManage_Handler             ( void );
+#ifndef __IAR_SYSTEMS_ICC__
+void MemoryManagement_Handler      ( void ) __attribute__((deprecated("Use MemManage_Handler instead"))); /* The legacy name - kept for backward compatibility */
+#else
+void MemoryManagement_Handler      ( void ); /* The legacy name - kept for backward compatibility */
+#endif
 void BusFault_Handler              ( void );
 void UsageFault_Handler            ( void );
-void SVCall_Handler                ( void );
-void DebugMonitor_Handler          ( void );
+void SVC_Handler                   ( void );
+#ifndef __IAR_SYSTEMS_ICC__
+void SVCall_Handler                ( void ) __attribute__((deprecated("Use SVC_Handler instead"))); /* The legacy name - kept for backward compatibility */
+#else
+void SVCall_Handler                ( void ); /* The legacy name - kept for backward compatibility */
+#endif
+void DebugMon_Handler              ( void );
+#ifndef __IAR_SYSTEMS_ICC__
+void DebugMonitor_Handler          ( void ) __attribute__((deprecated("Use DebugMon_Handler instead"))); /* The legacy name - kept for backward compatibility */
+#else
+void DebugMonitor_Handler          ( void ); /* The legacy name - kept for backward compatibility */
+#endif
 void PendSV_Handler                ( void );
 void SysTick_Handler               ( void );
 #endif /* DONT_USE_PREDEFINED_CORE_HANDLERS */
@@ -361,10 +383,12 @@ void GMAC_Q5_Handler               ( void );
 #define __ARCH_ARM_CORTEX_M                1
 
 /* CMSIS includes */
+#if !defined(DISABLE_CMSIS)
 #include "core_cm7.h"
 #if !defined(DISABLE_CMSIS_INIT)
 #include "system_samv71n21b.h"
 #endif /* DISABLE_CMSIS_INIT */
+#endif /* DISABLE_CMSIS */
 
 /* ************************************************************************** */
 /*             SOFTWARE PERIPHERAL API DEFINITIONS FOR SAMV71N21B             */

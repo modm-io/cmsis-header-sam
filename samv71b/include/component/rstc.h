@@ -19,11 +19,13 @@
  *
  */
 
-/*  file generated from device description file (ATDF) version 2025-07-21T07:57:33Z  */
+/*  file generated from device description file (ATDF) version 2026-06-26T08:37:48Z  */
 #ifndef _SAMV71_RSTC_COMPONENT_H_
 #define _SAMV71_RSTC_COMPONENT_H_
 
+#if !defined(DISABLE_CMSIS)
 #include "core_cm7.h"
+#endif /* !defined(DISABLE_CMSIS) */
 
 /* ************************************************************************** */
 /*                      SOFTWARE API DEFINITION FOR RSTC                      */
@@ -32,13 +34,13 @@
 /* -------- RSTC_CR : (RSTC Offset: 0x00) ( /W 32) Control Register -------- */
 #define RSTC_CR_PROCRST_Pos                   _UINT32_(0)                                          /* (RSTC_CR) Processor Reset Position */
 #define RSTC_CR_PROCRST_Msk                   (_UINT32_(0x1) << RSTC_CR_PROCRST_Pos)               /* (RSTC_CR) Processor Reset Mask */
-#define RSTC_CR_PROCRST(value)                (RSTC_CR_PROCRST_Msk & (_UINT32_(value) << RSTC_CR_PROCRST_Pos)) /* Assignment of value for PROCRST in the RSTC_CR register */
+#define RSTC_CR_PROCRST(value)                (RSTC_CR_PROCRST_Msk & ((uint32_t)(value) << RSTC_CR_PROCRST_Pos)) /* Assignment of value for PROCRST in the RSTC_CR register */
 #define RSTC_CR_EXTRST_Pos                    _UINT32_(3)                                          /* (RSTC_CR) External Reset Position */
 #define RSTC_CR_EXTRST_Msk                    (_UINT32_(0x1) << RSTC_CR_EXTRST_Pos)                /* (RSTC_CR) External Reset Mask */
-#define RSTC_CR_EXTRST(value)                 (RSTC_CR_EXTRST_Msk & (_UINT32_(value) << RSTC_CR_EXTRST_Pos)) /* Assignment of value for EXTRST in the RSTC_CR register */
+#define RSTC_CR_EXTRST(value)                 (RSTC_CR_EXTRST_Msk & ((uint32_t)(value) << RSTC_CR_EXTRST_Pos)) /* Assignment of value for EXTRST in the RSTC_CR register */
 #define RSTC_CR_KEY_Pos                       _UINT32_(24)                                         /* (RSTC_CR) System Reset Key Position */
 #define RSTC_CR_KEY_Msk                       (_UINT32_(0xFF) << RSTC_CR_KEY_Pos)                  /* (RSTC_CR) System Reset Key Mask */
-#define RSTC_CR_KEY(value)                    (RSTC_CR_KEY_Msk & (_UINT32_(value) << RSTC_CR_KEY_Pos)) /* Assignment of value for KEY in the RSTC_CR register */
+#define RSTC_CR_KEY(value)                    (RSTC_CR_KEY_Msk & ((uint32_t)(value) << RSTC_CR_KEY_Pos)) /* Assignment of value for KEY in the RSTC_CR register */
 #define   RSTC_CR_KEY_PASSWD_Val              _UINT32_(0xA5)                                       /* (RSTC_CR) Writing any other value in this field aborts the write operation.  */
 #define RSTC_CR_KEY_PASSWD                    (RSTC_CR_KEY_PASSWD_Val << RSTC_CR_KEY_Pos)          /* (RSTC_CR) Writing any other value in this field aborts the write operation. Position */
 #define RSTC_CR_Msk                           _UINT32_(0xFF000009)                                 /* (RSTC_CR) Register Mask  */
@@ -47,10 +49,10 @@
 /* -------- RSTC_SR : (RSTC Offset: 0x04) ( R/ 32) Status Register -------- */
 #define RSTC_SR_URSTS_Pos                     _UINT32_(0)                                          /* (RSTC_SR) User Reset Status Position */
 #define RSTC_SR_URSTS_Msk                     (_UINT32_(0x1) << RSTC_SR_URSTS_Pos)                 /* (RSTC_SR) User Reset Status Mask */
-#define RSTC_SR_URSTS(value)                  (RSTC_SR_URSTS_Msk & (_UINT32_(value) << RSTC_SR_URSTS_Pos)) /* Assignment of value for URSTS in the RSTC_SR register */
+#define RSTC_SR_URSTS(value)                  (RSTC_SR_URSTS_Msk & ((uint32_t)(value) << RSTC_SR_URSTS_Pos)) /* Assignment of value for URSTS in the RSTC_SR register */
 #define RSTC_SR_RSTTYP_Pos                    _UINT32_(8)                                          /* (RSTC_SR) Reset Type Position */
 #define RSTC_SR_RSTTYP_Msk                    (_UINT32_(0x7) << RSTC_SR_RSTTYP_Pos)                /* (RSTC_SR) Reset Type Mask */
-#define RSTC_SR_RSTTYP(value)                 (RSTC_SR_RSTTYP_Msk & (_UINT32_(value) << RSTC_SR_RSTTYP_Pos)) /* Assignment of value for RSTTYP in the RSTC_SR register */
+#define RSTC_SR_RSTTYP(value)                 (RSTC_SR_RSTTYP_Msk & ((uint32_t)(value) << RSTC_SR_RSTTYP_Pos)) /* Assignment of value for RSTTYP in the RSTC_SR register */
 #define   RSTC_SR_RSTTYP_GENERAL_RST_Val      _UINT32_(0x0)                                        /* (RSTC_SR) First power-up reset  */
 #define   RSTC_SR_RSTTYP_BACKUP_RST_Val       _UINT32_(0x1)                                        /* (RSTC_SR) Return from Backup Mode  */
 #define   RSTC_SR_RSTTYP_WDT_RST_Val          _UINT32_(0x2)                                        /* (RSTC_SR) Watchdog fault occurred  */
@@ -63,26 +65,26 @@
 #define RSTC_SR_RSTTYP_USER_RST               (RSTC_SR_RSTTYP_USER_RST_Val << RSTC_SR_RSTTYP_Pos)  /* (RSTC_SR) NRST pin detected low Position */
 #define RSTC_SR_NRSTL_Pos                     _UINT32_(16)                                         /* (RSTC_SR) NRST Pin Level Position */
 #define RSTC_SR_NRSTL_Msk                     (_UINT32_(0x1) << RSTC_SR_NRSTL_Pos)                 /* (RSTC_SR) NRST Pin Level Mask */
-#define RSTC_SR_NRSTL(value)                  (RSTC_SR_NRSTL_Msk & (_UINT32_(value) << RSTC_SR_NRSTL_Pos)) /* Assignment of value for NRSTL in the RSTC_SR register */
+#define RSTC_SR_NRSTL(value)                  (RSTC_SR_NRSTL_Msk & ((uint32_t)(value) << RSTC_SR_NRSTL_Pos)) /* Assignment of value for NRSTL in the RSTC_SR register */
 #define RSTC_SR_SRCMP_Pos                     _UINT32_(17)                                         /* (RSTC_SR) Software Reset Command in Progress Position */
 #define RSTC_SR_SRCMP_Msk                     (_UINT32_(0x1) << RSTC_SR_SRCMP_Pos)                 /* (RSTC_SR) Software Reset Command in Progress Mask */
-#define RSTC_SR_SRCMP(value)                  (RSTC_SR_SRCMP_Msk & (_UINT32_(value) << RSTC_SR_SRCMP_Pos)) /* Assignment of value for SRCMP in the RSTC_SR register */
+#define RSTC_SR_SRCMP(value)                  (RSTC_SR_SRCMP_Msk & ((uint32_t)(value) << RSTC_SR_SRCMP_Pos)) /* Assignment of value for SRCMP in the RSTC_SR register */
 #define RSTC_SR_Msk                           _UINT32_(0x00030701)                                 /* (RSTC_SR) Register Mask  */
 
 
 /* -------- RSTC_MR : (RSTC Offset: 0x08) (R/W 32) Mode Register -------- */
 #define RSTC_MR_URSTEN_Pos                    _UINT32_(0)                                          /* (RSTC_MR) User Reset Enable Position */
 #define RSTC_MR_URSTEN_Msk                    (_UINT32_(0x1) << RSTC_MR_URSTEN_Pos)                /* (RSTC_MR) User Reset Enable Mask */
-#define RSTC_MR_URSTEN(value)                 (RSTC_MR_URSTEN_Msk & (_UINT32_(value) << RSTC_MR_URSTEN_Pos)) /* Assignment of value for URSTEN in the RSTC_MR register */
+#define RSTC_MR_URSTEN(value)                 (RSTC_MR_URSTEN_Msk & ((uint32_t)(value) << RSTC_MR_URSTEN_Pos)) /* Assignment of value for URSTEN in the RSTC_MR register */
 #define RSTC_MR_URSTIEN_Pos                   _UINT32_(4)                                          /* (RSTC_MR) User Reset Interrupt Enable Position */
 #define RSTC_MR_URSTIEN_Msk                   (_UINT32_(0x1) << RSTC_MR_URSTIEN_Pos)               /* (RSTC_MR) User Reset Interrupt Enable Mask */
-#define RSTC_MR_URSTIEN(value)                (RSTC_MR_URSTIEN_Msk & (_UINT32_(value) << RSTC_MR_URSTIEN_Pos)) /* Assignment of value for URSTIEN in the RSTC_MR register */
+#define RSTC_MR_URSTIEN(value)                (RSTC_MR_URSTIEN_Msk & ((uint32_t)(value) << RSTC_MR_URSTIEN_Pos)) /* Assignment of value for URSTIEN in the RSTC_MR register */
 #define RSTC_MR_ERSTL_Pos                     _UINT32_(8)                                          /* (RSTC_MR) External Reset Length Position */
 #define RSTC_MR_ERSTL_Msk                     (_UINT32_(0xF) << RSTC_MR_ERSTL_Pos)                 /* (RSTC_MR) External Reset Length Mask */
-#define RSTC_MR_ERSTL(value)                  (RSTC_MR_ERSTL_Msk & (_UINT32_(value) << RSTC_MR_ERSTL_Pos)) /* Assignment of value for ERSTL in the RSTC_MR register */
+#define RSTC_MR_ERSTL(value)                  (RSTC_MR_ERSTL_Msk & ((uint32_t)(value) << RSTC_MR_ERSTL_Pos)) /* Assignment of value for ERSTL in the RSTC_MR register */
 #define RSTC_MR_KEY_Pos                       _UINT32_(24)                                         /* (RSTC_MR) Write Access Password Position */
 #define RSTC_MR_KEY_Msk                       (_UINT32_(0xFF) << RSTC_MR_KEY_Pos)                  /* (RSTC_MR) Write Access Password Mask */
-#define RSTC_MR_KEY(value)                    (RSTC_MR_KEY_Msk & (_UINT32_(value) << RSTC_MR_KEY_Pos)) /* Assignment of value for KEY in the RSTC_MR register */
+#define RSTC_MR_KEY(value)                    (RSTC_MR_KEY_Msk & ((uint32_t)(value) << RSTC_MR_KEY_Pos)) /* Assignment of value for KEY in the RSTC_MR register */
 #define   RSTC_MR_KEY_PASSWD_Val              _UINT32_(0xA5)                                       /* (RSTC_MR) Writing any other value in this field aborts the write operation.Always reads as 0.  */
 #define RSTC_MR_KEY_PASSWD                    (RSTC_MR_KEY_PASSWD_Val << RSTC_MR_KEY_Pos)          /* (RSTC_MR) Writing any other value in this field aborts the write operation.Always reads as 0. Position */
 #define RSTC_MR_Msk                           _UINT32_(0xFF000F11)                                 /* (RSTC_MR) Register Mask  */
